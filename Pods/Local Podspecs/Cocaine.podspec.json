@@ -1,0 +1,25 @@
+{
+  "name": "Cocaine",
+  "version": "1.0.0",
+  "summary": "Cocaine framework",
+  "description": "Cocaine framework",
+  "homepage": "http://EXAMPLE/Cocaine",
+  "license": "Cocaine",
+  "authors": {
+    "Ivankov Alexey": ""
+  },
+  "platforms": {
+    "ios": "8.0",
+    "osx": "10.7",
+    "watchos": "2.0",
+    "tvos": "9.0"
+  },
+  "source": {
+    "git": "https://github.com/alexeyIvankov/Cocaine.git",
+    "branch": "master"
+  },
+  "source_files": "Cocaine/**/*.{swift, h}",
+  "xcconfig": {
+    "HEADER_SEARCH_PATHS": "$(PODS_ROOT)/Cocaine"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "KeyboardHandler",
+  "version": "1.0.0",
+  "summary": "KeyboardHandler framework",
+  "description": "KeyboardHandler framework",
+  "homepage": "http://EXAMPLE/KeyboardHandler",
+  "license": "KeyboardHandler",
+  "authors": {
+    "Ivankov Alexey": ""
+  },
+  "platforms": {
+    "ios": "8.0",
+    "osx": "10.7",
+    "watchos": "2.0",
+    "tvos": "9.0"
+  },
+  "source": {
+    "git": "https://github.com/alexeyIvankov/KeyboardHandler.git",
+    "branch": "master"
+  },
+  "source_files": "KeyboardHandler/**/*.{swift, h}",
+  "xcconfig": {
+    "HEADER_SEARCH_PATHS": "$(PODS_ROOT)/KeyboardHandler"
+  }
+}
