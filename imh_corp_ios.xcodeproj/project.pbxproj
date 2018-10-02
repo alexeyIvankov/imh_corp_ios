@@ -61,7 +61,6 @@
 			children = (
 				FFAB4E722163465C00AE82EA /* imh_corp_ios */,
 				FFAB4E872163465F00AE82EA /* imh_corp_iosTests */,
-				FFAB4E712163465C00AE82EA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +71,7 @@
 				FFAB4E842163465F00AE82EA /* imh_corp_iosTests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		FFAB4E722163465C00AE82EA /* imh_corp_ios */ = {
@@ -92,6 +92,7 @@
 			children = (
 				FFAB4E882163465F00AE82EA /* imh_corp_iosTests.swift */,
 				FFAB4E8A2163465F00AE82EA /* Info.plist */,
+				FFAB4E712163465C00AE82EA /* Products */,
 			);
 			path = imh_corp_iosTests;
 			sourceTree = "<group>";
