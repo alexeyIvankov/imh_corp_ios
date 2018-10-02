@@ -11,11 +11,89 @@
 		B9D90EF4F711B91A51CF8641 /* Pods_imh_corp_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284E760EB484448212786CAC /* Pods_imh_corp_iosTests.framework */; };
 		FFAB4E892163465F00AE82EA /* imh_corp_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4E882163465F00AE82EA /* imh_corp_iosTests.swift */; };
 		FFAB4E942163489200AE82EA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4E932163489200AE82EA /* Podfile */; };
-		FFAB4EA0216348B200AE82EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4E96216348B200AE82EA /* AppDelegate.swift */; };
 		FFAB4EA1216348B200AE82EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4E9A216348B200AE82EA /* Assets.xcassets */; };
 		FFAB4EA2216348B200AE82EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4E9B216348B200AE82EA /* LaunchScreen.storyboard */; };
 		FFAB4EA3216348B200AE82EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4E9D216348B200AE82EA /* Main.storyboard */; };
-		FFAB4EA7216348C500AE82EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EA6216348C500AE82EA /* ViewController.swift */; };
+		FFAB4F0A216392D400AE82EA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4ECE216392D400AE82EA /* LICENSE */; };
+		FFAB4F0B216392D400AE82EA /* PopMenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4ED2216392D400AE82EA /* PopMenuAction.swift */; };
+		FFAB4F0C216392D400AE82EA /* PopMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4ED3216392D400AE82EA /* PopMenuViewController.swift */; };
+		FFAB4F0D216392D400AE82EA /* PopMenuAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4ED5216392D400AE82EA /* PopMenuAppearance.swift */; };
+		FFAB4F0E216392D400AE82EA /* PopMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4ED6216392D400AE82EA /* PopMenuManager.swift */; };
+		FFAB4F0F216392D400AE82EA /* UIColor+Contrast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4ED8216392D400AE82EA /* UIColor+Contrast.swift */; };
+		FFAB4F10216392D400AE82EA /* PopMenuGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4ED9216392D400AE82EA /* PopMenuGradientView.swift */; };
+		FFAB4F11216392D400AE82EA /* UIView+Shadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EDA216392D400AE82EA /* UIView+Shadows.swift */; };
+		FFAB4F12216392D400AE82EA /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EDB216392D400AE82EA /* Haptics.swift */; };
+		FFAB4F13216392D400AE82EA /* PopMenuPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EDD216392D400AE82EA /* PopMenuPresentAnimationController.swift */; };
+		FFAB4F14216392D400AE82EA /* PopMenuDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EDE216392D400AE82EA /* PopMenuDismissAnimationController.swift */; };
+		FFAB4F15216392D400AE82EA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4EDF216392D400AE82EA /* README.md */; };
+		FFAB4F16216392D400AE82EA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EE0216392D400AE82EA /* GradientView.swift */; };
+		FFAB4F17216392D400AE82EA /* IAppDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EE2216392D400AE82EA /* IAppDesign.swift */; };
+		FFAB4F18216392D400AE82EA /* IDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EE3216392D400AE82EA /* IDesign.swift */; };
+		FFAB4F19216392D400AE82EA /* AppDesignAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EE5216392D400AE82EA /* AppDesignAssembly.swift */; };
+		FFAB4F1A216392D400AE82EA /* AppDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EE6216392D400AE82EA /* AppDesign.swift */; };
+		FFAB4F1B216392D400AE82EA /* AssemblyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4EE8216392D400AE82EA /* AssemblyList.plist */; };
+		FFAB4F1C216392D400AE82EA /* IDependenceDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EE9216392D400AE82EA /* IDependenceDirector.swift */; };
+		FFAB4F1D216392D400AE82EA /* DependenceDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EEA216392D400AE82EA /* DependenceDirector.swift */; };
+		FFAB4F1E216392D400AE82EA /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EEB216392D400AE82EA /* Global.swift */; };
+		FFAB4F1F216392D400AE82EA /* IRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EED216392D400AE82EA /* IRouter.swift */; };
+		FFAB4F20216392D400AE82EA /* IWindowStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EF0216392D400AE82EA /* IWindowStack.swift */; };
+		FFAB4F21216392D400AE82EA /* WindowStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EF1216392D400AE82EA /* WindowStack.swift */; };
+		FFAB4F22216392D400AE82EA /* TimeInterval+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EF3216392D400AE82EA /* TimeInterval+Date.swift */; };
+		FFAB4F23216392D400AE82EA /* DispatchQueue+After.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EF5216392D400AE82EA /* DispatchQueue+After.swift */; };
+		FFAB4F24216392D400AE82EA /* UIStoryboard+Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EF7216392D400AE82EA /* UIStoryboard+Load.swift */; };
+		FFAB4F25216392D400AE82EA /* UIStoryboard+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EF8216392D400AE82EA /* UIStoryboard+Type.swift */; };
+		FFAB4F26216392D400AE82EA /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EFA216392D400AE82EA /* UIColor+Hex.swift */; };
+		FFAB4F27216392D400AE82EA /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EFB216392D400AE82EA /* UIColor+RGB.swift */; };
+		FFAB4F28216392D400AE82EA /* WKWebView+Cookies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4EFD216392D400AE82EA /* WKWebView+Cookies.swift */; };
+		FFAB4F29216392D400AE82EA /* FullSreenLoader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4F00216392D400AE82EA /* FullSreenLoader.xib */; };
+		FFAB4F2A216392D400AE82EA /* FullScreenLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F01216392D400AE82EA /* FullScreenLoader.swift */; };
+		FFAB4F2B216392D400AE82EA /* LoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F02216392D400AE82EA /* LoaderService.swift */; };
+		FFAB4F2C216392D400AE82EA /* ILoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F03216392D400AE82EA /* ILoaderService.swift */; };
+		FFAB4F2D216392D400AE82EA /* LoaderServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F05216392D400AE82EA /* LoaderServiceAssembly.swift */; };
+		FFAB4F2E216392D400AE82EA /* ILocalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F07216392D400AE82EA /* ILocalize.swift */; };
+		FFAB4F2F216392D400AE82EA /* ILocalizator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F08216392D400AE82EA /* ILocalizator.swift */; };
+		FFAB4F30216392D400AE82EA /* Localizator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F09216392D400AE82EA /* Localizator.swift */; };
+		FFAB4F382163936B00AE82EA /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F312163936A00AE82EA /* Application.swift */; };
+		FFAB4F392163936B00AE82EA /* IAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F332163936A00AE82EA /* IAppDelegate.swift */; };
+		FFAB4F3A2163936B00AE82EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F342163936A00AE82EA /* AppDelegate.swift */; };
+		FFAB4F3B2163936B00AE82EA /* IApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F352163936B00AE82EA /* IApplication.swift */; };
+		FFAB4F3C2163936B00AE82EA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F372163936B00AE82EA /* main.swift */; };
+		FFAB4F612163959700AE82EA /* AuthSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4F3E2163959700AE82EA /* AuthSB.storyboard */; };
+		FFAB4F622163959700AE82EA /* AuthServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F402163959700AE82EA /* AuthServicesAssembly.swift */; };
+		FFAB4F632163959700AE82EA /* AuthCakeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F412163959700AE82EA /* AuthCakeAssembly.swift */; };
+		FFAB4F642163959700AE82EA /* LoginDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F442163959700AE82EA /* LoginDesign.swift */; };
+		FFAB4F652163959700AE82EA /* ILoginDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F452163959700AE82EA /* ILoginDesign.swift */; };
+		FFAB4F662163959700AE82EA /* LoginCakeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F472163959700AE82EA /* LoginCakeAssembly.swift */; };
+		FFAB4F672163959700AE82EA /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F492163959700AE82EA /* LoginController.swift */; };
+		FFAB4F682163959700AE82EA /* ILoginServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F4B2163959700AE82EA /* ILoginServiceLayer.swift */; };
+		FFAB4F692163959700AE82EA /* LoginServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F4C2163959700AE82EA /* LoginServiceLayer.swift */; };
+		FFAB4F6A2163959700AE82EA /* ILoginCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F4E2163959700AE82EA /* ILoginCake.swift */; };
+		FFAB4F6B2163959700AE82EA /* LoginCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F4F2163959700AE82EA /* LoginCake.swift */; };
+		FFAB4F6C2163959700AE82EA /* ILoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F512163959700AE82EA /* ILoginRouter.swift */; };
+		FFAB4F6D2163959700AE82EA /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F522163959700AE82EA /* LoginRouter.swift */; };
+		FFAB4F6E2163959700AE82EA /* ISessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F542163959700AE82EA /* ISessionService.swift */; };
+		FFAB4F6F2163959700AE82EA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F552163959700AE82EA /* AuthService.swift */; };
+		FFAB4F702163959700AE82EA /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F562163959700AE82EA /* SessionService.swift */; };
+		FFAB4F732163959700AE82EA /* IAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F5A2163959700AE82EA /* IAuthService.swift */; };
+		FFAB4F742163959700AE82EA /* AuthCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F5C2163959700AE82EA /* AuthCake.swift */; };
+		FFAB4F752163959700AE82EA /* IAuthCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F5D2163959700AE82EA /* IAuthCake.swift */; };
+		FFAB4F762163959700AE82EA /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F5F2163959700AE82EA /* AuthRouter.swift */; };
+		FFAB4F772163959700AE82EA /* IAuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F602163959700AE82EA /* IAuthRouter.swift */; };
+		FFAB4F872163960900AE82EA /* RootServiceLayerAssebly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F7A2163960900AE82EA /* RootServiceLayerAssebly.swift */; };
+		FFAB4F882163960900AE82EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4F7B2163960900AE82EA /* Main.storyboard */; };
+		FFAB4F892163960900AE82EA /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F7D2163960900AE82EA /* RootController.swift */; };
+		FFAB4F8A2163960900AE82EA /* RootServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F7F2163960900AE82EA /* RootServiceLayer.swift */; };
+		FFAB4F8B2163960900AE82EA /* IRootServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F802163960900AE82EA /* IRootServiceLayer.swift */; };
+		FFAB4F8C2163960900AE82EA /* IRootCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F822163960900AE82EA /* IRootCake.swift */; };
+		FFAB4F8D2163960900AE82EA /* RootCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F832163960900AE82EA /* RootCake.swift */; };
+		FFAB4F8E2163960900AE82EA /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F852163960900AE82EA /* RootRouter.swift */; };
+		FFAB4F8F2163960900AE82EA /* IRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F862163960900AE82EA /* IRootRouter.swift */; };
+		FFAB4FA42163971A00AE82EA /* SecurityServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F9B2163971A00AE82EA /* SecurityServiceAssembly.swift */; };
+		FFAB4FA52163971A00AE82EA /* ISecurityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F9D2163971A00AE82EA /* ISecurityService.swift */; };
+		FFAB4FA62163971A00AE82EA /* SecurityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F9E2163971A00AE82EA /* SecurityService.swift */; };
+		FFAB4FA72163971A00AE82EA /* INetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4FA02163971A00AE82EA /* INetwork.swift */; };
+		FFAB4FA82163971A00AE82EA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4FA12163971A00AE82EA /* Network.swift */; };
+		FFAB4FA92163971A00AE82EA /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4FA32163971A00AE82EA /* NetworkAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,12 +118,91 @@
 		FFAB4E882163465F00AE82EA /* imh_corp_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imh_corp_iosTests.swift; sourceTree = "<group>"; };
 		FFAB4E8A2163465F00AE82EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFAB4E932163489200AE82EA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		FFAB4E96216348B200AE82EA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFAB4E9A216348B200AE82EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFAB4E9C216348B200AE82EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFAB4E9E216348B200AE82EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFAB4E9F216348B200AE82EA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFAB4EA6216348C500AE82EA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FFAB4ECE216392D400AE82EA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		FFAB4ED0216392D400AE82EA /* PopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopMenu.h; sourceTree = "<group>"; };
+		FFAB4ED2216392D400AE82EA /* PopMenuAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopMenuAction.swift; sourceTree = "<group>"; };
+		FFAB4ED3216392D400AE82EA /* PopMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopMenuViewController.swift; sourceTree = "<group>"; };
+		FFAB4ED5216392D400AE82EA /* PopMenuAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopMenuAppearance.swift; sourceTree = "<group>"; };
+		FFAB4ED6216392D400AE82EA /* PopMenuManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopMenuManager.swift; sourceTree = "<group>"; };
+		FFAB4ED8216392D400AE82EA /* UIColor+Contrast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Contrast.swift"; sourceTree = "<group>"; };
+		FFAB4ED9216392D400AE82EA /* PopMenuGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopMenuGradientView.swift; sourceTree = "<group>"; };
+		FFAB4EDA216392D400AE82EA /* UIView+Shadows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadows.swift"; sourceTree = "<group>"; };
+		FFAB4EDB216392D400AE82EA /* Haptics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		FFAB4EDD216392D400AE82EA /* PopMenuPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopMenuPresentAnimationController.swift; sourceTree = "<group>"; };
+		FFAB4EDE216392D400AE82EA /* PopMenuDismissAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopMenuDismissAnimationController.swift; sourceTree = "<group>"; };
+		FFAB4EDF216392D400AE82EA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FFAB4EE0216392D400AE82EA /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		FFAB4EE2216392D400AE82EA /* IAppDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAppDesign.swift; sourceTree = "<group>"; };
+		FFAB4EE3216392D400AE82EA /* IDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDesign.swift; sourceTree = "<group>"; };
+		FFAB4EE5216392D400AE82EA /* AppDesignAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDesignAssembly.swift; sourceTree = "<group>"; };
+		FFAB4EE6216392D400AE82EA /* AppDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDesign.swift; sourceTree = "<group>"; };
+		FFAB4EE8216392D400AE82EA /* AssemblyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AssemblyList.plist; sourceTree = "<group>"; };
+		FFAB4EE9216392D400AE82EA /* IDependenceDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDependenceDirector.swift; sourceTree = "<group>"; };
+		FFAB4EEA216392D400AE82EA /* DependenceDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependenceDirector.swift; sourceTree = "<group>"; };
+		FFAB4EEB216392D400AE82EA /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		FFAB4EED216392D400AE82EA /* IRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRouter.swift; sourceTree = "<group>"; };
+		FFAB4EF0216392D400AE82EA /* IWindowStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IWindowStack.swift; sourceTree = "<group>"; };
+		FFAB4EF1216392D400AE82EA /* WindowStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowStack.swift; sourceTree = "<group>"; };
+		FFAB4EF3216392D400AE82EA /* TimeInterval+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Date.swift"; sourceTree = "<group>"; };
+		FFAB4EF5216392D400AE82EA /* DispatchQueue+After.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+After.swift"; sourceTree = "<group>"; };
+		FFAB4EF7216392D400AE82EA /* UIStoryboard+Load.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Load.swift"; sourceTree = "<group>"; };
+		FFAB4EF8216392D400AE82EA /* UIStoryboard+Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Type.swift"; sourceTree = "<group>"; };
+		FFAB4EFA216392D400AE82EA /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		FFAB4EFB216392D400AE82EA /* UIColor+RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
+		FFAB4EFD216392D400AE82EA /* WKWebView+Cookies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WKWebView+Cookies.swift"; sourceTree = "<group>"; };
+		FFAB4F00216392D400AE82EA /* FullSreenLoader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullSreenLoader.xib; sourceTree = "<group>"; };
+		FFAB4F01216392D400AE82EA /* FullScreenLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenLoader.swift; sourceTree = "<group>"; };
+		FFAB4F02216392D400AE82EA /* LoaderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderService.swift; sourceTree = "<group>"; };
+		FFAB4F03216392D400AE82EA /* ILoaderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILoaderService.swift; sourceTree = "<group>"; };
+		FFAB4F05216392D400AE82EA /* LoaderServiceAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderServiceAssembly.swift; sourceTree = "<group>"; };
+		FFAB4F07216392D400AE82EA /* ILocalize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILocalize.swift; sourceTree = "<group>"; };
+		FFAB4F08216392D400AE82EA /* ILocalizator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILocalizator.swift; sourceTree = "<group>"; };
+		FFAB4F09216392D400AE82EA /* Localizator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizator.swift; sourceTree = "<group>"; };
+		FFAB4F312163936A00AE82EA /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		FFAB4F332163936A00AE82EA /* IAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAppDelegate.swift; sourceTree = "<group>"; };
+		FFAB4F342163936A00AE82EA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FFAB4F352163936B00AE82EA /* IApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IApplication.swift; sourceTree = "<group>"; };
+		FFAB4F372163936B00AE82EA /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FFAB4F3E2163959700AE82EA /* AuthSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AuthSB.storyboard; sourceTree = "<group>"; };
+		FFAB4F402163959700AE82EA /* AuthServicesAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthServicesAssembly.swift; sourceTree = "<group>"; };
+		FFAB4F412163959700AE82EA /* AuthCakeAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCakeAssembly.swift; sourceTree = "<group>"; };
+		FFAB4F442163959700AE82EA /* LoginDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDesign.swift; sourceTree = "<group>"; };
+		FFAB4F452163959700AE82EA /* ILoginDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILoginDesign.swift; sourceTree = "<group>"; };
+		FFAB4F472163959700AE82EA /* LoginCakeAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCakeAssembly.swift; sourceTree = "<group>"; };
+		FFAB4F492163959700AE82EA /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		FFAB4F4B2163959700AE82EA /* ILoginServiceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILoginServiceLayer.swift; sourceTree = "<group>"; };
+		FFAB4F4C2163959700AE82EA /* LoginServiceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginServiceLayer.swift; sourceTree = "<group>"; };
+		FFAB4F4E2163959700AE82EA /* ILoginCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILoginCake.swift; sourceTree = "<group>"; };
+		FFAB4F4F2163959700AE82EA /* LoginCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCake.swift; sourceTree = "<group>"; };
+		FFAB4F512163959700AE82EA /* ILoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILoginRouter.swift; sourceTree = "<group>"; };
+		FFAB4F522163959700AE82EA /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		FFAB4F542163959700AE82EA /* ISessionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISessionService.swift; sourceTree = "<group>"; };
+		FFAB4F552163959700AE82EA /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FFAB4F562163959700AE82EA /* SessionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
+		FFAB4F5A2163959700AE82EA /* IAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAuthService.swift; sourceTree = "<group>"; };
+		FFAB4F5C2163959700AE82EA /* AuthCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCake.swift; sourceTree = "<group>"; };
+		FFAB4F5D2163959700AE82EA /* IAuthCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAuthCake.swift; sourceTree = "<group>"; };
+		FFAB4F5F2163959700AE82EA /* AuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		FFAB4F602163959700AE82EA /* IAuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAuthRouter.swift; sourceTree = "<group>"; };
+		FFAB4F7A2163960900AE82EA /* RootServiceLayerAssebly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootServiceLayerAssebly.swift; sourceTree = "<group>"; };
+		FFAB4F7B2163960900AE82EA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FFAB4F7D2163960900AE82EA /* RootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
+		FFAB4F7F2163960900AE82EA /* RootServiceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootServiceLayer.swift; sourceTree = "<group>"; };
+		FFAB4F802163960900AE82EA /* IRootServiceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRootServiceLayer.swift; sourceTree = "<group>"; };
+		FFAB4F822163960900AE82EA /* IRootCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRootCake.swift; sourceTree = "<group>"; };
+		FFAB4F832163960900AE82EA /* RootCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCake.swift; sourceTree = "<group>"; };
+		FFAB4F852163960900AE82EA /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		FFAB4F862163960900AE82EA /* IRootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRootRouter.swift; sourceTree = "<group>"; };
+		FFAB4F9B2163971A00AE82EA /* SecurityServiceAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityServiceAssembly.swift; sourceTree = "<group>"; };
+		FFAB4F9D2163971A00AE82EA /* ISecurityService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISecurityService.swift; sourceTree = "<group>"; };
+		FFAB4F9E2163971A00AE82EA /* SecurityService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityService.swift; sourceTree = "<group>"; };
+		FFAB4FA02163971A00AE82EA /* INetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INetwork.swift; sourceTree = "<group>"; };
+		FFAB4FA12163971A00AE82EA /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		FFAB4FA32163971A00AE82EA /* NetworkAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,10 +269,10 @@
 		FFAB4E722163465C00AE82EA /* imh_corp_ios */ = {
 			isa = PBXGroup;
 			children = (
-				FFAB4EA6216348C500AE82EA /* ViewController.swift */,
+				FFAB4F782163960900AE82EA /* root */,
+				FFAB4F3D2163959700AE82EA /* auth */,
 				FFAB4EA5216348BE00AE82EA /* core */,
 				FFAB4E95216348B200AE82EA /* app */,
-				FFAB4E98216348B200AE82EA /* auth */,
 				FFAB4E99216348B200AE82EA /* res */,
 				FFAB4E97216348B200AE82EA /* root */,
 			);
@@ -135,7 +292,10 @@
 		FFAB4E95216348B200AE82EA /* app */ = {
 			isa = PBXGroup;
 			children = (
-				FFAB4E96216348B200AE82EA /* AppDelegate.swift */,
+				FFAB4F312163936A00AE82EA /* Application.swift */,
+				FFAB4F322163936A00AE82EA /* delegate */,
+				FFAB4F352163936B00AE82EA /* IApplication.swift */,
+				FFAB4F362163936B00AE82EA /* main */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -145,13 +305,6 @@
 			children = (
 			);
 			path = root;
-			sourceTree = "<group>";
-		};
-		FFAB4E98216348B200AE82EA /* auth */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = auth;
 			sourceTree = "<group>";
 		};
 		FFAB4E99216348B200AE82EA /* res */ = {
@@ -168,8 +321,459 @@
 		FFAB4EA5216348BE00AE82EA /* core */ = {
 			isa = PBXGroup;
 			children = (
+				FFAB4F9F2163971A00AE82EA /* network */,
+				FFAB4F992163971A00AE82EA /* security */,
+				FFAB4EE7216392D400AE82EA /* dependence */,
+				FFAB4EE1216392D400AE82EA /* design */,
+				FFAB4EF2216392D400AE82EA /* extensions */,
+				FFAB4EEB216392D400AE82EA /* Global.swift */,
+				FFAB4EFE216392D400AE82EA /* loader */,
+				FFAB4F06216392D400AE82EA /* localizator */,
+				FFAB4EEC216392D400AE82EA /* routing */,
+				FFAB4ECC216392D400AE82EA /* ui_components */,
+				FFAB4EEE216392D400AE82EA /* windowStack */,
 			);
 			path = core;
+			sourceTree = "<group>";
+		};
+		FFAB4ECC216392D400AE82EA /* ui_components */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4ECD216392D400AE82EA /* NewPopMenu */,
+				FFAB4EE0216392D400AE82EA /* GradientView.swift */,
+			);
+			path = ui_components;
+			sourceTree = "<group>";
+		};
+		FFAB4ECD216392D400AE82EA /* NewPopMenu */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4ECE216392D400AE82EA /* LICENSE */,
+				FFAB4ECF216392D400AE82EA /* PopMenu */,
+				FFAB4EDF216392D400AE82EA /* README.md */,
+			);
+			path = NewPopMenu;
+			sourceTree = "<group>";
+		};
+		FFAB4ECF216392D400AE82EA /* PopMenu */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4ED0216392D400AE82EA /* PopMenu.h */,
+				FFAB4ED1216392D400AE82EA /* View Controller & Views */,
+				FFAB4ED4216392D400AE82EA /* Classes */,
+				FFAB4EDC216392D400AE82EA /* Transitions */,
+			);
+			path = PopMenu;
+			sourceTree = "<group>";
+		};
+		FFAB4ED1216392D400AE82EA /* View Controller & Views */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4ED2216392D400AE82EA /* PopMenuAction.swift */,
+				FFAB4ED3216392D400AE82EA /* PopMenuViewController.swift */,
+			);
+			path = "View Controller & Views";
+			sourceTree = "<group>";
+		};
+		FFAB4ED4216392D400AE82EA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4ED5216392D400AE82EA /* PopMenuAppearance.swift */,
+				FFAB4ED6216392D400AE82EA /* PopMenuManager.swift */,
+				FFAB4ED7216392D400AE82EA /* Helpers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FFAB4ED7216392D400AE82EA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4ED8216392D400AE82EA /* UIColor+Contrast.swift */,
+				FFAB4ED9216392D400AE82EA /* PopMenuGradientView.swift */,
+				FFAB4EDA216392D400AE82EA /* UIView+Shadows.swift */,
+				FFAB4EDB216392D400AE82EA /* Haptics.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FFAB4EDC216392D400AE82EA /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4EDD216392D400AE82EA /* PopMenuPresentAnimationController.swift */,
+				FFAB4EDE216392D400AE82EA /* PopMenuDismissAnimationController.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		FFAB4EE1216392D400AE82EA /* design */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4EE2216392D400AE82EA /* IAppDesign.swift */,
+				FFAB4EE3216392D400AE82EA /* IDesign.swift */,
+				FFAB4EE4216392D400AE82EA /* assembly */,
+				FFAB4EE6216392D400AE82EA /* AppDesign.swift */,
+			);
+			path = design;
+			sourceTree = "<group>";
+		};
+		FFAB4EE4216392D400AE82EA /* assembly */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4EE5216392D400AE82EA /* AppDesignAssembly.swift */,
+			);
+			path = assembly;
+			sourceTree = "<group>";
+		};
+		FFAB4EE7216392D400AE82EA /* dependence */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4EE8216392D400AE82EA /* AssemblyList.plist */,
+				FFAB4EE9216392D400AE82EA /* IDependenceDirector.swift */,
+				FFAB4EEA216392D400AE82EA /* DependenceDirector.swift */,
+			);
+			path = dependence;
+			sourceTree = "<group>";
+		};
+		FFAB4EEC216392D400AE82EA /* routing */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4EED216392D400AE82EA /* IRouter.swift */,
+			);
+			path = routing;
+			sourceTree = "<group>";
+		};
+		FFAB4EEE216392D400AE82EA /* windowStack */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4EEF216392D400AE82EA /* assembly */,
+				FFAB4EF0216392D400AE82EA /* IWindowStack.swift */,
+				FFAB4EF1216392D400AE82EA /* WindowStack.swift */,
+			);
+			path = windowStack;
+			sourceTree = "<group>";
+		};
+		FFAB4EEF216392D400AE82EA /* assembly */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = assembly;
+			sourceTree = "<group>";
+		};
+		FFAB4EF2216392D400AE82EA /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4EF3216392D400AE82EA /* TimeInterval+Date.swift */,
+				FFAB4EF4216392D400AE82EA /* dispatchQueue */,
+				FFAB4EF6216392D400AE82EA /* uistoryboard */,
+				FFAB4EF9216392D400AE82EA /* color */,
+				FFAB4EFC216392D400AE82EA /* webView */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		FFAB4EF4216392D400AE82EA /* dispatchQueue */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4EF5216392D400AE82EA /* DispatchQueue+After.swift */,
+			);
+			path = dispatchQueue;
+			sourceTree = "<group>";
+		};
+		FFAB4EF6216392D400AE82EA /* uistoryboard */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4EF7216392D400AE82EA /* UIStoryboard+Load.swift */,
+				FFAB4EF8216392D400AE82EA /* UIStoryboard+Type.swift */,
+			);
+			path = uistoryboard;
+			sourceTree = "<group>";
+		};
+		FFAB4EF9216392D400AE82EA /* color */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4EFA216392D400AE82EA /* UIColor+Hex.swift */,
+				FFAB4EFB216392D400AE82EA /* UIColor+RGB.swift */,
+			);
+			path = color;
+			sourceTree = "<group>";
+		};
+		FFAB4EFC216392D400AE82EA /* webView */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4EFD216392D400AE82EA /* WKWebView+Cookies.swift */,
+			);
+			path = webView;
+			sourceTree = "<group>";
+		};
+		FFAB4EFE216392D400AE82EA /* loader */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4EFF216392D400AE82EA /* ui */,
+				FFAB4F02216392D400AE82EA /* LoaderService.swift */,
+				FFAB4F03216392D400AE82EA /* ILoaderService.swift */,
+				FFAB4F04216392D400AE82EA /* assembly */,
+			);
+			path = loader;
+			sourceTree = "<group>";
+		};
+		FFAB4EFF216392D400AE82EA /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F00216392D400AE82EA /* FullSreenLoader.xib */,
+				FFAB4F01216392D400AE82EA /* FullScreenLoader.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		FFAB4F04216392D400AE82EA /* assembly */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F05216392D400AE82EA /* LoaderServiceAssembly.swift */,
+			);
+			path = assembly;
+			sourceTree = "<group>";
+		};
+		FFAB4F06216392D400AE82EA /* localizator */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F07216392D400AE82EA /* ILocalize.swift */,
+				FFAB4F08216392D400AE82EA /* ILocalizator.swift */,
+				FFAB4F09216392D400AE82EA /* Localizator.swift */,
+			);
+			path = localizator;
+			sourceTree = "<group>";
+		};
+		FFAB4F322163936A00AE82EA /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F332163936A00AE82EA /* IAppDelegate.swift */,
+				FFAB4F342163936A00AE82EA /* AppDelegate.swift */,
+			);
+			path = delegate;
+			sourceTree = "<group>";
+		};
+		FFAB4F362163936B00AE82EA /* main */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F372163936B00AE82EA /* main.swift */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		FFAB4F3D2163959700AE82EA /* auth */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F3E2163959700AE82EA /* AuthSB.storyboard */,
+				FFAB4F3F2163959700AE82EA /* assemblys */,
+				FFAB4F422163959700AE82EA /* login */,
+				FFAB4F532163959700AE82EA /* services */,
+				FFAB4F5B2163959700AE82EA /* cake */,
+				FFAB4F5E2163959700AE82EA /* router */,
+			);
+			path = auth;
+			sourceTree = "<group>";
+		};
+		FFAB4F3F2163959700AE82EA /* assemblys */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F402163959700AE82EA /* AuthServicesAssembly.swift */,
+				FFAB4F412163959700AE82EA /* AuthCakeAssembly.swift */,
+			);
+			path = assemblys;
+			sourceTree = "<group>";
+		};
+		FFAB4F422163959700AE82EA /* login */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F432163959700AE82EA /* design */,
+				FFAB4F462163959700AE82EA /* assemblys */,
+				FFAB4F482163959700AE82EA /* controller */,
+				FFAB4F4A2163959700AE82EA /* services */,
+				FFAB4F4D2163959700AE82EA /* cake */,
+				FFAB4F502163959700AE82EA /* router */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		FFAB4F432163959700AE82EA /* design */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F442163959700AE82EA /* LoginDesign.swift */,
+				FFAB4F452163959700AE82EA /* ILoginDesign.swift */,
+			);
+			path = design;
+			sourceTree = "<group>";
+		};
+		FFAB4F462163959700AE82EA /* assemblys */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F472163959700AE82EA /* LoginCakeAssembly.swift */,
+			);
+			path = assemblys;
+			sourceTree = "<group>";
+		};
+		FFAB4F482163959700AE82EA /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F492163959700AE82EA /* LoginController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		FFAB4F4A2163959700AE82EA /* services */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F4B2163959700AE82EA /* ILoginServiceLayer.swift */,
+				FFAB4F4C2163959700AE82EA /* LoginServiceLayer.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		FFAB4F4D2163959700AE82EA /* cake */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F4E2163959700AE82EA /* ILoginCake.swift */,
+				FFAB4F4F2163959700AE82EA /* LoginCake.swift */,
+			);
+			path = cake;
+			sourceTree = "<group>";
+		};
+		FFAB4F502163959700AE82EA /* router */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F512163959700AE82EA /* ILoginRouter.swift */,
+				FFAB4F522163959700AE82EA /* LoginRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		FFAB4F532163959700AE82EA /* services */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F542163959700AE82EA /* ISessionService.swift */,
+				FFAB4F552163959700AE82EA /* AuthService.swift */,
+				FFAB4F562163959700AE82EA /* SessionService.swift */,
+				FFAB4F5A2163959700AE82EA /* IAuthService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		FFAB4F5B2163959700AE82EA /* cake */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F5C2163959700AE82EA /* AuthCake.swift */,
+				FFAB4F5D2163959700AE82EA /* IAuthCake.swift */,
+			);
+			path = cake;
+			sourceTree = "<group>";
+		};
+		FFAB4F5E2163959700AE82EA /* router */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F5F2163959700AE82EA /* AuthRouter.swift */,
+				FFAB4F602163959700AE82EA /* IAuthRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		FFAB4F782163960900AE82EA /* root */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F792163960900AE82EA /* assemblys */,
+				FFAB4F7B2163960900AE82EA /* Main.storyboard */,
+				FFAB4F7C2163960900AE82EA /* controller */,
+				FFAB4F7E2163960900AE82EA /* services */,
+				FFAB4F812163960900AE82EA /* cake */,
+				FFAB4F842163960900AE82EA /* router */,
+			);
+			path = root;
+			sourceTree = "<group>";
+		};
+		FFAB4F792163960900AE82EA /* assemblys */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F7A2163960900AE82EA /* RootServiceLayerAssebly.swift */,
+			);
+			path = assemblys;
+			sourceTree = "<group>";
+		};
+		FFAB4F7C2163960900AE82EA /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F7D2163960900AE82EA /* RootController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		FFAB4F7E2163960900AE82EA /* services */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F7F2163960900AE82EA /* RootServiceLayer.swift */,
+				FFAB4F802163960900AE82EA /* IRootServiceLayer.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		FFAB4F812163960900AE82EA /* cake */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F822163960900AE82EA /* IRootCake.swift */,
+				FFAB4F832163960900AE82EA /* RootCake.swift */,
+			);
+			path = cake;
+			sourceTree = "<group>";
+		};
+		FFAB4F842163960900AE82EA /* router */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F852163960900AE82EA /* RootRouter.swift */,
+				FFAB4F862163960900AE82EA /* IRootRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		FFAB4F992163971A00AE82EA /* security */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F9A2163971A00AE82EA /* assemblys */,
+				FFAB4F9C2163971A00AE82EA /* services */,
+			);
+			path = security;
+			sourceTree = "<group>";
+		};
+		FFAB4F9A2163971A00AE82EA /* assemblys */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F9B2163971A00AE82EA /* SecurityServiceAssembly.swift */,
+			);
+			path = assemblys;
+			sourceTree = "<group>";
+		};
+		FFAB4F9C2163971A00AE82EA /* services */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4F9D2163971A00AE82EA /* ISecurityService.swift */,
+				FFAB4F9E2163971A00AE82EA /* SecurityService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		FFAB4F9F2163971A00AE82EA /* network */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4FA02163971A00AE82EA /* INetwork.swift */,
+				FFAB4FA12163971A00AE82EA /* Network.swift */,
+				FFAB4FA22163971A00AE82EA /* assemblys */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		FFAB4FA22163971A00AE82EA /* assemblys */ = {
+			isa = PBXGroup;
+			children = (
+				FFAB4FA32163971A00AE82EA /* NetworkAssembly.swift */,
+			);
+			path = assemblys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,10 +863,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFAB4F15216392D400AE82EA /* README.md in Resources */,
+				FFAB4F882163960900AE82EA /* Main.storyboard in Resources */,
 				FFAB4EA2216348B200AE82EA /* LaunchScreen.storyboard in Resources */,
 				FFAB4EA1216348B200AE82EA /* Assets.xcassets in Resources */,
+				FFAB4F29216392D400AE82EA /* FullSreenLoader.xib in Resources */,
+				FFAB4F612163959700AE82EA /* AuthSB.storyboard in Resources */,
 				FFAB4E942163489200AE82EA /* Podfile in Resources */,
 				FFAB4EA3216348B200AE82EA /* Main.storyboard in Resources */,
+				FFAB4F1B216392D400AE82EA /* AssemblyList.plist in Resources */,
+				FFAB4F0A216392D400AE82EA /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,8 +1019,80 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFAB4EA7216348C500AE82EA /* ViewController.swift in Sources */,
-				FFAB4EA0216348B200AE82EA /* AppDelegate.swift in Sources */,
+				FFAB4F1F216392D400AE82EA /* IRouter.swift in Sources */,
+				FFAB4F752163959700AE82EA /* IAuthCake.swift in Sources */,
+				FFAB4F8B2163960900AE82EA /* IRootServiceLayer.swift in Sources */,
+				FFAB4F13216392D400AE82EA /* PopMenuPresentAnimationController.swift in Sources */,
+				FFAB4FA92163971A00AE82EA /* NetworkAssembly.swift in Sources */,
+				FFAB4F382163936B00AE82EA /* Application.swift in Sources */,
+				FFAB4FA62163971A00AE82EA /* SecurityService.swift in Sources */,
+				FFAB4F6D2163959700AE82EA /* LoginRouter.swift in Sources */,
+				FFAB4F8C2163960900AE82EA /* IRootCake.swift in Sources */,
+				FFAB4F2F216392D400AE82EA /* ILocalizator.swift in Sources */,
+				FFAB4F6C2163959700AE82EA /* ILoginRouter.swift in Sources */,
+				FFAB4F20216392D400AE82EA /* IWindowStack.swift in Sources */,
+				FFAB4F692163959700AE82EA /* LoginServiceLayer.swift in Sources */,
+				FFAB4FA72163971A00AE82EA /* INetwork.swift in Sources */,
+				FFAB4F6B2163959700AE82EA /* LoginCake.swift in Sources */,
+				FFAB4F622163959700AE82EA /* AuthServicesAssembly.swift in Sources */,
+				FFAB4F672163959700AE82EA /* LoginController.swift in Sources */,
+				FFAB4F652163959700AE82EA /* ILoginDesign.swift in Sources */,
+				FFAB4F772163959700AE82EA /* IAuthRouter.swift in Sources */,
+				FFAB4F762163959700AE82EA /* AuthRouter.swift in Sources */,
+				FFAB4F8F2163960900AE82EA /* IRootRouter.swift in Sources */,
+				FFAB4F11216392D400AE82EA /* UIView+Shadows.swift in Sources */,
+				FFAB4F732163959700AE82EA /* IAuthService.swift in Sources */,
+				FFAB4F12216392D400AE82EA /* Haptics.swift in Sources */,
+				FFAB4F10216392D400AE82EA /* PopMenuGradientView.swift in Sources */,
+				FFAB4F662163959700AE82EA /* LoginCakeAssembly.swift in Sources */,
+				FFAB4F0D216392D400AE82EA /* PopMenuAppearance.swift in Sources */,
+				FFAB4F30216392D400AE82EA /* Localizator.swift in Sources */,
+				FFAB4FA52163971A00AE82EA /* ISecurityService.swift in Sources */,
+				FFAB4F2D216392D400AE82EA /* LoaderServiceAssembly.swift in Sources */,
+				FFAB4F2E216392D400AE82EA /* ILocalize.swift in Sources */,
+				FFAB4F1D216392D400AE82EA /* DependenceDirector.swift in Sources */,
+				FFAB4F392163936B00AE82EA /* IAppDelegate.swift in Sources */,
+				FFAB4F682163959700AE82EA /* ILoginServiceLayer.swift in Sources */,
+				FFAB4F21216392D400AE82EA /* WindowStack.swift in Sources */,
+				FFAB4F14216392D400AE82EA /* PopMenuDismissAnimationController.swift in Sources */,
+				FFAB4F8D2163960900AE82EA /* RootCake.swift in Sources */,
+				FFAB4F632163959700AE82EA /* AuthCakeAssembly.swift in Sources */,
+				FFAB4F872163960900AE82EA /* RootServiceLayerAssebly.swift in Sources */,
+				FFAB4F6F2163959700AE82EA /* AuthService.swift in Sources */,
+				FFAB4F3C2163936B00AE82EA /* main.swift in Sources */,
+				FFAB4F1E216392D400AE82EA /* Global.swift in Sources */,
+				FFAB4F3B2163936B00AE82EA /* IApplication.swift in Sources */,
+				FFAB4F27216392D400AE82EA /* UIColor+RGB.swift in Sources */,
+				FFAB4FA42163971A00AE82EA /* SecurityServiceAssembly.swift in Sources */,
+				FFAB4F1A216392D400AE82EA /* AppDesign.swift in Sources */,
+				FFAB4F6A2163959700AE82EA /* ILoginCake.swift in Sources */,
+				FFAB4F23216392D400AE82EA /* DispatchQueue+After.swift in Sources */,
+				FFAB4F3A2163936B00AE82EA /* AppDelegate.swift in Sources */,
+				FFAB4F742163959700AE82EA /* AuthCake.swift in Sources */,
+				FFAB4F0C216392D400AE82EA /* PopMenuViewController.swift in Sources */,
+				FFAB4F25216392D400AE82EA /* UIStoryboard+Type.swift in Sources */,
+				FFAB4F22216392D400AE82EA /* TimeInterval+Date.swift in Sources */,
+				FFAB4F18216392D400AE82EA /* IDesign.swift in Sources */,
+				FFAB4F17216392D400AE82EA /* IAppDesign.swift in Sources */,
+				FFAB4F0E216392D400AE82EA /* PopMenuManager.swift in Sources */,
+				FFAB4F8E2163960900AE82EA /* RootRouter.swift in Sources */,
+				FFAB4F2B216392D400AE82EA /* LoaderService.swift in Sources */,
+				FFAB4F26216392D400AE82EA /* UIColor+Hex.swift in Sources */,
+				FFAB4F702163959700AE82EA /* SessionService.swift in Sources */,
+				FFAB4F16216392D400AE82EA /* GradientView.swift in Sources */,
+				FFAB4F642163959700AE82EA /* LoginDesign.swift in Sources */,
+				FFAB4F1C216392D400AE82EA /* IDependenceDirector.swift in Sources */,
+				FFAB4F892163960900AE82EA /* RootController.swift in Sources */,
+				FFAB4F6E2163959700AE82EA /* ISessionService.swift in Sources */,
+				FFAB4F19216392D400AE82EA /* AppDesignAssembly.swift in Sources */,
+				FFAB4F2C216392D400AE82EA /* ILoaderService.swift in Sources */,
+				FFAB4F0B216392D400AE82EA /* PopMenuAction.swift in Sources */,
+				FFAB4F28216392D400AE82EA /* WKWebView+Cookies.swift in Sources */,
+				FFAB4F2A216392D400AE82EA /* FullScreenLoader.swift in Sources */,
+				FFAB4FA82163971A00AE82EA /* Network.swift in Sources */,
+				FFAB4F8A2163960900AE82EA /* RootServiceLayer.swift in Sources */,
+				FFAB4F24216392D400AE82EA /* UIStoryboard+Load.swift in Sources */,
+				FFAB4F0F216392D400AE82EA /* UIColor+Contrast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,7 +1259,10 @@
 				DEVELOPMENT_TEAM = 4SPZ465GFN;
 				INFOPLIST_FILE = "$(SRCROOT)/imh_corp_ios/res/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imh.imh-corp-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -594,7 +1279,10 @@
 				DEVELOPMENT_TEAM = 4SPZ465GFN;
 				INFOPLIST_FILE = "$(SRCROOT)/imh_corp_ios/res/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imh.imh-corp-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -611,7 +1299,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4SPZ465GFN;
 				INFOPLIST_FILE = imh_corp_iosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imh.imh-corp-iosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -629,7 +1321,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4SPZ465GFN;
 				INFOPLIST_FILE = imh_corp_iosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imh.imh-corp-iosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
