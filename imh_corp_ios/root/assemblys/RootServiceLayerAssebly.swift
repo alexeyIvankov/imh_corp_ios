@@ -21,7 +21,7 @@ public class RootCakeAssembly : AssemblyProviderImpl {
             let securityService:ISecurityService = injector.tryInject()!
             let loaderService:ILoaderService = injector.tryInject()!
 
-            let rootServiceLayer:IRootServiceLayer = RootServiceLayer(securityService: securityService)
+            let rootServiceLayer:IRootDirector = RootDirector(securityService: securityService)
             let rootRouter:IRootRouter = RootRouter(loaderService: loaderService)
             
             let cake:IRootCake = RootCake(router: rootRouter, serviceLayer: rootServiceLayer)

@@ -10,6 +10,6 @@ import Foundation
 
 protocol IAuthCake : AnyObject{
  
-    var authService:IAuthService { get }
+    var authDirector:IAuthDirector { get }
     var authRouter:IAuthRouter { get }
 }

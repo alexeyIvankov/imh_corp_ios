@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol IAuthService : AnyObject {
+protocol IAuthDirector : AnyObject {
  
     var sessionService:ISessionService { get set}
     

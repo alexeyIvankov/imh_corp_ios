@@ -16,10 +16,10 @@ public class AuthCakeAssembly : AssemblyProviderImpl {
         
         return Assembly.init(buildType:IAuthCake.self, memoryPolicy: MemoryPolicy.Strong, instanceScope: InstanceScope.Singleton, buildBlock: { (injector:I_Injector) -> AnyObject in
             
-            let authService:IAuthService = injector.tryInject()!
+            let authDirector:IAuthDirector = injector.tryInject()!
             let authRouter:IAuthRouter = AuthRouter()
             
-            let authCake = AuthCake(authService: authService,
+            let authCake = AuthCake(authDirector: authDirector,
                                     authRouter: authRouter)
             
             return authCake

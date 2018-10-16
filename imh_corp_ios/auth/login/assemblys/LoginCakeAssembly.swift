@@ -17,12 +17,12 @@ public class LoginCakeAssembly : AssemblyProviderImpl {
         return Assembly.init(buildType:ILoginCake.self, memoryPolicy: MemoryPolicy.Strong, instanceScope: InstanceScope.Singleton, buildBlock: { (injector:I_Injector) -> AnyObject in
             
             let appDesign:IAppDesign = injector.tryInject()!
-            let authService:IAuthService = injector.tryInject()!
+            let authService:IAuthDirector = injector.tryInject()!
             let loaderService:ILoaderService = injector.tryInject()!
             let securityService:ISecurityService = injector.tryInject()!
             
             let loginCake:ILoginCake = LoginCake(router: LoginRouter(loaderService: loaderService),
-                                                 service: LoginServiceLayer(authSerice: authService, securityService:securityService),
+                                                 service: LoginDirector(authSerice: authService, securityService:securityService),
                                                  design: LoginDesign(appDesign: appDesign))
             
             return loginCake

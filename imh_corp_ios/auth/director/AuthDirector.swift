@@ -8,7 +8,7 @@
 
 import Foundation
 
-class AuthService : IAuthService {
+class AuthDirector : IAuthDirector {
 
     private let saveAuthKey = "auth"
     

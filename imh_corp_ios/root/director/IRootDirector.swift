@@ -1,5 +1,5 @@
 //
-//  IRootServiceLayer.swift
+//  IRootDirector.swift
 //  IMH_BI
 //
 //  Created by Alexey Ivankov on 23.08.2018.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol IRootServiceLayer : AnyObject {
+protocol IRootDirector : AnyObject {
 
 }

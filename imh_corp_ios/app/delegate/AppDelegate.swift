@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, IAppDelegate {
     
     private func selectStartFlow(){
 
-        if self.authCake.authService.isAuth() {
+        if self.authCake.authDirector.isAuth() {
             self.authCake.authRouter.handleEventAppAuthorized()
         }
         else {

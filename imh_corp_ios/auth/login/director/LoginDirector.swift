@@ -1,5 +1,5 @@
 //
-//  LoginServiceLayer.swift
+//  LoginDirector.swift
 //  IMH_BI
 //
 //  Created by Alexey Ivankov on 24.08.2018.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-class LoginServiceLayer : ILoginServiceLayer {
+class LoginDirector : ILoginDirector {
     
-    var authSerice:IAuthService
+    var authSerice:IAuthDirector
     var securityService:ISecurityService
     
-    required init(authSerice:IAuthService, securityService:ISecurityService){
+    required init(authSerice:IAuthDirector, securityService:ISecurityService){
         self.authSerice = authSerice
         self.securityService = securityService
     }

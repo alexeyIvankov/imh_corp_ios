@@ -11,6 +11,6 @@ import Foundation
 protocol ILoginCake : AnyObject {
     
     var router:ILoginRouter { get }
-    var service:ILoginServiceLayer { get }
+    var service:ILoginDirector { get }
     var design:ILoginDesign { get }
 }

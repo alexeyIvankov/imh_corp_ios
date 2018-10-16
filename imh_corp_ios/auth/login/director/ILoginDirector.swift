@@ -1,5 +1,5 @@
 //
-//  ILoginServiceLayer.swift
+//  ILoginDirector.swift
 //  IMH_BI
 //
 //  Created by Alexey Ivankov on 24.08.2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ILoginServiceLayer : AnyObject {
+protocol ILoginDirector : AnyObject {
     
-    var authSerice:IAuthService { get }
+    var authSerice:IAuthDirector { get }
 }

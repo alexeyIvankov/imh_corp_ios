@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RootServiceLayer : IRootServiceLayer {
+class RootDirector : IRootDirector {
    
     let securityService:ISecurityService
     

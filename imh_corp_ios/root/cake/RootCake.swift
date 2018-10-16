@@ -11,10 +11,10 @@ import Foundation
 class RootCake : IRootCake {
     
     var router: IRootRouter
-    var serviceLayer:IRootServiceLayer
+    var director:IRootDirector
     
-    required init(router:IRootRouter, serviceLayer:IRootServiceLayer) {
+    required init(router:IRootRouter, serviceLayer:IRootDirector) {
         self.router = router
-        self.serviceLayer = serviceLayer
+        self.director = serviceLayer
     }
 }

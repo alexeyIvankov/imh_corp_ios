@@ -10,13 +10,13 @@ import Foundation
 
 class AuthCake : IAuthCake{
     
-    var authService: IAuthService
+    var authDirector: IAuthDirector
     var authRouter: IAuthRouter
     
-    required init(authService: IAuthService,
+    required init(authDirector: IAuthDirector,
                   authRouter: IAuthRouter){
         
-        self.authService = authService
+        self.authDirector = authDirector
         self.authRouter = authRouter
     }
 }

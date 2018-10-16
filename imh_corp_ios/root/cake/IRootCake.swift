@@ -12,5 +12,5 @@ import UIKit
 protocol IRootCake : AnyObject {
     
     var router:IRootRouter { get }
-    var serviceLayer:IRootServiceLayer { get }
+    var director:IRootDirector { get }
 }
