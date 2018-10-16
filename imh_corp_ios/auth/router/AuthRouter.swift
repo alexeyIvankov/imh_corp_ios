@@ -11,13 +11,13 @@ import UIKit
 
 class AuthRouter : IAuthRouter{
     
-    func handleEventAppNotAuthorized(){
+    func startAppNotAuthorized(){
         
-        let root:LoginController = UIStoryboard.load(type: UIStoryboard.TypeSB.auth).load()!
-        _ = MyApplication.delegate()?.stackWindow.presentAndDismissAllExcept(vc: root)
+        let navigationController:UINavigationController = UIStoryboard.load(type: UIStoryboard.TypeSB.welcome).load()!
+        _ = MyApplication.delegate()?.stackWindow.presentAndDismissAllExcept(vc: navigationController)
     }
     
-    func handleEventAppAuthorized(){
+    func startAppWithAuthorized(){
         
         let root:RootController = UIStoryboard.load(type: UIStoryboard.TypeSB.root).load()!
         _ = MyApplication.delegate()?.stackWindow.presentAndDismissAllExcept(vc: root)

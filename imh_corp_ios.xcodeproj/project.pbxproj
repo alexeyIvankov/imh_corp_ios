@@ -35,10 +35,10 @@
 		FF72AF3D2175E35C002D04DA /* FSPageViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF342175E35C002D04DA /* FSPageViewLayout.swift */; };
 		FF72AF3E2175E35C002D04DA /* FSPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF352175E35C002D04DA /* FSPageControl.swift */; };
 		FF72AF3F2175E35C002D04DA /* FSPagerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF362175E35C002D04DA /* FSPagerCollectionView.swift */; };
+		FF72AF412175F6EE002D04DA /* WelcomeSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF72AF402175F6EE002D04DA /* WelcomeSB.storyboard */; };
 		FFAB4E942163489200AE82EA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4E932163489200AE82EA /* Podfile */; };
 		FFAB4EA1216348B200AE82EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4E9A216348B200AE82EA /* Assets.xcassets */; };
 		FFAB4EA2216348B200AE82EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4E9B216348B200AE82EA /* LaunchScreen.storyboard */; };
-		FFAB4EA3216348B200AE82EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4E9D216348B200AE82EA /* Main.storyboard */; };
 		FFAB4F0A216392D400AE82EA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4ECE216392D400AE82EA /* LICENSE */; };
 		FFAB4F0B216392D400AE82EA /* PopMenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4ED2216392D400AE82EA /* PopMenuAction.swift */; };
 		FFAB4F0C216392D400AE82EA /* PopMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4ED3216392D400AE82EA /* PopMenuViewController.swift */; };
@@ -84,7 +84,6 @@
 		FFAB4F3B2163936B00AE82EA /* IApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F352163936B00AE82EA /* IApplication.swift */; };
 		FFAB4F3C2163936B00AE82EA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F372163936B00AE82EA /* main.swift */; };
 		FFAB4F612163959700AE82EA /* AuthSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4F3E2163959700AE82EA /* AuthSB.storyboard */; };
-		FFAB4F622163959700AE82EA /* AuthDirectorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F402163959700AE82EA /* AuthDirectorAssembly.swift */; };
 		FFAB4F632163959700AE82EA /* AuthCakeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F412163959700AE82EA /* AuthCakeAssembly.swift */; };
 		FFAB4F642163959700AE82EA /* LoginDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F442163959700AE82EA /* LoginDesign.swift */; };
 		FFAB4F652163959700AE82EA /* ILoginDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F452163959700AE82EA /* ILoginDesign.swift */; };
@@ -158,10 +157,10 @@
 		FF72AF342175E35C002D04DA /* FSPageViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageViewLayout.swift; sourceTree = "<group>"; };
 		FF72AF352175E35C002D04DA /* FSPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageControl.swift; sourceTree = "<group>"; };
 		FF72AF362175E35C002D04DA /* FSPagerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerCollectionView.swift; sourceTree = "<group>"; };
+		FF72AF402175F6EE002D04DA /* WelcomeSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeSB.storyboard; sourceTree = "<group>"; };
 		FFAB4E932163489200AE82EA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FFAB4E9A216348B200AE82EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFAB4E9C216348B200AE82EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FFAB4E9E216348B200AE82EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFAB4E9F216348B200AE82EA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFAB4ECE216392D400AE82EA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		FFAB4ED0216392D400AE82EA /* PopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopMenu.h; sourceTree = "<group>"; };
@@ -209,7 +208,6 @@
 		FFAB4F352163936B00AE82EA /* IApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IApplication.swift; sourceTree = "<group>"; };
 		FFAB4F372163936B00AE82EA /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FFAB4F3E2163959700AE82EA /* AuthSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AuthSB.storyboard; sourceTree = "<group>"; };
-		FFAB4F402163959700AE82EA /* AuthDirectorAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthDirectorAssembly.swift; sourceTree = "<group>"; };
 		FFAB4F412163959700AE82EA /* AuthCakeAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCakeAssembly.swift; sourceTree = "<group>"; };
 		FFAB4F442163959700AE82EA /* LoginDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDesign.swift; sourceTree = "<group>"; };
 		FFAB4F452163959700AE82EA /* ILoginDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILoginDesign.swift; sourceTree = "<group>"; };
@@ -287,6 +285,7 @@
 				FF72AF052175CE38002D04DA /* controller */,
 				FF72AF062175CE38002D04DA /* director */,
 				FF72AF072175CE38002D04DA /* router */,
+				FF72AF402175F6EE002D04DA /* WelcomeSB.storyboard */,
 			);
 			path = welcome;
 			sourceTree = "<group>";
@@ -452,7 +451,6 @@
 			children = (
 				FFAB4E9A216348B200AE82EA /* Assets.xcassets */,
 				FFAB4E9B216348B200AE82EA /* LaunchScreen.storyboard */,
-				FFAB4E9D216348B200AE82EA /* Main.storyboard */,
 				FFAB4E9F216348B200AE82EA /* Info.plist */,
 			);
 			path = res;
@@ -717,7 +715,6 @@
 		FFAB4F3F2163959700AE82EA /* assemblys */ = {
 			isa = PBXGroup;
 			children = (
-				FFAB4F402163959700AE82EA /* AuthDirectorAssembly.swift */,
 				FFAB4F412163959700AE82EA /* AuthCakeAssembly.swift */,
 			);
 			path = assemblys;
@@ -979,11 +976,11 @@
 				FFAB4F882163960900AE82EA /* Main.storyboard in Resources */,
 				FFAB4EA2216348B200AE82EA /* LaunchScreen.storyboard in Resources */,
 				FFAB4EA1216348B200AE82EA /* Assets.xcassets in Resources */,
+				FF72AF412175F6EE002D04DA /* WelcomeSB.storyboard in Resources */,
 				FFAB4F29216392D400AE82EA /* FullSreenLoader.xib in Resources */,
 				FF72AF372175E35C002D04DA /* LICENSE in Resources */,
 				FFAB4F612163959700AE82EA /* AuthSB.storyboard in Resources */,
 				FFAB4E942163489200AE82EA /* Podfile in Resources */,
-				FFAB4EA3216348B200AE82EA /* Main.storyboard in Resources */,
 				FFAB4F1B216392D400AE82EA /* AssemblyList.plist in Resources */,
 				FFAB4F0A216392D400AE82EA /* LICENSE in Resources */,
 			);
@@ -1147,7 +1144,6 @@
 				FFAB4F20216392D400AE82EA /* IWindowStack.swift in Sources */,
 				FFAB4FA72163971A00AE82EA /* INetwork.swift in Sources */,
 				FFAB4F6B2163959700AE82EA /* LoginCake.swift in Sources */,
-				FFAB4F622163959700AE82EA /* AuthDirectorAssembly.swift in Sources */,
 				FFAB4F672163959700AE82EA /* LoginController.swift in Sources */,
 				FF72AF3D2175E35C002D04DA /* FSPageViewLayout.swift in Sources */,
 				FF72AF182175CEFF002D04DA /* IWelcomeRouter.swift in Sources */,
@@ -1250,14 +1246,6 @@
 				FFAB4E9C216348B200AE82EA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		FFAB4E9D216348B200AE82EA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FFAB4E9E216348B200AE82EA /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

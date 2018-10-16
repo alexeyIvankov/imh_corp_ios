@@ -16,7 +16,13 @@ public class AuthCakeAssembly : AssemblyProviderImpl {
         
         return Assembly.init(buildType:IAuthCake.self, memoryPolicy: MemoryPolicy.Strong, instanceScope: InstanceScope.Singleton, buildBlock: { (injector:I_Injector) -> AnyObject in
             
-            let authDirector:IAuthDirector = injector.tryInject()!
+            let network:INetwork = injector.tryInject()!
+            let sessionService:ISessionService = SessionService()
+            let securityService:ISecurityService = SecurityService()
+            
+            let authDirector:IAuthDirector =  AuthDirector(network: network,
+                                                           securityService: securityService,
+                                                           sessionService: sessionService)
             let authRouter:IAuthRouter = AuthRouter()
             
             let authCake = AuthCake(authDirector: authDirector,

@@ -240,6 +240,38 @@
             </objects>
             <point key="canvasLocation" x="5.2708638360175692" y="43.359375"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3wS-TJ-Bfk">
+            <objects>
+                <navigationController id="yCa-qJ-8eD" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MFM-gM-G5q">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wTs-9v-KPI" kind="relationship" relationship="rootViewController" id="Hwf-qy-wSN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WRM-ad-xlA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1764" y="727"/>
+        </scene>
+        <!--Welcome Controller-->
+        <scene sceneID="6kv-Yi-qkv">
+            <objects>
+                <viewController id="wTs-9v-KPI" customClass="WelcomeController" customModule="imh_corp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SnU-do-FaH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.39607843139999999" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="bkv-Gl-ogd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="D2X-jd-IaH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2co-Fa-UVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-966" y="726"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Logo 2" width="149" height="141"/>

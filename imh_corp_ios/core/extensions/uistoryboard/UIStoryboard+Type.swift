@@ -14,17 +14,10 @@ extension UIStoryboard{
     public enum TypeSB: String{
         case auth = "AuthSB"
         case root = "Main"
+        case welcome = "WelcomeSB"
     }
     
     class func load(type:TypeSB) -> UIStoryboard{
-        
-        if type == .auth{
-            return UIStoryboard(name:TypeSB.auth.rawValue, bundle:nil)
-        }
-        else  if type == .root{
-            return UIStoryboard(name:TypeSB.root.rawValue, bundle:nil)
-        }
-        
-        fatalError("storyboard not finded")
+        return UIStoryboard(name:type.rawValue, bundle:nil)
     }
 }

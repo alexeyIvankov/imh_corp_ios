@@ -7,7 +7,16 @@ import Crashlytics
 class AppDelegate: UIResponder, UIApplicationDelegate, IAppDelegate {
    
     var stackWindow: IWindowStack!
-    var window: UIWindow?
+   
+    var window: UIWindow? {
+        didSet
+        {
+            if self.window != nil{
+                self.window?.rootViewController = nil
+                self.stackWindow = WindowStack(win: self.window!)
+            }
+        }
+    }
     
     //MARK:- Dependence
     private let authCake:IAuthCake = Depednence.tryInject()!
@@ -16,35 +25,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, IAppDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         configureExternalLibary()
-        buildStackWindowIfNeed()
-        self.selectStartFlow()
+        self.selectEntryPointApp()
     
         return true
     }
     
-    private func selectStartFlow(){
+    private func selectEntryPointApp(){
 
         if self.authCake.authDirector.isAuth() {
-            self.authCake.authRouter.handleEventAppAuthorized()
+            self.authCake.authRouter.startAppWithAuthorized()
         }
         else {
-            self.authCake.authRouter.handleEventAppNotAuthorized()
+            self.authCake.authRouter.startAppNotAuthorized()
         }
     }
     
     private func configureExternalLibary(){
         //Fabric.with([Crashlytics.self])
-    }
-    
-    private func buildStackWindowIfNeed(){
-        
-        guard self.stackWindow == nil, self.window != nil else {
-            return
-        }
-        
-        self.window?.rootViewController = nil
-        self.stackWindow = WindowStack(win: self.window!)
-        
     }
 }
 

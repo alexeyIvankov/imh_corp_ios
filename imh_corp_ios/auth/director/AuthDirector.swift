@@ -26,7 +26,6 @@ class AuthDirector : IAuthDirector {
     }
     
     func isAuth() -> Bool{
-        
         return false
     }    
 }

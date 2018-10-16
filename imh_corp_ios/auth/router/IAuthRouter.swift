@@ -10,6 +10,6 @@ import Foundation
 
 protocol IAuthRouter : AnyObject{
     
-    func handleEventAppNotAuthorized()
-    func handleEventAppAuthorized()
+    func startAppNotAuthorized()
+    func startAppWithAuthorized()
 }
