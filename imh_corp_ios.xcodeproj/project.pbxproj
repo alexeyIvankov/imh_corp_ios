@@ -25,9 +25,16 @@
 		FF72AF162175CEED002D04DA /* WelcomeDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF152175CEED002D04DA /* WelcomeDirector.swift */; };
 		FF72AF182175CEFF002D04DA /* IWelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF172175CEFF002D04DA /* IWelcomeRouter.swift */; };
 		FF72AF1A2175CF0B002D04DA /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF192175CF0B002D04DA /* WelcomeRouter.swift */; };
-		FF72AF1C2175DA62002D04DA /* Welcome.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF72AF1B2175DA62002D04DA /* Welcome.xib */; };
 		FF72AF1F2175DB11002D04DA /* IWelcomeDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF1E2175DB11002D04DA /* IWelcomeDesign.swift */; };
 		FF72AF212175DB1C002D04DA /* WelcomeDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF202175DB1C002D04DA /* WelcomeDesign.swift */; };
+		FF72AF372175E35C002D04DA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FF72AF2D2175E35C002D04DA /* LICENSE */; };
+		FF72AF392175E35C002D04DA /* FSPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF302175E35C002D04DA /* FSPagerView.swift */; };
+		FF72AF3A2175E35C002D04DA /* FSPageViewTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF312175E35C002D04DA /* FSPageViewTransformer.swift */; };
+		FF72AF3B2175E35C002D04DA /* FSPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF322175E35C002D04DA /* FSPagerViewCell.swift */; };
+		FF72AF3C2175E35C002D04DA /* FSPagerViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF332175E35C002D04DA /* FSPagerViewLayoutAttributes.swift */; };
+		FF72AF3D2175E35C002D04DA /* FSPageViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF342175E35C002D04DA /* FSPageViewLayout.swift */; };
+		FF72AF3E2175E35C002D04DA /* FSPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF352175E35C002D04DA /* FSPageControl.swift */; };
+		FF72AF3F2175E35C002D04DA /* FSPagerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF362175E35C002D04DA /* FSPagerCollectionView.swift */; };
 		FFAB4E942163489200AE82EA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4E932163489200AE82EA /* Podfile */; };
 		FFAB4EA1216348B200AE82EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4E9A216348B200AE82EA /* Assets.xcassets */; };
 		FFAB4EA2216348B200AE82EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4E9B216348B200AE82EA /* LaunchScreen.storyboard */; };
@@ -139,11 +146,18 @@
 		FF72AF152175CEED002D04DA /* WelcomeDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeDirector.swift; sourceTree = "<group>"; };
 		FF72AF172175CEFF002D04DA /* IWelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IWelcomeRouter.swift; sourceTree = "<group>"; };
 		FF72AF192175CF0B002D04DA /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
-		FF72AF1B2175DA62002D04DA /* Welcome.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Welcome.xib; sourceTree = "<group>"; };
 		FF72AF1E2175DB11002D04DA /* IWelcomeDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IWelcomeDesign.swift; sourceTree = "<group>"; };
 		FF72AF202175DB1C002D04DA /* WelcomeDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeDesign.swift; sourceTree = "<group>"; };
-		FFAB4E702163465C00AE82EA /* imh_corp_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = imh_corp_ios.app; path = "/Users/alexeyivankov/Desktop/work/industrial_metallurgical_holding/imh_corp_ios/build/Debug-iphoneos/imh_corp_ios.app"; sourceTree = "<absolute>"; };
-		FFAB4E842163465F00AE82EA /* imh_corp_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = imh_corp_iosTests.xctest; path = "/Users/alexeyivankov/Desktop/work/industrial_metallurgical_holding/imh_corp_ios/build/Debug-iphoneos/imh_corp_iosTests.xctest"; sourceTree = "<absolute>"; };
+		FF72AF292175E2F1002D04DA /* imh_corp_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imh_corp_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF72AF2A2175E2F1002D04DA /* imh_corp_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imh_corp_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF72AF2D2175E35C002D04DA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		FF72AF302175E35C002D04DA /* FSPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerView.swift; sourceTree = "<group>"; };
+		FF72AF312175E35C002D04DA /* FSPageViewTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageViewTransformer.swift; sourceTree = "<group>"; };
+		FF72AF322175E35C002D04DA /* FSPagerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerViewCell.swift; sourceTree = "<group>"; };
+		FF72AF332175E35C002D04DA /* FSPagerViewLayoutAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerViewLayoutAttributes.swift; sourceTree = "<group>"; };
+		FF72AF342175E35C002D04DA /* FSPageViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageViewLayout.swift; sourceTree = "<group>"; };
+		FF72AF352175E35C002D04DA /* FSPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageControl.swift; sourceTree = "<group>"; };
+		FF72AF362175E35C002D04DA /* FSPagerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerCollectionView.swift; sourceTree = "<group>"; };
 		FFAB4E932163489200AE82EA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FFAB4E9A216348B200AE82EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFAB4E9C216348B200AE82EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -273,7 +287,6 @@
 				FF72AF052175CE38002D04DA /* controller */,
 				FF72AF062175CE38002D04DA /* director */,
 				FF72AF072175CE38002D04DA /* router */,
-				FF72AF1B2175DA62002D04DA /* Welcome.xib */,
 			);
 			path = welcome;
 			sourceTree = "<group>";
@@ -366,6 +379,37 @@
 			path = design;
 			sourceTree = "<group>";
 		};
+		FF72AF2B2175E35C002D04DA /* extLib */ = {
+			isa = PBXGroup;
+			children = (
+				FF72AF2C2175E35C002D04DA /* FSPagerView */,
+			);
+			path = extLib;
+			sourceTree = "<group>";
+		};
+		FF72AF2C2175E35C002D04DA /* FSPagerView */ = {
+			isa = PBXGroup;
+			children = (
+				FF72AF2D2175E35C002D04DA /* LICENSE */,
+				FF72AF2F2175E35C002D04DA /* Sources */,
+			);
+			path = FSPagerView;
+			sourceTree = "<group>";
+		};
+		FF72AF2F2175E35C002D04DA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FF72AF302175E35C002D04DA /* FSPagerView.swift */,
+				FF72AF312175E35C002D04DA /* FSPageViewTransformer.swift */,
+				FF72AF322175E35C002D04DA /* FSPagerViewCell.swift */,
+				FF72AF332175E35C002D04DA /* FSPagerViewLayoutAttributes.swift */,
+				FF72AF342175E35C002D04DA /* FSPageViewLayout.swift */,
+				FF72AF352175E35C002D04DA /* FSPageControl.swift */,
+				FF72AF362175E35C002D04DA /* FSPagerCollectionView.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		FFAB4E672163465C00AE82EA = {
 			isa = PBXGroup;
 			children = (
@@ -373,12 +417,15 @@
 				FFAB4E722163465C00AE82EA /* imh_corp_ios */,
 				8F213191BF86927CFE7E2704 /* Pods */,
 				6DA4429CA10A0A69F6390F31 /* Frameworks */,
+				FF72AF292175E2F1002D04DA /* imh_corp_ios.app */,
+				FF72AF2A2175E2F1002D04DA /* imh_corp_iosTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
 		FFAB4E722163465C00AE82EA /* imh_corp_ios */ = {
 			isa = PBXGroup;
 			children = (
+				FF72AF2B2175E35C002D04DA /* extLib */,
 				FF72AEEF2170AF8D002D04DA /* welcome */,
 				FFAB4F782163960900AE82EA /* root */,
 				FFAB4F3D2163959700AE82EA /* auth */,
@@ -861,7 +908,7 @@
 			);
 			name = imh_corp_ios;
 			productName = imh_corp_ios;
-			productReference = FFAB4E702163465C00AE82EA /* imh_corp_ios.app */;
+			productReference = FF72AF292175E2F1002D04DA /* imh_corp_ios.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FFAB4E832163465F00AE82EA /* imh_corp_iosTests */ = {
@@ -882,7 +929,7 @@
 			);
 			name = imh_corp_iosTests;
 			productName = imh_corp_iosTests;
-			productReference = FFAB4E842163465F00AE82EA /* imh_corp_iosTests.xctest */;
+			productReference = FF72AF2A2175E2F1002D04DA /* imh_corp_iosTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -930,10 +977,10 @@
 			files = (
 				FFAB4F15216392D400AE82EA /* README.md in Resources */,
 				FFAB4F882163960900AE82EA /* Main.storyboard in Resources */,
-				FF72AF1C2175DA62002D04DA /* Welcome.xib in Resources */,
 				FFAB4EA2216348B200AE82EA /* LaunchScreen.storyboard in Resources */,
 				FFAB4EA1216348B200AE82EA /* Assets.xcassets in Resources */,
 				FFAB4F29216392D400AE82EA /* FullSreenLoader.xib in Resources */,
+				FF72AF372175E35C002D04DA /* LICENSE in Resources */,
 				FFAB4F612163959700AE82EA /* AuthSB.storyboard in Resources */,
 				FFAB4E942163489200AE82EA /* Podfile in Resources */,
 				FFAB4EA3216348B200AE82EA /* Main.storyboard in Resources */,
@@ -1102,6 +1149,7 @@
 				FFAB4F6B2163959700AE82EA /* LoginCake.swift in Sources */,
 				FFAB4F622163959700AE82EA /* AuthDirectorAssembly.swift in Sources */,
 				FFAB4F672163959700AE82EA /* LoginController.swift in Sources */,
+				FF72AF3D2175E35C002D04DA /* FSPageViewLayout.swift in Sources */,
 				FF72AF182175CEFF002D04DA /* IWelcomeRouter.swift in Sources */,
 				FFAB4F652163959700AE82EA /* ILoginDesign.swift in Sources */,
 				FF72AF1F2175DB11002D04DA /* IWelcomeDesign.swift in Sources */,
@@ -1127,13 +1175,17 @@
 				FFAB4F8D2163960900AE82EA /* RootCake.swift in Sources */,
 				FF72AEFD2175C0A5002D04DA /* ISessionService.swift in Sources */,
 				FFAB4F632163959700AE82EA /* AuthCakeAssembly.swift in Sources */,
+				FF72AF3A2175E35C002D04DA /* FSPageViewTransformer.swift in Sources */,
 				FFAB4F872163960900AE82EA /* RootCakeAssebly.swift in Sources */,
+				FF72AF3C2175E35C002D04DA /* FSPagerViewLayoutAttributes.swift in Sources */,
 				FFAB4F3C2163936B00AE82EA /* main.swift in Sources */,
 				FFAB4F1E216392D400AE82EA /* Global.swift in Sources */,
 				FFAB4F3B2163936B00AE82EA /* IApplication.swift in Sources */,
 				FFAB4F27216392D400AE82EA /* UIColor+RGB.swift in Sources */,
 				FF72AF0C2175CE98002D04DA /* WelcomeCakeAssembly.swift in Sources */,
 				FFAB4FA42163971A00AE82EA /* SecurityServiceAssembly.swift in Sources */,
+				FF72AF3F2175E35C002D04DA /* FSPagerCollectionView.swift in Sources */,
+				FF72AF3B2175E35C002D04DA /* FSPagerViewCell.swift in Sources */,
 				FFAB4F1A216392D400AE82EA /* AppDesign.swift in Sources */,
 				FFAB4F6A2163959700AE82EA /* ILoginCake.swift in Sources */,
 				FF72AF122175CECF002D04DA /* WelcomeController.swift in Sources */,
@@ -1141,6 +1193,7 @@
 				FFAB4F3A2163936B00AE82EA /* AppDelegate.swift in Sources */,
 				FFAB4F742163959700AE82EA /* AuthCake.swift in Sources */,
 				FFAB4F0C216392D400AE82EA /* PopMenuViewController.swift in Sources */,
+				FF72AF392175E35C002D04DA /* FSPagerView.swift in Sources */,
 				FFAB4F25216392D400AE82EA /* UIStoryboard+Type.swift in Sources */,
 				FFAB4F22216392D400AE82EA /* TimeInterval+Date.swift in Sources */,
 				FF72AF162175CEED002D04DA /* WelcomeDirector.swift in Sources */,
@@ -1153,6 +1206,7 @@
 				FFAB4F26216392D400AE82EA /* UIColor+Hex.swift in Sources */,
 				FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */,
 				FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */,
+				FF72AF3E2175E35C002D04DA /* FSPageControl.swift in Sources */,
 				FFAB4F16216392D400AE82EA /* GradientView.swift in Sources */,
 				FFAB4F642163959700AE82EA /* LoginDesign.swift in Sources */,
 				FF72AF1A2175CF0B002D04DA /* WelcomeRouter.swift in Sources */,
