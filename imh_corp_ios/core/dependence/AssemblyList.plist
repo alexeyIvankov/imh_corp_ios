@@ -2,14 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-	<string>AuthServiceAssembly</string>
+	<string>AuthDirectorAssembly</string>
 	<string>NetworkAssembly</string>
 	<string>RootCakeAssembly</string>
 	<string>LoginCakeAssembly</string>
-	<string>AuthServiceLayerAssembly</string>
 	<string>AuthCakeAssembly</string>
 	<string>AppDesignAssembly</string>
-	<string>LoaderServiceAssembly</string>
 	<string>SecurityServiceAssembly</string>
+	<string>WelcomeCakeAssembly</string>
 </array>
 </plist>

@@ -17,6 +17,17 @@
 		FF72AEFE2175C0A5002D04DA /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEFC2175C0A5002D04DA /* SessionService.swift */; };
 		FF72AF022175C1F5002D04DA /* AuthDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF002175C1F5002D04DA /* AuthDirector.swift */; };
 		FF72AF032175C1F5002D04DA /* IAuthDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF012175C1F5002D04DA /* IAuthDirector.swift */; };
+		FF72AF0C2175CE98002D04DA /* WelcomeCakeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF0B2175CE98002D04DA /* WelcomeCakeAssembly.swift */; };
+		FF72AF0E2175CEAD002D04DA /* IWelcomeCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF0D2175CEAD002D04DA /* IWelcomeCake.swift */; };
+		FF72AF102175CEBA002D04DA /* WelcomeCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF0F2175CEBA002D04DA /* WelcomeCake.swift */; };
+		FF72AF122175CECF002D04DA /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF112175CECF002D04DA /* WelcomeController.swift */; };
+		FF72AF142175CEE1002D04DA /* IWelcomeDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF132175CEE1002D04DA /* IWelcomeDirector.swift */; };
+		FF72AF162175CEED002D04DA /* WelcomeDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF152175CEED002D04DA /* WelcomeDirector.swift */; };
+		FF72AF182175CEFF002D04DA /* IWelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF172175CEFF002D04DA /* IWelcomeRouter.swift */; };
+		FF72AF1A2175CF0B002D04DA /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF192175CF0B002D04DA /* WelcomeRouter.swift */; };
+		FF72AF1C2175DA62002D04DA /* Welcome.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF72AF1B2175DA62002D04DA /* Welcome.xib */; };
+		FF72AF1F2175DB11002D04DA /* IWelcomeDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF1E2175DB11002D04DA /* IWelcomeDesign.swift */; };
+		FF72AF212175DB1C002D04DA /* WelcomeDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF202175DB1C002D04DA /* WelcomeDesign.swift */; };
 		FFAB4E942163489200AE82EA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4E932163489200AE82EA /* Podfile */; };
 		FFAB4EA1216348B200AE82EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4E9A216348B200AE82EA /* Assets.xcassets */; };
 		FFAB4EA2216348B200AE82EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4E9B216348B200AE82EA /* LaunchScreen.storyboard */; };
@@ -80,7 +91,7 @@
 		FFAB4F752163959700AE82EA /* IAuthCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F5D2163959700AE82EA /* IAuthCake.swift */; };
 		FFAB4F762163959700AE82EA /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F5F2163959700AE82EA /* AuthRouter.swift */; };
 		FFAB4F772163959700AE82EA /* IAuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F602163959700AE82EA /* IAuthRouter.swift */; };
-		FFAB4F872163960900AE82EA /* RootServiceLayerAssebly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F7A2163960900AE82EA /* RootServiceLayerAssebly.swift */; };
+		FFAB4F872163960900AE82EA /* RootCakeAssebly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F7A2163960900AE82EA /* RootCakeAssebly.swift */; };
 		FFAB4F882163960900AE82EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4F7B2163960900AE82EA /* Main.storyboard */; };
 		FFAB4F892163960900AE82EA /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F7D2163960900AE82EA /* RootController.swift */; };
 		FFAB4F8C2163960900AE82EA /* IRootCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4F822163960900AE82EA /* IRootCake.swift */; };
@@ -120,6 +131,17 @@
 		FF72AEFC2175C0A5002D04DA /* SessionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		FF72AF002175C1F5002D04DA /* AuthDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthDirector.swift; sourceTree = "<group>"; };
 		FF72AF012175C1F5002D04DA /* IAuthDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAuthDirector.swift; sourceTree = "<group>"; };
+		FF72AF0B2175CE98002D04DA /* WelcomeCakeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCakeAssembly.swift; sourceTree = "<group>"; };
+		FF72AF0D2175CEAD002D04DA /* IWelcomeCake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IWelcomeCake.swift; sourceTree = "<group>"; };
+		FF72AF0F2175CEBA002D04DA /* WelcomeCake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCake.swift; sourceTree = "<group>"; };
+		FF72AF112175CECF002D04DA /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
+		FF72AF132175CEE1002D04DA /* IWelcomeDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IWelcomeDirector.swift; sourceTree = "<group>"; };
+		FF72AF152175CEED002D04DA /* WelcomeDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeDirector.swift; sourceTree = "<group>"; };
+		FF72AF172175CEFF002D04DA /* IWelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IWelcomeRouter.swift; sourceTree = "<group>"; };
+		FF72AF192175CF0B002D04DA /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
+		FF72AF1B2175DA62002D04DA /* Welcome.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Welcome.xib; sourceTree = "<group>"; };
+		FF72AF1E2175DB11002D04DA /* IWelcomeDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IWelcomeDesign.swift; sourceTree = "<group>"; };
+		FF72AF202175DB1C002D04DA /* WelcomeDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeDesign.swift; sourceTree = "<group>"; };
 		FFAB4E702163465C00AE82EA /* imh_corp_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = imh_corp_ios.app; path = "/Users/alexeyivankov/Desktop/work/industrial_metallurgical_holding/imh_corp_ios/build/Debug-iphoneos/imh_corp_ios.app"; sourceTree = "<absolute>"; };
 		FFAB4E842163465F00AE82EA /* imh_corp_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = imh_corp_iosTests.xctest; path = "/Users/alexeyivankov/Desktop/work/industrial_metallurgical_holding/imh_corp_ios/build/Debug-iphoneos/imh_corp_iosTests.xctest"; sourceTree = "<absolute>"; };
 		FFAB4E932163489200AE82EA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -187,7 +209,7 @@
 		FFAB4F5D2163959700AE82EA /* IAuthCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAuthCake.swift; sourceTree = "<group>"; };
 		FFAB4F5F2163959700AE82EA /* AuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		FFAB4F602163959700AE82EA /* IAuthRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAuthRouter.swift; sourceTree = "<group>"; };
-		FFAB4F7A2163960900AE82EA /* RootServiceLayerAssebly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootServiceLayerAssebly.swift; sourceTree = "<group>"; };
+		FFAB4F7A2163960900AE82EA /* RootCakeAssebly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCakeAssebly.swift; sourceTree = "<group>"; };
 		FFAB4F7B2163960900AE82EA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FFAB4F7D2163960900AE82EA /* RootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
 		FFAB4F822163960900AE82EA /* IRootCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRootCake.swift; sourceTree = "<group>"; };
@@ -245,6 +267,13 @@
 		FF72AEEF2170AF8D002D04DA /* welcome */ = {
 			isa = PBXGroup;
 			children = (
+				FF72AF1D2175DAFE002D04DA /* design */,
+				FF72AF042175CE38002D04DA /* assemblys */,
+				FF72AF082175CE38002D04DA /* cake */,
+				FF72AF052175CE38002D04DA /* controller */,
+				FF72AF062175CE38002D04DA /* director */,
+				FF72AF072175CE38002D04DA /* router */,
+				FF72AF1B2175DA62002D04DA /* Welcome.xib */,
 			);
 			path = welcome;
 			sourceTree = "<group>";
@@ -283,6 +312,58 @@
 				FF72AF012175C1F5002D04DA /* IAuthDirector.swift */,
 			);
 			path = director;
+			sourceTree = "<group>";
+		};
+		FF72AF042175CE38002D04DA /* assemblys */ = {
+			isa = PBXGroup;
+			children = (
+				FF72AF0B2175CE98002D04DA /* WelcomeCakeAssembly.swift */,
+			);
+			path = assemblys;
+			sourceTree = "<group>";
+		};
+		FF72AF052175CE38002D04DA /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				FF72AF112175CECF002D04DA /* WelcomeController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		FF72AF062175CE38002D04DA /* director */ = {
+			isa = PBXGroup;
+			children = (
+				FF72AF132175CEE1002D04DA /* IWelcomeDirector.swift */,
+				FF72AF152175CEED002D04DA /* WelcomeDirector.swift */,
+			);
+			path = director;
+			sourceTree = "<group>";
+		};
+		FF72AF072175CE38002D04DA /* router */ = {
+			isa = PBXGroup;
+			children = (
+				FF72AF172175CEFF002D04DA /* IWelcomeRouter.swift */,
+				FF72AF192175CF0B002D04DA /* WelcomeRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		FF72AF082175CE38002D04DA /* cake */ = {
+			isa = PBXGroup;
+			children = (
+				FF72AF0D2175CEAD002D04DA /* IWelcomeCake.swift */,
+				FF72AF0F2175CEBA002D04DA /* WelcomeCake.swift */,
+			);
+			path = cake;
+			sourceTree = "<group>";
+		};
+		FF72AF1D2175DAFE002D04DA /* design */ = {
+			isa = PBXGroup;
+			children = (
+				FF72AF1E2175DB11002D04DA /* IWelcomeDesign.swift */,
+				FF72AF202175DB1C002D04DA /* WelcomeDesign.swift */,
+			);
+			path = design;
 			sourceTree = "<group>";
 		};
 		FFAB4E672163465C00AE82EA = {
@@ -685,7 +766,7 @@
 		FFAB4F792163960900AE82EA /* assemblys */ = {
 			isa = PBXGroup;
 			children = (
-				FFAB4F7A2163960900AE82EA /* RootServiceLayerAssebly.swift */,
+				FFAB4F7A2163960900AE82EA /* RootCakeAssebly.swift */,
 			);
 			path = assemblys;
 			sourceTree = "<group>";
@@ -849,6 +930,7 @@
 			files = (
 				FFAB4F15216392D400AE82EA /* README.md in Resources */,
 				FFAB4F882163960900AE82EA /* Main.storyboard in Resources */,
+				FF72AF1C2175DA62002D04DA /* Welcome.xib in Resources */,
 				FFAB4EA2216348B200AE82EA /* LaunchScreen.storyboard in Resources */,
 				FFAB4EA1216348B200AE82EA /* Assets.xcassets in Resources */,
 				FFAB4F29216392D400AE82EA /* FullSreenLoader.xib in Resources */,
@@ -1020,13 +1102,16 @@
 				FFAB4F6B2163959700AE82EA /* LoginCake.swift in Sources */,
 				FFAB4F622163959700AE82EA /* AuthDirectorAssembly.swift in Sources */,
 				FFAB4F672163959700AE82EA /* LoginController.swift in Sources */,
+				FF72AF182175CEFF002D04DA /* IWelcomeRouter.swift in Sources */,
 				FFAB4F652163959700AE82EA /* ILoginDesign.swift in Sources */,
+				FF72AF1F2175DB11002D04DA /* IWelcomeDesign.swift in Sources */,
 				FFAB4F772163959700AE82EA /* IAuthRouter.swift in Sources */,
 				FF72AEFE2175C0A5002D04DA /* SessionService.swift in Sources */,
 				FFAB4F762163959700AE82EA /* AuthRouter.swift in Sources */,
 				FFAB4F8F2163960900AE82EA /* IRootRouter.swift in Sources */,
 				FFAB4F11216392D400AE82EA /* UIView+Shadows.swift in Sources */,
 				FFAB4F12216392D400AE82EA /* Haptics.swift in Sources */,
+				FF72AF142175CEE1002D04DA /* IWelcomeDirector.swift in Sources */,
 				FFAB4F10216392D400AE82EA /* PopMenuGradientView.swift in Sources */,
 				FFAB4F662163959700AE82EA /* LoginCakeAssembly.swift in Sources */,
 				FF72AEF92175BFF5002D04DA /* ILoginDirector.swift in Sources */,
@@ -1042,20 +1127,24 @@
 				FFAB4F8D2163960900AE82EA /* RootCake.swift in Sources */,
 				FF72AEFD2175C0A5002D04DA /* ISessionService.swift in Sources */,
 				FFAB4F632163959700AE82EA /* AuthCakeAssembly.swift in Sources */,
-				FFAB4F872163960900AE82EA /* RootServiceLayerAssebly.swift in Sources */,
+				FFAB4F872163960900AE82EA /* RootCakeAssebly.swift in Sources */,
 				FFAB4F3C2163936B00AE82EA /* main.swift in Sources */,
 				FFAB4F1E216392D400AE82EA /* Global.swift in Sources */,
 				FFAB4F3B2163936B00AE82EA /* IApplication.swift in Sources */,
 				FFAB4F27216392D400AE82EA /* UIColor+RGB.swift in Sources */,
+				FF72AF0C2175CE98002D04DA /* WelcomeCakeAssembly.swift in Sources */,
 				FFAB4FA42163971A00AE82EA /* SecurityServiceAssembly.swift in Sources */,
 				FFAB4F1A216392D400AE82EA /* AppDesign.swift in Sources */,
 				FFAB4F6A2163959700AE82EA /* ILoginCake.swift in Sources */,
+				FF72AF122175CECF002D04DA /* WelcomeController.swift in Sources */,
 				FFAB4F23216392D400AE82EA /* DispatchQueue+After.swift in Sources */,
 				FFAB4F3A2163936B00AE82EA /* AppDelegate.swift in Sources */,
 				FFAB4F742163959700AE82EA /* AuthCake.swift in Sources */,
 				FFAB4F0C216392D400AE82EA /* PopMenuViewController.swift in Sources */,
 				FFAB4F25216392D400AE82EA /* UIStoryboard+Type.swift in Sources */,
 				FFAB4F22216392D400AE82EA /* TimeInterval+Date.swift in Sources */,
+				FF72AF162175CEED002D04DA /* WelcomeDirector.swift in Sources */,
+				FF72AF102175CEBA002D04DA /* WelcomeCake.swift in Sources */,
 				FFAB4F18216392D400AE82EA /* IDesign.swift in Sources */,
 				FFAB4F17216392D400AE82EA /* IAppDesign.swift in Sources */,
 				FFAB4F0E216392D400AE82EA /* PopMenuManager.swift in Sources */,
@@ -1066,16 +1155,19 @@
 				FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */,
 				FFAB4F16216392D400AE82EA /* GradientView.swift in Sources */,
 				FFAB4F642163959700AE82EA /* LoginDesign.swift in Sources */,
+				FF72AF1A2175CF0B002D04DA /* WelcomeRouter.swift in Sources */,
 				FFAB4F1C216392D400AE82EA /* IDependenceDirector.swift in Sources */,
 				FFAB4F892163960900AE82EA /* RootController.swift in Sources */,
 				FFAB4F19216392D400AE82EA /* AppDesignAssembly.swift in Sources */,
 				FFAB4F2C216392D400AE82EA /* ILoaderService.swift in Sources */,
 				FF72AF032175C1F5002D04DA /* IAuthDirector.swift in Sources */,
+				FF72AF212175DB1C002D04DA /* WelcomeDesign.swift in Sources */,
 				FFAB4F0B216392D400AE82EA /* PopMenuAction.swift in Sources */,
 				FFAB4F28216392D400AE82EA /* WKWebView+Cookies.swift in Sources */,
 				FFAB4F2A216392D400AE82EA /* FullScreenLoader.swift in Sources */,
 				FFAB4FA82163971A00AE82EA /* Network.swift in Sources */,
 				FFAB4F24216392D400AE82EA /* UIStoryboard+Load.swift in Sources */,
+				FF72AF0E2175CEAD002D04DA /* IWelcomeCake.swift in Sources */,
 				FFAB4F0F216392D400AE82EA /* UIColor+Contrast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
