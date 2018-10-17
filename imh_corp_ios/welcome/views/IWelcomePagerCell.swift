@@ -1,5 +1,5 @@
 //
-//  IWelcomeDirector.swift
+//  IWelcomePagerCell.swift
 //  imh_corp_ios
 //
 //  Created by Alexey Ivankov on 16.10.2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol IWelcomeDirector : AnyObject {
+protocol IWelcomePagerCell {
     
-    func getPages() -> [IWelcomePage]
+    func configure(page:IWelcomePage)
 }

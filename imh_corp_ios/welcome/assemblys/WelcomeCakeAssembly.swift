@@ -18,7 +18,8 @@ public class WelcomeCakeAssembly : AssemblyProviderImpl {
             
             let appDesign:IAppDesign = injector.tryInject()!
             
-            let director:IWelcomeDirector = WelcomeDirector()
+            let dataSource = WelcomePagesDataSource()
+            let director:IWelcomeDirector = WelcomeDirector(dataSource: dataSource)
             let router:IWelcomeRouter = WelcomeRouter()
             let design:IWelcomeDesign = WelcomeDesign(appDesign: appDesign)
             

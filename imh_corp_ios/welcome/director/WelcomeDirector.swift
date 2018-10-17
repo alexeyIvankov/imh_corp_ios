@@ -9,5 +9,13 @@
 import Foundation
 
 class WelcomeDirector : IWelcomeDirector{
+    let dataSource:IWelcomePagesDataSource
     
+    required init(dataSource:IWelcomePagesDataSource){
+        self.dataSource = dataSource
+    }
+    
+    func getPages() -> [IWelcomePage]{
+        return self.dataSource.getPages()
+    }
 }

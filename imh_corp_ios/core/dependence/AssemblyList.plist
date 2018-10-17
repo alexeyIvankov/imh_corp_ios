@@ -3,11 +3,13 @@
 <plist version="1.0">
 <array>
 	<string>NetworkAssembly</string>
+	<string>ReuseViewServiceAssembly</string>
 	<string>RootCakeAssembly</string>
 	<string>LoginCakeAssembly</string>
 	<string>AuthCakeAssembly</string>
 	<string>AppDesignAssembly</string>
 	<string>SecurityServiceAssembly</string>
 	<string>WelcomeCakeAssembly</string>
+	<string>AppDesignAssembly</string>
 </array>
 </plist>

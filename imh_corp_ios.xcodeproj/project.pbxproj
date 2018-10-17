@@ -36,10 +36,31 @@
 		FF72AF3E2175E35C002D04DA /* FSPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF352175E35C002D04DA /* FSPageControl.swift */; };
 		FF72AF3F2175E35C002D04DA /* FSPagerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF362175E35C002D04DA /* FSPagerCollectionView.swift */; };
 		FF72AF412175F6EE002D04DA /* WelcomeSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF72AF402175F6EE002D04DA /* WelcomeSB.storyboard */; };
+		FF72AF4421761019002D04DA /* WelcomePagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF4321761019002D04DA /* WelcomePagerCell.swift */; };
+		FF72AF4621761050002D04DA /* WelcomePagerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF72AF4521761050002D04DA /* WelcomePagerCell.xib */; };
+		FF72AF482176109B002D04DA /* IWelcomePagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF472176109B002D04DA /* IWelcomePagerCell.swift */; };
+		FF72AF4B21761B09002D04DA /* IWelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF4A21761B09002D04DA /* IWelcomePage.swift */; };
+		FF72AF4D21761B13002D04DA /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF4C21761B13002D04DA /* WelcomePage.swift */; };
+		FF72AF5021770AB6002D04DA /* WelcomePagesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF4F21770AB6002D04DA /* WelcomePagesDataSource.swift */; };
+		FF72AF5221770ACA002D04DA /* IWelcomePagesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF5121770ACA002D04DA /* IWelcomePagesDataSource.swift */; };
+		FF72AF6421776138002D04DA /* UICollectionViewCell+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF6221776138002D04DA /* UICollectionViewCell+Reuse.swift */; };
+		FF72AF6521776138002D04DA /* UITableViewCell+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF6321776138002D04DA /* UITableViewCell+Reuse.swift */; };
+		FF72AF7B217761B2002D04DA /* Image+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF68217761B2002D04DA /* Image+Gradient.swift */; };
+		FF72AF7C217761B2002D04DA /* UIImage+NSData.m in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF6D217761B2002D04DA /* UIImage+NSData.m */; };
+		FF72AF7D217761B2002D04DA /* Image+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF6E217761B2002D04DA /* Image+Color.swift */; };
+		FF72AF7E217761B2002D04DA /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF70217761B2002D04DA /* UIImage+Alpha.m */; };
+		FF72AF7F217761B2002D04DA /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF71217761B2002D04DA /* UIImage+RoundedCorner.m */; };
+		FF72AF80217761B2002D04DA /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF72217761B2002D04DA /* UIImage+Resize.m */; };
+		FF72AF81217761B2002D04DA /* String+NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF74217761B2002D04DA /* String+NSMutableAttributedString.swift */; };
+		FF72AF82217761B2002D04DA /* String+Remove.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF75217761B2002D04DA /* String+Remove.swift */; };
+		FF72AF83217761B2002D04DA /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF76217761B2002D04DA /* String+Size.swift */; };
+		FF72AF84217761B2002D04DA /* String+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF77217761B2002D04DA /* String+Localize.swift */; };
+		FF72AF85217761B2002D04DA /* String+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF78217761B2002D04DA /* String+Subscript.swift */; };
+		FF72AF86217761B2002D04DA /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF79217761B2002D04DA /* String+HTML.swift */; };
+		FF72AF8921776230002D04DA /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF8821776230002D04DA /* UIView+Shadow.swift */; };
 		FFAB4E942163489200AE82EA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4E932163489200AE82EA /* Podfile */; };
 		FFAB4EA1216348B200AE82EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4E9A216348B200AE82EA /* Assets.xcassets */; };
 		FFAB4EA2216348B200AE82EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4E9B216348B200AE82EA /* LaunchScreen.storyboard */; };
-		FFAB4F0A216392D400AE82EA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FFAB4ECE216392D400AE82EA /* LICENSE */; };
 		FFAB4F0B216392D400AE82EA /* PopMenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4ED2216392D400AE82EA /* PopMenuAction.swift */; };
 		FFAB4F0C216392D400AE82EA /* PopMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4ED3216392D400AE82EA /* PopMenuViewController.swift */; };
 		FFAB4F0D216392D400AE82EA /* PopMenuAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4ED5216392D400AE82EA /* PopMenuAppearance.swift */; };
@@ -158,11 +179,37 @@
 		FF72AF352175E35C002D04DA /* FSPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageControl.swift; sourceTree = "<group>"; };
 		FF72AF362175E35C002D04DA /* FSPagerCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerCollectionView.swift; sourceTree = "<group>"; };
 		FF72AF402175F6EE002D04DA /* WelcomeSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeSB.storyboard; sourceTree = "<group>"; };
+		FF72AF4321761019002D04DA /* WelcomePagerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePagerCell.swift; sourceTree = "<group>"; };
+		FF72AF4521761050002D04DA /* WelcomePagerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomePagerCell.xib; sourceTree = "<group>"; };
+		FF72AF472176109B002D04DA /* IWelcomePagerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IWelcomePagerCell.swift; sourceTree = "<group>"; };
+		FF72AF4A21761B09002D04DA /* IWelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IWelcomePage.swift; sourceTree = "<group>"; };
+		FF72AF4C21761B13002D04DA /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
+		FF72AF4F21770AB6002D04DA /* WelcomePagesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePagesDataSource.swift; sourceTree = "<group>"; };
+		FF72AF5121770ACA002D04DA /* IWelcomePagesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IWelcomePagesDataSource.swift; sourceTree = "<group>"; };
+		FF72AF6221776138002D04DA /* UICollectionViewCell+Reuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Reuse.swift"; sourceTree = "<group>"; };
+		FF72AF6321776138002D04DA /* UITableViewCell+Reuse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Reuse.swift"; sourceTree = "<group>"; };
+		FF72AF68217761B2002D04DA /* Image+Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Gradient.swift"; sourceTree = "<group>"; };
+		FF72AF69217761B2002D04DA /* UIImage+CS_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CS_Extensions.h"; sourceTree = "<group>"; };
+		FF72AF6A217761B2002D04DA /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		FF72AF6B217761B2002D04DA /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		FF72AF6C217761B2002D04DA /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
+		FF72AF6D217761B2002D04DA /* UIImage+NSData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+NSData.m"; sourceTree = "<group>"; };
+		FF72AF6E217761B2002D04DA /* Image+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Color.swift"; sourceTree = "<group>"; };
+		FF72AF6F217761B2002D04DA /* UIImage+NSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+NSData.h"; sourceTree = "<group>"; };
+		FF72AF70217761B2002D04DA /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		FF72AF71217761B2002D04DA /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		FF72AF72217761B2002D04DA /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		FF72AF74217761B2002D04DA /* String+NSMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NSMutableAttributedString.swift"; sourceTree = "<group>"; };
+		FF72AF75217761B2002D04DA /* String+Remove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Remove.swift"; sourceTree = "<group>"; };
+		FF72AF76217761B2002D04DA /* String+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
+		FF72AF77217761B2002D04DA /* String+Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localize.swift"; sourceTree = "<group>"; };
+		FF72AF78217761B2002D04DA /* String+Subscript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Subscript.swift"; sourceTree = "<group>"; };
+		FF72AF79217761B2002D04DA /* String+HTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
+		FF72AF8821776230002D04DA /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		FFAB4E932163489200AE82EA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FFAB4E9A216348B200AE82EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFAB4E9C216348B200AE82EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFAB4E9F216348B200AE82EA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFAB4ECE216392D400AE82EA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		FFAB4ED0216392D400AE82EA /* PopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopMenu.h; sourceTree = "<group>"; };
 		FFAB4ED2216392D400AE82EA /* PopMenuAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopMenuAction.swift; sourceTree = "<group>"; };
 		FFAB4ED3216392D400AE82EA /* PopMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopMenuViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +326,9 @@
 		FF72AEEF2170AF8D002D04DA /* welcome */ = {
 			isa = PBXGroup;
 			children = (
+				FF72AF4E21770A91002D04DA /* dataSource */,
+				FF72AF4921761AF8002D04DA /* models */,
+				FF72AF4221760FFD002D04DA /* views */,
 				FF72AF1D2175DAFE002D04DA /* design */,
 				FF72AF042175CE38002D04DA /* assemblys */,
 				FF72AF082175CE38002D04DA /* cake */,
@@ -409,6 +459,82 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		FF72AF4221760FFD002D04DA /* views */ = {
+			isa = PBXGroup;
+			children = (
+				FF72AF4321761019002D04DA /* WelcomePagerCell.swift */,
+				FF72AF4521761050002D04DA /* WelcomePagerCell.xib */,
+				FF72AF472176109B002D04DA /* IWelcomePagerCell.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		FF72AF4921761AF8002D04DA /* models */ = {
+			isa = PBXGroup;
+			children = (
+				FF72AF4A21761B09002D04DA /* IWelcomePage.swift */,
+				FF72AF4C21761B13002D04DA /* WelcomePage.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		FF72AF4E21770A91002D04DA /* dataSource */ = {
+			isa = PBXGroup;
+			children = (
+				FF72AF4F21770AB6002D04DA /* WelcomePagesDataSource.swift */,
+				FF72AF5121770ACA002D04DA /* IWelcomePagesDataSource.swift */,
+			);
+			path = dataSource;
+			sourceTree = "<group>";
+		};
+		FF72AF6121776138002D04DA /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				FF72AF6221776138002D04DA /* UICollectionViewCell+Reuse.swift */,
+				FF72AF6321776138002D04DA /* UITableViewCell+Reuse.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		FF72AF66217761B2002D04DA /* image */ = {
+			isa = PBXGroup;
+			children = (
+				FF72AF68217761B2002D04DA /* Image+Gradient.swift */,
+				FF72AF69217761B2002D04DA /* UIImage+CS_Extensions.h */,
+				FF72AF6A217761B2002D04DA /* UIImage+RoundedCorner.h */,
+				FF72AF6B217761B2002D04DA /* UIImage+Resize.h */,
+				FF72AF6C217761B2002D04DA /* UIImage+Alpha.h */,
+				FF72AF6D217761B2002D04DA /* UIImage+NSData.m */,
+				FF72AF6E217761B2002D04DA /* Image+Color.swift */,
+				FF72AF6F217761B2002D04DA /* UIImage+NSData.h */,
+				FF72AF70217761B2002D04DA /* UIImage+Alpha.m */,
+				FF72AF71217761B2002D04DA /* UIImage+RoundedCorner.m */,
+				FF72AF72217761B2002D04DA /* UIImage+Resize.m */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		FF72AF73217761B2002D04DA /* string */ = {
+			isa = PBXGroup;
+			children = (
+				FF72AF74217761B2002D04DA /* String+NSMutableAttributedString.swift */,
+				FF72AF75217761B2002D04DA /* String+Remove.swift */,
+				FF72AF76217761B2002D04DA /* String+Size.swift */,
+				FF72AF77217761B2002D04DA /* String+Localize.swift */,
+				FF72AF78217761B2002D04DA /* String+Subscript.swift */,
+				FF72AF79217761B2002D04DA /* String+HTML.swift */,
+			);
+			path = string;
+			sourceTree = "<group>";
+		};
+		FF72AF8721776230002D04DA /* view */ = {
+			isa = PBXGroup;
+			children = (
+				FF72AF8821776230002D04DA /* UIView+Shadow.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		FFAB4E672163465C00AE82EA = {
 			isa = PBXGroup;
 			children = (
@@ -486,7 +612,6 @@
 		FFAB4ECD216392D400AE82EA /* NewPopMenu */ = {
 			isa = PBXGroup;
 			children = (
-				FFAB4ECE216392D400AE82EA /* LICENSE */,
 				FFAB4ECF216392D400AE82EA /* PopMenu */,
 				FFAB4EDF216392D400AE82EA /* README.md */,
 			);
@@ -600,6 +725,10 @@
 		FFAB4EF2216392D400AE82EA /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FF72AF8721776230002D04DA /* view */,
+				FF72AF66217761B2002D04DA /* image */,
+				FF72AF73217761B2002D04DA /* string */,
+				FF72AF6121776138002D04DA /* cells */,
 				FFAB4EF3216392D400AE82EA /* TimeInterval+Date.swift */,
 				FFAB4EF4216392D400AE82EA /* dispatchQueue */,
 				FFAB4EF6216392D400AE82EA /* uistoryboard */,
@@ -972,6 +1101,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF72AF4621761050002D04DA /* WelcomePagerCell.xib in Resources */,
 				FFAB4F15216392D400AE82EA /* README.md in Resources */,
 				FFAB4F882163960900AE82EA /* Main.storyboard in Resources */,
 				FFAB4EA2216348B200AE82EA /* LaunchScreen.storyboard in Resources */,
@@ -982,7 +1112,6 @@
 				FFAB4F612163959700AE82EA /* AuthSB.storyboard in Resources */,
 				FFAB4E942163489200AE82EA /* Podfile in Resources */,
 				FFAB4F1B216392D400AE82EA /* AssemblyList.plist in Resources */,
-				FFAB4F0A216392D400AE82EA /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1133,23 +1262,31 @@
 				FFAB4F752163959700AE82EA /* IAuthCake.swift in Sources */,
 				FFAB4F13216392D400AE82EA /* PopMenuPresentAnimationController.swift in Sources */,
 				FF72AEF32175BFBB002D04DA /* IRootDirector.swift in Sources */,
+				FF72AF4421761019002D04DA /* WelcomePagerCell.swift in Sources */,
+				FF72AF80217761B2002D04DA /* UIImage+Resize.m in Sources */,
 				FFAB4FA92163971A00AE82EA /* NetworkAssembly.swift in Sources */,
 				FFAB4F382163936B00AE82EA /* Application.swift in Sources */,
 				FF72AF022175C1F5002D04DA /* AuthDirector.swift in Sources */,
+				FF72AF86217761B2002D04DA /* String+HTML.swift in Sources */,
 				FFAB4FA62163971A00AE82EA /* SecurityService.swift in Sources */,
 				FFAB4F6D2163959700AE82EA /* LoginRouter.swift in Sources */,
 				FFAB4F8C2163960900AE82EA /* IRootCake.swift in Sources */,
 				FFAB4F2F216392D400AE82EA /* ILocalizator.swift in Sources */,
 				FFAB4F6C2163959700AE82EA /* ILoginRouter.swift in Sources */,
+				FF72AF7E217761B2002D04DA /* UIImage+Alpha.m in Sources */,
 				FFAB4F20216392D400AE82EA /* IWindowStack.swift in Sources */,
 				FFAB4FA72163971A00AE82EA /* INetwork.swift in Sources */,
+				FF72AF82217761B2002D04DA /* String+Remove.swift in Sources */,
 				FFAB4F6B2163959700AE82EA /* LoginCake.swift in Sources */,
 				FFAB4F672163959700AE82EA /* LoginController.swift in Sources */,
+				FF72AF7D217761B2002D04DA /* Image+Color.swift in Sources */,
 				FF72AF3D2175E35C002D04DA /* FSPageViewLayout.swift in Sources */,
 				FF72AF182175CEFF002D04DA /* IWelcomeRouter.swift in Sources */,
 				FFAB4F652163959700AE82EA /* ILoginDesign.swift in Sources */,
+				FF72AF5221770ACA002D04DA /* IWelcomePagesDataSource.swift in Sources */,
 				FF72AF1F2175DB11002D04DA /* IWelcomeDesign.swift in Sources */,
 				FFAB4F772163959700AE82EA /* IAuthRouter.swift in Sources */,
+				FF72AF482176109B002D04DA /* IWelcomePagerCell.swift in Sources */,
 				FF72AEFE2175C0A5002D04DA /* SessionService.swift in Sources */,
 				FFAB4F762163959700AE82EA /* AuthRouter.swift in Sources */,
 				FFAB4F8F2163960900AE82EA /* IRootRouter.swift in Sources */,
@@ -1159,7 +1296,11 @@
 				FFAB4F10216392D400AE82EA /* PopMenuGradientView.swift in Sources */,
 				FFAB4F662163959700AE82EA /* LoginCakeAssembly.swift in Sources */,
 				FF72AEF92175BFF5002D04DA /* ILoginDirector.swift in Sources */,
+				FF72AF7C217761B2002D04DA /* UIImage+NSData.m in Sources */,
 				FFAB4F0D216392D400AE82EA /* PopMenuAppearance.swift in Sources */,
+				FF72AF6421776138002D04DA /* UICollectionViewCell+Reuse.swift in Sources */,
+				FF72AF4D21761B13002D04DA /* WelcomePage.swift in Sources */,
+				FF72AF5021770AB6002D04DA /* WelcomePagesDataSource.swift in Sources */,
 				FFAB4F30216392D400AE82EA /* Localizator.swift in Sources */,
 				FFAB4FA52163971A00AE82EA /* ISecurityService.swift in Sources */,
 				FFAB4F2D216392D400AE82EA /* LoaderServiceAssembly.swift in Sources */,
@@ -1170,28 +1311,34 @@
 				FFAB4F14216392D400AE82EA /* PopMenuDismissAnimationController.swift in Sources */,
 				FFAB4F8D2163960900AE82EA /* RootCake.swift in Sources */,
 				FF72AEFD2175C0A5002D04DA /* ISessionService.swift in Sources */,
+				FF72AF7F217761B2002D04DA /* UIImage+RoundedCorner.m in Sources */,
 				FFAB4F632163959700AE82EA /* AuthCakeAssembly.swift in Sources */,
 				FF72AF3A2175E35C002D04DA /* FSPageViewTransformer.swift in Sources */,
+				FF72AF4B21761B09002D04DA /* IWelcomePage.swift in Sources */,
 				FFAB4F872163960900AE82EA /* RootCakeAssebly.swift in Sources */,
 				FF72AF3C2175E35C002D04DA /* FSPagerViewLayoutAttributes.swift in Sources */,
 				FFAB4F3C2163936B00AE82EA /* main.swift in Sources */,
 				FFAB4F1E216392D400AE82EA /* Global.swift in Sources */,
 				FFAB4F3B2163936B00AE82EA /* IApplication.swift in Sources */,
 				FFAB4F27216392D400AE82EA /* UIColor+RGB.swift in Sources */,
+				FF72AF7B217761B2002D04DA /* Image+Gradient.swift in Sources */,
 				FF72AF0C2175CE98002D04DA /* WelcomeCakeAssembly.swift in Sources */,
 				FFAB4FA42163971A00AE82EA /* SecurityServiceAssembly.swift in Sources */,
 				FF72AF3F2175E35C002D04DA /* FSPagerCollectionView.swift in Sources */,
 				FF72AF3B2175E35C002D04DA /* FSPagerViewCell.swift in Sources */,
+				FF72AF8921776230002D04DA /* UIView+Shadow.swift in Sources */,
 				FFAB4F1A216392D400AE82EA /* AppDesign.swift in Sources */,
 				FFAB4F6A2163959700AE82EA /* ILoginCake.swift in Sources */,
 				FF72AF122175CECF002D04DA /* WelcomeController.swift in Sources */,
 				FFAB4F23216392D400AE82EA /* DispatchQueue+After.swift in Sources */,
+				FF72AF81217761B2002D04DA /* String+NSMutableAttributedString.swift in Sources */,
 				FFAB4F3A2163936B00AE82EA /* AppDelegate.swift in Sources */,
 				FFAB4F742163959700AE82EA /* AuthCake.swift in Sources */,
 				FFAB4F0C216392D400AE82EA /* PopMenuViewController.swift in Sources */,
 				FF72AF392175E35C002D04DA /* FSPagerView.swift in Sources */,
 				FFAB4F25216392D400AE82EA /* UIStoryboard+Type.swift in Sources */,
 				FFAB4F22216392D400AE82EA /* TimeInterval+Date.swift in Sources */,
+				FF72AF85217761B2002D04DA /* String+Subscript.swift in Sources */,
 				FF72AF162175CEED002D04DA /* WelcomeDirector.swift in Sources */,
 				FF72AF102175CEBA002D04DA /* WelcomeCake.swift in Sources */,
 				FFAB4F18216392D400AE82EA /* IDesign.swift in Sources */,
@@ -1203,6 +1350,7 @@
 				FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */,
 				FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */,
 				FF72AF3E2175E35C002D04DA /* FSPageControl.swift in Sources */,
+				FF72AF6521776138002D04DA /* UITableViewCell+Reuse.swift in Sources */,
 				FFAB4F16216392D400AE82EA /* GradientView.swift in Sources */,
 				FFAB4F642163959700AE82EA /* LoginDesign.swift in Sources */,
 				FF72AF1A2175CF0B002D04DA /* WelcomeRouter.swift in Sources */,
@@ -1210,11 +1358,13 @@
 				FFAB4F892163960900AE82EA /* RootController.swift in Sources */,
 				FFAB4F19216392D400AE82EA /* AppDesignAssembly.swift in Sources */,
 				FFAB4F2C216392D400AE82EA /* ILoaderService.swift in Sources */,
+				FF72AF84217761B2002D04DA /* String+Localize.swift in Sources */,
 				FF72AF032175C1F5002D04DA /* IAuthDirector.swift in Sources */,
 				FF72AF212175DB1C002D04DA /* WelcomeDesign.swift in Sources */,
 				FFAB4F0B216392D400AE82EA /* PopMenuAction.swift in Sources */,
 				FFAB4F28216392D400AE82EA /* WKWebView+Cookies.swift in Sources */,
 				FFAB4F2A216392D400AE82EA /* FullScreenLoader.swift in Sources */,
+				FF72AF83217761B2002D04DA /* String+Size.swift in Sources */,
 				FFAB4FA82163971A00AE82EA /* Network.swift in Sources */,
 				FFAB4F24216392D400AE82EA /* UIStoryboard+Load.swift in Sources */,
 				FF72AF0E2175CEAD002D04DA /* IWelcomeCake.swift in Sources */,

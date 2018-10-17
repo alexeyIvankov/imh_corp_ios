@@ -1,5 +1,5 @@
 //
-//  IWelcomeDirector.swift
+//  IWelcomePage.swift
 //  imh_corp_ios
 //
 //  Created by Alexey Ivankov on 16.10.2018.
@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
-protocol IWelcomeDirector : AnyObject {
+protocol IWelcomePage : AnyObject{
     
-    func getPages() -> [IWelcomePage]
+    var image:UIImage? { get }
+    var name:String { get }
+    var details:String { get }
 }
