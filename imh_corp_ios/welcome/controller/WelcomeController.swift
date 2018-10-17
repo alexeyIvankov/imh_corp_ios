@@ -34,6 +34,7 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         didSet{
             if self.viewContainerPageControll != nil{
                 self.pageControll = FSPageControl(frame: self.viewContainerPageControll.bounds)
+                self.pageControll?.configureToWelcomeScreen()
                 self.viewContainerPageControll.addSubview(self.pageControll!)
             }
         }
@@ -42,7 +43,17 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
     
     @IBOutlet weak var buttonStart: UIButton!
     
-    private var pages:[IWelcomePage]!
+    private var pages:[IWelcomePage]!{
+        didSet{
+            if self.pages != nil{
+               self.pageControll?.numberOfPages = self.pages.count
+            }
+            else {
+                self.pageControll?.numberOfPages  = 0
+            }
+            
+        }
+    }
     
     //MARK: Dependence
     var welcomeCake:IWelcomeCake = Depednence.tryInject()!
@@ -83,5 +94,16 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {
         return self.pages.count
+    }
+}
+
+extension FSPageControl{
+    func configureToWelcomeScreen(){
+        self.itemSpacing = 8
+        self.interitemSpacing = 10
+        self.contentHorizontalAlignment = .center
+        self.hidesForSinglePage = true
+        self.setFillColor(UIColor(r:255, g:255, b:255, alpha:0.2), for: UIControl.State.normal)
+        self.setFillColor(UIColor.white, for: UIControl.State.selected)
     }
 }
