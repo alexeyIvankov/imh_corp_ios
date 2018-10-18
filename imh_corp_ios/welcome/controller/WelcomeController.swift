@@ -18,7 +18,7 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         }
     }
     
-    private var pageControll:FSPageControl?
+    public var pageControll:FSPageControl?
     
     //MARK: IBOutlets
     @IBOutlet weak var viewContainerPagerView: UIView!{
@@ -33,13 +33,18 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
     @IBOutlet weak var viewContainerPageControll: UIView!{
         didSet{
             if self.viewContainerPageControll != nil{
+           
                 self.pageControll = FSPageControl(frame: self.viewContainerPageControll.bounds)
-                self.pageControll?.configureToWelcomeScreen()
                 self.viewContainerPageControll.addSubview(self.pageControll!)
+                
             }
         }
     }
+    
     @IBOutlet weak var viewContainerStartButton: UIView!
+    @IBOutlet weak var viewContainerImage: UIView!
+    
+    @IBOutlet weak var imageViewPage: UIImageView!
     
     @IBOutlet weak var buttonStart: UIButton!
     
@@ -67,6 +72,7 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         
         self.configurePagesDataSource()
         self.registrerCells()
+        self.trySetStartImage()
         self.pagerView?.reloadData()
     }
     
@@ -83,11 +89,61 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         self.pagerView?.register(WelcomePagerCell.nibCell(), forCellWithReuseIdentifier: WelcomePagerCell.reuseIdCell())
     }
     
+    private func trySetStartImage(){
+        if self.pages.count > 0 && self.imageViewPage.image == nil{
+            self.imageViewPage.image = self.pages.first?.image
+        }
+    }
+    
+    private func tryChangePageToPageControll(nextPage:Int){
+        
+        if self.pageControll!.currentPage != nextPage{
+            self.pageControll!.currentPage = nextPage
+        }
+    }
+    
+    private func trySwitchPageOnThePageControll() {
+        
+        let collectionView:UICollectionView? = self.pagerView?.collectionView
+        let visibleCell = collectionView?.visibleCells.first
+        
+        if visibleCell != nil {
+            
+            let indexPathCell = collectionView?.indexPath(for: visibleCell!)
+            
+            if indexPathCell != nil && self.pageControll!.currentPage != indexPathCell!.row {
+                self.pageControll!.currentPage = indexPathCell!.row
+            }
+        }
+    }
+    
+    private func trySwitchImageOnThePage(){
+        
+        let collectionView:UICollectionView? = self.pagerView?.collectionView
+        let visibleCell = collectionView?.visibleCells.first
+        
+        if visibleCell != nil {
+            
+            let indexPathCell = collectionView?.indexPath(for: visibleCell!)
+            if indexPathCell != nil && indexPathCell!.row <  self.pages.count{
+                let page = self.pages[indexPathCell!.row]
+                
+                if self.imageViewPage.image != page.image{
+                    self.imageViewPage.image = page.image
+                }
+            }
+        }
+    }
+    
     //MARK: FSPagerViewDataSource
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell:IWelcomePagerCell = pagerView.dequeueReusableCell(withReuseIdentifier:WelcomePagerCell.reuseIdCell(), at: index) as! IWelcomePagerCell
         let page = self.pages[index]
         cell.configure(page: page)
+        
+        if self.pageControll?.currentPage != index{
+            self.pageControll?.currentPage = index
+        }
         
         return cell as! FSPagerViewCell
     }
@@ -95,15 +151,11 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
     func numberOfItems(in pagerView: FSPagerView) -> Int {
         return self.pages.count
     }
-}
-
-extension FSPageControl{
-    func configureToWelcomeScreen(){
-        self.itemSpacing = 8
-        self.interitemSpacing = 10
-        self.contentHorizontalAlignment = .center
-        self.hidesForSinglePage = true
-        self.setFillColor(UIColor(r:255, g:255, b:255, alpha:0.2), for: UIControl.State.normal)
-        self.setFillColor(UIColor.white, for: UIControl.State.selected)
+    
+    func pagerView(_ pagerView: FSPagerView, didEndDisplaying cell: FSPagerViewCell, forItemAt index: Int) {
+        self.trySwitchPageOnThePageControll()
+        self.trySwitchImageOnThePage()
     }
 }
+
+

@@ -12,7 +12,6 @@ import UIKit
 class WelcomePagerCell : FSPagerViewCell, IWelcomePagerCell{
     
     //MARK: Outlets
-    @IBOutlet  var imageViewPage: UIImageView!
     @IBOutlet  var labelNamePage: UILabel!
     @IBOutlet  var labelDescriptionPage: UILabel!
     
@@ -20,7 +19,6 @@ class WelcomePagerCell : FSPagerViewCell, IWelcomePagerCell{
     
     func configure(page:IWelcomePage){
         self.page = page
-        self.imageViewPage.image = page.image
         self.labelNamePage.text = page.name
         self.labelDescriptionPage.text = page.details
     }
