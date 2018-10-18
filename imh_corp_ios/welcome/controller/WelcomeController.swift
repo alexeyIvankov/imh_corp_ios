@@ -152,9 +152,19 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         return self.pages.count
     }
     
+    func pagerView(_ pagerView: FSPagerView, willDisplay cell: FSPagerViewCell, forItemAt index: Int) {
+        if let viewDisplayAnimation = cell as? IDisplayWithAnimation{
+            viewDisplayAnimation.startDisplayAnimation()
+        }
+    }
+    
     func pagerView(_ pagerView: FSPagerView, didEndDisplaying cell: FSPagerViewCell, forItemAt index: Int) {
         self.trySwitchPageOnThePageControll()
         self.trySwitchImageOnThePage()
+        
+        if let viewDisplayAnimation = cell as? IDisplayWithAnimation{
+            viewDisplayAnimation.stopDisplayAnimation()
+        }
     }
 }
 

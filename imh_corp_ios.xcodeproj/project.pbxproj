@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D688522DC2055097D4F50A0 /* Pods_imh_corp_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA73C63CBD60B29505B1F676 /* Pods_imh_corp_ios.framework */; };
 		B9D90EF4F711B91A51CF8641 /* Pods_imh_corp_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284E760EB484448212786CAC /* Pods_imh_corp_iosTests.framework */; };
+		FF3897BC2178A085005CE562 /* IDisplayWithAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897BB2178A085005CE562 /* IDisplayWithAnimation.swift */; };
+		FF3897C02178AC78005CE562 /* RQShineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3897BE2178AC78005CE562 /* RQShineLabel.m */; };
 		FF72AEF32175BFBB002D04DA /* IRootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF12175BFBB002D04DA /* IRootDirector.swift */; };
 		FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF22175BFBB002D04DA /* RootDirector.swift */; };
 		FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF62175BFF5002D04DA /* LoginDirector.swift */; };
@@ -150,6 +152,10 @@
 		4D0D0FFB817B6CB098FDE1BA /* Pods-imh_corp_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imh_corp_iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-imh_corp_iosTests/Pods-imh_corp_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F0C5A58696AEC9B6853308C /* Pods-imh_corp_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imh_corp_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-imh_corp_ios/Pods-imh_corp_ios.debug.xcconfig"; sourceTree = "<group>"; };
 		FA73C63CBD60B29505B1F676 /* Pods_imh_corp_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_imh_corp_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF3897BB2178A085005CE562 /* IDisplayWithAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDisplayWithAnimation.swift; sourceTree = "<group>"; };
+		FF3897BE2178AC78005CE562 /* RQShineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RQShineLabel.m; sourceTree = "<group>"; };
+		FF3897BF2178AC78005CE562 /* RQShineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RQShineLabel.h; sourceTree = "<group>"; };
+		FF3897C12178ADE1005CE562 /* imh_corp_ios-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "imh_corp_ios-bridging-header.h"; sourceTree = "<group>"; };
 		FF72AEF12175BFBB002D04DA /* IRootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF22175BFBB002D04DA /* RootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF62175BFF5002D04DA /* LoginDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDirector.swift; sourceTree = "<group>"; };
@@ -323,6 +329,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FF3897BA2178A012005CE562 /* animations */ = {
+			isa = PBXGroup;
+			children = (
+				FF3897BB2178A085005CE562 /* IDisplayWithAnimation.swift */,
+			);
+			path = animations;
+			sourceTree = "<group>";
+		};
+		FF3897BD2178AC78005CE562 /* RQShineLabel */ = {
+			isa = PBXGroup;
+			children = (
+				FF3897BE2178AC78005CE562 /* RQShineLabel.m */,
+				FF3897BF2178AC78005CE562 /* RQShineLabel.h */,
+			);
+			path = RQShineLabel;
+			sourceTree = "<group>";
+		};
 		FF72AEEF2170AF8D002D04DA /* welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +454,7 @@
 		FF72AF2B2175E35C002D04DA /* extLib */ = {
 			isa = PBXGroup;
 			children = (
+				FF3897BD2178AC78005CE562 /* RQShineLabel */,
 				FF72AF2C2175E35C002D04DA /* FSPagerView */,
 			);
 			path = extLib;
@@ -538,6 +562,7 @@
 		FFAB4E672163465C00AE82EA = {
 			isa = PBXGroup;
 			children = (
+				FF3897C12178ADE1005CE562 /* imh_corp_ios-bridging-header.h */,
 				FFAB4E932163489200AE82EA /* Podfile */,
 				FFAB4E722163465C00AE82EA /* imh_corp_ios */,
 				8F213191BF86927CFE7E2704 /* Pods */,
@@ -585,6 +610,7 @@
 		FFAB4EA5216348BE00AE82EA /* core */ = {
 			isa = PBXGroup;
 			children = (
+				FF3897BA2178A012005CE562 /* animations */,
 				FFAB4F9F2163971A00AE82EA /* network */,
 				FFAB4F992163971A00AE82EA /* security */,
 				FFAB4EE7216392D400AE82EA /* dependence */,
@@ -1267,6 +1293,7 @@
 				FFAB4FA92163971A00AE82EA /* NetworkAssembly.swift in Sources */,
 				FFAB4F382163936B00AE82EA /* Application.swift in Sources */,
 				FF72AF022175C1F5002D04DA /* AuthDirector.swift in Sources */,
+				FF3897C02178AC78005CE562 /* RQShineLabel.m in Sources */,
 				FF72AF86217761B2002D04DA /* String+HTML.swift in Sources */,
 				FFAB4FA62163971A00AE82EA /* SecurityService.swift in Sources */,
 				FFAB4F6D2163959700AE82EA /* LoginRouter.swift in Sources */,
@@ -1323,6 +1350,7 @@
 				FFAB4F27216392D400AE82EA /* UIColor+RGB.swift in Sources */,
 				FF72AF7B217761B2002D04DA /* Image+Gradient.swift in Sources */,
 				FF72AF0C2175CE98002D04DA /* WelcomeCakeAssembly.swift in Sources */,
+				FF3897BC2178A085005CE562 /* IDisplayWithAnimation.swift in Sources */,
 				FFAB4FA42163971A00AE82EA /* SecurityServiceAssembly.swift in Sources */,
 				FF72AF3F2175E35C002D04DA /* FSPagerCollectionView.swift in Sources */,
 				FF72AF3B2175E35C002D04DA /* FSPagerViewCell.swift in Sources */,
@@ -1532,6 +1560,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imh.imh-corp-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "imh_corp_ios-bridging-header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1552,6 +1581,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imh.imh-corp-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "imh_corp_ios-bridging-header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
