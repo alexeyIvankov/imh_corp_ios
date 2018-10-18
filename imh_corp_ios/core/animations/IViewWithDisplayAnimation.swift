@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-protocol IDisplayWithAnimation : AnyObject{
+protocol IViewWithDisplayAnimation{
     func startDisplayAnimation()
     func stopDisplayAnimation()
 }

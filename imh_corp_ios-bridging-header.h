@@ -10,5 +10,6 @@
 #define imh_corp_ios_bridging_header_h
 
 #import "RQShineLabel.h"
+#import "JHChainableAnimator.h"
 
 #endif /* imh_corp_ios_bridging_header_h */

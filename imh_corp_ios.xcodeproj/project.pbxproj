@@ -9,8 +9,26 @@
 /* Begin PBXBuildFile section */
 		0D688522DC2055097D4F50A0 /* Pods_imh_corp_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA73C63CBD60B29505B1F676 /* Pods_imh_corp_ios.framework */; };
 		B9D90EF4F711B91A51CF8641 /* Pods_imh_corp_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 284E760EB484448212786CAC /* Pods_imh_corp_iosTests.framework */; };
-		FF3897BC2178A085005CE562 /* IDisplayWithAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897BB2178A085005CE562 /* IDisplayWithAnimation.swift */; };
+		FF3897BC2178A085005CE562 /* IViewWithDisplayAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897BB2178A085005CE562 /* IViewWithDisplayAnimation.swift */; };
 		FF3897C02178AC78005CE562 /* RQShineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3897BE2178AC78005CE562 /* RQShineLabel.m */; };
+		FF3897D42178C3F5005CE562 /* JHKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = FF3897C62178C3F5005CE562 /* JHKeyframeAnimationFunctions.c */; };
+		FF3897D52178C3F5005CE562 /* UIView+ChainableAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897C82178C3F5005CE562 /* UIView+ChainableAnimator.swift */; };
+		FF3897D62178C3F5005CE562 /* ChainableAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897C92178C3F5005CE562 /* ChainableAnimator.swift */; };
+		FF3897D72178C3F5005CE562 /* JHKeyframeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3897CA2178C3F5005CE562 /* JHKeyframeAnimation.m */; };
+		FF3897D82178C3F5005CE562 /* JHAnimationChainLink.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3897CB2178C3F5005CE562 /* JHAnimationChainLink.m */; };
+		FF3897D92178C3F5005CE562 /* JHChainableAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = FF3897CD2178C3F5005CE562 /* JHChainableAnimator.m */; };
+		FF3897EB2178C462005CE562 /* DKChainableAnimationKit+Effects.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897DF2178C462005CE562 /* DKChainableAnimationKit+Effects.swift */; };
+		FF3897EC2178C462005CE562 /* DKChainableAnimationKit+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897E02178C462005CE562 /* DKChainableAnimationKit+Transform.swift */; };
+		FF3897ED2178C462005CE562 /* DKKeyframeAnimationFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897E12178C462005CE562 /* DKKeyframeAnimationFunction.swift */; };
+		FF3897EE2178C462005CE562 /* DKChainableAnimationKit+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897E22178C462005CE562 /* DKChainableAnimationKit+Anchor.swift */; };
+		FF3897EF2178C462005CE562 /* DKChainableAnimationKit+Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897E32178C462005CE562 /* DKChainableAnimationKit+Bezier.swift */; };
+		FF3897F02178C462005CE562 /* DKChainableAnimationKit+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897E42178C462005CE562 /* DKChainableAnimationKit+Frame.swift */; };
+		FF3897F12178C462005CE562 /* DKChainableAnimationKit+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897E52178C462005CE562 /* DKChainableAnimationKit+Extra.swift */; };
+		FF3897F22178C462005CE562 /* DKKeyFrameAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897E62178C462005CE562 /* DKKeyFrameAnimation.swift */; };
+		FF3897F32178C462005CE562 /* DKChainableAnimationKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897E72178C462005CE562 /* DKChainableAnimationKit.swift */; };
+		FF3897F42178C462005CE562 /* UIView+AnimationKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897E82178C462005CE562 /* UIView+AnimationKit.swift */; };
+		FF3897F72178C8A4005CE562 /* IAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897F62178C8A4005CE562 /* IAnimator.swift */; };
+		FF3897FA2178CB7D005CE562 /* AnimatorWelcomePageImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897F92178CB7D005CE562 /* AnimatorWelcomePageImages.swift */; };
 		FF72AEF32175BFBB002D04DA /* IRootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF12175BFBB002D04DA /* IRootDirector.swift */; };
 		FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF22175BFBB002D04DA /* RootDirector.swift */; };
 		FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF62175BFF5002D04DA /* LoginDirector.swift */; };
@@ -29,7 +47,6 @@
 		FF72AF1A2175CF0B002D04DA /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF192175CF0B002D04DA /* WelcomeRouter.swift */; };
 		FF72AF1F2175DB11002D04DA /* IWelcomeDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF1E2175DB11002D04DA /* IWelcomeDesign.swift */; };
 		FF72AF212175DB1C002D04DA /* WelcomeDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF202175DB1C002D04DA /* WelcomeDesign.swift */; };
-		FF72AF372175E35C002D04DA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FF72AF2D2175E35C002D04DA /* LICENSE */; };
 		FF72AF392175E35C002D04DA /* FSPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF302175E35C002D04DA /* FSPagerView.swift */; };
 		FF72AF3A2175E35C002D04DA /* FSPageViewTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF312175E35C002D04DA /* FSPageViewTransformer.swift */; };
 		FF72AF3B2175E35C002D04DA /* FSPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF322175E35C002D04DA /* FSPagerViewCell.swift */; };
@@ -152,10 +169,34 @@
 		4D0D0FFB817B6CB098FDE1BA /* Pods-imh_corp_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imh_corp_iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-imh_corp_iosTests/Pods-imh_corp_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F0C5A58696AEC9B6853308C /* Pods-imh_corp_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imh_corp_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-imh_corp_ios/Pods-imh_corp_ios.debug.xcconfig"; sourceTree = "<group>"; };
 		FA73C63CBD60B29505B1F676 /* Pods_imh_corp_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_imh_corp_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF3897BB2178A085005CE562 /* IDisplayWithAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDisplayWithAnimation.swift; sourceTree = "<group>"; };
+		FF3897BB2178A085005CE562 /* IViewWithDisplayAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IViewWithDisplayAnimation.swift; sourceTree = "<group>"; };
 		FF3897BE2178AC78005CE562 /* RQShineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RQShineLabel.m; sourceTree = "<group>"; };
 		FF3897BF2178AC78005CE562 /* RQShineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RQShineLabel.h; sourceTree = "<group>"; };
 		FF3897C12178ADE1005CE562 /* imh_corp_ios-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "imh_corp_ios-bridging-header.h"; sourceTree = "<group>"; };
+		FF3897C52178C3F5005CE562 /* JHAnimationChainLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAnimationChainLink.h; sourceTree = "<group>"; };
+		FF3897C62178C3F5005CE562 /* JHKeyframeAnimationFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = JHKeyframeAnimationFunctions.c; sourceTree = "<group>"; };
+		FF3897C72178C3F5005CE562 /* JHChainableAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHChainableAnimator.h; sourceTree = "<group>"; };
+		FF3897C82178C3F5005CE562 /* UIView+ChainableAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ChainableAnimator.swift"; sourceTree = "<group>"; };
+		FF3897C92178C3F5005CE562 /* ChainableAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainableAnimator.swift; sourceTree = "<group>"; };
+		FF3897CA2178C3F5005CE562 /* JHKeyframeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHKeyframeAnimation.m; sourceTree = "<group>"; };
+		FF3897CB2178C3F5005CE562 /* JHAnimationChainLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHAnimationChainLink.m; sourceTree = "<group>"; };
+		FF3897CC2178C3F5005CE562 /* JHKeyframeAnimationFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHKeyframeAnimationFunctions.h; sourceTree = "<group>"; };
+		FF3897CD2178C3F5005CE562 /* JHChainableAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHChainableAnimator.m; sourceTree = "<group>"; };
+		FF3897CE2178C3F5005CE562 /* JHKeyframeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHKeyframeAnimation.h; sourceTree = "<group>"; };
+		FF3897CF2178C3F5005CE562 /* JHChainableBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHChainableBlocks.h; sourceTree = "<group>"; };
+		FF3897D22178C3F5005CE562 /* ChainableAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainableAnimations.h; sourceTree = "<group>"; };
+		FF3897DF2178C462005CE562 /* DKChainableAnimationKit+Effects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DKChainableAnimationKit+Effects.swift"; sourceTree = "<group>"; };
+		FF3897E02178C462005CE562 /* DKChainableAnimationKit+Transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DKChainableAnimationKit+Transform.swift"; sourceTree = "<group>"; };
+		FF3897E12178C462005CE562 /* DKKeyframeAnimationFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKKeyframeAnimationFunction.swift; sourceTree = "<group>"; };
+		FF3897E22178C462005CE562 /* DKChainableAnimationKit+Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DKChainableAnimationKit+Anchor.swift"; sourceTree = "<group>"; };
+		FF3897E32178C462005CE562 /* DKChainableAnimationKit+Bezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DKChainableAnimationKit+Bezier.swift"; sourceTree = "<group>"; };
+		FF3897E42178C462005CE562 /* DKChainableAnimationKit+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DKChainableAnimationKit+Frame.swift"; sourceTree = "<group>"; };
+		FF3897E52178C462005CE562 /* DKChainableAnimationKit+Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DKChainableAnimationKit+Extra.swift"; sourceTree = "<group>"; };
+		FF3897E62178C462005CE562 /* DKKeyFrameAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKKeyFrameAnimation.swift; sourceTree = "<group>"; };
+		FF3897E72178C462005CE562 /* DKChainableAnimationKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKChainableAnimationKit.swift; sourceTree = "<group>"; };
+		FF3897E82178C462005CE562 /* UIView+AnimationKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AnimationKit.swift"; sourceTree = "<group>"; };
+		FF3897F62178C8A4005CE562 /* IAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAnimator.swift; sourceTree = "<group>"; };
+		FF3897F92178CB7D005CE562 /* AnimatorWelcomePageImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorWelcomePageImages.swift; sourceTree = "<group>"; };
 		FF72AEF12175BFBB002D04DA /* IRootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF22175BFBB002D04DA /* RootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF62175BFF5002D04DA /* LoginDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDirector.swift; sourceTree = "<group>"; };
@@ -176,7 +217,6 @@
 		FF72AF202175DB1C002D04DA /* WelcomeDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeDesign.swift; sourceTree = "<group>"; };
 		FF72AF292175E2F1002D04DA /* imh_corp_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imh_corp_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF72AF2A2175E2F1002D04DA /* imh_corp_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imh_corp_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF72AF2D2175E35C002D04DA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		FF72AF302175E35C002D04DA /* FSPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerView.swift; sourceTree = "<group>"; };
 		FF72AF312175E35C002D04DA /* FSPageViewTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageViewTransformer.swift; sourceTree = "<group>"; };
 		FF72AF322175E35C002D04DA /* FSPagerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerViewCell.swift; sourceTree = "<group>"; };
@@ -332,7 +372,8 @@
 		FF3897BA2178A012005CE562 /* animations */ = {
 			isa = PBXGroup;
 			children = (
-				FF3897BB2178A085005CE562 /* IDisplayWithAnimation.swift */,
+				FF3897BB2178A085005CE562 /* IViewWithDisplayAnimation.swift */,
+				FF3897F62178C8A4005CE562 /* IAnimator.swift */,
 			);
 			path = animations;
 			sourceTree = "<group>";
@@ -346,9 +387,86 @@
 			path = RQShineLabel;
 			sourceTree = "<group>";
 		};
+		FF3897C22178C3F5005CE562 /* ChainableAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				FF3897C42178C3F5005CE562 /* JHChainableAnimations */,
+				FF3897D12178C3F5005CE562 /* Frameworks-Swift */,
+			);
+			path = ChainableAnimations;
+			sourceTree = "<group>";
+		};
+		FF3897C42178C3F5005CE562 /* JHChainableAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				FF3897C52178C3F5005CE562 /* JHAnimationChainLink.h */,
+				FF3897C62178C3F5005CE562 /* JHKeyframeAnimationFunctions.c */,
+				FF3897C72178C3F5005CE562 /* JHChainableAnimator.h */,
+				FF3897C82178C3F5005CE562 /* UIView+ChainableAnimator.swift */,
+				FF3897C92178C3F5005CE562 /* ChainableAnimator.swift */,
+				FF3897CA2178C3F5005CE562 /* JHKeyframeAnimation.m */,
+				FF3897CB2178C3F5005CE562 /* JHAnimationChainLink.m */,
+				FF3897CC2178C3F5005CE562 /* JHKeyframeAnimationFunctions.h */,
+				FF3897CD2178C3F5005CE562 /* JHChainableAnimator.m */,
+				FF3897CE2178C3F5005CE562 /* JHKeyframeAnimation.h */,
+				FF3897CF2178C3F5005CE562 /* JHChainableBlocks.h */,
+			);
+			path = JHChainableAnimations;
+			sourceTree = "<group>";
+		};
+		FF3897D12178C3F5005CE562 /* Frameworks-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				FF3897D22178C3F5005CE562 /* ChainableAnimations.h */,
+			);
+			path = "Frameworks-Swift";
+			sourceTree = "<group>";
+		};
+		FF3897DB2178C462005CE562 /* DKChainableAnimationKit */ = {
+			isa = PBXGroup;
+			children = (
+				FF3897DD2178C462005CE562 /* DKChainableAnimationKit */,
+			);
+			path = DKChainableAnimationKit;
+			sourceTree = "<group>";
+		};
+		FF3897DD2178C462005CE562 /* DKChainableAnimationKit */ = {
+			isa = PBXGroup;
+			children = (
+				FF3897DE2178C462005CE562 /* Classes */,
+			);
+			path = DKChainableAnimationKit;
+			sourceTree = "<group>";
+		};
+		FF3897DE2178C462005CE562 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FF3897DF2178C462005CE562 /* DKChainableAnimationKit+Effects.swift */,
+				FF3897E02178C462005CE562 /* DKChainableAnimationKit+Transform.swift */,
+				FF3897E12178C462005CE562 /* DKKeyframeAnimationFunction.swift */,
+				FF3897E22178C462005CE562 /* DKChainableAnimationKit+Anchor.swift */,
+				FF3897E32178C462005CE562 /* DKChainableAnimationKit+Bezier.swift */,
+				FF3897E42178C462005CE562 /* DKChainableAnimationKit+Frame.swift */,
+				FF3897E52178C462005CE562 /* DKChainableAnimationKit+Extra.swift */,
+				FF3897E62178C462005CE562 /* DKKeyFrameAnimation.swift */,
+				FF3897E72178C462005CE562 /* DKChainableAnimationKit.swift */,
+				FF3897E82178C462005CE562 /* UIView+AnimationKit.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		FF3897F82178CB12005CE562 /* animators */ = {
+			isa = PBXGroup;
+			children = (
+				FF3897F92178CB7D005CE562 /* AnimatorWelcomePageImages.swift */,
+			);
+			path = animators;
+			sourceTree = "<group>";
+		};
 		FF72AEEF2170AF8D002D04DA /* welcome */ = {
 			isa = PBXGroup;
 			children = (
+				FF3897F82178CB12005CE562 /* animators */,
 				FF72AF4E21770A91002D04DA /* dataSource */,
 				FF72AF4921761AF8002D04DA /* models */,
 				FF72AF4221760FFD002D04DA /* views */,
@@ -454,6 +572,8 @@
 		FF72AF2B2175E35C002D04DA /* extLib */ = {
 			isa = PBXGroup;
 			children = (
+				FF3897DB2178C462005CE562 /* DKChainableAnimationKit */,
+				FF3897C22178C3F5005CE562 /* ChainableAnimations */,
 				FF3897BD2178AC78005CE562 /* RQShineLabel */,
 				FF72AF2C2175E35C002D04DA /* FSPagerView */,
 			);
@@ -463,7 +583,6 @@
 		FF72AF2C2175E35C002D04DA /* FSPagerView */ = {
 			isa = PBXGroup;
 			children = (
-				FF72AF2D2175E35C002D04DA /* LICENSE */,
 				FF72AF2F2175E35C002D04DA /* Sources */,
 			);
 			path = FSPagerView;
@@ -1134,7 +1253,6 @@
 				FFAB4EA1216348B200AE82EA /* Assets.xcassets in Resources */,
 				FF72AF412175F6EE002D04DA /* WelcomeSB.storyboard in Resources */,
 				FFAB4F29216392D400AE82EA /* FullSreenLoader.xib in Resources */,
-				FF72AF372175E35C002D04DA /* LICENSE in Resources */,
 				FFAB4F612163959700AE82EA /* AuthSB.storyboard in Resources */,
 				FFAB4E942163489200AE82EA /* Podfile in Resources */,
 				FFAB4F1B216392D400AE82EA /* AssemblyList.plist in Resources */,
@@ -1308,26 +1426,31 @@
 				FFAB4F672163959700AE82EA /* LoginController.swift in Sources */,
 				FF72AF7D217761B2002D04DA /* Image+Color.swift in Sources */,
 				FF72AF3D2175E35C002D04DA /* FSPageViewLayout.swift in Sources */,
+				FF3897D52178C3F5005CE562 /* UIView+ChainableAnimator.swift in Sources */,
 				FF72AF182175CEFF002D04DA /* IWelcomeRouter.swift in Sources */,
 				FFAB4F652163959700AE82EA /* ILoginDesign.swift in Sources */,
 				FF72AF5221770ACA002D04DA /* IWelcomePagesDataSource.swift in Sources */,
 				FF72AF1F2175DB11002D04DA /* IWelcomeDesign.swift in Sources */,
+				FF3897D42178C3F5005CE562 /* JHKeyframeAnimationFunctions.c in Sources */,
 				FFAB4F772163959700AE82EA /* IAuthRouter.swift in Sources */,
 				FF72AF482176109B002D04DA /* IWelcomePagerCell.swift in Sources */,
 				FF72AEFE2175C0A5002D04DA /* SessionService.swift in Sources */,
 				FFAB4F762163959700AE82EA /* AuthRouter.swift in Sources */,
 				FFAB4F8F2163960900AE82EA /* IRootRouter.swift in Sources */,
 				FFAB4F11216392D400AE82EA /* UIView+Shadows.swift in Sources */,
+				FF3897D82178C3F5005CE562 /* JHAnimationChainLink.m in Sources */,
 				FFAB4F12216392D400AE82EA /* Haptics.swift in Sources */,
 				FF72AF142175CEE1002D04DA /* IWelcomeDirector.swift in Sources */,
 				FFAB4F10216392D400AE82EA /* PopMenuGradientView.swift in Sources */,
 				FFAB4F662163959700AE82EA /* LoginCakeAssembly.swift in Sources */,
 				FF72AEF92175BFF5002D04DA /* ILoginDirector.swift in Sources */,
 				FF72AF7C217761B2002D04DA /* UIImage+NSData.m in Sources */,
+				FF3897EE2178C462005CE562 /* DKChainableAnimationKit+Anchor.swift in Sources */,
 				FFAB4F0D216392D400AE82EA /* PopMenuAppearance.swift in Sources */,
 				FF72AF6421776138002D04DA /* UICollectionViewCell+Reuse.swift in Sources */,
 				FF72AF4D21761B13002D04DA /* WelcomePage.swift in Sources */,
 				FF72AF5021770AB6002D04DA /* WelcomePagesDataSource.swift in Sources */,
+				FF3897FA2178CB7D005CE562 /* AnimatorWelcomePageImages.swift in Sources */,
 				FFAB4F30216392D400AE82EA /* Localizator.swift in Sources */,
 				FFAB4FA52163971A00AE82EA /* ISecurityService.swift in Sources */,
 				FFAB4F2D216392D400AE82EA /* LoaderServiceAssembly.swift in Sources */,
@@ -1341,19 +1464,25 @@
 				FF72AF7F217761B2002D04DA /* UIImage+RoundedCorner.m in Sources */,
 				FFAB4F632163959700AE82EA /* AuthCakeAssembly.swift in Sources */,
 				FF72AF3A2175E35C002D04DA /* FSPageViewTransformer.swift in Sources */,
+				FF3897EF2178C462005CE562 /* DKChainableAnimationKit+Bezier.swift in Sources */,
 				FF72AF4B21761B09002D04DA /* IWelcomePage.swift in Sources */,
 				FFAB4F872163960900AE82EA /* RootCakeAssebly.swift in Sources */,
 				FF72AF3C2175E35C002D04DA /* FSPagerViewLayoutAttributes.swift in Sources */,
 				FFAB4F3C2163936B00AE82EA /* main.swift in Sources */,
+				FF3897D92178C3F5005CE562 /* JHChainableAnimator.m in Sources */,
 				FFAB4F1E216392D400AE82EA /* Global.swift in Sources */,
 				FFAB4F3B2163936B00AE82EA /* IApplication.swift in Sources */,
+				FF3897F02178C462005CE562 /* DKChainableAnimationKit+Frame.swift in Sources */,
+				FF3897F32178C462005CE562 /* DKChainableAnimationKit.swift in Sources */,
 				FFAB4F27216392D400AE82EA /* UIColor+RGB.swift in Sources */,
 				FF72AF7B217761B2002D04DA /* Image+Gradient.swift in Sources */,
 				FF72AF0C2175CE98002D04DA /* WelcomeCakeAssembly.swift in Sources */,
-				FF3897BC2178A085005CE562 /* IDisplayWithAnimation.swift in Sources */,
+				FF3897BC2178A085005CE562 /* IViewWithDisplayAnimation.swift in Sources */,
 				FFAB4FA42163971A00AE82EA /* SecurityServiceAssembly.swift in Sources */,
 				FF72AF3F2175E35C002D04DA /* FSPagerCollectionView.swift in Sources */,
 				FF72AF3B2175E35C002D04DA /* FSPagerViewCell.swift in Sources */,
+				FF3897F72178C8A4005CE562 /* IAnimator.swift in Sources */,
+				FF3897D62178C3F5005CE562 /* ChainableAnimator.swift in Sources */,
 				FF72AF8921776230002D04DA /* UIView+Shadow.swift in Sources */,
 				FFAB4F1A216392D400AE82EA /* AppDesign.swift in Sources */,
 				FFAB4F6A2163959700AE82EA /* ILoginCake.swift in Sources */,
@@ -1362,6 +1491,7 @@
 				FF72AF81217761B2002D04DA /* String+NSMutableAttributedString.swift in Sources */,
 				FFAB4F3A2163936B00AE82EA /* AppDelegate.swift in Sources */,
 				FFAB4F742163959700AE82EA /* AuthCake.swift in Sources */,
+				FF3897D72178C3F5005CE562 /* JHKeyframeAnimation.m in Sources */,
 				FFAB4F0C216392D400AE82EA /* PopMenuViewController.swift in Sources */,
 				FF72AF392175E35C002D04DA /* FSPagerView.swift in Sources */,
 				FFAB4F25216392D400AE82EA /* UIStoryboard+Type.swift in Sources */,
@@ -1377,9 +1507,12 @@
 				FFAB4F26216392D400AE82EA /* UIColor+Hex.swift in Sources */,
 				FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */,
 				FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */,
+				FF3897ED2178C462005CE562 /* DKKeyframeAnimationFunction.swift in Sources */,
+				FF3897F22178C462005CE562 /* DKKeyFrameAnimation.swift in Sources */,
 				FF72AF3E2175E35C002D04DA /* FSPageControl.swift in Sources */,
 				FF72AF6521776138002D04DA /* UITableViewCell+Reuse.swift in Sources */,
 				FFAB4F16216392D400AE82EA /* GradientView.swift in Sources */,
+				FF3897F42178C462005CE562 /* UIView+AnimationKit.swift in Sources */,
 				FFAB4F642163959700AE82EA /* LoginDesign.swift in Sources */,
 				FF72AF1A2175CF0B002D04DA /* WelcomeRouter.swift in Sources */,
 				FFAB4F1C216392D400AE82EA /* IDependenceDirector.swift in Sources */,
@@ -1391,9 +1524,12 @@
 				FF72AF212175DB1C002D04DA /* WelcomeDesign.swift in Sources */,
 				FFAB4F0B216392D400AE82EA /* PopMenuAction.swift in Sources */,
 				FFAB4F28216392D400AE82EA /* WKWebView+Cookies.swift in Sources */,
+				FF3897EB2178C462005CE562 /* DKChainableAnimationKit+Effects.swift in Sources */,
 				FFAB4F2A216392D400AE82EA /* FullScreenLoader.swift in Sources */,
 				FF72AF83217761B2002D04DA /* String+Size.swift in Sources */,
 				FFAB4FA82163971A00AE82EA /* Network.swift in Sources */,
+				FF3897F12178C462005CE562 /* DKChainableAnimationKit+Extra.swift in Sources */,
+				FF3897EC2178C462005CE562 /* DKChainableAnimationKit+Transform.swift in Sources */,
 				FFAB4F24216392D400AE82EA /* UIStoryboard+Load.swift in Sources */,
 				FF72AF0E2175CEAD002D04DA /* IWelcomeCake.swift in Sources */,
 				FFAB4F0F216392D400AE82EA /* UIColor+Contrast.swift in Sources */,

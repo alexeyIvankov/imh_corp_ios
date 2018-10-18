@@ -11,12 +11,22 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ChainableAnimations.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>Cocaine.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+		<key>DKChainableAnimationKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
 		</dict>
 		<key>EventSender.xcscheme</key>
 		<dict>
@@ -39,6 +49,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>NVActivityIndicatorView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
 		<key>Pods-imh_corp_ios.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,11 +67,6 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>6</integer>
-		</dict>
-		<key>RQShineLabel.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>9</integer>
 		</dict>
 		<key>Realm.xcscheme</key>
 		<dict>

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol IWelcomePagerCell : IDisplayWithAnimation {
+protocol IWelcomePagerCell : IViewWithDisplayAnimation {
     
     func configure(page:IWelcomePage)
 }

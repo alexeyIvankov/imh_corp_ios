@@ -42,7 +42,12 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
     }
     
     @IBOutlet weak var viewContainerStartButton: UIView!
-    @IBOutlet weak var viewContainerImage: UIView!
+    
+    @IBOutlet weak var viewContainerImage: UIView!{
+        didSet{
+            self.animatorPageImages = AnimatorWelcomePageImages(viewIcon: self.viewContainerImage)
+        }
+    }
     
     @IBOutlet weak var imageViewPage: UIImageView!
     
@@ -59,6 +64,8 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
             
         }
     }
+    
+    private var animatorPageImages:IAnimator?
     
     //MARK: Dependence
     var welcomeCake:IWelcomeCake = Depednence.tryInject()!
@@ -128,9 +135,11 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
             if indexPathCell != nil && indexPathCell!.row <  self.pages.count{
                 let page = self.pages[indexPathCell!.row]
                 
-                if self.imageViewPage.image != page.image{
-                    self.imageViewPage.image = page.image
-                }
+                self.animatorPageImages?.start(completion: {
+                    if self.imageViewPage.image != page.image{
+                        self.imageViewPage.image = page.image
+                    }
+                })
             }
         }
     }
@@ -153,7 +162,7 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
     }
     
     func pagerView(_ pagerView: FSPagerView, willDisplay cell: FSPagerViewCell, forItemAt index: Int) {
-        if let viewDisplayAnimation = cell as? IDisplayWithAnimation{
+        if let viewDisplayAnimation = cell as? IViewWithDisplayAnimation{
             viewDisplayAnimation.startDisplayAnimation()
         }
     }
@@ -162,7 +171,7 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         self.trySwitchPageOnThePageControll()
         self.trySwitchImageOnThePage()
         
-        if let viewDisplayAnimation = cell as? IDisplayWithAnimation{
+        if let viewDisplayAnimation = cell as? IViewWithDisplayAnimation{
             viewDisplayAnimation.stopDisplayAnimation()
         }
     }

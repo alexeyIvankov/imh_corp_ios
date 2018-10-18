@@ -16,7 +16,7 @@
 @property (strong, nonatomic) CADisplayLink *displaylink;
 @property (assign, nonatomic) CFTimeInterval beginTime;
 @property (assign, nonatomic, getter = isFadedOut) BOOL fadedOut;
-@property (nonatomic, copy) void (^completion)();
+@property (nonatomic, copy) void (^completion)(void);
 
 @end
 
