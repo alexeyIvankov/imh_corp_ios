@@ -25,6 +25,7 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         didSet{
             if viewContainerPagerView != nil{
                 self.pagerView = FSPagerView(frame: self.viewContainerPagerView.bounds)
+                self.pagerView?.isInfinite = true
                 self.viewContainerPagerView.addSubview(self.pagerView!)
             }
         }
@@ -42,10 +43,10 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
     }
     
     @IBOutlet weak var viewContainerStartButton: UIView!
-    
     @IBOutlet weak var viewContainerImage: UIView!{
         didSet{
-            self.animatorPageImages = AnimatorWelcomePageImages(viewIcon: self.viewContainerImage)
+            self.animatorHideImagePage = AnimatorHideImagePage(animationView: self.viewContainerImage)
+            self.animatorShowImagePage = AnimatorShowImagePage(animationView: self.viewContainerImage)
         }
     }
     
@@ -65,7 +66,10 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         }
     }
     
-    private var animatorPageImages:IAnimator?
+    private var animatorHideImagePage:IAnimator?
+    private var animatorShowImagePage:IAnimator?
+    
+    private var timerAutoChangePage:Timer?
     
     //MARK: Dependence
     var welcomeCake:IWelcomeCake = Depednence.tryInject()!
@@ -83,11 +87,23 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         self.pagerView?.reloadData()
     }
     
-    //MARK: User actions
-    @IBAction func buttonStartPressed(_ sender: Any) {
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.startAutoChangePage()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.stopAutoChangePage()
+    }
+    
+    //MARK: User actions
+    @IBAction func buttonStartPressed(_ sender: Any) {
+
+    }
+    
+    
+    //MARK: Data source
     private func configurePagesDataSource(){
         self.pages = self.welcomeCake.director.getPages()
     }
@@ -100,6 +116,22 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         if self.pages.count > 0 && self.imageViewPage.image == nil{
             self.imageViewPage.image = self.pages.first?.image
         }
+    }
+    
+    //MARK: Switch page or image
+    private func calculateNextPageAndChange(){
+        
+        guard self.pagerView != nil else {
+            return
+        }
+        
+        var nextIndexPage = 0
+        
+        if self.pagerView!.currentIndex < self.pages.count - 1{
+            nextIndexPage = self.pagerView!.currentIndex + 1
+        }
+
+        self.pagerView?.scrollToItem(at: nextIndexPage, animated: true)
     }
     
     private func tryChangePageToPageControll(nextPage:Int){
@@ -134,14 +166,34 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
             let indexPathCell = collectionView?.indexPath(for: visibleCell!)
             if indexPathCell != nil && indexPathCell!.row <  self.pages.count{
                 let page = self.pages[indexPathCell!.row]
-                
-                self.animatorPageImages?.start(completion: {
-                    if self.imageViewPage.image != page.image{
+    
+                if self.imageViewPage.image != page.image{
+                    
+                    self.animatorHideImagePage?.start(completion: {
+                        
                         self.imageViewPage.image = page.image
-                    }
-                })
+                        self.animatorShowImagePage?.start(completion: {
+                            
+                        })
+                    })
+                }
             }
         }
+    }
+    
+    //MARK:
+    func startAutoChangePage(){
+        self.timerAutoChangePage = Timer(timeInterval: 3, repeats: true, block: { [unowned self](timer) in
+            self.calculateNextPageAndChange()
+        })
+        
+        RunLoop.current.add(self.timerAutoChangePage!, forMode: RunLoop.Mode.default)
+    }
+    
+    func stopAutoChangePage()
+    {
+        self.timerAutoChangePage?.invalidate()
+        self.timerAutoChangePage = nil
     }
     
     //MARK: FSPagerViewDataSource
@@ -169,11 +221,13 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
     
     func pagerView(_ pagerView: FSPagerView, didEndDisplaying cell: FSPagerViewCell, forItemAt index: Int) {
         self.trySwitchPageOnThePageControll()
-        self.trySwitchImageOnThePage()
-        
+   
         if let viewDisplayAnimation = cell as? IViewWithDisplayAnimation{
             viewDisplayAnimation.stopDisplayAnimation()
         }
+        
+        self.trySwitchImageOnThePage()
+  
     }
 }
 

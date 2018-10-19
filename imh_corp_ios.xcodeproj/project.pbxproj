@@ -28,7 +28,8 @@
 		FF3897F32178C462005CE562 /* DKChainableAnimationKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897E72178C462005CE562 /* DKChainableAnimationKit.swift */; };
 		FF3897F42178C462005CE562 /* UIView+AnimationKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897E82178C462005CE562 /* UIView+AnimationKit.swift */; };
 		FF3897F72178C8A4005CE562 /* IAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897F62178C8A4005CE562 /* IAnimator.swift */; };
-		FF3897FA2178CB7D005CE562 /* AnimatorWelcomePageImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897F92178CB7D005CE562 /* AnimatorWelcomePageImages.swift */; };
+		FF3897FA2178CB7D005CE562 /* AnimatorHideImagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897F92178CB7D005CE562 /* AnimatorHideImagePage.swift */; };
+		FF3897FC2179B946005CE562 /* AnimatorShowImagePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897FB2179B946005CE562 /* AnimatorShowImagePage.swift */; };
 		FF72AEF32175BFBB002D04DA /* IRootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF12175BFBB002D04DA /* IRootDirector.swift */; };
 		FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF22175BFBB002D04DA /* RootDirector.swift */; };
 		FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF62175BFF5002D04DA /* LoginDirector.swift */; };
@@ -196,7 +197,8 @@
 		FF3897E72178C462005CE562 /* DKChainableAnimationKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKChainableAnimationKit.swift; sourceTree = "<group>"; };
 		FF3897E82178C462005CE562 /* UIView+AnimationKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AnimationKit.swift"; sourceTree = "<group>"; };
 		FF3897F62178C8A4005CE562 /* IAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAnimator.swift; sourceTree = "<group>"; };
-		FF3897F92178CB7D005CE562 /* AnimatorWelcomePageImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorWelcomePageImages.swift; sourceTree = "<group>"; };
+		FF3897F92178CB7D005CE562 /* AnimatorHideImagePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorHideImagePage.swift; sourceTree = "<group>"; };
+		FF3897FB2179B946005CE562 /* AnimatorShowImagePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorShowImagePage.swift; sourceTree = "<group>"; };
 		FF72AEF12175BFBB002D04DA /* IRootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF22175BFBB002D04DA /* RootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF62175BFF5002D04DA /* LoginDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDirector.swift; sourceTree = "<group>"; };
@@ -458,7 +460,8 @@
 		FF3897F82178CB12005CE562 /* animators */ = {
 			isa = PBXGroup;
 			children = (
-				FF3897F92178CB7D005CE562 /* AnimatorWelcomePageImages.swift */,
+				FF3897F92178CB7D005CE562 /* AnimatorHideImagePage.swift */,
+				FF3897FB2179B946005CE562 /* AnimatorShowImagePage.swift */,
 			);
 			path = animators;
 			sourceTree = "<group>";
@@ -1450,7 +1453,7 @@
 				FF72AF6421776138002D04DA /* UICollectionViewCell+Reuse.swift in Sources */,
 				FF72AF4D21761B13002D04DA /* WelcomePage.swift in Sources */,
 				FF72AF5021770AB6002D04DA /* WelcomePagesDataSource.swift in Sources */,
-				FF3897FA2178CB7D005CE562 /* AnimatorWelcomePageImages.swift in Sources */,
+				FF3897FA2178CB7D005CE562 /* AnimatorHideImagePage.swift in Sources */,
 				FFAB4F30216392D400AE82EA /* Localizator.swift in Sources */,
 				FFAB4FA52163971A00AE82EA /* ISecurityService.swift in Sources */,
 				FFAB4F2D216392D400AE82EA /* LoaderServiceAssembly.swift in Sources */,
@@ -1460,6 +1463,7 @@
 				FFAB4F21216392D400AE82EA /* WindowStack.swift in Sources */,
 				FFAB4F14216392D400AE82EA /* PopMenuDismissAnimationController.swift in Sources */,
 				FFAB4F8D2163960900AE82EA /* RootCake.swift in Sources */,
+				FF3897FC2179B946005CE562 /* AnimatorShowImagePage.swift in Sources */,
 				FF72AEFD2175C0A5002D04DA /* ISessionService.swift in Sources */,
 				FF72AF7F217761B2002D04DA /* UIImage+RoundedCorner.m in Sources */,
 				FFAB4F632163959700AE82EA /* AuthCakeAssembly.swift in Sources */,

@@ -34,14 +34,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dI-jw-jeu">
-                                <rect key="frame" x="147.5" y="480" width="80" height="20"/>
+                                <rect key="frame" x="147.5" y="450" width="80" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="FDp-bb-HN9"/>
                                     <constraint firstAttribute="width" constant="80" id="erh-bQ-bGi"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Key-uW-iK8">
-                                <rect key="frame" x="60" y="550" width="255" height="50"/>
+                                <rect key="frame" x="60" y="520" width="255" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwe-Ay-aoE">
                                         <rect key="frame" x="0.0" y="0.0" width="255" height="50"/>
@@ -78,9 +78,9 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Kf-F1-onT">
-                                <rect key="frame" x="0.0" y="340" width="375" height="130"/>
+                                <rect key="frame" x="0.0" y="340" width="375" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="5Tg-Pc-bwh"/>
+                                    <constraint firstAttribute="height" constant="100" id="5Tg-Pc-bwh"/>
                                 </constraints>
                             </view>
                         </subviews>
