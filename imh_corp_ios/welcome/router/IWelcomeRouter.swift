@@ -9,5 +9,5 @@
 import Foundation
 
 protocol IWelcomeRouter : IRouter{
-    
+    func handleTouchNextButton()
 }

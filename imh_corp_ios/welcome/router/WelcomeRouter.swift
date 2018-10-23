@@ -20,5 +20,11 @@ class WelcomeRouter : IWelcomeRouter {
         self.owner = welcome
     }
     
+    func handleTouchNextButton(){
+        
+        let loginController:LoginController = UIStoryboard.load(type: UIStoryboard.TypeSB.auth).load()!
+        self.owner?.navigationController?.pushViewController(loginController, animated: true)
+    }
+    
     
 }

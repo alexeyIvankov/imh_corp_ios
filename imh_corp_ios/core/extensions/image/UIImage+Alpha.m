@@ -121,4 +121,58 @@
     return maskImageRef;
 }
 
+- (UIImage *)makeTransparent:(int)percent
+{
+    if (percent < 0 || percent > 100){
+        return self;
+    }
+    
+    // Create a pixel buffer in an easy to use format
+    CGImageRef imageRef = [self CGImage];
+    NSUInteger width = CGImageGetWidth(imageRef);
+    NSUInteger height = CGImageGetHeight(imageRef);
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    
+    NSUInteger bytesPerPixel = 4;
+    unsigned long buffer_len = height * width * bytesPerPixel;
+    
+    UInt8 * m_PixelBuf = malloc(sizeof(UInt8) * buffer_len);
+    
+   
+    NSUInteger bytesPerRow = bytesPerPixel * width;
+    NSUInteger bitsPerComponent = 8;
+    CGContextRef context = CGBitmapContextCreate(m_PixelBuf, width, height,
+                                                 bitsPerComponent, bytesPerRow, colorSpace,
+                                                 kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+    
+    CGContextDrawImage(context, CGRectMake(0, 0, width, height), imageRef);
+    CGContextRelease(context);
+    
+    
+    int percentStep = ceil(100 / percent);
+    
+    unsigned long step = bytesPerPixel * percentStep;
+    
+    for (int i=0; i<buffer_len; i+=step)
+    {
+        m_PixelBuf[i+3] = 0;
+    }
+    
+    
+    //create a new image
+    CGContextRef ctx = CGBitmapContextCreate(m_PixelBuf, width, height,
+                                             bitsPerComponent, bytesPerRow, colorSpace,
+                                             kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+    
+    CGImageRef newImgRef = CGBitmapContextCreateImage(ctx);
+    CGColorSpaceRelease(colorSpace);
+    CGContextRelease(ctx);
+    free(m_PixelBuf);
+    
+    UIImage *finalImage = [UIImage imageWithCGImage:newImgRef];
+    CGImageRelease(newImgRef);
+    
+    return finalImage;
+}
+
 @end

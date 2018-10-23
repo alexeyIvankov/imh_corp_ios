@@ -10,5 +10,4 @@ import Foundation
 
 protocol ILoginDirector : AnyObject {
     
-    var authSerice:IAuthDirector { get }
 }

@@ -11,5 +11,6 @@
 	<string>SecurityServiceAssembly</string>
 	<string>WelcomeCakeAssembly</string>
 	<string>AppDesignAssembly</string>
+	<string>LoaderServiceAssembly</string>
 </array>
 </plist>

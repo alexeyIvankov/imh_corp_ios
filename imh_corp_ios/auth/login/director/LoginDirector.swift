@@ -10,12 +10,5 @@ import Foundation
 
 class LoginDirector : ILoginDirector {
     
-    var authSerice:IAuthDirector
-    var securityService:ISecurityService
-    
-    required init(authSerice:IAuthDirector, securityService:ISecurityService){
-        self.authSerice = authSerice
-        self.securityService = securityService
-    }
   
 }

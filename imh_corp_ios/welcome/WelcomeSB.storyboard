@@ -34,14 +34,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dI-jw-jeu">
-                                <rect key="frame" x="147.5" y="450" width="80" height="20"/>
+                                <rect key="frame" x="147.5" y="460" width="80" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="FDp-bb-HN9"/>
                                     <constraint firstAttribute="width" constant="80" id="erh-bQ-bGi"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Key-uW-iK8">
-                                <rect key="frame" x="60" y="520" width="255" height="50"/>
+                                <rect key="frame" x="60" y="530" width="255" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwe-Ay-aoE">
                                         <rect key="frame" x="0.0" y="0.0" width="255" height="50"/>
@@ -61,26 +61,10 @@
                                     <constraint firstAttribute="height" constant="50" id="uUu-iB-4vj"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOx-oD-NjN">
-                                <rect key="frame" x="112.5" y="150" width="150" height="150"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hq8-fK-uKV">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="9z8-9o-KPd"/>
-                                    <constraint firstItem="hq8-fK-uKV" firstAttribute="leading" secondItem="fOx-oD-NjN" secondAttribute="leading" id="HzV-Mf-sEC"/>
-                                    <constraint firstAttribute="height" constant="150" id="LXq-mk-y39"/>
-                                    <constraint firstItem="hq8-fK-uKV" firstAttribute="top" secondItem="fOx-oD-NjN" secondAttribute="top" id="bNz-2i-wRG"/>
-                                    <constraint firstAttribute="bottom" secondItem="hq8-fK-uKV" secondAttribute="bottom" id="lQQ-rm-STw"/>
-                                    <constraint firstAttribute="trailing" secondItem="hq8-fK-uKV" secondAttribute="trailing" id="p63-q1-I6U"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Kf-F1-onT">
-                                <rect key="frame" x="0.0" y="340" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="150" width="375" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="5Tg-Pc-bwh"/>
+                                    <constraint firstAttribute="height" constant="300" id="5Tg-Pc-bwh"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -90,20 +74,16 @@
                             <constraint firstItem="zmD-da-Zr6" firstAttribute="trailing" secondItem="Key-uW-iK8" secondAttribute="trailing" constant="60" id="1tB-6C-6bM"/>
                             <constraint firstItem="4Kf-F1-onT" firstAttribute="leading" secondItem="zmD-da-Zr6" secondAttribute="leading" id="3qD-yJ-Kfi"/>
                             <constraint firstItem="9dI-jw-jeu" firstAttribute="centerX" secondItem="S7H-GA-5Ai" secondAttribute="centerX" id="5BD-6v-xQs"/>
-                            <constraint firstItem="fOx-oD-NjN" firstAttribute="centerX" secondItem="S7H-GA-5Ai" secondAttribute="centerX" id="Cml-Mk-dbe"/>
                             <constraint firstItem="zmD-da-Zr6" firstAttribute="trailing" secondItem="4Kf-F1-onT" secondAttribute="trailing" id="EbR-V0-LSn"/>
-                            <constraint firstItem="fOx-oD-NjN" firstAttribute="top" secondItem="zmD-da-Zr6" secondAttribute="top" constant="130" id="NLg-g4-pqm"/>
-                            <constraint firstItem="4Kf-F1-onT" firstAttribute="top" secondItem="fOx-oD-NjN" secondAttribute="bottom" constant="40" id="R6a-4g-NUh"/>
                             <constraint firstItem="9dI-jw-jeu" firstAttribute="top" secondItem="4Kf-F1-onT" secondAttribute="bottom" constant="10" id="b3W-H4-9yA"/>
                             <constraint firstItem="Key-uW-iK8" firstAttribute="leading" secondItem="zmD-da-Zr6" secondAttribute="leading" constant="60" id="i6i-NS-4ER"/>
+                            <constraint firstItem="4Kf-F1-onT" firstAttribute="top" secondItem="zmD-da-Zr6" secondAttribute="top" constant="130" id="ika-m8-te5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zmD-da-Zr6"/>
                     </view>
                     <navigationItem key="navigationItem" id="27N-K1-fnW"/>
                     <connections>
                         <outlet property="buttonStart" destination="nwe-Ay-aoE" id="P8a-AH-x9T"/>
-                        <outlet property="imageViewPage" destination="hq8-fK-uKV" id="ng5-12-f5k"/>
-                        <outlet property="viewContainerImage" destination="fOx-oD-NjN" id="SR5-uq-2fk"/>
                         <outlet property="viewContainerPageControll" destination="9dI-jw-jeu" id="aJu-cw-iNJ"/>
                         <outlet property="viewContainerPagerView" destination="4Kf-F1-onT" id="h5z-88-1go"/>
                         <outlet property="viewContainerStartButton" destination="Key-uW-iK8" id="3Z6-b9-yPY"/>

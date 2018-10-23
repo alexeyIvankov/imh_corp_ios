@@ -11,15 +11,15 @@ import Foundation
 class LoginCake : ILoginCake {
     
     var router: ILoginRouter
-    var service: ILoginDirector
+    var director: ILoginDirector
     var design:ILoginDesign
     
     required init(router:ILoginRouter,
-                  service:ILoginDirector,
+                  director:ILoginDirector,
                   design:ILoginDesign){
         
         self.router = router
-        self.service = service
+        self.director = director
         self.design = design
     }
 }

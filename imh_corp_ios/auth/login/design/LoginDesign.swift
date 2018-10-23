@@ -21,18 +21,18 @@ class LoginDesign : ILoginDesign {
             return
         }
         
-        loginVC.textFieldLogin.textColor =  UIColor(r: 0, g: 77, b: 127)
-        loginVC.textFieldPassword.textColor = UIColor(r: 0, g: 77, b: 127)
-        loginVC.textFieldLogin.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.regular)
-        loginVC.textFieldPassword.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.regular)
-        
-        let attributesPlaceholderTextField = [
-            NSAttributedString.Key.foregroundColor: UIColor(r: 197, g: 197, b: 197),
-            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.regular)
-        ]
-        
-        loginVC.textFieldLogin.attributedPlaceholder =  NSAttributedString(string: "Логин", attributes:attributesPlaceholderTextField)
-        loginVC.textFieldPassword.attributedPlaceholder =  NSAttributedString(string: "Пароль", attributes:attributesPlaceholderTextField)
+//        loginVC.textFieldLogin.textColor =  UIColor(r: 0, g: 77, b: 127)
+//        loginVC.textFieldPassword.textColor = UIColor(r: 0, g: 77, b: 127)
+//        loginVC.textFieldLogin.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.regular)
+//        loginVC.textFieldPassword.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.regular)
+//        
+//        let attributesPlaceholderTextField = [
+//            NSAttributedString.Key.foregroundColor: UIColor(r: 197, g: 197, b: 197),
+//            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.regular)
+//        ]
+//        
+//        loginVC.textFieldLogin.attributedPlaceholder =  NSAttributedString(string: "Логин", attributes:attributesPlaceholderTextField)
+//        loginVC.textFieldPassword.attributedPlaceholder =  NSAttributedString(string: "Пароль", attributes:attributesPlaceholderTextField)
     }
     
 }

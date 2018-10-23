@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewDataSource{
   
     private var pagerView:FSPagerView?{
@@ -43,15 +44,6 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
     }
     
     @IBOutlet weak var viewContainerStartButton: UIView!
-    @IBOutlet weak var viewContainerImage: UIView!{
-        didSet{
-            self.animatorHideImagePage = AnimatorHideImagePage(animationView: self.viewContainerImage)
-            self.animatorShowImagePage = AnimatorShowImagePage(animationView: self.viewContainerImage)
-        }
-    }
-    
-    @IBOutlet weak var imageViewPage: UIImageView!
-    
     @IBOutlet weak var buttonStart: UIButton!
     
     private var pages:[IWelcomePage]!{
@@ -66,8 +58,6 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         }
     }
     
-    private var animatorHideImagePage:IAnimator?
-    private var animatorShowImagePage:IAnimator?
     
     private var timerAutoChangePage:Timer?
     
@@ -83,7 +73,6 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         
         self.configurePagesDataSource()
         self.registrerCells()
-        self.trySetStartImage()
         self.pagerView?.reloadData()
     }
     
@@ -99,7 +88,7 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
     
     //MARK: User actions
     @IBAction func buttonStartPressed(_ sender: Any) {
-
+        self.welcomeCake.router.handleTouchNextButton()
     }
     
     
@@ -112,11 +101,6 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         self.pagerView?.register(WelcomePagerCell.nibCell(), forCellWithReuseIdentifier: WelcomePagerCell.reuseIdCell())
     }
     
-    private func trySetStartImage(){
-        if self.pages.count > 0 && self.imageViewPage.image == nil{
-            self.imageViewPage.image = self.pages.first?.image
-        }
-    }
     
     //MARK: Switch page or image
     private func calculateNextPageAndChange(){
@@ -156,30 +140,6 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         }
     }
     
-    private func trySwitchImageOnThePage(){
-        
-        let collectionView:UICollectionView? = self.pagerView?.collectionView
-        let visibleCell = collectionView?.visibleCells.first
-        
-        if visibleCell != nil {
-            
-            let indexPathCell = collectionView?.indexPath(for: visibleCell!)
-            if indexPathCell != nil && indexPathCell!.row <  self.pages.count{
-                let page = self.pages[indexPathCell!.row]
-    
-                if self.imageViewPage.image != page.image{
-                    
-                    self.animatorHideImagePage?.start(completion: {
-                        
-                        self.imageViewPage.image = page.image
-                        self.animatorShowImagePage?.start(completion: {
-                            
-                        })
-                    })
-                }
-            }
-        }
-    }
     
     //MARK:
     func startAutoChangePage(){
@@ -225,8 +185,6 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         if let viewDisplayAnimation = cell as? IViewWithDisplayAnimation{
             viewDisplayAnimation.stopDisplayAnimation()
         }
-        
-        self.trySwitchImageOnThePage()
   
     }
 }

@@ -15,29 +15,28 @@ class LoginController : UIViewController, WKNavigationDelegate{
     
     //MARK: IBOutlets
     @IBOutlet weak var viewContainer: UIView!
-    @IBOutlet weak var viewContainerLogin: UIView!
-    @IBOutlet weak var viewContainerPassword: UIView!
-    @IBOutlet weak var viewContainerEnterButton: UIView!
-    
-    @IBOutlet weak var switcher:UISwitch!
-    
-    @IBOutlet weak var imageViewIcon: UIImageView!
-    
+    @IBOutlet weak var viewContent: UIView!
+
     @IBOutlet weak var scrollView:UIScrollView!
     
     @IBOutlet weak var textFieldLogin: UITextField!
-    @IBOutlet weak var textFieldPassword: UITextField!
+
+    @IBOutlet weak var labelTitleLogin: UILabel!
+    @IBOutlet weak var labelCountry: UILabel!
+    @IBOutlet weak var labelPhoneCountryCode: UILabel!
     
     @IBOutlet weak var buttonLogin: UIButton!
+    @IBOutlet weak var buttonSelecCountry: UIButton!
+    
+    @IBOutlet weak var bottomConstraintViewContent: NSLayoutConstraint!
+    
     
     //MARK: Dependence
     var cake:ILoginCake = Depednence.tryInject()!
     
-
     private var keyboardHandler:KeyboardHandler = KeyboardHandler()
     
 
-    
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,10 +58,10 @@ class LoginController : UIViewController, WKNavigationDelegate{
         self.tryLogin()
     }
     
-    @IBAction func switcherChange(sw:UISwitch){
-  
+    @IBAction func touchSelectCountryButton(){
+
     }
-    
+  
     
     private func tryLogin(){
         
@@ -72,38 +71,69 @@ class LoginController : UIViewController, WKNavigationDelegate{
     //MARK : - subscribe/unsubscribe text field events
     private func subscribeInputFieldsToEventTextChange(){
         self.textFieldLogin.addTarget(self, action: #selector(textFieldLoginDidChange(_:)), for: .editingChanged)
-        self.textFieldPassword.addTarget(self, action: #selector(textFieldPasswordDidChange(_:)), for: .editingChanged)
+
     }
     
     private func unSubscribeInputFieldsToEventTextChange(){
         self.textFieldLogin.removeTarget(self, action: #selector(textFieldLoginDidChange(_:)), for: .editingChanged)
-        self.textFieldPassword.removeTarget(self, action: #selector(textFieldPasswordDidChange(_:)), for: .editingChanged)
     }
     
     //MARK :- Keyboard handler
     private func keyboardHandle(){
         
-        self.keyboardHandler.setAnimateWillShowHandler { (frameKeyboard) in
+        self.keyboardHandler.setWillShowHandler { (frameKeyboard, duration, animationCurve) in
             
-            if frameKeyboard != nil && frameKeyboard!.height > 100.00 {
-                
-                var newContentOffset = self.scrollView.contentOffset
-                newContentOffset.y = frameKeyboard!.size.height - (self.viewContainer.frame.size.height - (self.viewContainerLogin.frame.height + self.viewContainerLogin.frame.origin.y))
-                
-                self.scrollView.setContentOffset(newContentOffset, animated: true)
+            var animateDuration:Double = 0
+            var curve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue:7)
+            
+            if duration != nil{
+                animateDuration = duration!
             }
+            
+            if animationCurve != nil{
+                curve = animationCurve!
+            }
+            
+            
+            UIView.animate(withDuration: animateDuration,
+                           delay: 0.0,
+                           options: curve,
+                           animations: {
+                            
+                            self.bottomConstraintViewContent.constant = frameKeyboard!.size.height
+                            self.view.layoutIfNeeded()
+            },
+                           completion: nil)
         }
         
-        self.keyboardHandler.setAnimateWillHideHandler {
+        
+        self.keyboardHandler.setWillHideHandler { (duration, animationCurve) in
             
-            var newContentOffset = self.scrollView.contentOffset
-            newContentOffset.y = 0
-            self.scrollView.setContentOffset(newContentOffset, animated: true)
+            var animateDuration:Double = 0
+            var curve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue:7)
+            
+            if duration != nil{
+                animateDuration = duration!
+            }
+            
+            if animationCurve != nil{
+                curve = animationCurve!
+            }
+            
+            
+            UIView.animate(withDuration: animateDuration,
+                           delay: 0.0,
+                           options: curve,
+                           animations: {
+                            
+                            self.bottomConstraintViewContent.constant = 0
+                            self.view.layoutIfNeeded()
+            },
+                           completion: nil)
         }
     }
     
     //MARK: - UITextField Handle Event
-    
     @objc func textFieldLoginDidChange(_ textField: UITextField) {
         
     }
@@ -111,6 +141,5 @@ class LoginController : UIViewController, WKNavigationDelegate{
     @objc func textFieldPasswordDidChange(_ textField: UITextField) {
         
     }
-    
 }
 
