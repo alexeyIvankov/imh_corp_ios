@@ -31,16 +31,16 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите ваш номер телефона" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMy-K4-CUZ">
-                                                                <rect key="frame" x="67.5" y="100" width="240" height="20.5"/>
+                                                                <rect key="frame" x="67.5" y="130" width="240" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNa-0T-8XV">
-                                                                <rect key="frame" x="0.0" y="587" width="375" height="60"/>
+                                                                <rect key="frame" x="0.0" y="597" width="375" height="50"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHW-Og-gsn">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <connections>
                                                                             <action selector="touchLoginButton" destination="7rH-bC-089" eventType="touchUpInside" id="7D6-y7-qIk"/>
@@ -52,18 +52,18 @@
                                                                     <constraint firstAttribute="bottom" secondItem="UHW-Og-gsn" secondAttribute="bottom" id="em3-DL-mjf"/>
                                                                     <constraint firstAttribute="trailing" secondItem="UHW-Og-gsn" secondAttribute="trailing" id="nd2-4g-KbU"/>
                                                                     <constraint firstItem="UHW-Og-gsn" firstAttribute="leading" secondItem="WNa-0T-8XV" secondAttribute="leading" id="oY3-Q1-iK9"/>
-                                                                    <constraint firstAttribute="height" constant="60" id="t7p-nW-icl"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="t7p-nW-icl"/>
                                                                     <constraint firstItem="UHW-Og-gsn" firstAttribute="top" secondItem="WNa-0T-8XV" secondAttribute="top" id="xI6-e2-SxG"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Zz-9Q-3sh">
-                                                                <rect key="frame" x="10" y="160.5" width="365" height="100"/>
+                                                                <rect key="frame" x="10" y="210.5" width="365" height="100"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnE-QC-1oI" customClass="UIViewDrawBorder" customModule="imh_corp_ios" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="365" height="50"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Россия" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghl-Ot-OBl">
-                                                                                <rect key="frame" x="10" y="14.5" width="57.5" height="21"/>
+                                                                                <rect key="frame" x="20" y="14.5" width="57.5" height="21"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -78,7 +78,7 @@
                                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstItem="Ghl-Ot-OBl" firstAttribute="centerY" secondItem="lnE-QC-1oI" secondAttribute="centerY" id="6ld-Vz-BdU"/>
-                                                                            <constraint firstItem="Ghl-Ot-OBl" firstAttribute="leading" secondItem="lnE-QC-1oI" secondAttribute="leading" constant="10" id="NQE-lX-zRL"/>
+                                                                            <constraint firstItem="Ghl-Ot-OBl" firstAttribute="leading" secondItem="lnE-QC-1oI" secondAttribute="leading" constant="20" id="NQE-lX-zRL"/>
                                                                             <constraint firstAttribute="trailing" secondItem="qIa-8N-blc" secondAttribute="trailing" id="UAG-ut-AEs"/>
                                                                             <constraint firstAttribute="bottom" secondItem="qIa-8N-blc" secondAttribute="bottom" id="WB5-lj-eeL"/>
                                                                             <constraint firstItem="qIa-8N-blc" firstAttribute="top" secondItem="lnE-QC-1oI" secondAttribute="top" id="caY-6K-gki"/>
@@ -95,7 +95,7 @@
                                                                         <rect key="frame" x="0.0" y="50" width="65" height="50"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5N-Ee-m81">
-                                                                                <rect key="frame" x="10" y="14.5" width="20" height="21"/>
+                                                                                <rect key="frame" x="20" y="14.5" width="20" height="21"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -104,7 +104,7 @@
                                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstItem="S5N-Ee-m81" firstAttribute="centerY" secondItem="5JO-sV-ib7" secondAttribute="centerY" id="Ubn-YU-b0F"/>
-                                                                            <constraint firstItem="S5N-Ee-m81" firstAttribute="leading" secondItem="5JO-sV-ib7" secondAttribute="leading" constant="10" id="ycv-fX-p3B"/>
+                                                                            <constraint firstItem="S5N-Ee-m81" firstAttribute="leading" secondItem="5JO-sV-ib7" secondAttribute="leading" constant="20" id="ycv-fX-p3B"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="bottomBorder" value="YES"/>
@@ -159,9 +159,9 @@
                                                             <constraint firstAttribute="trailing" secondItem="5Zz-9Q-3sh" secondAttribute="trailing" id="9F0-nG-mDa"/>
                                                             <constraint firstItem="5Zz-9Q-3sh" firstAttribute="leading" secondItem="TDj-Ge-OyU" secondAttribute="leading" constant="10" id="AzG-bO-nxB"/>
                                                             <constraint firstAttribute="bottom" secondItem="WNa-0T-8XV" secondAttribute="bottom" id="GCs-XW-oMt"/>
-                                                            <constraint firstItem="5Zz-9Q-3sh" firstAttribute="top" secondItem="rMy-K4-CUZ" secondAttribute="bottom" constant="40" id="Gfc-eX-jV6"/>
+                                                            <constraint firstItem="5Zz-9Q-3sh" firstAttribute="top" secondItem="rMy-K4-CUZ" secondAttribute="bottom" constant="60" id="Gfc-eX-jV6"/>
                                                             <constraint firstItem="rMy-K4-CUZ" firstAttribute="centerX" secondItem="TDj-Ge-OyU" secondAttribute="centerX" id="VBF-Ux-T8d"/>
-                                                            <constraint firstItem="rMy-K4-CUZ" firstAttribute="top" secondItem="TDj-Ge-OyU" secondAttribute="top" constant="100" id="j7i-Qk-LyY"/>
+                                                            <constraint firstItem="rMy-K4-CUZ" firstAttribute="top" secondItem="TDj-Ge-OyU" secondAttribute="top" constant="130" id="j7i-Qk-LyY"/>
                                                             <constraint firstAttribute="trailing" secondItem="WNa-0T-8XV" secondAttribute="trailing" id="nWg-Dy-UXV"/>
                                                         </constraints>
                                                     </view>
