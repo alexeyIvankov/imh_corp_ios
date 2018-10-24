@@ -29,20 +29,24 @@ class LoginDesign : ILoginDesign {
         loginVC.buttonLogin.setTitleColor(UIColor.white, for: UIControl.State.normal)
         loginVC.buttonLogin.setTitleColor(UIColor.white, for: UIControl.State.selected)
         
-        loginVC.buttonLogin.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.bold)
+        loginVC.buttonLogin.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.light)
         
-//        loginVC.textFieldLogin.textColor =  UIColor(r: 0, g: 77, b: 127)
-//        loginVC.textFieldPassword.textColor = UIColor(r: 0, g: 77, b: 127)
-//        loginVC.textFieldLogin.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.regular)
-//        loginVC.textFieldPassword.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.regular)
-//
-//        let attributesPlaceholderTextField = [
-//            NSAttributedString.Key.foregroundColor: UIColor(r: 197, g: 197, b: 197),
-//            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.regular)
-//        ]
-//
-//        loginVC.textFieldLogin.attributedPlaceholder =  NSAttributedString(string: "Логин", attributes:attributesPlaceholderTextField)
-//        loginVC.textFieldPassword.attributedPlaceholder =  NSAttributedString(string: "Пароль", attributes:attributesPlaceholderTextField)
+        loginVC.labelTitleLogin.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.light)
+        loginVC.labelCountryName.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.light)
+        
+        loginVC.textFieldLogin.textColor = UIColor.black
+        loginVC.textFieldCountryCode.textColor = UIColor.black
+        
+        loginVC.textFieldLogin.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.regular)
+        loginVC.textFieldCountryCode.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.regular)
+        
+
+        let attributesPlaceholderTextField = [
+            NSAttributedString.Key.foregroundColor: UIColor.gray,
+            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.light)
+        ]
+        
+        loginVC.textFieldLogin.attributedPlaceholder =  NSAttributedString(string: "(999) 123 45 67", attributes:attributesPlaceholderTextField)
     }
     
 }

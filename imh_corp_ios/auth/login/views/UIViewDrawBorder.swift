@@ -18,6 +18,7 @@ class UIViewDrawBorder : UIView{
     @IBInspectable public var topBorder:Bool  = false
     @IBInspectable public var leftBorder:Bool  = false
     @IBInspectable public var rightBorder:Bool  = false
+    @IBInspectable public var colorBorder:UIColor  = UIColor.lightGray
     
     
     override func draw(_ rect: CGRect) {
@@ -44,7 +45,7 @@ class UIViewDrawBorder : UIView{
     private func drawBottomBorder(){
         
         let context = UIGraphicsGetCurrentContext()
-        context?.setStrokeColor(UIColor.red.cgColor)
+        context?.setStrokeColor(self.colorBorder.cgColor)
         context?.setLineWidth(0.5)
         
         context?.move(to: CGPoint(x: 0, y: self.frame.size.height))
@@ -56,7 +57,7 @@ class UIViewDrawBorder : UIView{
     private func drawTopBorder(){
         
         let context = UIGraphicsGetCurrentContext()
-        context?.setStrokeColor(UIColor.red.cgColor)
+        context?.setStrokeColor(self.colorBorder.cgColor)
         context?.setLineWidth(0.5)
         
         context?.move(to: CGPoint(x: 0, y: 0))
@@ -69,7 +70,7 @@ class UIViewDrawBorder : UIView{
     private func drawLeftBorder(){
         
         let context = UIGraphicsGetCurrentContext()
-        context?.setStrokeColor(UIColor.red.cgColor)
+        context?.setStrokeColor(self.colorBorder.cgColor)
         context?.setLineWidth(0.5)
         
         context?.move(to: CGPoint(x: 0, y: 0))
@@ -82,7 +83,7 @@ class UIViewDrawBorder : UIView{
     private func drawRightBorder(){
         
         let context = UIGraphicsGetCurrentContext()
-        context?.setStrokeColor(UIColor.red.cgColor)
+        context?.setStrokeColor(self.colorBorder.cgColor)
         context?.setLineWidth(0.5)
         
         context?.move(to: CGPoint(x: self.frame.size.width, y: 0))

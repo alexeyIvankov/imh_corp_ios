@@ -20,10 +20,10 @@ class LoginController : UIViewController, WKNavigationDelegate{
     @IBOutlet weak var scrollView:UIScrollView!
     
     @IBOutlet weak var textFieldLogin: UITextField!
+    @IBOutlet weak var textFieldCountryCode: UITextField!
 
     @IBOutlet weak var labelTitleLogin: UILabel!
-    @IBOutlet weak var labelCountry: UILabel!
-    @IBOutlet weak var labelPhoneCountryCode: UILabel!
+    @IBOutlet weak var labelCountryName: UILabel!
     
     @IBOutlet weak var buttonLogin: UIButton!
     @IBOutlet weak var buttonSelecCountry: UIButton!
@@ -71,11 +71,13 @@ class LoginController : UIViewController, WKNavigationDelegate{
     //MARK : - subscribe/unsubscribe text field events
     private func subscribeInputFieldsToEventTextChange(){
         self.textFieldLogin.addTarget(self, action: #selector(textFieldLoginDidChange(_:)), for: .editingChanged)
+        self.textFieldCountryCode.addTarget(self, action: #selector(textFieldLoginDidChange(_:)), for: .editingChanged)
 
     }
     
     private func unSubscribeInputFieldsToEventTextChange(){
         self.textFieldLogin.removeTarget(self, action: #selector(textFieldLoginDidChange(_:)), for: .editingChanged)
+        self.textFieldCountryCode.removeTarget(self, action: #selector(textFieldLoginDidChange(_:)), for: .editingChanged)
     }
     
     //MARK :- Keyboard handler

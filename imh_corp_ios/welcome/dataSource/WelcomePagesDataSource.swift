@@ -14,7 +14,7 @@ class WelcomePagesDataSource : IWelcomePagesDataSource{
     func getPages() -> [IWelcomePage]{
         var pages = Array<IWelcomePage>()
         
-        pages.append(WelcomePage(image: UIImage(named: "logo_welcome2"), name: "Корпоративный портал ПМХ", details: "Представляем вам наше корпоративное приложение"))
+        pages.append(WelcomePage(image: UIImage(named: "logo_welcome2"), name: "ПМХ", details: "Представляем вам наше корпоративное приложение"))
         pages.append(WelcomePage(image: UIImage(named: "hand_welcome2"), name: "Услуги", details: "Корпоративные документы и услуги у вас в кармане"))
         pages.append(WelcomePage(image: UIImage(named: "news_welcome2"), name: "Новости", details: "Самые свежие новости из жизни компании"))
         pages.append(WelcomePage(image: UIImage(named: "people_welcome2"), name: "Люди", details: "Календарь событий и справочник сотрудников компании"))

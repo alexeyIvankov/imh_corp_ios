@@ -31,7 +31,15 @@ class WelcomeDesign : IWelcomeDesign {
         welcomeVC.buttonStart.setTitleColor(UIColor.white, for: UIControl.State.normal)
         welcomeVC.buttonStart.setTitleColor(UIColor.white, for: UIControl.State.selected)
         
-        welcomeVC.buttonStart.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.bold)
+        welcomeVC.buttonStart.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.light)
+    }
+    
+    func apply(cell:WelcomePagerCell){
+        cell.labelNamePage.textColor = UIColor.black
+        cell.labelDescriptionPage.textColor = UIColor.black
+        
+        cell.labelNamePage.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.light)
+        cell.labelDescriptionPage.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.light)
     }
 }
 

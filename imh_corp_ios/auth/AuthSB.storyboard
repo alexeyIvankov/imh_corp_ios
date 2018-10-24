@@ -94,17 +94,19 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5JO-sV-ib7" customClass="UIViewDrawBorder" customModule="imh_corp_ios" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="50" width="65" height="50"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5N-Ee-m81">
-                                                                                <rect key="frame" x="20" y="14.5" width="20" height="21"/>
-                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+7" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1LA-Kb-arz">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="65" height="50"/>
                                                                                 <nil key="textColor"/>
-                                                                                <nil key="highlightedColor"/>
-                                                                            </label>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                            </textField>
                                                                         </subviews>
                                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
-                                                                            <constraint firstItem="S5N-Ee-m81" firstAttribute="centerY" secondItem="5JO-sV-ib7" secondAttribute="centerY" id="Ubn-YU-b0F"/>
-                                                                            <constraint firstItem="S5N-Ee-m81" firstAttribute="leading" secondItem="5JO-sV-ib7" secondAttribute="leading" constant="20" id="ycv-fX-p3B"/>
+                                                                            <constraint firstItem="1LA-Kb-arz" firstAttribute="leading" secondItem="5JO-sV-ib7" secondAttribute="leading" id="1KQ-TI-ReZ"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="1LA-Kb-arz" secondAttribute="bottom" id="5m2-Js-pnV"/>
+                                                                            <constraint firstItem="1LA-Kb-arz" firstAttribute="top" secondItem="5JO-sV-ib7" secondAttribute="top" id="UP6-5X-ADV"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="1LA-Kb-arz" secondAttribute="trailing" id="hrg-f0-ntK"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="bottomBorder" value="YES"/>
@@ -208,10 +210,10 @@
                         <outlet property="bottomConstraintViewContent" destination="vD1-Qr-hak" id="smN-4K-MOb"/>
                         <outlet property="buttonLogin" destination="UHW-Og-gsn" id="Fzp-dA-xtC"/>
                         <outlet property="buttonSelecCountry" destination="qIa-8N-blc" id="Wym-Nw-0iU"/>
-                        <outlet property="labelCountry" destination="Ghl-Ot-OBl" id="5Vg-XC-yQ0"/>
-                        <outlet property="labelPhoneCountryCode" destination="S5N-Ee-m81" id="gBt-sX-Brs"/>
+                        <outlet property="labelCountryName" destination="Ghl-Ot-OBl" id="oLL-QW-UZP"/>
                         <outlet property="labelTitleLogin" destination="rMy-K4-CUZ" id="Ja8-pa-pc7"/>
                         <outlet property="scrollView" destination="BiA-A4-KOn" id="Pua-dr-mKr"/>
+                        <outlet property="textFieldCountryCode" destination="1LA-Kb-arz" id="y3t-sR-BKO"/>
                         <outlet property="textFieldLogin" destination="Xmt-dP-x5B" id="W7O-XL-2qM"/>
                         <outlet property="viewContainer" destination="YPh-se-UH7" id="k1x-eJ-S5x"/>
                         <outlet property="viewContent" destination="TDj-Ge-OyU" id="pSc-NV-TPE"/>

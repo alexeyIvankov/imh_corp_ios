@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 protocol IWelcomeDesign : AnyObject, IDesign {
-    
+    func apply(cell:WelcomePagerCell)
 }

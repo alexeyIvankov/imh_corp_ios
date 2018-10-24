@@ -13,14 +13,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WelcomePagerCell" customModule="imh_corp_ios" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EzO-y3-p8W">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZH-7e-lCp" customClass="RQShineLabel">
-                            <rect key="frame" x="30" y="236" width="315" height="20.5"/>
+                            <rect key="frame" x="30" y="261" width="315" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0b-29-1nC" customClass="RQShineLabel">
-                            <rect key="frame" x="30" y="197" width="315" height="29"/>
+                            <rect key="frame" x="30" y="207" width="315" height="29"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -52,15 +52,15 @@
                     <constraints>
                         <constraint firstItem="N0b-29-1nC" firstAttribute="leading" secondItem="EzO-y3-p8W" secondAttribute="leading" constant="30" id="3Qn-ng-sSa"/>
                         <constraint firstItem="N0b-29-1nC" firstAttribute="centerX" secondItem="EzO-y3-p8W" secondAttribute="centerX" id="BWX-0k-4Fw"/>
-                        <constraint firstAttribute="height" constant="300" id="BoN-eW-zVF"/>
+                        <constraint firstAttribute="height" constant="320" id="BoN-eW-zVF"/>
                         <constraint firstAttribute="trailing" secondItem="N0b-29-1nC" secondAttribute="trailing" constant="30" id="FPE-93-U0e"/>
                         <constraint firstItem="KtI-cf-SWK" firstAttribute="top" secondItem="EzO-y3-p8W" secondAttribute="top" id="PkF-ef-zO1"/>
-                        <constraint firstItem="N0b-29-1nC" firstAttribute="top" secondItem="KtI-cf-SWK" secondAttribute="bottom" constant="60" id="TYJ-S3-Gs6"/>
+                        <constraint firstItem="N0b-29-1nC" firstAttribute="top" secondItem="KtI-cf-SWK" secondAttribute="bottom" constant="70" id="TYJ-S3-Gs6"/>
                         <constraint firstItem="KtI-cf-SWK" firstAttribute="centerX" secondItem="EzO-y3-p8W" secondAttribute="centerX" id="gaP-UC-t1I"/>
                         <constraint firstItem="nZH-7e-lCp" firstAttribute="centerX" secondItem="EzO-y3-p8W" secondAttribute="centerX" id="hfq-6a-ibl"/>
                         <constraint firstItem="nZH-7e-lCp" firstAttribute="leading" secondItem="EzO-y3-p8W" secondAttribute="leading" constant="30" id="oHM-pg-eGM"/>
                         <constraint firstAttribute="trailing" secondItem="nZH-7e-lCp" secondAttribute="trailing" constant="30" id="pFm-5U-K5j"/>
-                        <constraint firstItem="nZH-7e-lCp" firstAttribute="top" secondItem="N0b-29-1nC" secondAttribute="bottom" constant="10" id="wI4-Td-0TQ"/>
+                        <constraint firstItem="nZH-7e-lCp" firstAttribute="top" secondItem="N0b-29-1nC" secondAttribute="bottom" constant="25" id="wI4-Td-0TQ"/>
                     </constraints>
                 </view>
             </subviews>

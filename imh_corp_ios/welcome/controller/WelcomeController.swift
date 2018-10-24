@@ -166,6 +166,10 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
             self.pageControll?.currentPage = index
         }
         
+        if let welcomeCell = cell as? WelcomePagerCell{
+             self.welcomeCake.design.apply(cell:welcomeCell)
+        }
+        
         return cell as! FSPagerViewCell
     }
     

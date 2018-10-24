@@ -20,8 +20,6 @@ class WelcomePagerCell : FSPagerViewCell, IWelcomePagerCell{
     private var page:IWelcomePage?
     
     override func awakeFromNib() {
-        self.labelNamePage.textColor = UIColor.black
-        self.labelDescriptionPage.textColor = UIColor.black
     }
     
     func configure(page:IWelcomePage){
