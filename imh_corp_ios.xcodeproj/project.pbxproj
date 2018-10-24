@@ -44,6 +44,10 @@
 		FF56144A21805B4600DCCE1B /* IConfirmationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56143F21805B4500DCCE1B /* IConfirmationRouter.swift */; };
 		FF56144B21805B4600DCCE1B /* ConfirmationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56144021805B4500DCCE1B /* ConfirmationRouter.swift */; };
 		FF56144D2180631400DCCE1B /* UINavigationControllerTransparentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56144C2180631400DCCE1B /* UINavigationControllerTransparentBar.swift */; };
+		FF5614552180943200DCCE1B /* ValidatorTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614502180943200DCCE1B /* ValidatorTemplate.swift */; };
+		FF5614562180943200DCCE1B /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614522180943200DCCE1B /* StateType.swift */; };
+		FF5614572180943200DCCE1B /* StateTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614532180943200DCCE1B /* StateTemplate.swift */; };
+		FF5614582180943200DCCE1B /* StateEngineTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614542180943200DCCE1B /* StateEngineTemplate.swift */; };
 		FF72AEF32175BFBB002D04DA /* IRootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF12175BFBB002D04DA /* IRootDirector.swift */; };
 		FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF22175BFBB002D04DA /* RootDirector.swift */; };
 		FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF62175BFF5002D04DA /* LoginDirector.swift */; };
@@ -227,6 +231,10 @@
 		FF56143F21805B4500DCCE1B /* IConfirmationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IConfirmationRouter.swift; sourceTree = "<group>"; };
 		FF56144021805B4500DCCE1B /* ConfirmationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationRouter.swift; sourceTree = "<group>"; };
 		FF56144C2180631400DCCE1B /* UINavigationControllerTransparentBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerTransparentBar.swift; sourceTree = "<group>"; };
+		FF5614502180943200DCCE1B /* ValidatorTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorTemplate.swift; sourceTree = "<group>"; };
+		FF5614522180943200DCCE1B /* StateType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateType.swift; sourceTree = "<group>"; };
+		FF5614532180943200DCCE1B /* StateTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateTemplate.swift; sourceTree = "<group>"; };
+		FF5614542180943200DCCE1B /* StateEngineTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateEngineTemplate.swift; sourceTree = "<group>"; };
 		FF72AEF12175BFBB002D04DA /* IRootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF22175BFBB002D04DA /* RootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF62175BFF5002D04DA /* LoginDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDirector.swift; sourceTree = "<group>"; };
@@ -584,6 +592,33 @@
 			path = router;
 			sourceTree = "<group>";
 		};
+		FF56144E2180943200DCCE1B /* templates */ = {
+			isa = PBXGroup;
+			children = (
+				FF56144F2180943200DCCE1B /* validator */,
+				FF5614512180943200DCCE1B /* stateEngine */,
+			);
+			path = templates;
+			sourceTree = "<group>";
+		};
+		FF56144F2180943200DCCE1B /* validator */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614502180943200DCCE1B /* ValidatorTemplate.swift */,
+			);
+			path = validator;
+			sourceTree = "<group>";
+		};
+		FF5614512180943200DCCE1B /* stateEngine */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614522180943200DCCE1B /* StateType.swift */,
+				FF5614532180943200DCCE1B /* StateTemplate.swift */,
+				FF5614542180943200DCCE1B /* StateEngineTemplate.swift */,
+			);
+			path = stateEngine;
+			sourceTree = "<group>";
+		};
 		FF72AEEF2170AF8D002D04DA /* welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -850,6 +885,7 @@
 		FFAB4EA5216348BE00AE82EA /* core */ = {
 			isa = PBXGroup;
 			children = (
+				FF56144E2180943200DCCE1B /* templates */,
 				FF561424217DD3A700DCCE1B /* timer */,
 				FF3897BA2178A012005CE562 /* animations */,
 				FFAB4F9F2163971A00AE82EA /* network */,
@@ -1564,6 +1600,7 @@
 				FF72AEFE2175C0A5002D04DA /* SessionService.swift in Sources */,
 				FF56144521805B4600DCCE1B /* ConfirmationCakeAssembly.swift in Sources */,
 				FFAB4F762163959700AE82EA /* AuthRouter.swift in Sources */,
+				FF5614562180943200DCCE1B /* StateType.swift in Sources */,
 				FFAB4F8F2163960900AE82EA /* IRootRouter.swift in Sources */,
 				FFAB4F11216392D400AE82EA /* UIView+Shadows.swift in Sources */,
 				FF3897D82178C3F5005CE562 /* JHAnimationChainLink.m in Sources */,
@@ -1579,6 +1616,7 @@
 				FF72AF6421776138002D04DA /* UICollectionViewCell+Reuse.swift in Sources */,
 				FF72AF4D21761B13002D04DA /* WelcomePage.swift in Sources */,
 				FF72AF5021770AB6002D04DA /* WelcomePagesDataSource.swift in Sources */,
+				FF5614582180943200DCCE1B /* StateEngineTemplate.swift in Sources */,
 				FF3897FA2178CB7D005CE562 /* AnimatorImage.swift in Sources */,
 				FFAB4F30216392D400AE82EA /* Localizator.swift in Sources */,
 				FFAB4FA52163971A00AE82EA /* ISecurityService.swift in Sources */,
@@ -1599,11 +1637,13 @@
 				FFAB4F872163960900AE82EA /* RootCakeAssebly.swift in Sources */,
 				FF72AF3C2175E35C002D04DA /* FSPagerViewLayoutAttributes.swift in Sources */,
 				FFAB4F3C2163936B00AE82EA /* main.swift in Sources */,
+				FF5614552180943200DCCE1B /* ValidatorTemplate.swift in Sources */,
 				FF3897D92178C3F5005CE562 /* JHChainableAnimator.m in Sources */,
 				FFAB4F1E216392D400AE82EA /* Global.swift in Sources */,
 				FFAB4F3B2163936B00AE82EA /* IApplication.swift in Sources */,
 				FF3897F02178C462005CE562 /* DKChainableAnimationKit+Frame.swift in Sources */,
 				FF3897F32178C462005CE562 /* DKChainableAnimationKit.swift in Sources */,
+				FF5614572180943200DCCE1B /* StateTemplate.swift in Sources */,
 				FFAB4F27216392D400AE82EA /* UIColor+RGB.swift in Sources */,
 				FF72AF7B217761B2002D04DA /* Image+Gradient.swift in Sources */,
 				FF72AF0C2175CE98002D04DA /* WelcomeCakeAssembly.swift in Sources */,

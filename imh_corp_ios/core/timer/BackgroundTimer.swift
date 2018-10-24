@@ -23,21 +23,21 @@ class BackgroundTimer : ITimer {
     
     func startNewAndStopOld(timeInterval: TimeInterval,
                             countRepeats:Int,
-                            block: @escaping()->(),
+                            block: @escaping(Int)->(),
                             completion: @escaping()->()){
         
         self.stop()
         
         guard countRepeats > self.countPastRepeats else {
-            return block()
+            return block(0)
         }
         
         self.timer = DispatchSource.makeTimerSource(queue: self.queue)
-        self.timer?.schedule(deadline: .now(), repeating: DispatchTimeInterval.milliseconds(Int(timeInterval * 100)), leeway: DispatchTimeInterval.never)
+        self.timer?.schedule(deadline: .now(), repeating: DispatchTimeInterval.milliseconds(Int(timeInterval * 1000)), leeway: DispatchTimeInterval.never)
         
         timer?.setEventHandler {
            
-            block()
+            block(self.countPastRepeats + 1)
             
             self.executeOperationThreadSave {
                  self.countPastRepeats += 1

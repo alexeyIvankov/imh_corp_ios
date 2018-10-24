@@ -13,6 +13,11 @@ import KeyboardHandler
 
 class ConfirmationController : UIViewController {
     
+    public enum ResendCodeState{
+        case ready
+        case lock
+    }
+    
     //MARK: IBOutlets
     @IBOutlet weak var viewContainer: UIView!
     @IBOutlet weak var viewContent: UIView!
@@ -29,11 +34,17 @@ class ConfirmationController : UIViewController {
     
     @IBOutlet weak var bottomConstraintViewContent: NSLayoutConstraint!
     
+    //MARK: State machine
+    lazy public var stateMachineResendCode:StateEngineTemplate<ResendCodeState> = buildStateMachine()
+    
+    //MARK: Keyboard handler
+    private var keyboardHandler:KeyboardHandler?
+    
+    //MARK:Resend
+    private var timerResend:ITimer  = BackgroundTimer()
     
     //MARK: Dependence
     var cake:IConfirmationCake = Depednence.tryInject()!
-    
-    private var keyboardHandler:KeyboardHandler?
     
 
     //MARK: Life cycle
@@ -49,6 +60,7 @@ class ConfirmationController : UIViewController {
         self.keyboardHandle()
         self.subscribeInputFieldsToEventTextChange()
         self.textFieldConfirmation.becomeFirstResponder()
+        self.stateMachineResendCode.change(stateType: StateType(type: ResendCodeState.lock))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -57,6 +69,7 @@ class ConfirmationController : UIViewController {
         self.view.endEditing(true)
         self.keyboardHandler = nil
         self.unSubscribeInputFieldsToEventTextChange()
+        self.stateMachineResendCode.change(stateType: StateType(type: ResendCodeState.ready))
     }
     
   
@@ -66,9 +79,41 @@ class ConfirmationController : UIViewController {
     }
     
     @IBAction func touchResendCodeButton(){
-
+         self.stateMachineResendCode.change(stateType: StateType(type: ResendCodeState.lock))
     }
-  
+    
+    func buildStateMachine() -> StateEngineTemplate<ResendCodeState> {
+        
+        let stateReady = StateTemplate<ResendCodeState>(type: ResendCodeState.ready)
+        
+        stateReady.set {[unowned self] (data) in
+            self.timerResend.stop()
+            self.labelTimeResendCode.text = "Отправить код еще раз"
+            self.buttonResendCode.isEnabled = true
+        }
+        
+        let stateLock = StateTemplate<ResendCodeState>(type: ResendCodeState.lock)
+        
+        stateLock.set {[unowned self] (data) in
+            self.buttonResendCode.isEnabled = false
+            
+            self.timerResend.startNewAndStopOld(timeInterval: 1, countRepeats: 30, block: {(step) in 
+                
+                DispatchQueue.main.async {
+                      self.labelTimeResendCode.text = "Отправить повторно через: \(30 - step)"
+                }
+                
+            }, completion: {
+                
+                DispatchQueue.main.async {
+                    self.stateMachineResendCode.change(stateType: StateType(type: ResendCodeState.ready))
+                }
+            })
+        }
+    
+        return StateEngineTemplate<ResendCodeState>(states:[stateReady, stateLock], currentState: stateLock )
+    }
+    
     
     //MARK : - subscribe/unsubscribe text field events
     private func subscribeInputFieldsToEventTextChange(){

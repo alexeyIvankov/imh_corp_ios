@@ -12,7 +12,7 @@ public protocol ITimer : AnyObject{
     
     func startNewAndStopOld(timeInterval: TimeInterval,
                             countRepeats:Int,
-                            block: @escaping()->(),
+                            block: @escaping(_ currentStep:Int)->(),
                             completion: @escaping()->())
     func stop()
 }

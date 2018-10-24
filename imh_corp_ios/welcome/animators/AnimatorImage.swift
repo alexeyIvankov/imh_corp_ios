@@ -37,7 +37,7 @@ class AnimatorImage : IAnimatorImage{
         
         self.originImage = image
         
-        self.timerAnimate.startNewAndStopOld(timeInterval: self.lifeTimeAnimtionFrame, countRepeats: self.countFramesAnimation, block: {
+        self.timerAnimate.startNewAndStopOld(timeInterval: self.lifeTimeAnimtionFrame, countRepeats: self.countFramesAnimation, block: {_ in 
             
             DispatchQueue.global().async {
                 self.percentTransparentImage += self.percentStepTransparentImage
