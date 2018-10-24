@@ -48,6 +48,50 @@
 		FF5614562180943200DCCE1B /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614522180943200DCCE1B /* StateType.swift */; };
 		FF5614572180943200DCCE1B /* StateTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614532180943200DCCE1B /* StateTemplate.swift */; };
 		FF5614582180943200DCCE1B /* StateEngineTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614542180943200DCCE1B /* StateEngineTemplate.swift */; };
+		FF56146B21809EE300DCCE1B /* INewsDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56145B21809EE300DCCE1B /* INewsDesign.swift */; };
+		FF56146C21809EE300DCCE1B /* NewsDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56145C21809EE300DCCE1B /* NewsDesign.swift */; };
+		FF56146D21809EE300DCCE1B /* NewsDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56145E21809EE300DCCE1B /* NewsDirector.swift */; };
+		FF56146E21809EE300DCCE1B /* INewsDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56145F21809EE300DCCE1B /* INewsDirector.swift */; };
+		FF56146F21809EE300DCCE1B /* NewsCakeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56146121809EE300DCCE1B /* NewsCakeAssembly.swift */; };
+		FF56147021809EE300DCCE1B /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56146321809EE300DCCE1B /* NewsController.swift */; };
+		FF56147121809EE300DCCE1B /* NewsCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56146621809EE300DCCE1B /* NewsCake.swift */; };
+		FF56147221809EE300DCCE1B /* INewsCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56146721809EE300DCCE1B /* INewsCake.swift */; };
+		FF56147321809EE300DCCE1B /* INewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56146921809EE300DCCE1B /* INewsRouter.swift */; };
+		FF56147421809EE300DCCE1B /* NewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56146A21809EE300DCCE1B /* NewsRouter.swift */; };
+		FF5614872180A1A800DCCE1B /* IСompanyServicesDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614772180A1A800DCCE1B /* IСompanyServicesDesign.swift */; };
+		FF5614882180A1A800DCCE1B /* СompanyServicesDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614782180A1A800DCCE1B /* СompanyServicesDesign.swift */; };
+		FF5614892180A1A800DCCE1B /* СompanyServicesDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56147A2180A1A800DCCE1B /* СompanyServicesDirector.swift */; };
+		FF56148A2180A1A800DCCE1B /* IСompanyServicesDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56147B2180A1A800DCCE1B /* IСompanyServicesDirector.swift */; };
+		FF56148B2180A1A800DCCE1B /* СompanyServicesCakeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56147D2180A1A800DCCE1B /* СompanyServicesCakeAssembly.swift */; };
+		FF56148C2180A1A800DCCE1B /* СompanyServicesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56147F2180A1A800DCCE1B /* СompanyServicesController.swift */; };
+		FF56148D2180A1A800DCCE1B /* IСompanyServicesCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614822180A1A800DCCE1B /* IСompanyServicesCake.swift */; };
+		FF56148E2180A1A800DCCE1B /* СompanyServicesCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614832180A1A800DCCE1B /* СompanyServicesCake.swift */; };
+		FF56148F2180A1A800DCCE1B /* IСompanyServicesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614852180A1A800DCCE1B /* IСompanyServicesRouter.swift */; };
+		FF5614902180A1A800DCCE1B /* СompanyServicesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614862180A1A800DCCE1B /* СompanyServicesRouter.swift */; };
+		FF5614A32180A2C200DCCE1B /* IEventsDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614932180A2C200DCCE1B /* IEventsDesign.swift */; };
+		FF5614A42180A2C200DCCE1B /* EventsDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614942180A2C200DCCE1B /* EventsDesign.swift */; };
+		FF5614A52180A2C200DCCE1B /* EventsDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614962180A2C200DCCE1B /* EventsDirector.swift */; };
+		FF5614A62180A2C200DCCE1B /* IEventsDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614972180A2C200DCCE1B /* IEventsDirector.swift */; };
+		FF5614A72180A2C200DCCE1B /* EventsCakeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614992180A2C200DCCE1B /* EventsCakeAssembly.swift */; };
+		FF5614A82180A2C200DCCE1B /* EventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56149B2180A2C200DCCE1B /* EventsController.swift */; };
+		FF5614A92180A2C200DCCE1B /* IEventsCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56149E2180A2C200DCCE1B /* IEventsCake.swift */; };
+		FF5614AA2180A2C200DCCE1B /* EventsCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56149F2180A2C200DCCE1B /* EventsCake.swift */; };
+		FF5614AB2180A2C200DCCE1B /* IEventsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614A12180A2C200DCCE1B /* IEventsRouter.swift */; };
+		FF5614AC2180A2C200DCCE1B /* EventsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614A22180A2C200DCCE1B /* EventsRouter.swift */; };
+		FF5614BF2180A40900DCCE1B /* IMoreDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614AF2180A40900DCCE1B /* IMoreDesign.swift */; };
+		FF5614C02180A40900DCCE1B /* MoreDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614B02180A40900DCCE1B /* MoreDesign.swift */; };
+		FF5614C12180A40900DCCE1B /* MoreDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614B22180A40900DCCE1B /* MoreDirector.swift */; };
+		FF5614C22180A40900DCCE1B /* IMoreDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614B32180A40900DCCE1B /* IMoreDirector.swift */; };
+		FF5614C32180A40900DCCE1B /* MoreCakeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614B52180A40900DCCE1B /* MoreCakeAssembly.swift */; };
+		FF5614C42180A40900DCCE1B /* MoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614B72180A40900DCCE1B /* MoreController.swift */; };
+		FF5614C52180A40900DCCE1B /* IMoreCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614BA2180A40900DCCE1B /* IMoreCake.swift */; };
+		FF5614C62180A40900DCCE1B /* MoreCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614BB2180A40900DCCE1B /* MoreCake.swift */; };
+		FF5614C72180A40900DCCE1B /* IMoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614BD2180A40900DCCE1B /* IMoreRouter.swift */; };
+		FF5614C82180A40900DCCE1B /* MoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614BE2180A40900DCCE1B /* MoreRouter.swift */; };
+		FF5614CA2180ACC500DCCE1B /* MoreSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5614C92180ACC500DCCE1B /* MoreSB.storyboard */; };
+		FF5614CC2180ACD900DCCE1B /* EventsSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5614CB2180ACD900DCCE1B /* EventsSB.storyboard */; };
+		FF5614CE2180ACEB00DCCE1B /* CompanyServicesSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5614CD2180ACEB00DCCE1B /* CompanyServicesSB.storyboard */; };
+		FF5614D02180ACFB00DCCE1B /* NewsSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5614CF2180ACFB00DCCE1B /* NewsSB.storyboard */; };
 		FF72AEF32175BFBB002D04DA /* IRootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF12175BFBB002D04DA /* IRootDirector.swift */; };
 		FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF22175BFBB002D04DA /* RootDirector.swift */; };
 		FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF62175BFF5002D04DA /* LoginDirector.swift */; };
@@ -235,6 +279,50 @@
 		FF5614522180943200DCCE1B /* StateType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateType.swift; sourceTree = "<group>"; };
 		FF5614532180943200DCCE1B /* StateTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateTemplate.swift; sourceTree = "<group>"; };
 		FF5614542180943200DCCE1B /* StateEngineTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateEngineTemplate.swift; sourceTree = "<group>"; };
+		FF56145B21809EE300DCCE1B /* INewsDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INewsDesign.swift; sourceTree = "<group>"; };
+		FF56145C21809EE300DCCE1B /* NewsDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDesign.swift; sourceTree = "<group>"; };
+		FF56145E21809EE300DCCE1B /* NewsDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDirector.swift; sourceTree = "<group>"; };
+		FF56145F21809EE300DCCE1B /* INewsDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INewsDirector.swift; sourceTree = "<group>"; };
+		FF56146121809EE300DCCE1B /* NewsCakeAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCakeAssembly.swift; sourceTree = "<group>"; };
+		FF56146321809EE300DCCE1B /* NewsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
+		FF56146621809EE300DCCE1B /* NewsCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCake.swift; sourceTree = "<group>"; };
+		FF56146721809EE300DCCE1B /* INewsCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INewsCake.swift; sourceTree = "<group>"; };
+		FF56146921809EE300DCCE1B /* INewsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INewsRouter.swift; sourceTree = "<group>"; };
+		FF56146A21809EE300DCCE1B /* NewsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRouter.swift; sourceTree = "<group>"; };
+		FF5614772180A1A800DCCE1B /* IСompanyServicesDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IСompanyServicesDesign.swift"; sourceTree = "<group>"; };
+		FF5614782180A1A800DCCE1B /* СompanyServicesDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СompanyServicesDesign.swift"; sourceTree = "<group>"; };
+		FF56147A2180A1A800DCCE1B /* СompanyServicesDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СompanyServicesDirector.swift"; sourceTree = "<group>"; };
+		FF56147B2180A1A800DCCE1B /* IСompanyServicesDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IСompanyServicesDirector.swift"; sourceTree = "<group>"; };
+		FF56147D2180A1A800DCCE1B /* СompanyServicesCakeAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СompanyServicesCakeAssembly.swift"; sourceTree = "<group>"; };
+		FF56147F2180A1A800DCCE1B /* СompanyServicesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СompanyServicesController.swift"; sourceTree = "<group>"; };
+		FF5614822180A1A800DCCE1B /* IСompanyServicesCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IСompanyServicesCake.swift"; sourceTree = "<group>"; };
+		FF5614832180A1A800DCCE1B /* СompanyServicesCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СompanyServicesCake.swift"; sourceTree = "<group>"; };
+		FF5614852180A1A800DCCE1B /* IСompanyServicesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IСompanyServicesRouter.swift"; sourceTree = "<group>"; };
+		FF5614862180A1A800DCCE1B /* СompanyServicesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СompanyServicesRouter.swift"; sourceTree = "<group>"; };
+		FF5614932180A2C200DCCE1B /* IEventsDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEventsDesign.swift; sourceTree = "<group>"; };
+		FF5614942180A2C200DCCE1B /* EventsDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsDesign.swift; sourceTree = "<group>"; };
+		FF5614962180A2C200DCCE1B /* EventsDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsDirector.swift; sourceTree = "<group>"; };
+		FF5614972180A2C200DCCE1B /* IEventsDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEventsDirector.swift; sourceTree = "<group>"; };
+		FF5614992180A2C200DCCE1B /* EventsCakeAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCakeAssembly.swift; sourceTree = "<group>"; };
+		FF56149B2180A2C200DCCE1B /* EventsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsController.swift; sourceTree = "<group>"; };
+		FF56149E2180A2C200DCCE1B /* IEventsCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEventsCake.swift; sourceTree = "<group>"; };
+		FF56149F2180A2C200DCCE1B /* EventsCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCake.swift; sourceTree = "<group>"; };
+		FF5614A12180A2C200DCCE1B /* IEventsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEventsRouter.swift; sourceTree = "<group>"; };
+		FF5614A22180A2C200DCCE1B /* EventsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsRouter.swift; sourceTree = "<group>"; };
+		FF5614AF2180A40900DCCE1B /* IMoreDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMoreDesign.swift; sourceTree = "<group>"; };
+		FF5614B02180A40900DCCE1B /* MoreDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreDesign.swift; sourceTree = "<group>"; };
+		FF5614B22180A40900DCCE1B /* MoreDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreDirector.swift; sourceTree = "<group>"; };
+		FF5614B32180A40900DCCE1B /* IMoreDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMoreDirector.swift; sourceTree = "<group>"; };
+		FF5614B52180A40900DCCE1B /* MoreCakeAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreCakeAssembly.swift; sourceTree = "<group>"; };
+		FF5614B72180A40900DCCE1B /* MoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreController.swift; sourceTree = "<group>"; };
+		FF5614BA2180A40900DCCE1B /* IMoreCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMoreCake.swift; sourceTree = "<group>"; };
+		FF5614BB2180A40900DCCE1B /* MoreCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreCake.swift; sourceTree = "<group>"; };
+		FF5614BD2180A40900DCCE1B /* IMoreRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMoreRouter.swift; sourceTree = "<group>"; };
+		FF5614BE2180A40900DCCE1B /* MoreRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreRouter.swift; sourceTree = "<group>"; };
+		FF5614C92180ACC500DCCE1B /* MoreSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreSB.storyboard; sourceTree = "<group>"; };
+		FF5614CB2180ACD900DCCE1B /* EventsSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventsSB.storyboard; sourceTree = "<group>"; };
+		FF5614CD2180ACEB00DCCE1B /* CompanyServicesSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CompanyServicesSB.storyboard; sourceTree = "<group>"; };
+		FF5614CF2180ACFB00DCCE1B /* NewsSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsSB.storyboard; sourceTree = "<group>"; };
 		FF72AEF12175BFBB002D04DA /* IRootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF22175BFBB002D04DA /* RootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF62175BFF5002D04DA /* LoginDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDirector.swift; sourceTree = "<group>"; };
@@ -619,6 +707,302 @@
 			path = stateEngine;
 			sourceTree = "<group>";
 		};
+		FF56145921809EE300DCCE1B /* news */ = {
+			isa = PBXGroup;
+			children = (
+				FF56145A21809EE300DCCE1B /* design */,
+				FF56145D21809EE300DCCE1B /* director */,
+				FF56146021809EE300DCCE1B /* assemblys */,
+				FF56146221809EE300DCCE1B /* controller */,
+				FF56146421809EE300DCCE1B /* views */,
+				FF56146521809EE300DCCE1B /* cake */,
+				FF56146821809EE300DCCE1B /* router */,
+				FF5614CF2180ACFB00DCCE1B /* NewsSB.storyboard */,
+			);
+			path = news;
+			sourceTree = "<group>";
+		};
+		FF56145A21809EE300DCCE1B /* design */ = {
+			isa = PBXGroup;
+			children = (
+				FF56145B21809EE300DCCE1B /* INewsDesign.swift */,
+				FF56145C21809EE300DCCE1B /* NewsDesign.swift */,
+			);
+			path = design;
+			sourceTree = "<group>";
+		};
+		FF56145D21809EE300DCCE1B /* director */ = {
+			isa = PBXGroup;
+			children = (
+				FF56145E21809EE300DCCE1B /* NewsDirector.swift */,
+				FF56145F21809EE300DCCE1B /* INewsDirector.swift */,
+			);
+			path = director;
+			sourceTree = "<group>";
+		};
+		FF56146021809EE300DCCE1B /* assemblys */ = {
+			isa = PBXGroup;
+			children = (
+				FF56146121809EE300DCCE1B /* NewsCakeAssembly.swift */,
+			);
+			path = assemblys;
+			sourceTree = "<group>";
+		};
+		FF56146221809EE300DCCE1B /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				FF56146321809EE300DCCE1B /* NewsController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		FF56146421809EE300DCCE1B /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		FF56146521809EE300DCCE1B /* cake */ = {
+			isa = PBXGroup;
+			children = (
+				FF56146621809EE300DCCE1B /* NewsCake.swift */,
+				FF56146721809EE300DCCE1B /* INewsCake.swift */,
+			);
+			path = cake;
+			sourceTree = "<group>";
+		};
+		FF56146821809EE300DCCE1B /* router */ = {
+			isa = PBXGroup;
+			children = (
+				FF56146921809EE300DCCE1B /* INewsRouter.swift */,
+				FF56146A21809EE300DCCE1B /* NewsRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		FF5614752180A1A800DCCE1B /* companyServices */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614762180A1A800DCCE1B /* design */,
+				FF5614792180A1A800DCCE1B /* director */,
+				FF56147C2180A1A800DCCE1B /* assemblys */,
+				FF56147E2180A1A800DCCE1B /* controller */,
+				FF5614802180A1A800DCCE1B /* views */,
+				FF5614812180A1A800DCCE1B /* cake */,
+				FF5614842180A1A800DCCE1B /* router */,
+				FF5614CD2180ACEB00DCCE1B /* CompanyServicesSB.storyboard */,
+			);
+			path = companyServices;
+			sourceTree = "<group>";
+		};
+		FF5614762180A1A800DCCE1B /* design */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614772180A1A800DCCE1B /* IСompanyServicesDesign.swift */,
+				FF5614782180A1A800DCCE1B /* СompanyServicesDesign.swift */,
+			);
+			path = design;
+			sourceTree = "<group>";
+		};
+		FF5614792180A1A800DCCE1B /* director */ = {
+			isa = PBXGroup;
+			children = (
+				FF56147A2180A1A800DCCE1B /* СompanyServicesDirector.swift */,
+				FF56147B2180A1A800DCCE1B /* IСompanyServicesDirector.swift */,
+			);
+			path = director;
+			sourceTree = "<group>";
+		};
+		FF56147C2180A1A800DCCE1B /* assemblys */ = {
+			isa = PBXGroup;
+			children = (
+				FF56147D2180A1A800DCCE1B /* СompanyServicesCakeAssembly.swift */,
+			);
+			path = assemblys;
+			sourceTree = "<group>";
+		};
+		FF56147E2180A1A800DCCE1B /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				FF56147F2180A1A800DCCE1B /* СompanyServicesController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		FF5614802180A1A800DCCE1B /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		FF5614812180A1A800DCCE1B /* cake */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614822180A1A800DCCE1B /* IСompanyServicesCake.swift */,
+				FF5614832180A1A800DCCE1B /* СompanyServicesCake.swift */,
+			);
+			path = cake;
+			sourceTree = "<group>";
+		};
+		FF5614842180A1A800DCCE1B /* router */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614852180A1A800DCCE1B /* IСompanyServicesRouter.swift */,
+				FF5614862180A1A800DCCE1B /* СompanyServicesRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		FF5614912180A2C200DCCE1B /* events */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614922180A2C200DCCE1B /* design */,
+				FF5614952180A2C200DCCE1B /* director */,
+				FF5614982180A2C200DCCE1B /* assemblys */,
+				FF56149A2180A2C200DCCE1B /* controller */,
+				FF56149C2180A2C200DCCE1B /* views */,
+				FF56149D2180A2C200DCCE1B /* cake */,
+				FF5614A02180A2C200DCCE1B /* router */,
+				FF5614CB2180ACD900DCCE1B /* EventsSB.storyboard */,
+			);
+			path = events;
+			sourceTree = "<group>";
+		};
+		FF5614922180A2C200DCCE1B /* design */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614932180A2C200DCCE1B /* IEventsDesign.swift */,
+				FF5614942180A2C200DCCE1B /* EventsDesign.swift */,
+			);
+			path = design;
+			sourceTree = "<group>";
+		};
+		FF5614952180A2C200DCCE1B /* director */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614962180A2C200DCCE1B /* EventsDirector.swift */,
+				FF5614972180A2C200DCCE1B /* IEventsDirector.swift */,
+			);
+			path = director;
+			sourceTree = "<group>";
+		};
+		FF5614982180A2C200DCCE1B /* assemblys */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614992180A2C200DCCE1B /* EventsCakeAssembly.swift */,
+			);
+			path = assemblys;
+			sourceTree = "<group>";
+		};
+		FF56149A2180A2C200DCCE1B /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				FF56149B2180A2C200DCCE1B /* EventsController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		FF56149C2180A2C200DCCE1B /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		FF56149D2180A2C200DCCE1B /* cake */ = {
+			isa = PBXGroup;
+			children = (
+				FF56149E2180A2C200DCCE1B /* IEventsCake.swift */,
+				FF56149F2180A2C200DCCE1B /* EventsCake.swift */,
+			);
+			path = cake;
+			sourceTree = "<group>";
+		};
+		FF5614A02180A2C200DCCE1B /* router */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614A12180A2C200DCCE1B /* IEventsRouter.swift */,
+				FF5614A22180A2C200DCCE1B /* EventsRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		FF5614AD2180A40900DCCE1B /* more */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614AE2180A40900DCCE1B /* design */,
+				FF5614B12180A40900DCCE1B /* director */,
+				FF5614B42180A40900DCCE1B /* assemblys */,
+				FF5614B62180A40900DCCE1B /* controller */,
+				FF5614B82180A40900DCCE1B /* views */,
+				FF5614B92180A40900DCCE1B /* cake */,
+				FF5614BC2180A40900DCCE1B /* router */,
+				FF5614C92180ACC500DCCE1B /* MoreSB.storyboard */,
+			);
+			path = more;
+			sourceTree = "<group>";
+		};
+		FF5614AE2180A40900DCCE1B /* design */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614AF2180A40900DCCE1B /* IMoreDesign.swift */,
+				FF5614B02180A40900DCCE1B /* MoreDesign.swift */,
+			);
+			path = design;
+			sourceTree = "<group>";
+		};
+		FF5614B12180A40900DCCE1B /* director */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614B22180A40900DCCE1B /* MoreDirector.swift */,
+				FF5614B32180A40900DCCE1B /* IMoreDirector.swift */,
+			);
+			path = director;
+			sourceTree = "<group>";
+		};
+		FF5614B42180A40900DCCE1B /* assemblys */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614B52180A40900DCCE1B /* MoreCakeAssembly.swift */,
+			);
+			path = assemblys;
+			sourceTree = "<group>";
+		};
+		FF5614B62180A40900DCCE1B /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614B72180A40900DCCE1B /* MoreController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		FF5614B82180A40900DCCE1B /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		FF5614B92180A40900DCCE1B /* cake */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614BA2180A40900DCCE1B /* IMoreCake.swift */,
+				FF5614BB2180A40900DCCE1B /* MoreCake.swift */,
+			);
+			path = cake;
+			sourceTree = "<group>";
+		};
+		FF5614BC2180A40900DCCE1B /* router */ = {
+			isa = PBXGroup;
+			children = (
+				FF5614BD2180A40900DCCE1B /* IMoreRouter.swift */,
+				FF5614BE2180A40900DCCE1B /* MoreRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
 		FF72AEEF2170AF8D002D04DA /* welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -850,6 +1234,10 @@
 		FFAB4E722163465C00AE82EA /* imh_corp_ios */ = {
 			isa = PBXGroup;
 			children = (
+				FF5614AD2180A40900DCCE1B /* more */,
+				FF5614912180A2C200DCCE1B /* events */,
+				FF5614752180A1A800DCCE1B /* companyServices */,
+				FF56145921809EE300DCCE1B /* news */,
 				FF72AF2B2175E35C002D04DA /* extLib */,
 				FF72AEEF2170AF8D002D04DA /* welcome */,
 				FFAB4F782163960900AE82EA /* root */,
@@ -1407,9 +1795,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF5614D02180ACFB00DCCE1B /* NewsSB.storyboard in Resources */,
 				FF72AF4621761050002D04DA /* WelcomePagerCell.xib in Resources */,
 				FFAB4F15216392D400AE82EA /* README.md in Resources */,
 				FFAB4F882163960900AE82EA /* Main.storyboard in Resources */,
+				FF5614CA2180ACC500DCCE1B /* MoreSB.storyboard in Resources */,
+				FF5614CE2180ACEB00DCCE1B /* CompanyServicesSB.storyboard in Resources */,
+				FF5614CC2180ACD900DCCE1B /* EventsSB.storyboard in Resources */,
 				FFAB4EA2216348B200AE82EA /* LaunchScreen.storyboard in Resources */,
 				FFAB4EA1216348B200AE82EA /* Assets.xcassets in Resources */,
 				FF72AF412175F6EE002D04DA /* WelcomeSB.storyboard in Resources */,
@@ -1565,21 +1957,30 @@
 			files = (
 				FFAB4F1F216392D400AE82EA /* IRouter.swift in Sources */,
 				FFAB4F752163959700AE82EA /* IAuthCake.swift in Sources */,
+				FF56146B21809EE300DCCE1B /* INewsDesign.swift in Sources */,
+				FF5614902180A1A800DCCE1B /* СompanyServicesRouter.swift in Sources */,
 				FFAB4F13216392D400AE82EA /* PopMenuPresentAnimationController.swift in Sources */,
 				FF72AEF32175BFBB002D04DA /* IRootDirector.swift in Sources */,
+				FF5614C12180A40900DCCE1B /* MoreDirector.swift in Sources */,
+				FF5614A32180A2C200DCCE1B /* IEventsDesign.swift in Sources */,
 				FF72AF4421761019002D04DA /* WelcomePagerCell.swift in Sources */,
 				FF72AF80217761B2002D04DA /* UIImage+Resize.m in Sources */,
 				FFAB4FA92163971A00AE82EA /* NetworkAssembly.swift in Sources */,
 				FFAB4F382163936B00AE82EA /* Application.swift in Sources */,
 				FF72AF022175C1F5002D04DA /* AuthDirector.swift in Sources */,
 				FF3897C02178AC78005CE562 /* RQShineLabel.m in Sources */,
+				FF5614AC2180A2C200DCCE1B /* EventsRouter.swift in Sources */,
 				FF72AF86217761B2002D04DA /* String+HTML.swift in Sources */,
 				FFAB4FA62163971A00AE82EA /* SecurityService.swift in Sources */,
 				FFAB4F6D2163959700AE82EA /* LoginRouter.swift in Sources */,
+				FF56147221809EE300DCCE1B /* INewsCake.swift in Sources */,
 				FFAB4F8C2163960900AE82EA /* IRootCake.swift in Sources */,
 				FFAB4F2F216392D400AE82EA /* ILocalizator.swift in Sources */,
 				FFAB4F6C2163959700AE82EA /* ILoginRouter.swift in Sources */,
 				FF72AF7E217761B2002D04DA /* UIImage+Alpha.m in Sources */,
+				FF56147321809EE300DCCE1B /* INewsRouter.swift in Sources */,
+				FF56148D2180A1A800DCCE1B /* IСompanyServicesCake.swift in Sources */,
+				FF5614C72180A40900DCCE1B /* IMoreRouter.swift in Sources */,
 				FFAB4F20216392D400AE82EA /* IWindowStack.swift in Sources */,
 				FFAB4FA72163971A00AE82EA /* INetwork.swift in Sources */,
 				FF72AF82217761B2002D04DA /* String+Remove.swift in Sources */,
@@ -1589,20 +1990,28 @@
 				FF72AF3D2175E35C002D04DA /* FSPageViewLayout.swift in Sources */,
 				FF3897D52178C3F5005CE562 /* UIView+ChainableAnimator.swift in Sources */,
 				FF72AF182175CEFF002D04DA /* IWelcomeRouter.swift in Sources */,
+				FF56147421809EE300DCCE1B /* NewsRouter.swift in Sources */,
 				FF56142A217DF5BD00DCCE1B /* IAnimatorImage.swift in Sources */,
 				FFAB4F652163959700AE82EA /* ILoginDesign.swift in Sources */,
 				FF72AF5221770ACA002D04DA /* IWelcomePagesDataSource.swift in Sources */,
+				FF56146C21809EE300DCCE1B /* NewsDesign.swift in Sources */,
 				FF72AF1F2175DB11002D04DA /* IWelcomeDesign.swift in Sources */,
 				FF56142D217F56C200DCCE1B /* UIViewDrawBorder.swift in Sources */,
+				FF5614882180A1A800DCCE1B /* СompanyServicesDesign.swift in Sources */,
 				FF3897D42178C3F5005CE562 /* JHKeyframeAnimationFunctions.c in Sources */,
 				FFAB4F772163959700AE82EA /* IAuthRouter.swift in Sources */,
+				FF5614872180A1A800DCCE1B /* IСompanyServicesDesign.swift in Sources */,
+				FF56148B2180A1A800DCCE1B /* СompanyServicesCakeAssembly.swift in Sources */,
 				FF72AF482176109B002D04DA /* IWelcomePagerCell.swift in Sources */,
+				FF5614BF2180A40900DCCE1B /* IMoreDesign.swift in Sources */,
 				FF72AEFE2175C0A5002D04DA /* SessionService.swift in Sources */,
 				FF56144521805B4600DCCE1B /* ConfirmationCakeAssembly.swift in Sources */,
 				FFAB4F762163959700AE82EA /* AuthRouter.swift in Sources */,
 				FF5614562180943200DCCE1B /* StateType.swift in Sources */,
+				FF56147021809EE300DCCE1B /* NewsController.swift in Sources */,
 				FFAB4F8F2163960900AE82EA /* IRootRouter.swift in Sources */,
 				FFAB4F11216392D400AE82EA /* UIView+Shadows.swift in Sources */,
+				FF56146E21809EE300DCCE1B /* INewsDirector.swift in Sources */,
 				FF3897D82178C3F5005CE562 /* JHAnimationChainLink.m in Sources */,
 				FFAB4F12216392D400AE82EA /* Haptics.swift in Sources */,
 				FF72AF142175CEE1002D04DA /* IWelcomeDirector.swift in Sources */,
@@ -1611,32 +2020,41 @@
 				FFAB4F662163959700AE82EA /* LoginCakeAssembly.swift in Sources */,
 				FF72AEF92175BFF5002D04DA /* ILoginDirector.swift in Sources */,
 				FF72AF7C217761B2002D04DA /* UIImage+NSData.m in Sources */,
+				FF56146D21809EE300DCCE1B /* NewsDirector.swift in Sources */,
 				FF3897EE2178C462005CE562 /* DKChainableAnimationKit+Anchor.swift in Sources */,
 				FFAB4F0D216392D400AE82EA /* PopMenuAppearance.swift in Sources */,
 				FF72AF6421776138002D04DA /* UICollectionViewCell+Reuse.swift in Sources */,
 				FF72AF4D21761B13002D04DA /* WelcomePage.swift in Sources */,
 				FF72AF5021770AB6002D04DA /* WelcomePagesDataSource.swift in Sources */,
 				FF5614582180943200DCCE1B /* StateEngineTemplate.swift in Sources */,
+				FF56148A2180A1A800DCCE1B /* IСompanyServicesDirector.swift in Sources */,
 				FF3897FA2178CB7D005CE562 /* AnimatorImage.swift in Sources */,
+				FF5614A72180A2C200DCCE1B /* EventsCakeAssembly.swift in Sources */,
 				FFAB4F30216392D400AE82EA /* Localizator.swift in Sources */,
 				FFAB4FA52163971A00AE82EA /* ISecurityService.swift in Sources */,
 				FFAB4F2D216392D400AE82EA /* LoaderServiceAssembly.swift in Sources */,
 				FFAB4F2E216392D400AE82EA /* ILocalize.swift in Sources */,
 				FFAB4F1D216392D400AE82EA /* DependenceDirector.swift in Sources */,
 				FFAB4F392163936B00AE82EA /* IAppDelegate.swift in Sources */,
+				FF56147121809EE300DCCE1B /* NewsCake.swift in Sources */,
 				FFAB4F21216392D400AE82EA /* WindowStack.swift in Sources */,
+				FF5614A62180A2C200DCCE1B /* IEventsDirector.swift in Sources */,
 				FFAB4F14216392D400AE82EA /* PopMenuDismissAnimationController.swift in Sources */,
 				FFAB4F8D2163960900AE82EA /* RootCake.swift in Sources */,
 				FF72AEFD2175C0A5002D04DA /* ISessionService.swift in Sources */,
 				FF72AF7F217761B2002D04DA /* UIImage+RoundedCorner.m in Sources */,
 				FF561428217DD3DC00DCCE1B /* BackgroundTimer.swift in Sources */,
+				FF5614C52180A40900DCCE1B /* IMoreCake.swift in Sources */,
+				FF5614C22180A40900DCCE1B /* IMoreDirector.swift in Sources */,
 				FFAB4F632163959700AE82EA /* AuthCakeAssembly.swift in Sources */,
+				FF5614C32180A40900DCCE1B /* MoreCakeAssembly.swift in Sources */,
 				FF72AF3A2175E35C002D04DA /* FSPageViewTransformer.swift in Sources */,
 				FF3897EF2178C462005CE562 /* DKChainableAnimationKit+Bezier.swift in Sources */,
 				FF72AF4B21761B09002D04DA /* IWelcomePage.swift in Sources */,
 				FFAB4F872163960900AE82EA /* RootCakeAssebly.swift in Sources */,
 				FF72AF3C2175E35C002D04DA /* FSPagerViewLayoutAttributes.swift in Sources */,
 				FFAB4F3C2163936B00AE82EA /* main.swift in Sources */,
+				FF5614C02180A40900DCCE1B /* MoreDesign.swift in Sources */,
 				FF5614552180943200DCCE1B /* ValidatorTemplate.swift in Sources */,
 				FF3897D92178C3F5005CE562 /* JHChainableAnimator.m in Sources */,
 				FFAB4F1E216392D400AE82EA /* Global.swift in Sources */,
@@ -1644,18 +2062,24 @@
 				FF3897F02178C462005CE562 /* DKChainableAnimationKit+Frame.swift in Sources */,
 				FF3897F32178C462005CE562 /* DKChainableAnimationKit.swift in Sources */,
 				FF5614572180943200DCCE1B /* StateTemplate.swift in Sources */,
+				FF5614A92180A2C200DCCE1B /* IEventsCake.swift in Sources */,
 				FFAB4F27216392D400AE82EA /* UIColor+RGB.swift in Sources */,
 				FF72AF7B217761B2002D04DA /* Image+Gradient.swift in Sources */,
 				FF72AF0C2175CE98002D04DA /* WelcomeCakeAssembly.swift in Sources */,
+				FF5614C62180A40900DCCE1B /* MoreCake.swift in Sources */,
 				FF3897BC2178A085005CE562 /* IViewWithDisplayAnimation.swift in Sources */,
 				FFAB4FA42163971A00AE82EA /* SecurityServiceAssembly.swift in Sources */,
 				FF72AF3F2175E35C002D04DA /* FSPagerCollectionView.swift in Sources */,
 				FF56144321805B4600DCCE1B /* ConfirmationDirector.swift in Sources */,
 				FF72AF3B2175E35C002D04DA /* FSPagerViewCell.swift in Sources */,
+				FF5614AB2180A2C200DCCE1B /* IEventsRouter.swift in Sources */,
 				FF3897F72178C8A4005CE562 /* IAnimator.swift in Sources */,
 				FF56144921805B4600DCCE1B /* ConfirmationCake.swift in Sources */,
 				FF3897D62178C3F5005CE562 /* ChainableAnimator.swift in Sources */,
 				FF72AF8921776230002D04DA /* UIView+Shadow.swift in Sources */,
+				FF5614AA2180A2C200DCCE1B /* EventsCake.swift in Sources */,
+				FF5614C82180A40900DCCE1B /* MoreRouter.swift in Sources */,
+				FF5614892180A1A800DCCE1B /* СompanyServicesDirector.swift in Sources */,
 				FFAB4F1A216392D400AE82EA /* AppDesign.swift in Sources */,
 				FF56144221805B4600DCCE1B /* IConfirmationDesign.swift in Sources */,
 				FFAB4F6A2163959700AE82EA /* ILoginCake.swift in Sources */,
@@ -1676,8 +2100,11 @@
 				FF56144421805B4600DCCE1B /* IConfirmationDirector.swift in Sources */,
 				FF72AF102175CEBA002D04DA /* WelcomeCake.swift in Sources */,
 				FFAB4F18216392D400AE82EA /* IDesign.swift in Sources */,
+				FF56148F2180A1A800DCCE1B /* IСompanyServicesRouter.swift in Sources */,
 				FFAB4F17216392D400AE82EA /* IAppDesign.swift in Sources */,
+				FF5614A52180A2C200DCCE1B /* EventsDirector.swift in Sources */,
 				FFAB4F0E216392D400AE82EA /* PopMenuManager.swift in Sources */,
+				FF56148E2180A1A800DCCE1B /* СompanyServicesCake.swift in Sources */,
 				FFAB4F8E2163960900AE82EA /* RootRouter.swift in Sources */,
 				FFAB4F2B216392D400AE82EA /* LoaderService.swift in Sources */,
 				FFAB4F26216392D400AE82EA /* UIColor+Hex.swift in Sources */,
@@ -1685,12 +2112,15 @@
 				FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */,
 				FF3897ED2178C462005CE562 /* DKKeyframeAnimationFunction.swift in Sources */,
 				FF56144B21805B4600DCCE1B /* ConfirmationRouter.swift in Sources */,
+				FF5614A82180A2C200DCCE1B /* EventsController.swift in Sources */,
 				FF3897F22178C462005CE562 /* DKKeyFrameAnimation.swift in Sources */,
 				FF72AF3E2175E35C002D04DA /* FSPageControl.swift in Sources */,
+				FF5614C42180A40900DCCE1B /* MoreController.swift in Sources */,
 				FF72AF6521776138002D04DA /* UITableViewCell+Reuse.swift in Sources */,
 				FFAB4F16216392D400AE82EA /* GradientView.swift in Sources */,
 				FF3897F42178C462005CE562 /* UIView+AnimationKit.swift in Sources */,
 				FFAB4F642163959700AE82EA /* LoginDesign.swift in Sources */,
+				FF56148C2180A1A800DCCE1B /* СompanyServicesController.swift in Sources */,
 				FF72AF1A2175CF0B002D04DA /* WelcomeRouter.swift in Sources */,
 				FFAB4F1C216392D400AE82EA /* IDependenceDirector.swift in Sources */,
 				FFAB4F892163960900AE82EA /* RootController.swift in Sources */,
@@ -1700,10 +2130,12 @@
 				FF72AF032175C1F5002D04DA /* IAuthDirector.swift in Sources */,
 				FF72AF212175DB1C002D04DA /* WelcomeDesign.swift in Sources */,
 				FFAB4F0B216392D400AE82EA /* PopMenuAction.swift in Sources */,
+				FF56146F21809EE300DCCE1B /* NewsCakeAssembly.swift in Sources */,
 				FFAB4F28216392D400AE82EA /* WKWebView+Cookies.swift in Sources */,
 				FF3897EB2178C462005CE562 /* DKChainableAnimationKit+Effects.swift in Sources */,
 				FFAB4F2A216392D400AE82EA /* FullScreenLoader.swift in Sources */,
 				FF56144D2180631400DCCE1B /* UINavigationControllerTransparentBar.swift in Sources */,
+				FF5614A42180A2C200DCCE1B /* EventsDesign.swift in Sources */,
 				FF72AF83217761B2002D04DA /* String+Size.swift in Sources */,
 				FFAB4FA82163971A00AE82EA /* Network.swift in Sources */,
 				FF3897F12178C462005CE562 /* DKChainableAnimationKit+Extra.swift in Sources */,

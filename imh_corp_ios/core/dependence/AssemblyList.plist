@@ -13,5 +13,9 @@
 	<string>AppDesignAssembly</string>
 	<string>LoaderServiceAssembly</string>
 	<string>ConfirmationCakeAssembly</string>
+	<string>MoreCakeAssembly</string>
+	<string>EventsCakeAssembly</string>
+	<string>СompanyServicesCakeAssembly</string>
+	<string>NewsCakeAssembly</string>
 </array>
 </plist>

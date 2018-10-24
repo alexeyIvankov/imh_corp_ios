@@ -45,6 +45,7 @@ class ConfirmationController : UIViewController {
     
     //MARK: Dependence
     var cake:IConfirmationCake = Depednence.tryInject()!
+    var authCake:IAuthCake = Depednence.tryInject()!
     
 
     //MARK: Life cycle
@@ -75,7 +76,7 @@ class ConfirmationController : UIViewController {
   
     //MARK: IBActions
     @IBAction func touchSendCodeButton(){
-    
+        self.authCake.authRouter.startAppWithAuthorized()
     }
     
     @IBAction func touchResendCodeButton(){

@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import WebKit
 
-class RootController: UIViewController , WKNavigationDelegate, ISessionServiceDelegate{
+class RootController: UITabBarController, ISessionServiceDelegate{
 
     
     //MARK:Status bar
@@ -23,7 +22,6 @@ class RootController: UIViewController , WKNavigationDelegate, ISessionServiceDe
     
     //MARK: Dependence
     var rootCake:IRootCake = Depednence.tryInject()!
-    var authService:IAuthDirector = Depednence.tryInject()!
 
     //MARK: Life cycle
     override func viewDidLoad() {
@@ -35,7 +33,6 @@ class RootController: UIViewController , WKNavigationDelegate, ISessionServiceDe
     //MARK: - SessionServiceDelegate
     func sessionExpired() {
     }
-
 }
 
 

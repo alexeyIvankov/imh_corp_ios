@@ -15,6 +15,10 @@ extension UIStoryboard{
         case auth = "AuthSB"
         case root = "Main"
         case welcome = "WelcomeSB"
+        case news = "NewsSB"
+        case companyServices = "CompanyServicesSB"
+        case events = "EventsSB"
+        case more = "MoreSB"
     }
     
     class func load(type:TypeSB) -> UIStoryboard{
