@@ -11,7 +11,7 @@ import UIKit
 import WebKit
 import KeyboardHandler
 
-class LoginController : UIViewController, WKNavigationDelegate{
+class ConfirmationController : UIViewController {
     
     //MARK: IBOutlets
     @IBOutlet weak var viewContainer: UIView!
@@ -19,20 +19,19 @@ class LoginController : UIViewController, WKNavigationDelegate{
 
     @IBOutlet weak var scrollView:UIScrollView!
     
-    @IBOutlet weak var textFieldLogin: UITextField!
-    @IBOutlet weak var textFieldCountryCode: UITextField!
+    @IBOutlet weak var textFieldConfirmation: UITextField!
 
-    @IBOutlet weak var labelTitleLogin: UILabel!
-    @IBOutlet weak var labelCountryName: UILabel!
+    @IBOutlet weak var labelTitleConfirmation: UILabel!
+    @IBOutlet weak var labelTimeResendCode: UILabel!
     
-    @IBOutlet weak var buttonLogin: UIButton!
-    @IBOutlet weak var buttonSelecCountry: UIButton!
+    @IBOutlet weak var buttonSendCode: UIButton!
+    @IBOutlet weak var buttonResendCode: UIButton!
     
     @IBOutlet weak var bottomConstraintViewContent: NSLayoutConstraint!
     
     
     //MARK: Dependence
-    var cake:ILoginCake = Depednence.tryInject()!
+    var cake:IConfirmationCake = Depednence.tryInject()!
     
     private var keyboardHandler:KeyboardHandler?
     
@@ -42,8 +41,6 @@ class LoginController : UIViewController, WKNavigationDelegate{
         super.viewDidLoad()
         self.cake.router.setOwnwer(ownwer: self)
         self.cake.design.apply(vc: self)
-        
-        self.navigationItem.title = " "
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +48,7 @@ class LoginController : UIViewController, WKNavigationDelegate{
         self.keyboardHandler = KeyboardHandler()
         self.keyboardHandle()
         self.subscribeInputFieldsToEventTextChange()
-        self.textFieldLogin.becomeFirstResponder()
+        self.textFieldConfirmation.becomeFirstResponder()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -62,31 +59,25 @@ class LoginController : UIViewController, WKNavigationDelegate{
         self.unSubscribeInputFieldsToEventTextChange()
     }
     
+  
     //MARK: IBActions
-    @IBAction func touchLoginButton(){
-        self.cake.router.handleTouchNextButton()
+    @IBAction func touchSendCodeButton(){
+    
     }
     
-    @IBAction func touchSelectCountryButton(){
+    @IBAction func touchResendCodeButton(){
 
     }
   
     
-    private func tryLogin(){
-        
-    }
-
-    
     //MARK : - subscribe/unsubscribe text field events
     private func subscribeInputFieldsToEventTextChange(){
-        self.textFieldLogin.addTarget(self, action: #selector(textFieldLoginDidChange(_:)), for: .editingChanged)
-        self.textFieldCountryCode.addTarget(self, action: #selector(textFieldLoginDidChange(_:)), for: .editingChanged)
+        self.textFieldConfirmation.addTarget(self, action: #selector(textFieldConfirmationDidChange(_:)), for: .editingChanged)
 
     }
     
     private func unSubscribeInputFieldsToEventTextChange(){
-        self.textFieldLogin.removeTarget(self, action: #selector(textFieldLoginDidChange(_:)), for: .editingChanged)
-        self.textFieldCountryCode.removeTarget(self, action: #selector(textFieldLoginDidChange(_:)), for: .editingChanged)
+        self.textFieldConfirmation.removeTarget(self, action: #selector(textFieldConfirmationDidChange(_:)), for: .editingChanged)
     }
     
     //MARK :- Keyboard handler
@@ -145,11 +136,7 @@ class LoginController : UIViewController, WKNavigationDelegate{
     }
     
     //MARK: - UITextField Handle Event
-    @objc func textFieldLoginDidChange(_ textField: UITextField) {
-        
-    }
-    
-    @objc func textFieldPasswordDidChange(_ textField: UITextField) {
+    @objc func textFieldConfirmationDidChange(_ textField: UITextField) {
         
     }
 }

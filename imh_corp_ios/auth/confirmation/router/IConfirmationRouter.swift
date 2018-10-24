@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-protocol ILoginRouter : AnyObject {
+protocol IConfirmationRouter : AnyObject {
     func setOwnwer<T:UIViewController>(ownwer:T)
-    
-    func handleTouchNextButton()
     
     func showAlert(message:String)
     func showLoader()
     func hideLoader()
+    
+    func hadleEventLoginSuccess()
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LoginRouter : ILoginRouter{
+class ConfirmationRouter : IConfirmationRouter{
 
     var owner:UIViewController?
     var loaderService:ILoaderService
@@ -22,17 +22,17 @@ class LoginRouter : ILoginRouter{
         self.owner = ownwer
     }
     
-    func handleTouchNextButton(){
-        
-        let confirmationController:ConfirmationController = UIStoryboard.load(type: UIStoryboard.TypeSB.auth).load()!
-        self.owner?.navigationController?.pushViewController(confirmationController, animated: true)
-    }
-    
     func showAlert(message: String) {
         
         let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         owner?.present(alert, animated: true, completion: nil)
+    }
+    
+    func hadleEventLoginSuccess(){
+       
+        let root:RootController = UIStoryboard.load(type: UIStoryboard.TypeSB.root).load()!
+        _ = MyApplication.delegate()?.stackWindow.presentAndDismissAllExcept(vc: root)
     }
     
     func showLoader(){

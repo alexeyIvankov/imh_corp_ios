@@ -23,22 +23,22 @@ class LoginDesign : ILoginDesign {
         
         loginVC.buttonLogin.backgroundColor = UIColor(r:112, g:178, b:250, alpha:1)
         
-        loginVC.buttonLogin.setTitle("ДАЛЕЕ", for: UIControl.State.normal)
-        loginVC.buttonLogin.setTitle("ДАЛЕЕ", for: UIControl.State.selected)
+        loginVC.buttonLogin.setTitle("Далее", for: UIControl.State.normal)
+        loginVC.buttonLogin.setTitle("Далее", for: UIControl.State.selected)
         
         loginVC.buttonLogin.setTitleColor(UIColor.white, for: UIControl.State.normal)
         loginVC.buttonLogin.setTitleColor(UIColor.white, for: UIControl.State.selected)
         
-        loginVC.buttonLogin.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.light)
+        loginVC.buttonLogin.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.medium)
         
-        loginVC.labelTitleLogin.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.light)
-        loginVC.labelCountryName.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.light)
+        loginVC.labelTitleLogin.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.light)
+        loginVC.labelCountryName.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.regular)
         
         loginVC.textFieldLogin.textColor = UIColor.black
         loginVC.textFieldCountryCode.textColor = UIColor.black
         
-        loginVC.textFieldLogin.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.regular)
-        loginVC.textFieldCountryCode.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.regular)
+        loginVC.textFieldLogin.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.regular)
+        loginVC.textFieldCountryCode.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.regular)
         
 
         let attributesPlaceholderTextField = [

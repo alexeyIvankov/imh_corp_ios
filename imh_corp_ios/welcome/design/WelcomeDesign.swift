@@ -25,13 +25,13 @@ class WelcomeDesign : IWelcomeDesign {
         welcomeVC.buttonStart.backgroundColor = UIColor(r:112, g:178, b:250, alpha:1)
         welcomeVC.buttonStart.layer.cornerRadius = 25
         
-        welcomeVC.buttonStart.setTitle("ДАЛЕЕ", for: UIControl.State.normal)
-        welcomeVC.buttonStart.setTitle("ДАЛЕЕ", for: UIControl.State.selected)
+        welcomeVC.buttonStart.setTitle("Далее", for: UIControl.State.normal)
+        welcomeVC.buttonStart.setTitle("Далее", for: UIControl.State.selected)
         
         welcomeVC.buttonStart.setTitleColor(UIColor.white, for: UIControl.State.normal)
         welcomeVC.buttonStart.setTitleColor(UIColor.white, for: UIControl.State.selected)
         
-        welcomeVC.buttonStart.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.light)
+        welcomeVC.buttonStart.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.medium)
     }
     
     func apply(cell:WelcomePagerCell){

@@ -33,6 +33,17 @@
 		FF561428217DD3DC00DCCE1B /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */; };
 		FF56142A217DF5BD00DCCE1B /* IAnimatorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */; };
 		FF56142D217F56C200DCCE1B /* UIViewDrawBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56142C217F56C200DCCE1B /* UIViewDrawBorder.swift */; };
+		FF56144121805B4600DCCE1B /* ConfirmationDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56143021805B4500DCCE1B /* ConfirmationDesign.swift */; };
+		FF56144221805B4600DCCE1B /* IConfirmationDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56143121805B4500DCCE1B /* IConfirmationDesign.swift */; };
+		FF56144321805B4600DCCE1B /* ConfirmationDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56143321805B4500DCCE1B /* ConfirmationDirector.swift */; };
+		FF56144421805B4600DCCE1B /* IConfirmationDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56143421805B4500DCCE1B /* IConfirmationDirector.swift */; };
+		FF56144521805B4600DCCE1B /* ConfirmationCakeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56143621805B4500DCCE1B /* ConfirmationCakeAssembly.swift */; };
+		FF56144621805B4600DCCE1B /* ConfirmationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56143821805B4500DCCE1B /* ConfirmationController.swift */; };
+		FF56144821805B4600DCCE1B /* IConfirmationCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56143C21805B4500DCCE1B /* IConfirmationCake.swift */; };
+		FF56144921805B4600DCCE1B /* ConfirmationCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56143D21805B4500DCCE1B /* ConfirmationCake.swift */; };
+		FF56144A21805B4600DCCE1B /* IConfirmationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56143F21805B4500DCCE1B /* IConfirmationRouter.swift */; };
+		FF56144B21805B4600DCCE1B /* ConfirmationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56144021805B4500DCCE1B /* ConfirmationRouter.swift */; };
+		FF56144D2180631400DCCE1B /* UINavigationControllerTransparentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56144C2180631400DCCE1B /* UINavigationControllerTransparentBar.swift */; };
 		FF72AEF32175BFBB002D04DA /* IRootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF12175BFBB002D04DA /* IRootDirector.swift */; };
 		FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF22175BFBB002D04DA /* RootDirector.swift */; };
 		FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF62175BFF5002D04DA /* LoginDirector.swift */; };
@@ -205,6 +216,17 @@
 		FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
 		FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAnimatorImage.swift; sourceTree = "<group>"; };
 		FF56142C217F56C200DCCE1B /* UIViewDrawBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewDrawBorder.swift; sourceTree = "<group>"; };
+		FF56143021805B4500DCCE1B /* ConfirmationDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationDesign.swift; sourceTree = "<group>"; };
+		FF56143121805B4500DCCE1B /* IConfirmationDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IConfirmationDesign.swift; sourceTree = "<group>"; };
+		FF56143321805B4500DCCE1B /* ConfirmationDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationDirector.swift; sourceTree = "<group>"; };
+		FF56143421805B4500DCCE1B /* IConfirmationDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IConfirmationDirector.swift; sourceTree = "<group>"; };
+		FF56143621805B4500DCCE1B /* ConfirmationCakeAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationCakeAssembly.swift; sourceTree = "<group>"; };
+		FF56143821805B4500DCCE1B /* ConfirmationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationController.swift; sourceTree = "<group>"; };
+		FF56143C21805B4500DCCE1B /* IConfirmationCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IConfirmationCake.swift; sourceTree = "<group>"; };
+		FF56143D21805B4500DCCE1B /* ConfirmationCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationCake.swift; sourceTree = "<group>"; };
+		FF56143F21805B4500DCCE1B /* IConfirmationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IConfirmationRouter.swift; sourceTree = "<group>"; };
+		FF56144021805B4500DCCE1B /* ConfirmationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationRouter.swift; sourceTree = "<group>"; };
+		FF56144C2180631400DCCE1B /* UINavigationControllerTransparentBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerTransparentBar.swift; sourceTree = "<group>"; };
 		FF72AEF12175BFBB002D04DA /* IRootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF22175BFBB002D04DA /* RootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF62175BFF5002D04DA /* LoginDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDirector.swift; sourceTree = "<group>"; };
@@ -487,6 +509,79 @@
 				FF56142C217F56C200DCCE1B /* UIViewDrawBorder.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		FF56142E21805B4500DCCE1B /* confirmation */ = {
+			isa = PBXGroup;
+			children = (
+				FF56142F21805B4500DCCE1B /* design */,
+				FF56143221805B4500DCCE1B /* director */,
+				FF56143521805B4500DCCE1B /* assemblys */,
+				FF56143721805B4500DCCE1B /* controller */,
+				FF56143921805B4500DCCE1B /* views */,
+				FF56143B21805B4500DCCE1B /* cake */,
+				FF56143E21805B4500DCCE1B /* router */,
+			);
+			path = confirmation;
+			sourceTree = "<group>";
+		};
+		FF56142F21805B4500DCCE1B /* design */ = {
+			isa = PBXGroup;
+			children = (
+				FF56143021805B4500DCCE1B /* ConfirmationDesign.swift */,
+				FF56143121805B4500DCCE1B /* IConfirmationDesign.swift */,
+			);
+			path = design;
+			sourceTree = "<group>";
+		};
+		FF56143221805B4500DCCE1B /* director */ = {
+			isa = PBXGroup;
+			children = (
+				FF56143321805B4500DCCE1B /* ConfirmationDirector.swift */,
+				FF56143421805B4500DCCE1B /* IConfirmationDirector.swift */,
+			);
+			path = director;
+			sourceTree = "<group>";
+		};
+		FF56143521805B4500DCCE1B /* assemblys */ = {
+			isa = PBXGroup;
+			children = (
+				FF56143621805B4500DCCE1B /* ConfirmationCakeAssembly.swift */,
+			);
+			path = assemblys;
+			sourceTree = "<group>";
+		};
+		FF56143721805B4500DCCE1B /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				FF56143821805B4500DCCE1B /* ConfirmationController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		FF56143921805B4500DCCE1B /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		FF56143B21805B4500DCCE1B /* cake */ = {
+			isa = PBXGroup;
+			children = (
+				FF56143C21805B4500DCCE1B /* IConfirmationCake.swift */,
+				FF56143D21805B4500DCCE1B /* ConfirmationCake.swift */,
+			);
+			path = cake;
+			sourceTree = "<group>";
+		};
+		FF56143E21805B4500DCCE1B /* router */ = {
+			isa = PBXGroup;
+			children = (
+				FF56143F21805B4500DCCE1B /* IConfirmationRouter.swift */,
+				FF56144021805B4500DCCE1B /* ConfirmationRouter.swift */,
+			);
+			path = router;
 			sourceTree = "<group>";
 		};
 		FF72AEEF2170AF8D002D04DA /* welcome */ = {
@@ -777,6 +872,7 @@
 			children = (
 				FFAB4ECD216392D400AE82EA /* NewPopMenu */,
 				FFAB4EE0216392D400AE82EA /* GradientView.swift */,
+				FF56144C2180631400DCCE1B /* UINavigationControllerTransparentBar.swift */,
 			);
 			path = ui_components;
 			sourceTree = "<group>";
@@ -1002,6 +1098,7 @@
 		FFAB4F3D2163959700AE82EA /* auth */ = {
 			isa = PBXGroup;
 			children = (
+				FF56142E21805B4500DCCE1B /* confirmation */,
 				FF72AEFF2175C1F5002D04DA /* director */,
 				FF72AEFA2175C0A5002D04DA /* session */,
 				FFAB4F3E2163959700AE82EA /* AuthSB.storyboard */,
@@ -1465,6 +1562,7 @@
 				FFAB4F772163959700AE82EA /* IAuthRouter.swift in Sources */,
 				FF72AF482176109B002D04DA /* IWelcomePagerCell.swift in Sources */,
 				FF72AEFE2175C0A5002D04DA /* SessionService.swift in Sources */,
+				FF56144521805B4600DCCE1B /* ConfirmationCakeAssembly.swift in Sources */,
 				FFAB4F762163959700AE82EA /* AuthRouter.swift in Sources */,
 				FFAB4F8F2163960900AE82EA /* IRootRouter.swift in Sources */,
 				FFAB4F11216392D400AE82EA /* UIView+Shadows.swift in Sources */,
@@ -1472,6 +1570,7 @@
 				FFAB4F12216392D400AE82EA /* Haptics.swift in Sources */,
 				FF72AF142175CEE1002D04DA /* IWelcomeDirector.swift in Sources */,
 				FFAB4F10216392D400AE82EA /* PopMenuGradientView.swift in Sources */,
+				FF56144821805B4600DCCE1B /* IConfirmationCake.swift in Sources */,
 				FFAB4F662163959700AE82EA /* LoginCakeAssembly.swift in Sources */,
 				FF72AEF92175BFF5002D04DA /* ILoginDirector.swift in Sources */,
 				FF72AF7C217761B2002D04DA /* UIImage+NSData.m in Sources */,
@@ -1511,12 +1610,16 @@
 				FF3897BC2178A085005CE562 /* IViewWithDisplayAnimation.swift in Sources */,
 				FFAB4FA42163971A00AE82EA /* SecurityServiceAssembly.swift in Sources */,
 				FF72AF3F2175E35C002D04DA /* FSPagerCollectionView.swift in Sources */,
+				FF56144321805B4600DCCE1B /* ConfirmationDirector.swift in Sources */,
 				FF72AF3B2175E35C002D04DA /* FSPagerViewCell.swift in Sources */,
 				FF3897F72178C8A4005CE562 /* IAnimator.swift in Sources */,
+				FF56144921805B4600DCCE1B /* ConfirmationCake.swift in Sources */,
 				FF3897D62178C3F5005CE562 /* ChainableAnimator.swift in Sources */,
 				FF72AF8921776230002D04DA /* UIView+Shadow.swift in Sources */,
 				FFAB4F1A216392D400AE82EA /* AppDesign.swift in Sources */,
+				FF56144221805B4600DCCE1B /* IConfirmationDesign.swift in Sources */,
 				FFAB4F6A2163959700AE82EA /* ILoginCake.swift in Sources */,
+				FF56144121805B4600DCCE1B /* ConfirmationDesign.swift in Sources */,
 				FF72AF122175CECF002D04DA /* WelcomeController.swift in Sources */,
 				FFAB4F23216392D400AE82EA /* DispatchQueue+After.swift in Sources */,
 				FF72AF81217761B2002D04DA /* String+NSMutableAttributedString.swift in Sources */,
@@ -1526,9 +1629,11 @@
 				FFAB4F0C216392D400AE82EA /* PopMenuViewController.swift in Sources */,
 				FF72AF392175E35C002D04DA /* FSPagerView.swift in Sources */,
 				FFAB4F25216392D400AE82EA /* UIStoryboard+Type.swift in Sources */,
+				FF56144621805B4600DCCE1B /* ConfirmationController.swift in Sources */,
 				FFAB4F22216392D400AE82EA /* TimeInterval+Date.swift in Sources */,
 				FF72AF85217761B2002D04DA /* String+Subscript.swift in Sources */,
 				FF72AF162175CEED002D04DA /* WelcomeDirector.swift in Sources */,
+				FF56144421805B4600DCCE1B /* IConfirmationDirector.swift in Sources */,
 				FF72AF102175CEBA002D04DA /* WelcomeCake.swift in Sources */,
 				FFAB4F18216392D400AE82EA /* IDesign.swift in Sources */,
 				FFAB4F17216392D400AE82EA /* IAppDesign.swift in Sources */,
@@ -1539,6 +1644,7 @@
 				FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */,
 				FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */,
 				FF3897ED2178C462005CE562 /* DKKeyframeAnimationFunction.swift in Sources */,
+				FF56144B21805B4600DCCE1B /* ConfirmationRouter.swift in Sources */,
 				FF3897F22178C462005CE562 /* DKKeyFrameAnimation.swift in Sources */,
 				FF72AF3E2175E35C002D04DA /* FSPageControl.swift in Sources */,
 				FF72AF6521776138002D04DA /* UITableViewCell+Reuse.swift in Sources */,
@@ -1557,6 +1663,7 @@
 				FFAB4F28216392D400AE82EA /* WKWebView+Cookies.swift in Sources */,
 				FF3897EB2178C462005CE562 /* DKChainableAnimationKit+Effects.swift in Sources */,
 				FFAB4F2A216392D400AE82EA /* FullScreenLoader.swift in Sources */,
+				FF56144D2180631400DCCE1B /* UINavigationControllerTransparentBar.swift in Sources */,
 				FF72AF83217761B2002D04DA /* String+Size.swift in Sources */,
 				FFAB4FA82163971A00AE82EA /* Network.swift in Sources */,
 				FF3897F12178C462005CE562 /* DKChainableAnimationKit+Extra.swift in Sources */,
@@ -1564,6 +1671,7 @@
 				FFAB4F24216392D400AE82EA /* UIStoryboard+Load.swift in Sources */,
 				FF72AF0E2175CEAD002D04DA /* IWelcomeCake.swift in Sources */,
 				FFAB4F0F216392D400AE82EA /* UIColor+Contrast.swift in Sources */,
+				FF56144A21805B4600DCCE1B /* IConfirmationRouter.swift in Sources */,
 				FF561426217DD3B600DCCE1B /* ITimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

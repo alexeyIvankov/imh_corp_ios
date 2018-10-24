@@ -74,6 +74,8 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         self.configurePagesDataSource()
         self.registrerCells()
         self.pagerView?.reloadData()
+        
+        self.navigationItem.title = " "
     }
     
     override func viewWillAppear(_ animated: Bool) {
