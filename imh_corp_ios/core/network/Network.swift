@@ -7,18 +7,13 @@
 //
 
 import Foundation
+import imh_corp_ios_api
 
 class Network : INetwork {
-        
-    var startPageUrl: String {
-        get{
-            return self.hostUrl+":9502/analytics"
-        }
-    }
     
-    var hostUrl: String
-
-    required init(hostUrl:String){
-        self.hostUrl = hostUrl
+    let apiDirector:IAPIDirector
+    
+    required init(url:String){
+        apiDirector = APIDirector(serverUrl: url)
     }
 }

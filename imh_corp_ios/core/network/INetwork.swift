@@ -7,9 +7,8 @@
 //
 
 import Foundation
+import imh_corp_ios_api
 
 protocol INetwork : AnyObject {
-    
-    var hostUrl:String { get }
-    var startPageUrl:String { get }
+    var apiDirector:IAPIDirector { get }
 }

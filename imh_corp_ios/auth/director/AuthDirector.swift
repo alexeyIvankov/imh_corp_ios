@@ -10,22 +10,27 @@ import Foundation
 
 class AuthDirector : IAuthDirector {
 
-    private let saveAuthKey = "auth"
-    
-    var securityService:ISecurityService
-    var sessionService:ISessionService
     var network:INetwork
     
-    required init( network:INetwork,
-                   securityService:ISecurityService,
-                   sessionService:ISessionService){
-        
+    required init( network:INetwork){
         self.network = network
-        self.securityService = securityService
-        self.sessionService = sessionService
     }
     
     func isAuth() -> Bool{
         return false
-    }    
+    }
+    
+    func authorization(countryCode:String,
+                       phone:String,
+                       success:@escaping (IAccount)->(),
+                       error:@escaping (IError)->()){
+        
+        self.network.apiDirector.authModule.authorization(countryCode: countryCode,
+                                                          phonePart: phone,
+                                                          success: { (responce) in
+            
+        }) { (error) in
+            
+        }
+    }
 }

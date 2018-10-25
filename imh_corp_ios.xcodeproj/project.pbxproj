@@ -92,6 +92,8 @@
 		FF5614CC2180ACD900DCCE1B /* EventsSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5614CB2180ACD900DCCE1B /* EventsSB.storyboard */; };
 		FF5614CE2180ACEB00DCCE1B /* CompanyServicesSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5614CD2180ACEB00DCCE1B /* CompanyServicesSB.storyboard */; };
 		FF5614D02180ACFB00DCCE1B /* NewsSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5614CF2180ACFB00DCCE1B /* NewsSB.storyboard */; };
+		FF5615452181CB1600DCCE1B /* IAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5615442181CB1600DCCE1B /* IAccount.swift */; };
+		FF5615482181CBDD00DCCE1B /* IError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5615472181CBDD00DCCE1B /* IError.swift */; };
 		FF72AEF32175BFBB002D04DA /* IRootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF12175BFBB002D04DA /* IRootDirector.swift */; };
 		FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF22175BFBB002D04DA /* RootDirector.swift */; };
 		FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF62175BFF5002D04DA /* LoginDirector.swift */; };
@@ -323,6 +325,8 @@
 		FF5614CB2180ACD900DCCE1B /* EventsSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventsSB.storyboard; sourceTree = "<group>"; };
 		FF5614CD2180ACEB00DCCE1B /* CompanyServicesSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CompanyServicesSB.storyboard; sourceTree = "<group>"; };
 		FF5614CF2180ACFB00DCCE1B /* NewsSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsSB.storyboard; sourceTree = "<group>"; };
+		FF5615442181CB1600DCCE1B /* IAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAccount.swift; sourceTree = "<group>"; };
+		FF5615472181CBDD00DCCE1B /* IError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IError.swift; sourceTree = "<group>"; };
 		FF72AEF12175BFBB002D04DA /* IRootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF22175BFBB002D04DA /* RootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF62175BFF5002D04DA /* LoginDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDirector.swift; sourceTree = "<group>"; };
@@ -1003,6 +1007,31 @@
 			path = router;
 			sourceTree = "<group>";
 		};
+		FF5615422181CAF100DCCE1B /* models */ = {
+			isa = PBXGroup;
+			children = (
+				FF5615462181CBD400DCCE1B /* error */,
+				FF5615432181CB0500DCCE1B /* account */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		FF5615432181CB0500DCCE1B /* account */ = {
+			isa = PBXGroup;
+			children = (
+				FF5615442181CB1600DCCE1B /* IAccount.swift */,
+			);
+			path = account;
+			sourceTree = "<group>";
+		};
+		FF5615462181CBD400DCCE1B /* error */ = {
+			isa = PBXGroup;
+			children = (
+				FF5615472181CBDD00DCCE1B /* IError.swift */,
+			);
+			path = error;
+			sourceTree = "<group>";
+		};
 		FF72AEEF2170AF8D002D04DA /* welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -1273,6 +1302,7 @@
 		FFAB4EA5216348BE00AE82EA /* core */ = {
 			isa = PBXGroup;
 			children = (
+				FF5615422181CAF100DCCE1B /* models */,
 				FF56144E2180943200DCCE1B /* templates */,
 				FF561424217DD3A700DCCE1B /* timer */,
 				FF3897BA2178A012005CE562 /* animations */,
@@ -1829,6 +1859,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-imh_corp_iosTests/Pods-imh_corp_iosTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BiometricAuthentication/BiometricAuthentication.framework",
 				"${BUILT_PRODUCTS_DIR}/Cocaine/Cocaine.framework",
 				"${BUILT_PRODUCTS_DIR}/EventSender/EventSender.framework",
@@ -1836,9 +1867,11 @@
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/imh_corp_ios_api/imh_corp_ios_api.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BiometricAuthentication.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cocaine.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EventSender.framework",
@@ -1846,6 +1879,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/imh_corp_ios_api.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1874,6 +1908,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-imh_corp_ios/Pods-imh_corp_ios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BiometricAuthentication/BiometricAuthentication.framework",
 				"${BUILT_PRODUCTS_DIR}/Cocaine/Cocaine.framework",
 				"${BUILT_PRODUCTS_DIR}/EventSender/EventSender.framework",
@@ -1881,9 +1916,11 @@
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/imh_corp_ios_api/imh_corp_ios_api.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BiometricAuthentication.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cocaine.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EventSender.framework",
@@ -1891,6 +1928,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/imh_corp_ios_api.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2013,6 +2051,7 @@
 				FFAB4F11216392D400AE82EA /* UIView+Shadows.swift in Sources */,
 				FF56146E21809EE300DCCE1B /* INewsDirector.swift in Sources */,
 				FF3897D82178C3F5005CE562 /* JHAnimationChainLink.m in Sources */,
+				FF5615482181CBDD00DCCE1B /* IError.swift in Sources */,
 				FFAB4F12216392D400AE82EA /* Haptics.swift in Sources */,
 				FF72AF142175CEE1002D04DA /* IWelcomeDirector.swift in Sources */,
 				FFAB4F10216392D400AE82EA /* PopMenuGradientView.swift in Sources */,
@@ -2139,6 +2178,7 @@
 				FF72AF83217761B2002D04DA /* String+Size.swift in Sources */,
 				FFAB4FA82163971A00AE82EA /* Network.swift in Sources */,
 				FF3897F12178C462005CE562 /* DKChainableAnimationKit+Extra.swift in Sources */,
+				FF5615452181CB1600DCCE1B /* IAccount.swift in Sources */,
 				FF3897EC2178C462005CE562 /* DKChainableAnimationKit+Transform.swift in Sources */,
 				FFAB4F24216392D400AE82EA /* UIStoryboard+Load.swift in Sources */,
 				FF72AF0E2175CEAD002D04DA /* IWelcomeCake.swift in Sources */,

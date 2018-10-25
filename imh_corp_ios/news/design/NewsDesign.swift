@@ -20,6 +20,8 @@ class NewsDesign : INewsDesign {
         guard let newsVC = vc as? NewsController else {
             return
         }
+        
+        //newsVC.navigationController?.tabBarItem.image = UIImage(named: "news_root")
     }
     
 }

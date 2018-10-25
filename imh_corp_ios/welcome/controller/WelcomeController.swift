@@ -145,7 +145,7 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
     
     //MARK:
     func startAutoChangePage(){
-        self.timerAutoChangePage = Timer(timeInterval: 3, repeats: true, block: { [unowned self](timer) in
+        self.timerAutoChangePage = Timer(timeInterval: 5, repeats: true, block: { [unowned self](timer) in
             self.calculateNextPageAndChange()
         })
         

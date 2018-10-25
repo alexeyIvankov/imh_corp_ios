@@ -9,8 +9,11 @@
 import Foundation
 
 protocol IAuthDirector : AnyObject {
- 
-    var sessionService:ISessionService { get set}
-    
+
     func isAuth() -> Bool
+    
+    func authorization(countryCode:String,
+                       phone:String,
+                       success:@escaping (IAccount)->(),
+                       error:@escaping (IError)->())
 }

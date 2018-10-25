@@ -1,0 +1,36 @@
+{
+  "name": "imh_corp_ios_api",
+  "version": "1.0.0",
+  "summary": "imh_corp_ios_api",
+  "description": "imh_corp_ios_api",
+  "homepage": "http://EXAMPLE/",
+  "license": "imh_corp_ios_api",
+  "authors": {
+    "Ivankov Alexey": ""
+  },
+  "platforms": {
+    "ios": "10.0",
+    "osx": "10.7",
+    "watchos": "2.0",
+    "tvos": "9.0"
+  },
+  "source": {
+    "git": "https://aivankov@bitbucket.org/aivankov/imh_corp_ios_api.git",
+    "branch": "master"
+  },
+  "source_files": "imh_corp_ios_api/**/*.{swift, h}",
+  "xcconfig": {
+    "HEADER_SEARCH_PATHS": "$(PODS_ROOT)/imh_corp_ios_api"
+  },
+  "subspecs": [
+    {
+      "name": "Alamofire",
+      "source_files": "imh_corp_ios_api/Alamofire/**/*.{swift, h}",
+      "dependencies": {
+        "Alamofire": [
+          "4.6"
+        ]
+      }
+    }
+  ]
+}
