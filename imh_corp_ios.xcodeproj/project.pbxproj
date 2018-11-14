@@ -346,7 +346,7 @@
 		FF72AF1E2175DB11002D04DA /* IWelcomeDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IWelcomeDesign.swift; sourceTree = "<group>"; };
 		FF72AF202175DB1C002D04DA /* WelcomeDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeDesign.swift; sourceTree = "<group>"; };
 		FF72AF292175E2F1002D04DA /* imh_corp_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imh_corp_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF72AF2A2175E2F1002D04DA /* imh_corp_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imh_corp_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF72AF2A2175E2F1002D04DA /* imh_corp_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = imh_corp_iosTests.xctest; path = "/Users/alexeyivankov/Desktop/work/industrial_metallurgical_holding/imh_corp_ios/build/Debug-iphoneos/imh_corp_iosTests.xctest"; sourceTree = "<absolute>"; };
 		FF72AF302175E35C002D04DA /* FSPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerView.swift; sourceTree = "<group>"; };
 		FF72AF312175E35C002D04DA /* FSPageViewTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPageViewTransformer.swift; sourceTree = "<group>"; };
 		FF72AF322175E35C002D04DA /* FSPagerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSPagerViewCell.swift; sourceTree = "<group>"; };
@@ -1256,7 +1256,6 @@
 				8F213191BF86927CFE7E2704 /* Pods */,
 				6DA4429CA10A0A69F6390F31 /* Frameworks */,
 				FF72AF292175E2F1002D04DA /* imh_corp_ios.app */,
-				FF72AF2A2175E2F1002D04DA /* imh_corp_iosTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};

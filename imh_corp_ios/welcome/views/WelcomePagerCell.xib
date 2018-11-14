@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,22 +17,21 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EzO-y3-p8W">
-                    <rect key="frame" x="0.0" y="0.0" width="500" height="320"/>
+                    <rect key="frame" x="30" y="30" width="440" height="260"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZH-7e-lCp" customClass="RQShineLabel">
-                            <rect key="frame" x="30" y="261" width="440" height="20.5"/>
+                            <rect key="frame" x="30" y="261" width="380" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KtI-cf-SWK">
-                            <rect key="frame" x="181.5" y="0.0" width="137" height="137"/>
+                            <rect key="frame" x="151.5" y="0.0" width="137" height="137"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ygU-Bi-IVy">
                                     <rect key="frame" x="0.0" y="0.0" width="137" height="137"/>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="ygU-Bi-IVy" firstAttribute="top" secondItem="KtI-cf-SWK" secondAttribute="top" id="9bP-CV-Yli"/>
                                 <constraint firstAttribute="trailing" secondItem="ygU-Bi-IVy" secondAttribute="trailing" id="PAl-yn-AwH"/>
@@ -43,13 +42,12 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0b-29-1nC" customClass="RQShineLabel">
-                            <rect key="frame" x="30" y="207" width="440" height="29"/>
+                            <rect key="frame" x="30" y="207" width="380" height="29"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="N0b-29-1nC" firstAttribute="leading" secondItem="EzO-y3-p8W" secondAttribute="leading" constant="30" id="3Qn-ng-sSa"/>
                         <constraint firstItem="N0b-29-1nC" firstAttribute="centerX" secondItem="EzO-y3-p8W" secondAttribute="centerX" id="BWX-0k-4Fw"/>
@@ -66,10 +64,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="EzO-y3-p8W" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="42p-dT-KmT"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="EzO-y3-p8W" secondAttribute="bottom" id="JaA-Y0-aU4"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EzO-y3-p8W" secondAttribute="trailing" id="n1v-Yc-pu5"/>
-                <constraint firstItem="EzO-y3-p8W" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="pk9-ws-dm0"/>
+                <constraint firstItem="EzO-y3-p8W" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="42p-dT-KmT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="EzO-y3-p8W" secondAttribute="bottom" constant="30" id="JaA-Y0-aU4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EzO-y3-p8W" secondAttribute="trailing" constant="30" id="n1v-Yc-pu5"/>
+                <constraint firstItem="EzO-y3-p8W" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="pk9-ws-dm0"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>

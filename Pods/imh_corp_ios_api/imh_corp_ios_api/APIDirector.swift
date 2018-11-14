@@ -12,7 +12,7 @@ import Alamofire
 public class APIDirector: IAPIDirector{
     
     enum PathModules:String{
-        case auth = "/auth"
+        case auth = "/authorization/rpc/"
     }
    
     public let serverUrl:String

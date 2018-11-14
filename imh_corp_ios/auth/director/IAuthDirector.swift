@@ -12,7 +12,7 @@ protocol IAuthDirector : AnyObject {
 
     func isAuth() -> Bool
     
-    func authorization(countryCode:String,
+    func authorization(deviceId:String,
                        phone:String,
                        success:@escaping (IAccount)->(),
                        error:@escaping (IError)->())

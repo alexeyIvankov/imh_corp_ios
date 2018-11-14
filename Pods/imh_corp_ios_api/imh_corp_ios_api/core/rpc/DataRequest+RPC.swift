@@ -13,10 +13,20 @@ extension DataRequest {
             
             if json != nil {
                 
-                if let errorDict = json!["error"] as? [String:Any],
-                    let message = errorDict["message"] as? String,
-                    let code = errorDict["code"] as? NSNumber{
-                    failed(NSError(domain: message, code: code.intValue, userInfo: nil))
+                if let errorDict = json!["error"] as? [String:Any]{
+                    
+                    var message = errorDict["message"] as? String
+                    var code = errorDict["code"] as? NSNumber
+                    
+                    if message == nil{
+                        message = "Неизвестная ошибка!"
+                    }
+                    
+                    if code == nil{
+                        code = NSNumber(value: -1)
+                    }
+                    
+                    failed(NSError(domain: message!, code: code!.intValue, userInfo: nil))
                 }
                 else {
                     

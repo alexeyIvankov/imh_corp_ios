@@ -8,7 +8,7 @@ public class NetworkAssembly : AssemblyProviderImpl {
      
         return Assembly.init(buildType:INetwork.self, memoryPolicy: MemoryPolicy.Strong, instanceScope: InstanceScope.Singleton, buildBlock: { (injector:I_Injector) -> AnyObject in
         
-            let network:INetwork = Network(url: "")
+            let network:INetwork = Network(url: "http://corp-app.metholding.com")
             
             return network
         })

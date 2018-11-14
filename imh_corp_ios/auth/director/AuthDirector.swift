@@ -20,17 +20,16 @@ class AuthDirector : IAuthDirector {
         return false
     }
     
-    func authorization(countryCode:String,
+    func authorization(deviceId:String,
                        phone:String,
                        success:@escaping (IAccount)->(),
                        error:@escaping (IError)->()){
         
-        self.network.apiDirector.authModule.authorization(countryCode: countryCode,
-                                                          phonePart: phone,
-                                                          success: { (responce) in
+        self.network.apiDirector.authModule.authorization(deviceId: deviceId, phone: phone, success: { (responce) in
+            print(responce)
             
         }) { (error) in
-            
+           print(error)
         }
     }
 }

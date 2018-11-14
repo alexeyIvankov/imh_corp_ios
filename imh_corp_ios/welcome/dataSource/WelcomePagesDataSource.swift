@@ -17,7 +17,7 @@ class WelcomePagesDataSource : IWelcomePagesDataSource{
         pages.append(WelcomePage(image: UIImage(named: "logo_welcome3"), name: "ПМХ", details: "Представляем вам наше корпоративное приложение"))
         pages.append(WelcomePage(image: UIImage(named: "service_welcome"), name: "Услуги", details: "Корпоративные документы и услуги у вас в кармане"))
         pages.append(WelcomePage(image: UIImage(named: "news_welcome3"), name: "Новости", details: "Самые свежие новости из жизни компании"))
-        pages.append(WelcomePage(image: UIImage(named: "people_welcome2"), name: "Люди", details: "Календарь событий и справочник сотрудников компании"))
+        pages.append(WelcomePage(image: UIImage(named: "people_welcome4"), name: "Люди", details: "Календарь событий и справочник сотрудников компании"))
         
         return pages
     }

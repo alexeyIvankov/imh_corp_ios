@@ -26,7 +26,9 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         didSet{
             if viewContainerPagerView != nil{
                 self.pagerView = FSPagerView(frame: self.viewContainerPagerView.bounds)
+                self.pagerView?.translatesAutoresizingMaskIntoConstraints = false
                 self.pagerView?.isInfinite = true
+                self.viewContainerPagerView.addConstraints(self.createConstraints(pagerView: self.pagerView!))
                 self.viewContainerPagerView.addSubview(self.pagerView!)
             }
         }
@@ -73,13 +75,15 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         
         self.configurePagesDataSource()
         self.registrerCells()
-        self.pagerView?.reloadData()
         
         self.navigationItem.title = " "
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.pagerView?.reloadData()
+        
+        
         self.startAutoChangePage()
     }
     
@@ -93,6 +97,18 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         self.welcomeCake.router.handleTouchNextButton()
     }
     
+    private func createConstraints(pagerView:FSPagerView) -> [NSLayoutConstraint]{
+        
+        let topConstraint = NSLayoutConstraint(item: pagerView, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.viewContainerPagerView, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: 0)
+        
+        let bottomConstraint = NSLayoutConstraint(item: pagerView, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.viewContainerPagerView, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1.0, constant: 0)
+        
+        let leftConstraint = NSLayoutConstraint(item: pagerView, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.viewContainerPagerView, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1.0, constant: 0)
+        
+        let rightConstraint = NSLayoutConstraint(item: pagerView, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.viewContainerPagerView, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: 0)
+        
+        return [topConstraint, bottomConstraint, leftConstraint, rightConstraint]
+    }
     
     //MARK: Data source
     private func configurePagesDataSource(){
@@ -191,7 +207,6 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         if let viewDisplayAnimation = cell as? IViewWithDisplayAnimation{
             viewDisplayAnimation.stopDisplayAnimation()
         }
-  
     }
 }
 

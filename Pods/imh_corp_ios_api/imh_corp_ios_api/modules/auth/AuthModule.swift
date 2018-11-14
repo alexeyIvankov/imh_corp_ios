@@ -22,14 +22,14 @@ public class AuthModule : IAuthModule{
         self.url = url
     }
     
-    public func authorization(countryCode:String,
-                              phonePart:String,
+    public func authorization(deviceId:String,
+                              phone:String,
                               success:@escaping (RPCResponce)->(),
                               failed:@escaping (NSError)->()){
         
         var params:[String:Any] = [:]
-        params["country_code"] = countryCode
-        params["phone_part"] = phonePart
+        params["deviceId"] = deviceId
+        params["phone"] = phone
         
         self.requestExecutor.executeRPCRequest(url: self.url, method:RemoteMethods.authorization.rawValue , params: params,success: success, failed: failed)
     }

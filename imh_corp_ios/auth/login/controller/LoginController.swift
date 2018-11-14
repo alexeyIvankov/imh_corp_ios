@@ -33,6 +33,7 @@ class LoginController : UIViewController, WKNavigationDelegate{
     
     //MARK: Dependence
     var cake:ILoginCake = Depednence.tryInject()!
+    var authCake:IAuthCake = Depednence.tryInject()!
     
     private var keyboardHandler:KeyboardHandler?
     
@@ -64,7 +65,20 @@ class LoginController : UIViewController, WKNavigationDelegate{
     
     //MARK: IBActions
     @IBAction func touchLoginButton(){
-        self.cake.router.handleTouchNextButton()
+        
+        if let code = self.textFieldCountryCode.text, let phone = self.textFieldLogin.text {
+            
+            let phoneFull = (code + phone).replacingOccurrences(of: "+", with: "")            
+            self.authCake.authDirector.authorization(deviceId: "test", phone: phoneFull, success: { (account) in
+                
+            }) { (error) in
+                
+            }
+        }
+        
+       
+        
+        //self.cake.router.handleTouchNextButton()
     }
     
     @IBAction func touchSelectCountryButton(){

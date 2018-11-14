@@ -10,8 +10,8 @@ import Foundation
 
 public protocol IAuthModule : AnyObject{
     
-    func authorization(countryCode:String,
-                       phonePart:String,
+    func authorization(deviceId:String,
+                       phone:String,
                        success:@escaping (RPCResponce)->(),
                        failed:@escaping (NSError)->())
 }
