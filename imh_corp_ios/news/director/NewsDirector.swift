@@ -9,6 +9,9 @@
 import Foundation
 
 class NewsDirector : INewsDirector {
-    
+  
+    func loadNews() {
+        
+    }
   
 }

@@ -67,9 +67,7 @@ class LoginController : UIViewController, WKNavigationDelegate{
     @IBAction func touchLoginButton(){
         
         if let code = self.textFieldCountryCode.text, let phone = self.textFieldLogin.text {
-            
-            let phoneFull = (code + phone).replacingOccurrences(of: "+", with: "")            
-            self.authCake.authDirector.authorization(deviceId: "test", phone: phoneFull, success: { (account) in
+            self.authCake.authDirector.authorization(deviceId: "test", phone: phone, success: { (account) in
                 
             }) { (error) in
                 

@@ -9,5 +9,6 @@
 import Foundation
 
 protocol INewsDirector : AnyObject {
-    
+ 
+    func loadNews()
 }
