@@ -9,10 +9,9 @@
 import Foundation
 import UIKit
 
-protocol IConfirmationRouter : AnyObject {
+protocol IConfirmationRouter : AnyObject, IRouter {
     func setOwnwer<T:UIViewController>(ownwer:T)
     
-    func showAlert(message:String)
     func showLoader()
     func hideLoader()
     

@@ -8,11 +8,6 @@
 
 import Foundation
 
-public protocol ISessionServiceDelegate : AnyObject{
-    func sessionExpired()
-}
-
-public protocol ISessionService {
-    
-    var delegate:ISessionServiceDelegate? { get set }
+public protocol ISessionService : AnyObject{
+    var activeSession:ISession?  { get }
 }

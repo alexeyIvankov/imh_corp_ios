@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootController: UITabBarController, ISessionServiceDelegate{
+class RootController: UITabBarController{
 
     
     //MARK:Status bar
@@ -28,10 +28,6 @@ class RootController: UITabBarController, ISessionServiceDelegate{
         super.viewDidLoad()
     
         self.rootCake.router.setOwnwer(ownwer: self)
-    }
-    
-    //MARK: - SessionServiceDelegate
-    func sessionExpired() {
     }
 }
 

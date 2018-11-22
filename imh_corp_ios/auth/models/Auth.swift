@@ -12,4 +12,8 @@ import RealmSwift
 class Auth: Object, IAuth{
     @objc dynamic var accessToken:String? = nil
     @objc dynamic var refreshToken:String? = nil
+    
+    override static func primaryKey() -> String? {
+        return "accessToken"
+    }
 }

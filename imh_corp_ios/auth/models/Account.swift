@@ -9,13 +9,13 @@
 import Foundation
 import RealmSwift
 
-class Account{
+class Account :  Object, IAccount{
     
     @objc dynamic var name:String? = nil
     @objc dynamic var position:String? = nil
     @objc dynamic var phone:String? = nil
     
-    var auth:Auth!
+    @objc dynamic var auth:Auth!
     var news = List<News>()
     
     func getAuth() -> IAuth{
@@ -24,5 +24,9 @@ class Account{
     
     func getNews()->[INews]{
         return self.news.toArray()
+    }
+    
+    override static func primaryKey() -> String? {
+        return "name"
     }
 }

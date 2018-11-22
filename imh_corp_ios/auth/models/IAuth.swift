@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol IAuth {
+public protocol IAuth {
     var accessToken:String? { get }
     var refreshToken:String? { get }
 }

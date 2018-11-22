@@ -33,6 +33,20 @@
 		FF43358E21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43358B21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift */; };
 		FF43358F21A69CF100F0F5F0 /* LazyParametersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43358C21A69CF100F0F5F0 /* LazyParametersManager.swift */; };
 		FF43359021A69CF100F0F5F0 /* ILazyParametersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43358D21A69CF100F0F5F0 /* ILazyParametersManager.swift */; };
+		FF43359A21A6A8F000F0F5F0 /* FetchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43359421A6A8F000F0F5F0 /* FetchOptions.swift */; };
+		FF43359B21A6A8F000F0F5F0 /* DataBaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43359621A6A8F000F0F5F0 /* DataBaseAssembly.swift */; };
+		FF43359C21A6A8F000F0F5F0 /* IDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43359721A6A8F000F0F5F0 /* IDataBase.swift */; };
+		FF43359D21A6A8F000F0F5F0 /* IDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43359821A6A8F000F0F5F0 /* IDataStorage.swift */; };
+		FF43359E21A6A8F000F0F5F0 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43359921A6A8F000F0F5F0 /* DataBase.swift */; };
+		FF4335A021A6A9E600F0F5F0 /* IAuthDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43359F21A6A9E600F0F5F0 /* IAuthDataStorage.swift */; };
+		FF4335A221A6AC2600F0F5F0 /* AuthDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335A121A6AC2600F0F5F0 /* AuthDataStorage.swift */; };
+		FF4335AB21A6CF5C00F0F5F0 /* ISessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335A821A6CF5C00F0F5F0 /* ISessionService.swift */; };
+		FF4335AC21A6CF5C00F0F5F0 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335A921A6CF5C00F0F5F0 /* SessionService.swift */; };
+		FF4335AE21A6CF8C00F0F5F0 /* ISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335AD21A6CF8C00F0F5F0 /* ISession.swift */; };
+		FF4335B021A6CF9500F0F5F0 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335AF21A6CF9500F0F5F0 /* Session.swift */; };
+		FF4335B321A6D5A500F0F5F0 /* SessionServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335B221A6D5A500F0F5F0 /* SessionServiceAssembly.swift */; };
+		FF4335B621A6D88800F0F5F0 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335B421A6D88800F0F5F0 /* Account.swift */; };
+		FF4335B721A6D88800F0F5F0 /* IAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335B521A6D88800F0F5F0 /* IAccount.swift */; };
 		FF561426217DD3B600DCCE1B /* ITimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561425217DD3B600DCCE1B /* ITimer.swift */; };
 		FF561428217DD3DC00DCCE1B /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */; };
 		FF56142A217DF5BD00DCCE1B /* IAnimatorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */; };
@@ -101,8 +115,6 @@
 		FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF22175BFBB002D04DA /* RootDirector.swift */; };
 		FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF62175BFF5002D04DA /* LoginDirector.swift */; };
 		FF72AEF92175BFF5002D04DA /* ILoginDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF72175BFF5002D04DA /* ILoginDirector.swift */; };
-		FF72AEFD2175C0A5002D04DA /* ISessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEFB2175C0A5002D04DA /* ISessionService.swift */; };
-		FF72AEFE2175C0A5002D04DA /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEFC2175C0A5002D04DA /* SessionService.swift */; };
 		FF72AF022175C1F5002D04DA /* AuthDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF002175C1F5002D04DA /* AuthDirector.swift */; };
 		FF72AF032175C1F5002D04DA /* IAuthDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF012175C1F5002D04DA /* IAuthDirector.swift */; };
 		FF72AF0C2175CE98002D04DA /* WelcomeCakeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AF0B2175CE98002D04DA /* WelcomeCakeAssembly.swift */; };
@@ -240,8 +252,6 @@
 		FFF9535121A2AE5700612C10 /* ViewNewsStateShowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9534F21A2AE5700612C10 /* ViewNewsStateShowImage.swift */; };
 		FFF9535221A2AE5700612C10 /* ViewNewsStateOnlyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9535021A2AE5700612C10 /* ViewNewsStateOnlyText.swift */; };
 		FFF9535421A2B73C00612C10 /* INewsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9535321A2B73C00612C10 /* INewsPresenter.swift */; };
-		FFF9535921A2BC5500612C10 /* IAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9535821A2BC5500612C10 /* IAccount.swift */; };
-		FFF9535B21A2BC5E00612C10 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9535A21A2BC5E00612C10 /* Account.swift */; };
 		FFF9535E21A2BDED00612C10 /* IAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9535D21A2BDED00612C10 /* IAuth.swift */; };
 		FFF9536021A2BDF600612C10 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9535F21A2BDF600612C10 /* Auth.swift */; };
 		FFF9536221A2C1EF00612C10 /* DynamicAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9536121A2C1EF00612C10 /* DynamicAssembly.swift */; };
@@ -297,6 +307,20 @@
 		FF43358B21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyParametersManagerAssembly.swift; sourceTree = "<group>"; };
 		FF43358C21A69CF100F0F5F0 /* LazyParametersManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyParametersManager.swift; sourceTree = "<group>"; };
 		FF43358D21A69CF100F0F5F0 /* ILazyParametersManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILazyParametersManager.swift; sourceTree = "<group>"; };
+		FF43359421A6A8F000F0F5F0 /* FetchOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchOptions.swift; sourceTree = "<group>"; };
+		FF43359621A6A8F000F0F5F0 /* DataBaseAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBaseAssembly.swift; sourceTree = "<group>"; };
+		FF43359721A6A8F000F0F5F0 /* IDataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDataBase.swift; sourceTree = "<group>"; };
+		FF43359821A6A8F000F0F5F0 /* IDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDataStorage.swift; sourceTree = "<group>"; };
+		FF43359921A6A8F000F0F5F0 /* DataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
+		FF43359F21A6A9E600F0F5F0 /* IAuthDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAuthDataStorage.swift; sourceTree = "<group>"; };
+		FF4335A121A6AC2600F0F5F0 /* AuthDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataStorage.swift; sourceTree = "<group>"; };
+		FF4335A821A6CF5C00F0F5F0 /* ISessionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISessionService.swift; sourceTree = "<group>"; };
+		FF4335A921A6CF5C00F0F5F0 /* SessionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
+		FF4335AD21A6CF8C00F0F5F0 /* ISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISession.swift; sourceTree = "<group>"; };
+		FF4335AF21A6CF9500F0F5F0 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		FF4335B221A6D5A500F0F5F0 /* SessionServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionServiceAssembly.swift; sourceTree = "<group>"; };
+		FF4335B421A6D88800F0F5F0 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		FF4335B521A6D88800F0F5F0 /* IAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAccount.swift; sourceTree = "<group>"; };
 		FF561425217DD3B600DCCE1B /* ITimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITimer.swift; sourceTree = "<group>"; };
 		FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
 		FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAnimatorImage.swift; sourceTree = "<group>"; };
@@ -365,8 +389,6 @@
 		FF72AEF22175BFBB002D04DA /* RootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF62175BFF5002D04DA /* LoginDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDirector.swift; sourceTree = "<group>"; };
 		FF72AEF72175BFF5002D04DA /* ILoginDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILoginDirector.swift; sourceTree = "<group>"; };
-		FF72AEFB2175C0A5002D04DA /* ISessionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISessionService.swift; sourceTree = "<group>"; };
-		FF72AEFC2175C0A5002D04DA /* SessionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		FF72AF002175C1F5002D04DA /* AuthDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthDirector.swift; sourceTree = "<group>"; };
 		FF72AF012175C1F5002D04DA /* IAuthDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAuthDirector.swift; sourceTree = "<group>"; };
 		FF72AF0B2175CE98002D04DA /* WelcomeCakeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCakeAssembly.swift; sourceTree = "<group>"; };
@@ -512,8 +534,6 @@
 		FFF9534F21A2AE5700612C10 /* ViewNewsStateShowImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewNewsStateShowImage.swift; sourceTree = "<group>"; };
 		FFF9535021A2AE5700612C10 /* ViewNewsStateOnlyText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewNewsStateOnlyText.swift; sourceTree = "<group>"; };
 		FFF9535321A2B73C00612C10 /* INewsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INewsPresenter.swift; sourceTree = "<group>"; };
-		FFF9535821A2BC5500612C10 /* IAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAccount.swift; sourceTree = "<group>"; };
-		FFF9535A21A2BC5E00612C10 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		FFF9535D21A2BDED00612C10 /* IAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAuth.swift; sourceTree = "<group>"; };
 		FFF9535F21A2BDF600612C10 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		FFF9536121A2C1EF00612C10 /* DynamicAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicAssembly.swift; sourceTree = "<group>"; };
@@ -678,6 +698,69 @@
 				FF43358B21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift */,
 			);
 			path = assemblys;
+			sourceTree = "<group>";
+		};
+		FF43359121A6A7A400F0F5F0 /* dataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				FF43359F21A6A9E600F0F5F0 /* IAuthDataStorage.swift */,
+				FF4335A121A6AC2600F0F5F0 /* AuthDataStorage.swift */,
+			);
+			path = dataStorage;
+			sourceTree = "<group>";
+		};
+		FF43359221A6A8F000F0F5F0 /* dataBase */ = {
+			isa = PBXGroup;
+			children = (
+				FF43359321A6A8F000F0F5F0 /* types */,
+				FF43359521A6A8F000F0F5F0 /* assembly */,
+				FF43359721A6A8F000F0F5F0 /* IDataBase.swift */,
+				FF43359821A6A8F000F0F5F0 /* IDataStorage.swift */,
+				FF43359921A6A8F000F0F5F0 /* DataBase.swift */,
+			);
+			path = dataBase;
+			sourceTree = "<group>";
+		};
+		FF43359321A6A8F000F0F5F0 /* types */ = {
+			isa = PBXGroup;
+			children = (
+				FF43359421A6A8F000F0F5F0 /* FetchOptions.swift */,
+			);
+			path = types;
+			sourceTree = "<group>";
+		};
+		FF43359521A6A8F000F0F5F0 /* assembly */ = {
+			isa = PBXGroup;
+			children = (
+				FF43359621A6A8F000F0F5F0 /* DataBaseAssembly.swift */,
+			);
+			path = assembly;
+			sourceTree = "<group>";
+		};
+		FF4335A721A6CF5C00F0F5F0 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				FF4335A821A6CF5C00F0F5F0 /* ISessionService.swift */,
+				FF4335A921A6CF5C00F0F5F0 /* SessionService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		FF4335AA21A6CF5C00F0F5F0 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				FF4335AD21A6CF8C00F0F5F0 /* ISession.swift */,
+				FF4335AF21A6CF9500F0F5F0 /* Session.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		FF4335B121A6D55300F0F5F0 /* assembly */ = {
+			isa = PBXGroup;
+			children = (
+				FF4335B221A6D5A500F0F5F0 /* SessionServiceAssembly.swift */,
+			);
+			path = assembly;
 			sourceTree = "<group>";
 		};
 		FF561424217DD3A700DCCE1B /* timer */ = {
@@ -1155,8 +1238,9 @@
 		FF72AEFA2175C0A5002D04DA /* session */ = {
 			isa = PBXGroup;
 			children = (
-				FF72AEFB2175C0A5002D04DA /* ISessionService.swift */,
-				FF72AEFC2175C0A5002D04DA /* SessionService.swift */,
+				FF4335B121A6D55300F0F5F0 /* assembly */,
+				FF4335AA21A6CF5C00F0F5F0 /* models */,
+				FF4335A721A6CF5C00F0F5F0 /* service */,
 			);
 			path = session;
 			sourceTree = "<group>";
@@ -1347,7 +1431,6 @@
 		FFAB4E722163465C00AE82EA /* imh_corp_ios */ = {
 			isa = PBXGroup;
 			children = (
-				FFF9535521A2BC2200612C10 /* account */,
 				FF5614AD2180A40900DCCE1B /* more */,
 				FF5614912180A2C200DCCE1B /* events */,
 				FF5614752180A1A800DCCE1B /* companyServices */,
@@ -1387,6 +1470,7 @@
 		FFAB4EA5216348BE00AE82EA /* core */ = {
 			isa = PBXGroup;
 			children = (
+				FF43359221A6A8F000F0F5F0 /* dataBase */,
 				FF43358921A69CF100F0F5F0 /* lazyParametersManager */,
 				FF5615422181CAF100DCCE1B /* models */,
 				FF56144E2180943200DCCE1B /* templates */,
@@ -1642,6 +1726,7 @@
 		FFAB4F3D2163959700AE82EA /* auth */ = {
 			isa = PBXGroup;
 			children = (
+				FF43359121A6A7A400F0F5F0 /* dataStorage */,
 				FFF9535C21A2BDE100612C10 /* models */,
 				FF56142E21805B4500DCCE1B /* confirmation */,
 				FF72AEFF2175C1F5002D04DA /* director */,
@@ -1922,34 +2007,11 @@
 			path = states;
 			sourceTree = "<group>";
 		};
-		FFF9535521A2BC2200612C10 /* account */ = {
-			isa = PBXGroup;
-			children = (
-				FFF9535621A2BC4A00612C10 /* models */,
-				FFF9535721A2BC4A00612C10 /* services */,
-			);
-			path = account;
-			sourceTree = "<group>";
-		};
-		FFF9535621A2BC4A00612C10 /* models */ = {
-			isa = PBXGroup;
-			children = (
-				FFF9535821A2BC5500612C10 /* IAccount.swift */,
-				FFF9535A21A2BC5E00612C10 /* Account.swift */,
-			);
-			path = models;
-			sourceTree = "<group>";
-		};
-		FFF9535721A2BC4A00612C10 /* services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = services;
-			sourceTree = "<group>";
-		};
 		FFF9535C21A2BDE100612C10 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				FF4335B421A6D88800F0F5F0 /* Account.swift */,
+				FF4335B521A6D88800F0F5F0 /* IAccount.swift */,
 				FFF9535D21A2BDED00612C10 /* IAuth.swift */,
 				FFF9535F21A2BDF600612C10 /* Auth.swift */,
 			);
@@ -2237,13 +2299,13 @@
 				FFAB4F6C2163959700AE82EA /* ILoginRouter.swift in Sources */,
 				FF72AF7E217761B2002D04DA /* UIImage+Alpha.m in Sources */,
 				FFF9533E21A2A4D900612C10 /* IContainerItem.swift in Sources */,
-				FFF9535B21A2BC5E00612C10 /* Account.swift in Sources */,
+				FF4335AC21A6CF5C00F0F5F0 /* SessionService.swift in Sources */,
 				FF56147321809EE300DCCE1B /* INewsRouter.swift in Sources */,
 				FF56148D2180A1A800DCCE1B /* IСompanyServicesCake.swift in Sources */,
 				FF5614C72180A40900DCCE1B /* IMoreRouter.swift in Sources */,
 				FFAB4F20216392D400AE82EA /* IWindowStack.swift in Sources */,
-				FFF9535921A2BC5500612C10 /* IAccount.swift in Sources */,
 				FFAB4FA72163971A00AE82EA /* INetwork.swift in Sources */,
+				FF4335AE21A6CF8C00F0F5F0 /* ISession.swift in Sources */,
 				FF72AF82217761B2002D04DA /* String+Remove.swift in Sources */,
 				FFF9533D21A2A4D900612C10 /* IContainer.swift in Sources */,
 				FFAB4F6B2163959700AE82EA /* LoginCake.swift in Sources */,
@@ -2268,11 +2330,12 @@
 				FF56148B2180A1A800DCCE1B /* СompanyServicesCakeAssembly.swift in Sources */,
 				FF72AF482176109B002D04DA /* IWelcomePagerCell.swift in Sources */,
 				FF5614BF2180A40900DCCE1B /* IMoreDesign.swift in Sources */,
-				FF72AEFE2175C0A5002D04DA /* SessionService.swift in Sources */,
 				FF56144521805B4600DCCE1B /* ConfirmationCakeAssembly.swift in Sources */,
 				FFAB4F762163959700AE82EA /* AuthRouter.swift in Sources */,
 				FF5614562180943200DCCE1B /* StateType.swift in Sources */,
+				FF4335B321A6D5A500F0F5F0 /* SessionServiceAssembly.swift in Sources */,
 				FF56147021809EE300DCCE1B /* NewsController.swift in Sources */,
+				FF43359D21A6A8F000F0F5F0 /* IDataStorage.swift in Sources */,
 				FFAB4F8F2163960900AE82EA /* IRootRouter.swift in Sources */,
 				FFAB4F11216392D400AE82EA /* UIView+Shadows.swift in Sources */,
 				FF56146E21809EE300DCCE1B /* INewsDirector.swift in Sources */,
@@ -2287,6 +2350,7 @@
 				FFF9536021A2BDF600612C10 /* Auth.swift in Sources */,
 				FF72AEF92175BFF5002D04DA /* ILoginDirector.swift in Sources */,
 				FF72AF7C217761B2002D04DA /* UIImage+NSData.m in Sources */,
+				FF43359E21A6A8F000F0F5F0 /* DataBase.swift in Sources */,
 				FF56146D21809EE300DCCE1B /* NewsDirector.swift in Sources */,
 				FF3897EE2178C462005CE562 /* DKChainableAnimationKit+Anchor.swift in Sources */,
 				FFAB4F0D216392D400AE82EA /* PopMenuAppearance.swift in Sources */,
@@ -2311,7 +2375,6 @@
 				FF5614A62180A2C200DCCE1B /* IEventsDirector.swift in Sources */,
 				FFAB4F14216392D400AE82EA /* PopMenuDismissAnimationController.swift in Sources */,
 				FFAB4F8D2163960900AE82EA /* RootCake.swift in Sources */,
-				FF72AEFD2175C0A5002D04DA /* ISessionService.swift in Sources */,
 				FFF9534721A2A86800612C10 /* NewsCell.swift in Sources */,
 				FF72AF7F217761B2002D04DA /* UIImage+RoundedCorner.m in Sources */,
 				FF561428217DD3DC00DCCE1B /* BackgroundTimer.swift in Sources */,
@@ -2336,6 +2399,7 @@
 				FF3897F02178C462005CE562 /* DKChainableAnimationKit+Frame.swift in Sources */,
 				FF3897F32178C462005CE562 /* DKChainableAnimationKit.swift in Sources */,
 				FF5614572180943200DCCE1B /* StateTemplate.swift in Sources */,
+				FF4335AB21A6CF5C00F0F5F0 /* ISessionService.swift in Sources */,
 				FF5614A92180A2C200DCCE1B /* IEventsCake.swift in Sources */,
 				FFAB4F27216392D400AE82EA /* UIColor+RGB.swift in Sources */,
 				FF72AF7B217761B2002D04DA /* Image+Gradient.swift in Sources */,
@@ -2380,6 +2444,7 @@
 				FF72AF102175CEBA002D04DA /* WelcomeCake.swift in Sources */,
 				FFAB4F18216392D400AE82EA /* IDesign.swift in Sources */,
 				FF56148F2180A1A800DCCE1B /* IСompanyServicesRouter.swift in Sources */,
+				FF43359C21A6A8F000F0F5F0 /* IDataBase.swift in Sources */,
 				FFAB4F17216392D400AE82EA /* IAppDesign.swift in Sources */,
 				FF5614A52180A2C200DCCE1B /* EventsDirector.swift in Sources */,
 				FFAB4F0E216392D400AE82EA /* PopMenuManager.swift in Sources */,
@@ -2391,13 +2456,16 @@
 				FFAB4F26216392D400AE82EA /* UIColor+Hex.swift in Sources */,
 				FF43358E21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift in Sources */,
 				FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */,
+				FF43359B21A6A8F000F0F5F0 /* DataBaseAssembly.swift in Sources */,
 				FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */,
 				FFF9533F21A2A4D900612C10 /* ContainerTemplate.swift in Sources */,
+				FF43359A21A6A8F000F0F5F0 /* FetchOptions.swift in Sources */,
 				FF3897ED2178C462005CE562 /* DKKeyframeAnimationFunction.swift in Sources */,
 				FF56144B21805B4600DCCE1B /* ConfirmationRouter.swift in Sources */,
 				FF5614A82180A2C200DCCE1B /* EventsController.swift in Sources */,
 				FF3897F22178C462005CE562 /* DKKeyFrameAnimation.swift in Sources */,
 				FFF9534321A2A4D900612C10 /* Row.swift in Sources */,
+				FF4335B721A6D88800F0F5F0 /* IAccount.swift in Sources */,
 				FF72AF3E2175E35C002D04DA /* FSPageControl.swift in Sources */,
 				FF5614C42180A40900DCCE1B /* MoreController.swift in Sources */,
 				FF72AF6521776138002D04DA /* UITableViewCell+Reuse.swift in Sources */,
@@ -2408,6 +2476,7 @@
 				FF72AF1A2175CF0B002D04DA /* WelcomeRouter.swift in Sources */,
 				FFAB4F1C216392D400AE82EA /* IDependenceDirector.swift in Sources */,
 				FFAB4F892163960900AE82EA /* RootController.swift in Sources */,
+				FF4335B021A6CF9500F0F5F0 /* Session.swift in Sources */,
 				FFAB4F19216392D400AE82EA /* AppDesignAssembly.swift in Sources */,
 				FFAB4F2C216392D400AE82EA /* ILoaderService.swift in Sources */,
 				FF72AF84217761B2002D04DA /* String+Localize.swift in Sources */,
@@ -2421,9 +2490,11 @@
 				FFF9534021A2A4D900612C10 /* Header.swift in Sources */,
 				FFAB4F2A216392D400AE82EA /* FullScreenLoader.swift in Sources */,
 				FF56144D2180631400DCCE1B /* UINavigationControllerTransparentBar.swift in Sources */,
+				FF4335B621A6D88800F0F5F0 /* Account.swift in Sources */,
 				FF5614A42180A2C200DCCE1B /* EventsDesign.swift in Sources */,
 				FF72AF83217761B2002D04DA /* String+Size.swift in Sources */,
 				FFAB4FA82163971A00AE82EA /* Network.swift in Sources */,
+				FF4335A221A6AC2600F0F5F0 /* AuthDataStorage.swift in Sources */,
 				FF3897F12178C462005CE562 /* DKChainableAnimationKit+Extra.swift in Sources */,
 				FF3897EC2178C462005CE562 /* DKChainableAnimationKit+Transform.swift in Sources */,
 				FFAB4F24216392D400AE82EA /* UIStoryboard+Load.swift in Sources */,
@@ -2432,6 +2503,7 @@
 				FFF9532D21A29F9A00612C10 /* List+Array.swift in Sources */,
 				FF56144A21805B4600DCCE1B /* IConfirmationRouter.swift in Sources */,
 				FF561426217DD3B600DCCE1B /* ITimer.swift in Sources */,
+				FF4335A021A6A9E600F0F5F0 /* IAuthDataStorage.swift in Sources */,
 				FFF9535E21A2BDED00612C10 /* IAuth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,20 +11,32 @@ import Foundation
 class AuthDirector : IAuthDirector {
 
     var network:INetwork
+    var dataStorage:IAuthDataStorage
+    var sessionService:ISessionService
     
-    required init( network:INetwork){
+    required init( network:INetwork,
+                   dataStorage:IAuthDataStorage,
+                   sessionService:ISessionService){
+        
         self.network = network
+        self.dataStorage = dataStorage
+        self.sessionService = sessionService
     }
     
     func isAuth() -> Bool{
-        return false
+        if self.sessionService.activeSession != nil{
+            return true
+        }
+        else {
+            return false
+        }
     }
     
     func authorization(phone:String,
                        countyCode:String,
                        smsCode:String,
                        deviceId:String,
-                       success:@escaping (IAccount)->(),
+                       success:@escaping (ISession)->(),
                        error:@escaping (IError)->()){
         
         self.network.apiDirector.authModule.authorization(phone: phone,
@@ -32,11 +44,25 @@ class AuthDirector : IAuthDirector {
                                                           countryCode:countyCode,
                                                           smsCode: smsCode,
                                                           success: { (responce) in
-            print(responce)
+                                                           
+                                                            if let data = responce.success?["data"] as? [String:Any], let account = data["account"] as? [String:Any]{
+                                                                self.dataStorage.trySaveAuthorization(account: account)
+                                                                
+                                                                if let session = self.sessionService.activeSession{
+                                                                    success(session)
+                                                                }
+                                                                else {
+                                                                    error(NSError(domain: "Не удалось получить информацию о пользователе!", code: -1, userInfo: nil))
+                                                                }
+                                                               
+                                                                
+                                                            }
+                                                            else{
+                                                                error(NSError(domain: "Не удалось получить информацию о пользователе!", code: -1, userInfo: nil))
+                                                            }
+                                         
             
-        }) { (error) in
-           print(error)
-        }
+        }, failed:error)
     }
     
     func sendVerifyCode(phone:String,

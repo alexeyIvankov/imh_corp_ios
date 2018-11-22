@@ -80,7 +80,7 @@ class ConfirmationController : UIViewController {
   
     //MARK: IBActions
     @IBAction func touchSendCodeButton(){
-        self.authCake.authRouter.startAppWithAuthorized()
+        self.tryAuthorization()
     }
     
     @IBAction func touchResendCodeButton(){
@@ -111,6 +111,29 @@ class ConfirmationController : UIViewController {
                                                         
             }) { (error) in
                 self.showAlertInfo(message: error.message())
+            }
+        }
+    }
+    
+    private func tryAuthorization(){
+        if let verifivcationCode = self.textFieldConfirmation.text,
+            let phone = self.phone,
+            let countryCode = self.codeRegion,
+            let deviceId  = UIDevice.current.identifierForVendor?.uuidString {
+            
+            self.authCake.authDirector.authorization(phone: phone,
+                                                     countyCode: countryCode,
+                                                     smsCode: verifivcationCode,
+                                                     deviceId: deviceId,
+                                                     success: { (session) in
+                
+                                                        self.cake.router.showAlertInfo(message: "Пользователь \(session.getAccount().name!) успешно зарегестрирован!",  handlerActionClose: {
+                                                            self.authCake.authRouter.startAppWithAuthorized()
+                                                        })
+                                                        
+                                                        
+            }) { (error) in
+                self.cake.router.showAlertInfo(message: error.message())
             }
         }
     }

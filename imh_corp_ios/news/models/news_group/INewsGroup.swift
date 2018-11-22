@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol INewsGroup : AnyObject {
+public protocol INewsGroup : AnyObject {
     
     var name:String? { get }
 }

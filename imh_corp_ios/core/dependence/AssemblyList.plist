@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
+	<string>SessionServiceAssembly</string>
+	<string>DataBaseAssembly</string>
 	<string>NetworkAssembly</string>
 	<string>ReuseViewServiceAssembly</string>
 	<string>RootCakeAssembly</string>

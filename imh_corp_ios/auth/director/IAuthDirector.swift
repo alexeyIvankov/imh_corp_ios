@@ -16,7 +16,7 @@ protocol IAuthDirector : AnyObject {
                        countyCode:String,
                        smsCode:String,
                        deviceId:String,
-                       success:@escaping (IAccount)->(),
+                       success:@escaping (ISession)->(),
                        error:@escaping (IError)->())
     
     func sendVerifyCode(phone:String,

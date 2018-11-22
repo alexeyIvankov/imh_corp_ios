@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol IAccount : AnyObject {
+public protocol IAccount : AnyObject {
     
     var name:String? { get }
     var position:String? { get }
