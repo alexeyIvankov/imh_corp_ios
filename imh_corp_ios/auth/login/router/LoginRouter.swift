@@ -22,19 +22,14 @@ class LoginRouter : ILoginRouter{
         self.owner = ownwer
     }
     
-    func handleTouchNextButton(){
+    func handleTouchNextButton(phone:String, codeRegion:String){
         
         let confirmationController:ConfirmationController = UIStoryboard.load(type: UIStoryboard.TypeSB.auth).load()!
+        confirmationController.phone = phone
+        confirmationController.codeRegion = codeRegion
         self.owner?.navigationController?.pushViewController(confirmationController, animated: true)
     }
-    
-    func showAlert(message: String) {
         
-        let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        owner?.present(alert, animated: true, completion: nil)
-    }
-    
     func showLoader(){
        self.loaderService.showIfNeed()
     }

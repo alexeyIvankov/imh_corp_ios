@@ -12,8 +12,16 @@ protocol IAuthDirector : AnyObject {
 
     func isAuth() -> Bool
     
-    func authorization(deviceId:String,
-                       phone:String,
+    func authorization(phone:String,
+                       countyCode:String,
+                       smsCode:String,
+                       deviceId:String,
                        success:@escaping (IAccount)->(),
                        error:@escaping (IError)->())
+    
+    func sendVerifyCode(phone:String,
+                        countyCode:String,
+                        deviceId:String,
+                        success:@escaping (String?)->(),
+                        error:@escaping (IError)->())
 }

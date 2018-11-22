@@ -9,12 +9,11 @@
 import Foundation
 import UIKit
 
-protocol ILoginRouter : AnyObject {
+protocol ILoginRouter : IRouter{
     func setOwnwer<T:UIViewController>(ownwer:T)
     
-    func handleTouchNextButton()
-    
-    func showAlert(message:String)
+    func handleTouchNextButton(phone:String, codeRegion:String)
+
     func showLoader()
     func hideLoader()
 }

@@ -13,6 +13,7 @@ public class APIDirector: IAPIDirector{
     
     enum PathModules:String{
         case auth = "/authorization/rpc/"
+        case socialNetwork = "/social_network/rpc/"
     }
    
     public let serverUrl:String
@@ -22,12 +23,14 @@ public class APIDirector: IAPIDirector{
     
     //MARK: Modules
     public let authModule: IAuthModule
+    public let socialNetworkModule:ISocialNetworkModule
     
     public required init(serverUrl:String){
         self.serverUrl = serverUrl
         self.sessionManager = SessionManager()
         self.requestExecutor = RequestExecutor(sessionManager: self.sessionManager)
         self.authModule = AuthModule(requestExecutor: self.requestExecutor, url: self.serverUrl + PathModules.auth.rawValue)
+        self.socialNetworkModule = SocialNetworkModule(requestExecutor: self.requestExecutor, url: self.serverUrl + PathModules.socialNetwork.rawValue)
     }
     
     

@@ -15,3 +15,9 @@ protocol IRouter : AnyObject {
     
     func setOwnwer(ownwer:UIViewController)
 }
+
+extension IRouter{
+    func showAlertInfo(message:String, title:String="", handlerActionClose: (()->())? = nil){
+        self.owner?.showAlertInfo(message: message, title: title, handlerActionClose: handlerActionClose)
+    }
+}

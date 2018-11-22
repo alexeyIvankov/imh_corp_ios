@@ -43,6 +43,10 @@ class ConfirmationController : UIViewController {
     //MARK:Resend
     private var timerResend:ITimer  = BackgroundTimer()
     
+    //MARK:
+    public var phone:String?
+    public var codeRegion:String?
+    
     //MARK: Dependence
     var cake:IConfirmationCake = Depednence.tryInject()!
     var authCake:IAuthCake = Depednence.tryInject()!
@@ -80,9 +84,39 @@ class ConfirmationController : UIViewController {
     }
     
     @IBAction func touchResendCodeButton(){
+         self.tryVerificationPhone()
          self.stateMachineResendCode.change(stateType: StateType(type: ResendCodeState.lock))
     }
     
+    private func tryVerificationPhone(){
+        
+        if let code = self.codeRegion,
+            let phone = self.phone,
+            let deviceId  = UIDevice.current.identifierForVendor?.uuidString {
+            
+            self.authCake.authDirector.sendVerifyCode(phone: phone,
+                                                      countyCode: code,
+                                                      deviceId: deviceId,
+                                                      success: { (message) in
+                                                        
+                                                        if message != nil{
+                                                            self.showAlertInfo(message: message!, handlerActionClose: {
+                                                            
+                                                            })
+                                                        }
+                                                        else{
+                                                            self.showAlertInfo(message: "Код отправлен")
+                                                        }
+                                                        
+                                                        
+            }) { (error) in
+                self.showAlertInfo(message: error.message())
+            }
+        }
+    }
+    
+    
+     //MARK: States
     func buildStateMachine() -> StateEngineTemplate<ResendCodeState> {
         
         let stateReady = StateTemplate<ResendCodeState>(type: ResendCodeState.ready)

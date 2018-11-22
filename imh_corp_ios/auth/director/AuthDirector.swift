@@ -20,16 +20,44 @@ class AuthDirector : IAuthDirector {
         return false
     }
     
-    func authorization(deviceId:String,
-                       phone:String,
+    func authorization(phone:String,
+                       countyCode:String,
+                       smsCode:String,
+                       deviceId:String,
                        success:@escaping (IAccount)->(),
                        error:@escaping (IError)->()){
         
-        self.network.apiDirector.authModule.authorization(deviceId: deviceId, phone: phone, success: { (responce) in
+        self.network.apiDirector.authModule.authorization(phone: phone,
+                                                          deviceId: deviceId,
+                                                          countryCode:countyCode,
+                                                          smsCode: smsCode,
+                                                          success: { (responce) in
             print(responce)
             
         }) { (error) in
            print(error)
         }
+    }
+    
+    func sendVerifyCode(phone:String,
+                        countyCode:String,
+                        deviceId:String,
+                        success:@escaping (String?)->(),
+                        error:@escaping (IError)->()){
+        
+        self.network.apiDirector.authModule.sendVerifyCode(phone: phone,
+                                                           countryCode: countyCode,
+                                                           deviceId: deviceId,
+                                                           success: { (responce) in
+             
+                                                            if let responceSuccess = responce.success?["data"] as? [String:Any],
+                                                                let message = responceSuccess["message"] as? String{
+                                                                success(message)
+                                                            }
+                                                            else{
+                                                                success(nil)
+                                                            }
+                                                            
+        }, failed:error)
     }
 }

@@ -9,9 +9,10 @@
 import Foundation
 
 public class AuthModule : IAuthModule{
-    
+
     enum RemoteMethods : String{
         case authorization = "authorization"
+        case sendVerifyCode = "send_sms"
     }
     
     let requestExecutor:IRequestExecutor
@@ -22,16 +23,34 @@ public class AuthModule : IAuthModule{
         self.url = url
     }
     
-    public func authorization(deviceId:String,
-                              phone:String,
+    public func authorization(phone:String,
+                              deviceId:String,
+                              countryCode:String,
+                              smsCode:String,
                               success:@escaping (RPCResponce)->(),
                               failed:@escaping (NSError)->()){
         
         var params:[String:Any] = [:]
         params["deviceId"] = deviceId
         params["phone"] = phone
+        params["country_code"] = countryCode
+        params["sms_code"] = smsCode
         
+
         self.requestExecutor.executeRPCRequest(url: self.url, method:RemoteMethods.authorization.rawValue , params: params,success: success, failed: failed)
     }
     
+    public func sendVerifyCode(phone: String,
+                               countryCode: String,
+                               deviceId: String,
+                               success: @escaping (RPCResponce) -> (),
+                               failed: @escaping (NSError) -> ()) {
+        
+        var params:[String:Any] = [:]
+        params["deviceId"] = deviceId
+        params["phone"] = phone
+        params["country_code"] = countryCode
+        
+        self.requestExecutor.executeRPCRequest(url: self.url, method:RemoteMethods.sendVerifyCode.rawValue , params: params,success: success, failed: failed)
+    }
 }

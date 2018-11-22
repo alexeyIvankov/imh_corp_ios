@@ -9,5 +9,12 @@
 import Foundation
 
 protocol IError : AnyObject {
+    func message() -> String
+}
+
+extension NSError : IError{
     
+    func message() -> String {
+        return self.domain
+    }
 }

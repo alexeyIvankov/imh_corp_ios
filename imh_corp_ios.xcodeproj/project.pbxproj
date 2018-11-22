@@ -29,6 +29,10 @@
 		FF3897F42178C462005CE562 /* UIView+AnimationKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897E82178C462005CE562 /* UIView+AnimationKit.swift */; };
 		FF3897F72178C8A4005CE562 /* IAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897F62178C8A4005CE562 /* IAnimator.swift */; };
 		FF3897FA2178CB7D005CE562 /* AnimatorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897F92178CB7D005CE562 /* AnimatorImage.swift */; };
+		FF43358021A6835000F0F5F0 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43357F21A6835000F0F5F0 /* UIViewController+Alert.swift */; };
+		FF43358E21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43358B21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift */; };
+		FF43358F21A69CF100F0F5F0 /* LazyParametersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43358C21A69CF100F0F5F0 /* LazyParametersManager.swift */; };
+		FF43359021A69CF100F0F5F0 /* ILazyParametersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43358D21A69CF100F0F5F0 /* ILazyParametersManager.swift */; };
 		FF561426217DD3B600DCCE1B /* ITimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561425217DD3B600DCCE1B /* ITimer.swift */; };
 		FF561428217DD3DC00DCCE1B /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */; };
 		FF56142A217DF5BD00DCCE1B /* IAnimatorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */; };
@@ -288,6 +292,11 @@
 		FF3897E82178C462005CE562 /* UIView+AnimationKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AnimationKit.swift"; sourceTree = "<group>"; };
 		FF3897F62178C8A4005CE562 /* IAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAnimator.swift; sourceTree = "<group>"; };
 		FF3897F92178CB7D005CE562 /* AnimatorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorImage.swift; sourceTree = "<group>"; };
+		FF43357D21A5A2E400F0F5F0 /* imh_corp_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imh_corp_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF43357F21A6835000F0F5F0 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		FF43358B21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyParametersManagerAssembly.swift; sourceTree = "<group>"; };
+		FF43358C21A69CF100F0F5F0 /* LazyParametersManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyParametersManager.swift; sourceTree = "<group>"; };
+		FF43358D21A69CF100F0F5F0 /* ILazyParametersManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILazyParametersManager.swift; sourceTree = "<group>"; };
 		FF561425217DD3B600DCCE1B /* ITimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITimer.swift; sourceTree = "<group>"; };
 		FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
 		FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAnimatorImage.swift; sourceTree = "<group>"; };
@@ -481,7 +490,6 @@
 		FFAB4FA02163971A00AE82EA /* INetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INetwork.swift; sourceTree = "<group>"; };
 		FFAB4FA12163971A00AE82EA /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		FFAB4FA32163971A00AE82EA /* NetworkAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
-		FFF9531621A28EF200612C10 /* imh_corp_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = imh_corp_iosTests.xctest; path = "/Users/alexeyivankov/Desktop/work/industrial_metallurgical_holding/imh_corp_ios/build/Debug-iphoneos/imh_corp_iosTests.xctest"; sourceTree = "<absolute>"; };
 		FFF9531D21A292C600612C10 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		FFF9531E21A292C600612C10 /* INews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INews.swift; sourceTree = "<group>"; };
 		FFF9532221A292D500612C10 /* NewsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsGroup.swift; sourceTree = "<group>"; };
@@ -644,6 +652,32 @@
 				FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */,
 			);
 			path = animators;
+			sourceTree = "<group>";
+		};
+		FF43357E21A6808700F0F5F0 /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				FF43357F21A6835000F0F5F0 /* UIViewController+Alert.swift */,
+			);
+			path = viewController;
+			sourceTree = "<group>";
+		};
+		FF43358921A69CF100F0F5F0 /* lazyParametersManager */ = {
+			isa = PBXGroup;
+			children = (
+				FF43358A21A69CF100F0F5F0 /* assemblys */,
+				FF43358C21A69CF100F0F5F0 /* LazyParametersManager.swift */,
+				FF43358D21A69CF100F0F5F0 /* ILazyParametersManager.swift */,
+			);
+			path = lazyParametersManager;
+			sourceTree = "<group>";
+		};
+		FF43358A21A69CF100F0F5F0 /* assemblys */ = {
+			isa = PBXGroup;
+			children = (
+				FF43358B21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift */,
+			);
+			path = assemblys;
 			sourceTree = "<group>";
 		};
 		FF561424217DD3A700DCCE1B /* timer */ = {
@@ -1306,6 +1340,7 @@
 				8F213191BF86927CFE7E2704 /* Pods */,
 				6DA4429CA10A0A69F6390F31 /* Frameworks */,
 				FF72AF292175E2F1002D04DA /* imh_corp_ios.app */,
+				FF43357D21A5A2E400F0F5F0 /* imh_corp_iosTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1352,6 +1387,7 @@
 		FFAB4EA5216348BE00AE82EA /* core */ = {
 			isa = PBXGroup;
 			children = (
+				FF43358921A69CF100F0F5F0 /* lazyParametersManager */,
 				FF5615422181CAF100DCCE1B /* models */,
 				FF56144E2180943200DCCE1B /* templates */,
 				FF561424217DD3A700DCCE1B /* timer */,
@@ -1499,6 +1535,7 @@
 		FFAB4EF2216392D400AE82EA /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FF43357E21A6808700F0F5F0 /* viewController */,
 				FFF9532B21A29F8B00612C10 /* realm */,
 				FF72AF8721776230002D04DA /* view */,
 				FF72AF66217761B2002D04DA /* image */,
@@ -1960,7 +1997,7 @@
 			);
 			name = imh_corp_iosTests;
 			productName = imh_corp_iosTests;
-			productReference = FFF9531621A28EF200612C10 /* imh_corp_iosTests.xctest */;
+			productReference = FF43357D21A5A2E400F0F5F0 /* imh_corp_iosTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -2212,6 +2249,7 @@
 				FFAB4F6B2163959700AE82EA /* LoginCake.swift in Sources */,
 				FFAB4F672163959700AE82EA /* LoginController.swift in Sources */,
 				FF72AF7D217761B2002D04DA /* Image+Color.swift in Sources */,
+				FF43358F21A69CF100F0F5F0 /* LazyParametersManager.swift in Sources */,
 				FF72AF3D2175E35C002D04DA /* FSPageViewLayout.swift in Sources */,
 				FF3897D52178C3F5005CE562 /* UIView+ChainableAnimator.swift in Sources */,
 				FF72AF182175CEFF002D04DA /* IWelcomeRouter.swift in Sources */,
@@ -2301,6 +2339,7 @@
 				FF5614A92180A2C200DCCE1B /* IEventsCake.swift in Sources */,
 				FFAB4F27216392D400AE82EA /* UIColor+RGB.swift in Sources */,
 				FF72AF7B217761B2002D04DA /* Image+Gradient.swift in Sources */,
+				FF43359021A69CF100F0F5F0 /* ILazyParametersManager.swift in Sources */,
 				FF72AF0C2175CE98002D04DA /* WelcomeCakeAssembly.swift in Sources */,
 				FF5614C62180A40900DCCE1B /* MoreCake.swift in Sources */,
 				FF3897BC2178A085005CE562 /* IViewWithDisplayAnimation.swift in Sources */,
@@ -2348,7 +2387,9 @@
 				FFAB4F8E2163960900AE82EA /* RootRouter.swift in Sources */,
 				FFF9536221A2C1EF00612C10 /* DynamicAssembly.swift in Sources */,
 				FFAB4F2B216392D400AE82EA /* LoaderService.swift in Sources */,
+				FF43358021A6835000F0F5F0 /* UIViewController+Alert.swift in Sources */,
 				FFAB4F26216392D400AE82EA /* UIColor+Hex.swift in Sources */,
+				FF43358E21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift in Sources */,
 				FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */,
 				FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */,
 				FFF9533F21A2A4D900612C10 /* ContainerTemplate.swift in Sources */,

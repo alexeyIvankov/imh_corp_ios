@@ -13,8 +13,9 @@
         <!--Navigation Controller Transparent Bar-->
         <scene sceneID="fZD-NL-S5A">
             <objects>
-                <navigationController storyboardIdentifier="UINavigationController" navigationBarHidden="YES" id="Ezr-mD-WF2" customClass="UINavigationControllerTransparentBar" customModule="imh_corp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UINavigationController" id="Ezr-mD-WF2" customClass="UINavigationControllerTransparentBar" customModule="imh_corp_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rg3-5z-CLM">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -34,10 +35,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="16I-bZ-egW">
-                                <rect key="frame" x="0.0" y="30" width="320" height="398"/>
+                                <rect key="frame" x="0.0" y="74" width="320" height="354"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JeX-jn-gL3">
-                                        <rect key="frame" x="0.0" y="4" width="320" height="390"/>
+                                        <rect key="frame" x="0.0" y="-18" width="320" height="390"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Kf-F1-onT">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="370"/>

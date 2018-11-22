@@ -65,18 +65,7 @@ class LoginController : UIViewController, WKNavigationDelegate{
     
     //MARK: IBActions
     @IBAction func touchLoginButton(){
-        
-        if let code = self.textFieldCountryCode.text, let phone = self.textFieldLogin.text {
-            self.authCake.authDirector.authorization(deviceId: "test", phone: phone, success: { (account) in
-                
-            }) { (error) in
-                
-            }
-        }
-        
-       
-        
-        //self.cake.router.handleTouchNextButton()
+        self.tryVerificationPhone()
     }
     
     @IBAction func touchSelectCountryButton(){
@@ -86,6 +75,33 @@ class LoginController : UIViewController, WKNavigationDelegate{
     
     private func tryLogin(){
         
+    }
+    
+    private func tryVerificationPhone(){
+        
+        if let code = self.textFieldCountryCode.text,
+            let phone = self.textFieldLogin.text,
+            let deviceId  = UIDevice.current.identifierForVendor?.uuidString {
+            
+            self.authCake.authDirector.sendVerifyCode(phone: phone,
+                                                      countyCode: code,
+                                                      deviceId: deviceId,
+                                                      success: { (message) in
+                                                        
+                                                        if message != nil{
+                                                            self.showAlertInfo(message: message!, handlerActionClose: {
+                                                                self.cake.router.handleTouchNextButton(phone: phone, codeRegion: code)
+                                                            })
+                                                        }
+                                                        else{
+                                                            self.cake.router.handleTouchNextButton(phone: phone, codeRegion: code)
+                                                        }
+                                                        
+                                                        
+            }) { (error) in
+                self.showAlertInfo(message: error.message())
+            }
+        }
     }
 
     
