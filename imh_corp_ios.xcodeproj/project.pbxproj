@@ -47,6 +47,11 @@
 		FF4335B321A6D5A500F0F5F0 /* SessionServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335B221A6D5A500F0F5F0 /* SessionServiceAssembly.swift */; };
 		FF4335B621A6D88800F0F5F0 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335B421A6D88800F0F5F0 /* Account.swift */; };
 		FF4335B721A6D88800F0F5F0 /* IAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335B521A6D88800F0F5F0 /* IAccount.swift */; };
+		FF4335C021A7D7D400F0F5F0 /* SpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335BB21A7D7D400F0F5F0 /* SpinerLayer.swift */; };
+		FF4335C121A7D7D400F0F5F0 /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335BC21A7D7D400F0F5F0 /* CGRectEx.swift */; };
+		FF4335C221A7D7D400F0F5F0 /* TransitionSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335BD21A7D7D400F0F5F0 /* TransitionSubmitButton.swift */; };
+		FF4335C321A7D7D400F0F5F0 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335BE21A7D7D400F0F5F0 /* FadeTransition.swift */; };
+		FF4335C421A7D7D400F0F5F0 /* TimerEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335BF21A7D7D400F0F5F0 /* TimerEx.swift */; };
 		FF561426217DD3B600DCCE1B /* ITimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561425217DD3B600DCCE1B /* ITimer.swift */; };
 		FF561428217DD3DC00DCCE1B /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */; };
 		FF56142A217DF5BD00DCCE1B /* IAnimatorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */; };
@@ -321,6 +326,11 @@
 		FF4335B221A6D5A500F0F5F0 /* SessionServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionServiceAssembly.swift; sourceTree = "<group>"; };
 		FF4335B421A6D88800F0F5F0 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		FF4335B521A6D88800F0F5F0 /* IAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAccount.swift; sourceTree = "<group>"; };
+		FF4335BB21A7D7D400F0F5F0 /* SpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinerLayer.swift; sourceTree = "<group>"; };
+		FF4335BC21A7D7D400F0F5F0 /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
+		FF4335BD21A7D7D400F0F5F0 /* TransitionSubmitButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionSubmitButton.swift; sourceTree = "<group>"; };
+		FF4335BE21A7D7D400F0F5F0 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
+		FF4335BF21A7D7D400F0F5F0 /* TimerEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerEx.swift; sourceTree = "<group>"; };
 		FF561425217DD3B600DCCE1B /* ITimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITimer.swift; sourceTree = "<group>"; };
 		FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
 		FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAnimatorImage.swift; sourceTree = "<group>"; };
@@ -761,6 +771,34 @@
 				FF4335B221A6D5A500F0F5F0 /* SessionServiceAssembly.swift */,
 			);
 			path = assembly;
+			sourceTree = "<group>";
+		};
+		FF4335B821A7D7D400F0F5F0 /* TKSubmitTransition */ = {
+			isa = PBXGroup;
+			children = (
+				FF4335B921A7D7D400F0F5F0 /* SubmitTransition */,
+			);
+			path = TKSubmitTransition;
+			sourceTree = "<group>";
+		};
+		FF4335B921A7D7D400F0F5F0 /* SubmitTransition */ = {
+			isa = PBXGroup;
+			children = (
+				FF4335BA21A7D7D400F0F5F0 /* Classes */,
+			);
+			path = SubmitTransition;
+			sourceTree = "<group>";
+		};
+		FF4335BA21A7D7D400F0F5F0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FF4335BB21A7D7D400F0F5F0 /* SpinerLayer.swift */,
+				FF4335BC21A7D7D400F0F5F0 /* CGRectEx.swift */,
+				FF4335BD21A7D7D400F0F5F0 /* TransitionSubmitButton.swift */,
+				FF4335BE21A7D7D400F0F5F0 /* FadeTransition.swift */,
+				FF4335BF21A7D7D400F0F5F0 /* TimerEx.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		FF561424217DD3A700DCCE1B /* timer */ = {
@@ -1494,6 +1532,7 @@
 		FFAB4ECC216392D400AE82EA /* ui_components */ = {
 			isa = PBXGroup;
 			children = (
+				FF4335B821A7D7D400F0F5F0 /* TKSubmitTransition */,
 				FFF9532E21A2A4D900612C10 /* limonade */,
 				FFAB4ECD216392D400AE82EA /* NewPopMenu */,
 				FFAB4EE0216392D400AE82EA /* GradientView.swift */,
@@ -2277,6 +2316,7 @@
 				FFAB4F1F216392D400AE82EA /* IRouter.swift in Sources */,
 				FFAB4F752163959700AE82EA /* IAuthCake.swift in Sources */,
 				FF56146B21809EE300DCCE1B /* INewsDesign.swift in Sources */,
+				FF4335C121A7D7D400F0F5F0 /* CGRectEx.swift in Sources */,
 				FF5614902180A1A800DCCE1B /* СompanyServicesRouter.swift in Sources */,
 				FFAB4F13216392D400AE82EA /* PopMenuPresentAnimationController.swift in Sources */,
 				FF72AEF32175BFBB002D04DA /* IRootDirector.swift in Sources */,
@@ -2335,6 +2375,7 @@
 				FF5614562180943200DCCE1B /* StateType.swift in Sources */,
 				FF4335B321A6D5A500F0F5F0 /* SessionServiceAssembly.swift in Sources */,
 				FF56147021809EE300DCCE1B /* NewsController.swift in Sources */,
+				FF4335C421A7D7D400F0F5F0 /* TimerEx.swift in Sources */,
 				FF43359D21A6A8F000F0F5F0 /* IDataStorage.swift in Sources */,
 				FFAB4F8F2163960900AE82EA /* IRootRouter.swift in Sources */,
 				FFAB4F11216392D400AE82EA /* UIView+Shadows.swift in Sources */,
@@ -2344,6 +2385,7 @@
 				FFAB4F12216392D400AE82EA /* Haptics.swift in Sources */,
 				FF72AF142175CEE1002D04DA /* IWelcomeDirector.swift in Sources */,
 				FFAB4F10216392D400AE82EA /* PopMenuGradientView.swift in Sources */,
+				FF4335C321A7D7D400F0F5F0 /* FadeTransition.swift in Sources */,
 				FFF9533C21A2A4D900612C10 /* Cell.swift in Sources */,
 				FF56144821805B4600DCCE1B /* IConfirmationCake.swift in Sources */,
 				FFAB4F662163959700AE82EA /* LoginCakeAssembly.swift in Sources */,
@@ -2377,6 +2419,7 @@
 				FFAB4F8D2163960900AE82EA /* RootCake.swift in Sources */,
 				FFF9534721A2A86800612C10 /* NewsCell.swift in Sources */,
 				FF72AF7F217761B2002D04DA /* UIImage+RoundedCorner.m in Sources */,
+				FF4335C221A7D7D400F0F5F0 /* TransitionSubmitButton.swift in Sources */,
 				FF561428217DD3DC00DCCE1B /* BackgroundTimer.swift in Sources */,
 				FF5614C52180A40900DCCE1B /* IMoreCake.swift in Sources */,
 				FF5614C22180A40900DCCE1B /* IMoreDirector.swift in Sources */,
@@ -2492,6 +2535,7 @@
 				FF56144D2180631400DCCE1B /* UINavigationControllerTransparentBar.swift in Sources */,
 				FF4335B621A6D88800F0F5F0 /* Account.swift in Sources */,
 				FF5614A42180A2C200DCCE1B /* EventsDesign.swift in Sources */,
+				FF4335C021A7D7D400F0F5F0 /* SpinerLayer.swift in Sources */,
 				FF72AF83217761B2002D04DA /* String+Size.swift in Sources */,
 				FFAB4FA82163971A00AE82EA /* Network.swift in Sources */,
 				FF4335A221A6AC2600F0F5F0 /* AuthDataStorage.swift in Sources */,

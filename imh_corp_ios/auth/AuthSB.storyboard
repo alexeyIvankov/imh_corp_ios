@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7rH-bC-089">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7rH-bC-089">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +39,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNa-0T-8XV">
                                                                 <rect key="frame" x="0.0" y="666" width="414" height="50"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHW-Og-gsn">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHW-Og-gsn" customClass="TKTransitionSubmitButton" customModule="imh_corp_ios" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <connections>
@@ -47,7 +47,6 @@
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
-                                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="bottom" secondItem="UHW-Og-gsn" secondAttribute="bottom" id="em3-DL-mjf"/>
                                                                     <constraint firstAttribute="trailing" secondItem="UHW-Og-gsn" secondAttribute="trailing" id="nd2-4g-KbU"/>
@@ -63,7 +62,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="404" height="54"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Россия" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghl-Ot-OBl">
-                                                                                <rect key="frame" x="19.999999999999996" y="16.333333333333343" width="57.666666666666657" height="21"/>
+                                                                                <rect key="frame" x="19.999999999999996" y="16.666666666666686" width="57.666666666666657" height="21"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -281,7 +280,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hwG-Bf-bcY">
                                                                 <rect key="frame" x="0.0" y="666" width="414" height="50"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXW-WQ-Wp4">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXW-WQ-Wp4" customClass="TKTransitionSubmitButton" customModule="imh_corp_ios" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <connections>
@@ -289,7 +288,6 @@
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
-                                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="G3Y-uk-1br"/>
                                                                     <constraint firstItem="DXW-WQ-Wp4" firstAttribute="top" secondItem="hwG-Bf-bcY" secondAttribute="top" id="PkO-Sl-Qj3"/>
@@ -418,6 +416,7 @@
                         <outlet property="scrollView" destination="HWV-HS-HKs" id="YTj-4I-CVU"/>
                         <outlet property="textFieldConfirmation" destination="zkX-dU-Fu8" id="1Ai-I6-ofG"/>
                         <outlet property="viewContainer" destination="B35-75-Ex3" id="bMo-da-D1K"/>
+                        <outlet property="viewContainerResendCode" destination="7Wh-kr-rBD" id="mTV-qs-1de"/>
                         <outlet property="viewContent" destination="u47-FV-rA9" id="7XT-PY-eL0"/>
                     </connections>
                 </viewController>

@@ -25,7 +25,7 @@ class LoginController : UIViewController, WKNavigationDelegate{
     @IBOutlet weak var labelTitleLogin: UILabel!
     @IBOutlet weak var labelCountryName: UILabel!
     
-    @IBOutlet weak var buttonLogin: UIButton!
+    @IBOutlet weak var buttonLogin:TKTransitionSubmitButton!
     @IBOutlet weak var buttonSelecCountry: UIButton!
     
     @IBOutlet weak var bottomConstraintViewContent: NSLayoutConstraint!
@@ -83,10 +83,14 @@ class LoginController : UIViewController, WKNavigationDelegate{
             let phone = self.textFieldLogin.text,
             let deviceId  = UIDevice.current.identifierForVendor?.uuidString {
             
+            self.buttonLogin.startLoadingAnimation()
+            
             self.authCake.authDirector.sendVerifyCode(phone: phone,
                                                       countyCode: code,
                                                       deviceId: deviceId,
                                                       success: { (message) in
+                                                        
+                                                        self.buttonLogin.returnToOriginalState()
                                                         
                                                         if message != nil{
                                                             self.showAlertInfo(message: message!, handlerActionClose: {
@@ -99,6 +103,8 @@ class LoginController : UIViewController, WKNavigationDelegate{
                                                         
                                                         
             }) { (error) in
+                
+                self.buttonLogin.returnToOriginalState()
                 self.showAlertInfo(message: error.message())
             }
         }

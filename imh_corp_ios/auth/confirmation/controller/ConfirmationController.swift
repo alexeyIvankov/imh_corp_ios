@@ -16,11 +16,13 @@ class ConfirmationController : UIViewController {
     public enum ResendCodeState{
         case ready
         case lock
+        case hiden
     }
     
     //MARK: IBOutlets
     @IBOutlet weak var viewContainer: UIView!
     @IBOutlet weak var viewContent: UIView!
+    @IBOutlet weak var viewContainerResendCode: UIView!
 
     @IBOutlet weak var scrollView:UIScrollView!
     
@@ -29,7 +31,7 @@ class ConfirmationController : UIViewController {
     @IBOutlet weak var labelTitleConfirmation: UILabel!
     @IBOutlet weak var labelTimeResendCode: UILabel!
     
-    @IBOutlet weak var buttonSendCode: UIButton!
+    @IBOutlet weak var buttonSendCode: TKTransitionSubmitButton!
     @IBOutlet weak var buttonResendCode: UIButton!
     
     @IBOutlet weak var bottomConstraintViewContent: NSLayoutConstraint!
@@ -121,11 +123,17 @@ class ConfirmationController : UIViewController {
             let countryCode = self.codeRegion,
             let deviceId  = UIDevice.current.identifierForVendor?.uuidString {
             
+            self.buttonSendCode.startLoadingAnimation()
+            self.stateMachineResendCode.change(stateType: StateType(type: ResendCodeState.hiden))
+            
             self.authCake.authDirector.authorization(phone: phone,
                                                      countyCode: countryCode,
                                                      smsCode: verifivcationCode,
                                                      deviceId: deviceId,
                                                      success: { (session) in
+                                                        
+                                                        self.buttonSendCode.returnToOriginalState()
+                                                      
                 
                                                         self.cake.router.showAlertInfo(message: "Пользователь \(session.getAccount().name!) успешно зарегестрирован!",  handlerActionClose: {
                                                             self.authCake.authRouter.startAppWithAuthorized()
@@ -133,6 +141,9 @@ class ConfirmationController : UIViewController {
                                                         
                                                         
             }) { (error) in
+                
+                self.buttonSendCode.returnToOriginalState()
+                self.stateMachineResendCode.change(stateType: StateType(type: ResendCodeState.ready))
                 self.cake.router.showAlertInfo(message: error.message())
             }
         }
@@ -148,11 +159,20 @@ class ConfirmationController : UIViewController {
             self.timerResend.stop()
             self.labelTimeResendCode.text = "Отправить код еще раз"
             self.buttonResendCode.isEnabled = true
+            self.viewContainerResendCode.isHidden = false
+        }
+        
+        let stateHiden = StateTemplate<ResendCodeState>(type: ResendCodeState.hiden)
+        
+        stateHiden.set {[unowned self] (data) in
+            self.timerResend.stop()
+            self.viewContainerResendCode.isHidden = true
         }
         
         let stateLock = StateTemplate<ResendCodeState>(type: ResendCodeState.lock)
         
         stateLock.set {[unowned self] (data) in
+            self.viewContainerResendCode.isHidden = false
             self.buttonResendCode.isEnabled = false
             
             self.timerResend.startNewAndStopOld(timeInterval: 1, countRepeats: 30, block: {(step) in 
@@ -169,7 +189,7 @@ class ConfirmationController : UIViewController {
             })
         }
     
-        return StateEngineTemplate<ResendCodeState>(states:[stateReady, stateLock], currentState: stateLock )
+        return StateEngineTemplate<ResendCodeState>(states:[stateReady, stateLock, stateHiden], currentState: stateLock )
     }
     
     
