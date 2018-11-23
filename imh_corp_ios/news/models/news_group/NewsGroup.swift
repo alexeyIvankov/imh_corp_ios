@@ -12,5 +12,8 @@ import RealmSwift
 class NewsGroup: Object, INewsGroup {
     
     @objc dynamic var name:String? = nil
+    @objc dynamic var groupId:String? = nil
+    @objc dynamic var descript:String? = nil
+    
     var news = List<News>()
 }

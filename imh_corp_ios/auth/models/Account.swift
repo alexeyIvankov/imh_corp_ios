@@ -16,14 +16,14 @@ class Account :  Object, IAccount{
     @objc dynamic var phone:String? = nil
     
     @objc dynamic var auth:Auth!
-    var news = List<News>()
+    var groups = List<NewsGroup>()
     
     func getAuth() -> IAuth{
         return self.auth
     }
     
-    func getNews()->[INews]{
-        return self.news.toArray()
+    func getGroupsNews()->[INewsGroup]{
+        return self.groups.toArray()
     }
     
     override static func primaryKey() -> String? {

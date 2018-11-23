@@ -9,10 +9,9 @@
 import Foundation
 import UIKit
 
-protocol INewsRouter : AnyObject {
+protocol INewsRouter : IRouter {
     func setOwnwer<T:UIViewController>(ownwer:T)
     
-    func showAlert(message:String)
     func showLoader()
     func hideLoader()
 }

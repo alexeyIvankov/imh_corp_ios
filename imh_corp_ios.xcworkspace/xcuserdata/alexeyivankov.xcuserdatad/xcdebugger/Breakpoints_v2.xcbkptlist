@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "imh_corp_ios/auth/director/AuthDirector.swift"
-            timestampString = "564592860.730587"
+            filePath = "Pods/Alamofire/Source/SessionManager.swift"
+            timestampString = "564656459.907419"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "authorization(phone:countyCode:smsCode:deviceId:success:error:)"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
+            landmarkName = "request(_:method:parameters:encoding:headers:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "imh_corp_ios/auth/director/AuthDirector.swift"
-            timestampString = "564592860.730782"
+            filePath = "Pods/Alamofire/Source/SessionManager.swift"
+            timestampString = "564656756.504459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "authorization(phone:countyCode:smsCode:deviceId:success:error:)"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
+            landmarkName = "request(_:method:parameters:encoding:headers:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,14 +41,26 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "imh_corp_ios/auth/director/AuthDirector.swift"
-            timestampString = "564592860.730882"
+            filePath = "Pods/imh_corp_ios_api/imh_corp_ios_api/core/rpc/DataRequest+RPC.swift"
+            timestampString = "564661774.961548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "authorization(phone:countyCode:smsCode:deviceId:success:error:)"
-            landmarkType = "7">
+            startingLineNumber = "90"
+            endingLineNumber = "90">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/imh_corp_ios_api/imh_corp_ios_api/core/rpc/DataRequest+RPC.swift"
+            timestampString = "564661774.962086"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

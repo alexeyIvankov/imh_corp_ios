@@ -11,4 +11,8 @@ import Foundation
 protocol INewsDirector : AnyObject {
  
     func loadNews()
+    func loadYammerGroups(success:@escaping ()->(),
+                          failed: @escaping (NSError?)->())
+    
+    func getAllGroups() -> [INewsGroup]
 }

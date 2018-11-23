@@ -34,6 +34,14 @@ class NewsController : UIViewController {
         self.cake.design.apply(vc: self)
         
         self.navigationItem.title = "Новости"
+        
+        self.cake.director.loadYammerGroups(success: {
+            print("success")
+          let  groups = self.cake.director.getAllGroups()
+            print(groups)
+        }) { (error) in
+           print(error)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
