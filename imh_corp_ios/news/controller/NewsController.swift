@@ -33,6 +33,9 @@ class NewsController : UIViewController {
         self.cake.router.setOwnwer(ownwer: self)
         self.cake.design.apply(vc: self)
         
+        self.tableView.estimatedRowHeight = UIScreen.main.bounds.size.height
+        self.tableView.rowHeight = UITableView.automaticDimension
+        
         self.navigationItem.title = "Новости"
         self.configureTableViewComponents()
     }

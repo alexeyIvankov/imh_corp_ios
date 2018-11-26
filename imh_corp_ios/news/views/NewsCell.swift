@@ -10,22 +10,14 @@ import Foundation
 import UIKit
 
 class NewCell : UITableViewCell,  INewsCell{
-    
-    @IBOutlet weak var viewStateOnlyText:ViewNewsStateOnlyText!
-    @IBOutlet weak var viewStateShowImage:ViewNewsStateShowImage!
+  
+    @IBOutlet weak var labelTitleNews:UILabel!
+    @IBOutlet weak var labelSubTitleNews:UILabel!
+    @IBOutlet weak var labelGroupName:UILabel!
     
     func configure(news: INews) {
-        
-        self.viewStateShowImage.isHidden = true
-        self.viewStateOnlyText.isHidden = true
-        
-        if news.getFiles().count == 0 {
-            self.viewStateOnlyText.configure(news: news)
-            self.viewStateOnlyText.isHidden = false
-        }
-        else {
-            self.viewStateShowImage.configure(news: news)
-            self.viewStateShowImage.isHidden = false
-        }
+        self.labelTitleNews.text = news.body
+        self.labelSubTitleNews.text = news.body
+        //self.labelGroupName.text = news.getGroup().name
     }
 }

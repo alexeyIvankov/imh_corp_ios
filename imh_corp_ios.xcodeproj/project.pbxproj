@@ -258,8 +258,6 @@
 		FFF9534521A2A85300612C10 /* INewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9534421A2A85300612C10 /* INewsCell.swift */; };
 		FFF9534721A2A86800612C10 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9534621A2A86800612C10 /* NewsCell.swift */; };
 		FFF9534921A2A93E00612C10 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFF9534821A2A93E00612C10 /* NewsCell.xib */; };
-		FFF9535121A2AE5700612C10 /* ViewNewsStateShowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9534F21A2AE5700612C10 /* ViewNewsStateShowImage.swift */; };
-		FFF9535221A2AE5700612C10 /* ViewNewsStateOnlyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9535021A2AE5700612C10 /* ViewNewsStateOnlyText.swift */; };
 		FFF9535421A2B73C00612C10 /* INewsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9535321A2B73C00612C10 /* INewsPresenter.swift */; };
 		FFF9535E21A2BDED00612C10 /* IAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9535D21A2BDED00612C10 /* IAuth.swift */; };
 		FFF9536021A2BDF600612C10 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9535F21A2BDF600612C10 /* Auth.swift */; };
@@ -549,8 +547,6 @@
 		FFF9534421A2A85300612C10 /* INewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INewsCell.swift; sourceTree = "<group>"; };
 		FFF9534621A2A86800612C10 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		FFF9534821A2A93E00612C10 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
-		FFF9534F21A2AE5700612C10 /* ViewNewsStateShowImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewNewsStateShowImage.swift; sourceTree = "<group>"; };
-		FFF9535021A2AE5700612C10 /* ViewNewsStateOnlyText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewNewsStateOnlyText.swift; sourceTree = "<group>"; };
 		FFF9535321A2B73C00612C10 /* INewsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INewsPresenter.swift; sourceTree = "<group>"; };
 		FFF9535D21A2BDED00612C10 /* IAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAuth.swift; sourceTree = "<group>"; };
 		FFF9535F21A2BDF600612C10 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
@@ -990,7 +986,6 @@
 		FF56146421809EE300DCCE1B /* views */ = {
 			isa = PBXGroup;
 			children = (
-				FFF9534E21A2AE5700612C10 /* states */,
 				FFF9534421A2A85300612C10 /* INewsCell.swift */,
 				FFF9534621A2A86800612C10 /* NewsCell.swift */,
 				FFF9534821A2A93E00612C10 /* NewsCell.xib */,
@@ -2057,15 +2052,6 @@
 			path = container;
 			sourceTree = "<group>";
 		};
-		FFF9534E21A2AE5700612C10 /* states */ = {
-			isa = PBXGroup;
-			children = (
-				FFF9534F21A2AE5700612C10 /* ViewNewsStateShowImage.swift */,
-				FFF9535021A2AE5700612C10 /* ViewNewsStateOnlyText.swift */,
-			);
-			path = states;
-			sourceTree = "<group>";
-		};
 		FFF9535C21A2BDE100612C10 /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -2418,7 +2404,6 @@
 				FF3897EE2178C462005CE562 /* DKChainableAnimationKit+Anchor.swift in Sources */,
 				FFAB4F0D216392D400AE82EA /* PopMenuAppearance.swift in Sources */,
 				FF72AF6421776138002D04DA /* UICollectionViewCell+Reuse.swift in Sources */,
-				FFF9535221A2AE5700612C10 /* ViewNewsStateOnlyText.swift in Sources */,
 				FF72AF4D21761B13002D04DA /* WelcomePage.swift in Sources */,
 				FF72AF5021770AB6002D04DA /* WelcomePagesDataSource.swift in Sources */,
 				FF5614582180943200DCCE1B /* StateEngineTemplate.swift in Sources */,
@@ -2485,7 +2470,6 @@
 				FF72AF8921776230002D04DA /* UIView+Shadow.swift in Sources */,
 				FF5614AA2180A2C200DCCE1B /* EventsCake.swift in Sources */,
 				FF5614C82180A40900DCCE1B /* MoreRouter.swift in Sources */,
-				FFF9535121A2AE5700612C10 /* ViewNewsStateShowImage.swift in Sources */,
 				FF5614892180A1A800DCCE1B /* СompanyServicesDirector.swift in Sources */,
 				FFAB4F1A216392D400AE82EA /* AppDesign.swift in Sources */,
 				FF56144221805B4600DCCE1B /* IConfirmationDesign.swift in Sources */,
