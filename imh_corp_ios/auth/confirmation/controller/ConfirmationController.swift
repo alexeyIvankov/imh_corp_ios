@@ -112,7 +112,7 @@ class ConfirmationController : UIViewController {
                                                         
                                                         
             }) { (error) in
-                self.showAlertInfo(message: error.message())
+                self.showAlertInfo(message: "Не удалось выполнить запрос! Проверьте интернет подлючение")
             }
         }
     }
@@ -144,7 +144,7 @@ class ConfirmationController : UIViewController {
                 
                 self.buttonSendCode.returnToOriginalState()
                 self.stateMachineResendCode.change(stateType: StateType(type: ResendCodeState.ready))
-                self.cake.router.showAlertInfo(message: error.message())
+                self.showAlertInfo(message: "Не удалось выполнить запрос! Проверьте интернет подлючение")
             }
         }
     }

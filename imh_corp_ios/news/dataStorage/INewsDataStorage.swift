@@ -10,5 +10,10 @@ import Foundation
 
 protocol INewsDataStorage : AnyObject {
     
-    func saveOrUpdateOrDeleteExessNewsGroups(account:IAccount, groupsJson:[Any])
+    func saveOrUpdateNewsGroups(account:IAccount,
+                                groupsJson:[Any])
+    
+    func saveOrUpdateNews(account:IAccount,
+                          groupId:String,
+                          newsJson:[Any])
 }

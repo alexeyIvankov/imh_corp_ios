@@ -16,4 +16,8 @@ class NewsGroup: Object, INewsGroup {
     @objc dynamic var descript:String? = nil
     
     var news = List<News>()
+    
+    func getNews() -> [INews]{
+        return self.news.toArray()
+    }
 }

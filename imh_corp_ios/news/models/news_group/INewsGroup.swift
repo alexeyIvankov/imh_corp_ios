@@ -11,4 +11,9 @@ import Foundation
 public protocol INewsGroup : AnyObject {
     
     var name:String? { get }
+    var groupId:String? { get }
+    var descript:String? { get }
+    
+    func getNews() -> [INews]
 }
+

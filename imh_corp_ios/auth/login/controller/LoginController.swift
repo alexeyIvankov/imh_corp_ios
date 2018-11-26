@@ -105,7 +105,7 @@ class LoginController : UIViewController, WKNavigationDelegate{
             }) { (error) in
                 
                 self.buttonLogin.returnToOriginalState()
-                self.showAlertInfo(message: error.message())
+                self.showAlertInfo(message: "Не удалось выполнить запрос! Проверьте интернет подлючение")
             }
         }
     }

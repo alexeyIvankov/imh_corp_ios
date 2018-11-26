@@ -11,8 +11,8 @@ import RealmSwift
 
 class News: Object, INews {
     
-    @objc dynamic var title:String? = nil
-    @objc dynamic var subTitle:String? = nil
+    @objc dynamic var newsId:String? = nil
+    @objc dynamic var body:String? = nil
     @objc dynamic var dateCreated:String? = nil
     @objc dynamic var group:NewsGroup!
     

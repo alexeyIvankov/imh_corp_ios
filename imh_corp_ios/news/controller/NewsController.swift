@@ -34,22 +34,34 @@ class NewsController : UIViewController {
         self.cake.design.apply(vc: self)
         
         self.navigationItem.title = "Новости"
-        
-        self.cake.director.loadYammerGroups(success: {
-            print("success")
-          let  groups = self.cake.director.getAllGroups()
-            print(groups)
-        }) { (error) in
-           print(error)
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.loadNews()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+    }
+    
+    private func loadNews(){
+        
+        self.cake.director.loadYammerGroups(success: { [unowned self] in
+            let group = self.cake.director.getGroup(name: "Пресса ПМХ")
+            if group != nil  && group?.groupId != nil{
+                self.cake.director.loadYammerNews(groupId: group!.groupId!, success: {  [unowned self] in
+                    let news = self.cake.director.getNews(groupName: "Пресса ПМХ")
+                    print(news)
+                }, failed: { (error) in
+                    
+                })
+            }
+
+        }) { (error) in
+            print(error)
+        }
+        
     }
     
 //    //MARK: - Data source
