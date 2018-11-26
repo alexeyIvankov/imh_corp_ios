@@ -20,6 +20,8 @@ public protocol IContainer
     func removeAll()
     
     func index(item:IContainerItem) ->Int?
+    func index(id:String) -> Int?
+    
     func allItems() -> [IContainerItem]
  
     func count() -> Int;

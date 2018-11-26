@@ -8,12 +8,13 @@
 
 import Foundation
 
-public protocol INews : AnyObject {
+public protocol INews :  ILimonadeItem {
     
-    var newsId:String? { get }
-    var body:String? { get }
-    var dateCreated:String? { get }
+    var newsId:String! { get }
+    var body:String! { get }
+    var dateCreated:String! { get }
     
     func getGroup() -> INewsGroup
     func getFiles() -> [IFile]
 }
+

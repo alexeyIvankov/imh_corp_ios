@@ -50,8 +50,21 @@ class Limonade : NSObject, UITableViewDelegate, UITableViewDataSource {
         container.add(item: section)
     }
     
-    public func isExistSection(name:String) -> Bool{
-        return self.container.item(id: name) != nil ? true : false
+    public func appendSectionIfNeed(item:ILimonadeItem, animation: UITableView.RowAnimation, header:UIView?=nil){
+        
+        guard self.container.item(id: item.limonadeId) == nil else  {
+            return
+        }
+        
+        if header != nil {
+            let section:Section = Section(id: item.limonadeId, sortKey: item.limonadeSortKey, header:Header(viewHeader: header!))
+            container.add(item: section)
+        }
+        else {
+            let section:Section = Section(id: item.limonadeId, sortKey: item.limonadeSortKey)
+            container.add(item: section)
+        }
+        self.addSectionAnimate(sectionItem: item, animation: animation)
     }
     
     public func appendRow(name:String,
@@ -77,17 +90,115 @@ class Limonade : NSObject, UITableViewDelegate, UITableViewDataSource {
         self.registerCellIfNeeded(nameNib: nameCell, reuseId: nameCell)
     }
     
-    public func reloadRow(nameRow:String, nameSection:String){
-  
+    public func tryAppendOrUpdateRow(rowItem:ILimonadeItem,
+                                     sectionItem:ILimonadeItem, 
+                                     nameCell:String,
+                                     animation: UITableView.RowAnimation){
+        guard let section:Section = container.item(id: sectionItem.limonadeId) as? Section else {
+            return
+        }
+        
+        var row = section.item(id: rowItem.limonadeId) as? Row
+        
+        if row == nil{
+            row = Row(id: rowItem.limonadeId, sortKey: rowItem.limonadeSortKey,  model: rowItem as AnyObject, cell: Cell(reuseId: nameCell, nibName: nameCell))
+            section.add(item: row!)
+            self.registerCellIfNeeded(nameNib: nameCell, reuseId: nameCell)
+            self.addRowAnimate(rowItem: rowItem, sectionItem: sectionItem, animation: animation)
+        }
+        else {
+            if let currentModel:ILimonadeItem = row?.model as? ILimonadeItem{
+                if currentModel.getHashLimonade() != rowItem.getHashLimonade(){
+                    row?.model = rowItem
+                    self.reloadRow(rowItem: rowItem, sectionItem: sectionItem, animation: animation)
+                }
+                else {
+                    print("skip update!!")
+                }
+            }
+        }
+        
+        
+    }
+    
+    public func reloadRow(nameRow:String,
+                          nameSection:String,
+                          animation:UITableView.RowAnimation){
+        
         if let section:Section = self.container.item(id: nameSection) as? Section{
             let indexSection = self.container.index(item: section)
             if let row = section.item(id: nameRow) as? Row{
                 let indexRow = section.index(item: row)
                 if indexSection != nil && indexRow != nil {
-                    
-                    self.tableView.reloadRows(at: [IndexPath(item: indexRow!, section: indexSection!)], with: UITableView.RowAnimation.automatic)
+                    self.tableView.reloadRows(at: [IndexPath(item: indexRow!, section: indexSection!)], with:animation)
                 }
             }
+        }
+    }
+    
+    public func reloadRow(rowItem:ILimonadeItem,
+                          sectionItem:ILimonadeItem,
+                          animation:UITableView.RowAnimation){
+        
+        if let section:Section = self.container.item(id: sectionItem.limonadeId) as? Section{
+            let indexSection = self.container.index(item: section)
+            if let row = section.item(id: rowItem.limonadeId) as? Row{
+                let indexRow = section.index(item: row)
+                if indexSection != nil && indexRow != nil {
+                    self.tableView.beginUpdates()
+                    self.tableView.reloadRows(at: [IndexPath(item: indexRow!, section: indexSection!)], with:animation)
+                    self.tableView.endUpdates()
+                }
+            }
+        }
+    }
+    
+    
+    public func addRowAnimate(rowItem:ILimonadeItem,
+                              sectionItem:ILimonadeItem,
+                              animation:UITableView.RowAnimation){
+        
+        if let section:Section = self.container.item(id: sectionItem.limonadeId) as? Section{
+            let indexSection = self.container.index(item: section)
+            if let row = section.item(id: rowItem.limonadeId) as? Row{
+                let indexRow = section.index(item: row)
+                if indexSection != nil && indexRow != nil {
+                    self.tableView.beginUpdates()
+                    self.tableView.insertRows(at: [IndexPath(item: indexRow!, section: indexSection!)], with: animation)
+                    self.tableView.endUpdates()
+                }
+            }
+        }
+    }
+    
+    public func addSectionAnimate(sectionItem:ILimonadeItem,
+                                  animation:UITableView.RowAnimation){
+        
+        if let section:Section = self.container.item(id: sectionItem.limonadeId) as? Section{
+            let indexSection = self.container.index(item: section)
+            if indexSection != nil{
+                self.tableView.beginUpdates()
+                self.tableView.insertSections([indexSection!], with: animation)
+                self.tableView.endUpdates()
+            }
+        }
+    }
+    
+    
+    public func isExistSection(name:String) -> Bool{
+        return self.container.item(id: name) != nil ? true : false
+    }
+    
+    public func isExistRow(sectionName:String, rowId:String) -> Bool{
+        guard let section:Section = self.container.item(id: sectionName) as? Section else{
+            return false
+        }
+        
+        if section.item(id: rowId) != nil{
+            return true
+        }
+        else {
+            return false
         }
     }
     

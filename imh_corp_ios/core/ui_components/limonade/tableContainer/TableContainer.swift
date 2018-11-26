@@ -91,6 +91,17 @@ open class TableContainer : IContainer
         return index;
     }
     
+    public func index(id: String) -> Int? {
+        
+        var index:Int?;
+        
+        self.threadSaveOperation {
+            index = self.sections.index(id: id);
+        }
+        
+        return index;
+    }
+    
     open func allItems() -> [IContainerItem]
     {
         var items:[IContainerItem] = [];

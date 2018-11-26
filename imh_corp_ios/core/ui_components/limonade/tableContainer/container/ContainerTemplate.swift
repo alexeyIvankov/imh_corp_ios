@@ -89,6 +89,21 @@ class ContainerTemplate : IContainer
         return index
     }
     
+    func index(id:String) -> Int?{
+        
+        var index:Int? = nil;
+        
+        for (_index,value) in self.items.enumerated()
+        {
+            if value.id == id
+            {
+                index = _index;
+                break;
+            }
+        }
+        return index
+    }
+    
     func allItems() -> [IContainerItem] {
         return self.items;
     }

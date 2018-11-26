@@ -8,11 +8,11 @@
 
 import Foundation
 
-public protocol INewsGroup : AnyObject {
+public protocol INewsGroup : ILimonadeItem {
     
-    var name:String? { get }
-    var groupId:String? { get }
-    var descript:String? { get }
+    var name:String! { get }
+    var groupId:String! { get }
+    var descript:String! { get }
     
     func getNews() -> [INews]
 }

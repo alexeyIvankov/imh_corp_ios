@@ -52,6 +52,10 @@ public struct Section : IContainer, IContainerItem
         return self.rows.index(item: item)
     }
     
+    public func index(id: String) -> Int? {
+        return self.rows.index(id:id)
+    }
+    
     public func allItems() -> [IContainerItem] {
         return self.rows.allItems()
     }

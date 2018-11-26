@@ -16,8 +16,8 @@ class ViewNewsStateOnlyText: UIView, INewsPresenter{
     @IBOutlet weak var labelGroupName:UILabel!
     
     func configure(news: INews) {
-        //self.labelTitleNews.text = news.title
-        //self.labelSubTitleNews.text = news.subTitle
-        self.labelGroupName.text = news.getGroup().name
+        self.labelTitleNews.text = news.body
+        self.labelSubTitleNews.text = news.body
+        //self.labelGroupName.text = news.getGroup().name
     }
 }

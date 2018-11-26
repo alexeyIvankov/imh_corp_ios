@@ -55,6 +55,7 @@
 		FF4335C721A7E20200F0F5F0 /* INewsDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335C621A7E20200F0F5F0 /* INewsDataStorage.swift */; };
 		FF4335C921A7E22000F0F5F0 /* NewsDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335C821A7E22000F0F5F0 /* NewsDataStorage.swift */; };
 		FF4335CB21A8225B00F0F5F0 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335CA21A8225B00F0F5F0 /* UIViewController+Keyboard.swift */; };
+		FF4335CD21ABF85A00F0F5F0 /* ILimonadeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335CC21ABF85A00F0F5F0 /* ILimonadeItem.swift */; };
 		FF561426217DD3B600DCCE1B /* ITimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561425217DD3B600DCCE1B /* ITimer.swift */; };
 		FF561428217DD3DC00DCCE1B /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */; };
 		FF56142A217DF5BD00DCCE1B /* IAnimatorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */; };
@@ -337,6 +338,7 @@
 		FF4335C621A7E20200F0F5F0 /* INewsDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INewsDataStorage.swift; sourceTree = "<group>"; };
 		FF4335C821A7E22000F0F5F0 /* NewsDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataStorage.swift; sourceTree = "<group>"; };
 		FF4335CA21A8225B00F0F5F0 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
+		FF4335CC21ABF85A00F0F5F0 /* ILimonadeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILimonadeItem.swift; sourceTree = "<group>"; };
 		FF561425217DD3B600DCCE1B /* ITimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITimer.swift; sourceTree = "<group>"; };
 		FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
 		FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAnimatorImage.swift; sourceTree = "<group>"; };
@@ -2027,6 +2029,7 @@
 			isa = PBXGroup;
 			children = (
 				FFF9533021A2A4D900612C10 /* Limonade.swift */,
+				FF4335CC21ABF85A00F0F5F0 /* ILimonadeItem.swift */,
 			);
 			path = limonade;
 			sourceTree = "<group>";
@@ -2521,6 +2524,7 @@
 				FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */,
 				FF43359B21A6A8F000F0F5F0 /* DataBaseAssembly.swift in Sources */,
 				FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */,
+				FF4335CD21ABF85A00F0F5F0 /* ILimonadeItem.swift in Sources */,
 				FFF9533F21A2A4D900612C10 /* ContainerTemplate.swift in Sources */,
 				FF43359A21A6A8F000F0F5F0 /* FetchOptions.swift in Sources */,
 				FF3897ED2178C462005CE562 /* DKKeyframeAnimationFunction.swift in Sources */,

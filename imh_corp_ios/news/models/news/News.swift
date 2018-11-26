@@ -10,11 +10,24 @@ import Foundation
 import RealmSwift
 
 class News: Object, INews {
-    
-    @objc dynamic var newsId:String? = nil
-    @objc dynamic var body:String? = nil
-    @objc dynamic var dateCreated:String? = nil
+ 
+    @objc dynamic var newsId:String! = nil
+    @objc dynamic var body:String! = nil
+    @objc dynamic var dateCreated:String! = nil
     @objc dynamic var group:NewsGroup!
+    
+    //MARK: ILimonadeItem
+    var limonadeId: String!{
+        return String(self.newsId!)
+    }
+    
+    var limonadeSortKey: String!{
+        return String(self.dateCreated!)
+    }
+    
+    func getHashLimonade() -> Int {
+        return self.body.hashValue ^ self.dateCreated.hashValue
+    }
     
     var files = List<File>()
     

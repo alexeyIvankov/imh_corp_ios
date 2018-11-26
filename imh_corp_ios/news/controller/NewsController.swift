@@ -34,15 +34,24 @@ class NewsController : UIViewController {
         self.cake.design.apply(vc: self)
         
         self.navigationItem.title = "Новости"
+        self.configureTableViewComponents()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tryShowCashedContent()
         self.loadNews()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+    }
+    
+    private func tryShowCashedContent(){
+        let group = self.cake.director.getGroup(name: "Пресса ПМХ")
+        if group != nil {
+            self.createOrUpdateDataSource(groups: [group!])
+        }
     }
     
     private func loadNews(){
@@ -51,8 +60,7 @@ class NewsController : UIViewController {
             let group = self.cake.director.getGroup(name: "Пресса ПМХ")
             if group != nil  && group?.groupId != nil{
                 self.cake.director.loadYammerNews(groupId: group!.groupId!, success: {  [unowned self] in
-                    let news = self.cake.director.getNews(groupName: "Пресса ПМХ")
-                    print(news)
+                    self.createOrUpdateDataSource(groups: [group!])
                 }, failed: { (error) in
                     
                 })
@@ -61,62 +69,33 @@ class NewsController : UIViewController {
         }) { (error) in
             print(error)
         }
-        
     }
     
-//    //MARK: - Data source
-//    private func configureDataSourceCompanys(){
-//
-//        self.companysList = self.cake.serviceLayer.getListCompanys()
-//        self.limonade.appendSection(name: "root")
-//
-//        if companysList != nil {
-//
-//            for company in self.companysList!{
-//                self.limonade.appendRow(name: company.name, data: company as AnyObject, nameCell: "CompanyCell", nameSection: "root")
-//            }
-//        }
-//    }
-//
-//    private func configureTableViewComponents(){
-//
-//        self.limonade?.setHandlerConfigureCell(handler: { (cell, model, nameRow, nameSection) in
-//
-//            if let cell = cell as? ICompanyCell,
-//                let company = model as? ICompany{
-//
-//                cell.configure(company: company)
-//
-//                if self.selectedCompany != nil && self.selectedCompany!.name == company.name{
-//                    cell.setSelected(selected: true)
-//                }
-//                else{
-//                    cell.setSelected(selected: false)
-//                }
-//            }
-//        })
-//
-//        self.limonade.setHandlerSelectCell(handler: { (model, cell, nameRow, nameSection) in
-//
-//            if let company = model as? ICompany, let companyCell = cell as? ICompanyCell{
-//
-//                self.deleselectAll()
-//                companyCell.setSelected(selected: true)
-//                self.selectedCompany = company
-//                self.cake.serviceLayer.save(company: company)
-//
-//                print(company)
-//            }
-//        })
-//    }
-//
-//    private func deleselectAll(){
-//        let cells = self.limonade.getVisibleCells()
-//        for cell in cells{
-//            if let companyCell = cell as? ICompanyCell{
-//                companyCell.setSelected(selected: false)
-//            }
-//        }
-//    }
+    private func createOrUpdateDataSource(groups:[INewsGroup]){
+        
+        for group:INewsGroup in groups{
+            self.limonade.appendSectionIfNeed(item: group, animation: UITableView.RowAnimation.bottom, header: nil)
+            
+            for news:INews in group.getNews(){
+                self.limonade.tryAppendOrUpdateRow(rowItem: news,
+                                                   sectionItem: group,
+                                                   nameCell: "NewsCell",
+                                                   animation: UITableView.RowAnimation.bottom)
+            }
+        }
+    }
+    
+    
+    private func configureTableViewComponents(){
+        
+        self.limonade?.setHandlerConfigureCell(handler: { (cell, model, nameRow, nameSection) in
+            
+            if let cell = cell as? INewsCell,
+                let news = model as? INews{
+                
+                cell.configure(news: news)
+            }
+        })
+    }
 }
 
