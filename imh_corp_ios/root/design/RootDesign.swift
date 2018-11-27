@@ -41,8 +41,8 @@ class RootDesign : IRootDesign{
                         currentVC.tabBarItem.selectedImage = UIImage(named: "events_icon_select")?.withRenderingMode(.alwaysOriginal)
                     }
                     else if currentVC is СompanyServicesController{
-                        currentVC.tabBarItem.image =  UIImage(named: "hand_icon_deselect")?.withRenderingMode(.alwaysOriginal)
-                        currentVC.tabBarItem.selectedImage = UIImage(named: "hand_icon_select")?.withRenderingMode(.alwaysOriginal)
+                        currentVC.tabBarItem.image =  UIImage(named: "info_icon_deselect")?.withRenderingMode(.alwaysOriginal)
+                        currentVC.tabBarItem.selectedImage = UIImage(named: "info_icon_select")?.withRenderingMode(.alwaysOriginal)
                     }
                     else if currentVC is MoreController{
                         currentVC.tabBarItem.image =  UIImage(named: "people_icon_deselect")?.withRenderingMode(.alwaysOriginal)

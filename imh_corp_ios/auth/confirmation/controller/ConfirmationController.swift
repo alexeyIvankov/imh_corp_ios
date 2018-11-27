@@ -99,7 +99,7 @@ class ConfirmationController : UIViewController {
             self.authCake.authDirector.sendVerifyCode(phone: phone,
                                                       countyCode: code,
                                                       deviceId: deviceId,
-                                                      success: { (message) in
+                                                      success: { [unowned self] (message) in
                                                         
                                                         if message != nil{
                                                             self.showAlertInfo(message: message!, handlerActionClose: {
@@ -123,16 +123,16 @@ class ConfirmationController : UIViewController {
             let countryCode = self.codeRegion,
             let deviceId  = UIDevice.current.identifierForVendor?.uuidString {
             
-            self.buttonSendCode.startLoadingAnimation()
+            self.startAnimationSendCodeButton()
             self.stateMachineResendCode.change(stateType: StateType(type: ResendCodeState.hiden))
             
             self.authCake.authDirector.authorization(phone: phone,
                                                      countyCode: countryCode,
                                                      smsCode: verifivcationCode,
                                                      deviceId: deviceId,
-                                                     success: { (session) in
+                                                     success: {[unowned self] (session) in
                                                         
-                                                        self.buttonSendCode.returnToOriginalState()
+                                                        self.stopAnimationSendCodeButtonWithDelay()
                                                       
                 
                                                         self.cake.router.showAlertInfo(message: "Пользователь \(session.getAccount().name!) успешно зарегестрирован!",  handlerActionClose: {
@@ -140,12 +140,23 @@ class ConfirmationController : UIViewController {
                                                         })
                                                         
                                                         
-            }) { (error) in
+            }) {[unowned self] (error) in
                 
-                self.buttonSendCode.returnToOriginalState()
+                self.stopAnimationSendCodeButtonWithDelay()
                 self.stateMachineResendCode.change(stateType: StateType(type: ResendCodeState.ready))
-                self.showAlertInfo(message: "Не удалось выполнить запрос! Проверьте интернет подлючение")
+                self.showAlertInfo(message: error.message())
             }
+        }
+    }
+    
+    private func startAnimationSendCodeButton(){
+        self.buttonSendCode.startLoadingAnimation()
+    }
+    
+    private func stopAnimationSendCodeButtonWithDelay(){
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.buttonSendCode.returnToOriginalState()
         }
     }
     
@@ -175,13 +186,13 @@ class ConfirmationController : UIViewController {
             self.viewContainerResendCode.isHidden = false
             self.buttonResendCode.isEnabled = false
             
-            self.timerResend.startNewAndStopOld(timeInterval: 1, countRepeats: 30, block: {(step) in 
+            self.timerResend.startNewAndStopOld(timeInterval: 1, countRepeats: 30, block: {[unowned self] (step) in
                 
                 DispatchQueue.main.async {
                       self.labelTimeResendCode.text = "Отправить повторно через: \(30 - step)"
                 }
                 
-            }, completion: {
+            }, completion: { [unowned self] in
                 
                 DispatchQueue.main.async {
                     self.stateMachineResendCode.change(stateType: StateType(type: ResendCodeState.ready))

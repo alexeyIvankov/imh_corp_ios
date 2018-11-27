@@ -73,27 +73,25 @@ class LoginController : UIViewController, WKNavigationDelegate{
     }
   
     
-    private func tryLogin(){
-        
-    }
-    
     private func tryVerificationPhone(){
         
         if let code = self.textFieldCountryCode.text,
             let phone = self.textFieldLogin.text,
             let deviceId  = UIDevice.current.identifierForVendor?.uuidString {
             
-            self.buttonLogin.startLoadingAnimation()
+            self.startAnimationLoginButton()
             
             self.authCake.authDirector.sendVerifyCode(phone: phone,
                                                       countyCode: code,
                                                       deviceId: deviceId,
-                                                      success: { (message) in
+                                                      success: { [unowned self] (message) in
                                                         
-                                                        self.buttonLogin.returnToOriginalState()
+                                                        self.stopAnimationLoginButtonWithDelay()
+                                                       
                                                         
                                                         if message != nil{
-                                                            self.showAlertInfo(message: message!, handlerActionClose: {
+                                                            self.showAlertInfo(message: message!, handlerActionClose: { [unowned self]  in
+                                                                
                                                                 self.cake.router.handleTouchNextButton(phone: phone, codeRegion: code)
                                                             })
                                                         }
@@ -102,14 +100,24 @@ class LoginController : UIViewController, WKNavigationDelegate{
                                                         }
                                                         
                                                         
-            }) { (error) in
+            }) { [unowned self](error) in
                 
-                self.buttonLogin.returnToOriginalState()
-                self.showAlertInfo(message: "Не удалось выполнить запрос! Проверьте интернет подлючение")
+                self.stopAnimationLoginButtonWithDelay()
+                self.showAlertInfo(message: error.message())
             }
         }
     }
 
+    private func startAnimationLoginButton(){
+        self.buttonLogin.startLoadingAnimation()
+    }
+    
+    private func stopAnimationLoginButtonWithDelay(){
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+             self.buttonLogin.returnToOriginalState()
+        }
+    }
     
     //MARK : - subscribe/unsubscribe text field events
     private func subscribeInputFieldsToEventTextChange(){
