@@ -10,7 +10,6 @@ import UIKit
 
 class RootController: UITabBarController{
 
-    
     //MARK:Status bar
     override var prefersStatusBarHidden: Bool {
         return true
@@ -28,6 +27,7 @@ class RootController: UITabBarController{
         super.viewDidLoad()
     
         self.rootCake.router.setOwnwer(ownwer: self)
+        self.rootCake.design.apply(vc: self)
     }
 }
 

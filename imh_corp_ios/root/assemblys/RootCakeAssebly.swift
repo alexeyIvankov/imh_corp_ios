@@ -18,13 +18,18 @@ public class RootCakeAssembly : AssemblyProviderImpl {
         
         return Assembly.init(buildType:IRootCake.self, memoryPolicy: MemoryPolicy.Strong, instanceScope: InstanceScope.Singleton, buildBlock: { (injector:I_Injector) -> AnyObject in
             
+            let appDesign:IAppDesign = injector.tryInject()!
+            let design:IRootDesign = RootDesign(appDesign: appDesign)
+            
             let securityService:ISecurityService = injector.tryInject()!
             let loaderService:ILoaderService = injector.tryInject()!
 
             let rootServiceLayer:IRootDirector = RootDirector(securityService: securityService)
             let rootRouter:IRootRouter = RootRouter(loaderService: loaderService)
             
-            let cake:IRootCake = RootCake(router: rootRouter, serviceLayer: rootServiceLayer)
+            let cake:IRootCake = RootCake(router: rootRouter,
+                                          serviceLayer: rootServiceLayer,
+                                          design:design)
             
             return cake
         })

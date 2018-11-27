@@ -56,6 +56,8 @@
 		FF4335C921A7E22000F0F5F0 /* NewsDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335C821A7E22000F0F5F0 /* NewsDataStorage.swift */; };
 		FF4335CB21A8225B00F0F5F0 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335CA21A8225B00F0F5F0 /* UIViewController+Keyboard.swift */; };
 		FF4335CD21ABF85A00F0F5F0 /* ILimonadeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335CC21ABF85A00F0F5F0 /* ILimonadeItem.swift */; };
+		FF4335D021AD1C9500F0F5F0 /* IRootDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335CF21AD1C9500F0F5F0 /* IRootDesign.swift */; };
+		FF4335D221AD1D9D00F0F5F0 /* RootDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335D121AD1D9D00F0F5F0 /* RootDesign.swift */; };
 		FF561426217DD3B600DCCE1B /* ITimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561425217DD3B600DCCE1B /* ITimer.swift */; };
 		FF561428217DD3DC00DCCE1B /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */; };
 		FF56142A217DF5BD00DCCE1B /* IAnimatorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */; };
@@ -337,6 +339,8 @@
 		FF4335C821A7E22000F0F5F0 /* NewsDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataStorage.swift; sourceTree = "<group>"; };
 		FF4335CA21A8225B00F0F5F0 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		FF4335CC21ABF85A00F0F5F0 /* ILimonadeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILimonadeItem.swift; sourceTree = "<group>"; };
+		FF4335CF21AD1C9500F0F5F0 /* IRootDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRootDesign.swift; sourceTree = "<group>"; };
+		FF4335D121AD1D9D00F0F5F0 /* RootDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootDesign.swift; sourceTree = "<group>"; };
 		FF561425217DD3B600DCCE1B /* ITimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITimer.swift; sourceTree = "<group>"; };
 		FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
 		FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAnimatorImage.swift; sourceTree = "<group>"; };
@@ -815,6 +819,15 @@
 			path = dataStorage;
 			sourceTree = "<group>";
 		};
+		FF4335CE21AD1C8400F0F5F0 /* design */ = {
+			isa = PBXGroup;
+			children = (
+				FF4335CF21AD1C9500F0F5F0 /* IRootDesign.swift */,
+				FF4335D121AD1D9D00F0F5F0 /* RootDesign.swift */,
+			);
+			path = design;
+			sourceTree = "<group>";
+		};
 		FF561424217DD3A700DCCE1B /* timer */ = {
 			isa = PBXGroup;
 			children = (
@@ -944,7 +957,6 @@
 				FF56146421809EE300DCCE1B /* views */,
 				FF56146521809EE300DCCE1B /* cake */,
 				FF56146821809EE300DCCE1B /* router */,
-				FF5614CF2180ACFB00DCCE1B /* NewsSB.storyboard */,
 			);
 			path = news;
 			sourceTree = "<group>";
@@ -1361,6 +1373,7 @@
 		FF72AF2B2175E35C002D04DA /* extLib */ = {
 			isa = PBXGroup;
 			children = (
+				FF5614CF2180ACFB00DCCE1B /* NewsSB.storyboard */,
 				FF3897DB2178C462005CE562 /* DKChainableAnimationKit */,
 				FF3897C22178C3F5005CE562 /* ChainableAnimations */,
 				FF3897BD2178AC78005CE562 /* RQShineLabel */,
@@ -1879,6 +1892,7 @@
 		FFAB4F782163960900AE82EA /* root */ = {
 			isa = PBXGroup;
 			children = (
+				FF4335CE21AD1C8400F0F5F0 /* design */,
 				FF72AEF02175BFBB002D04DA /* director */,
 				FFAB4F792163960900AE82EA /* assemblys */,
 				FFAB4F7B2163960900AE82EA /* Main.storyboard */,
@@ -2322,6 +2336,7 @@
 				FFAB4F1F216392D400AE82EA /* IRouter.swift in Sources */,
 				FFAB4F752163959700AE82EA /* IAuthCake.swift in Sources */,
 				FF56146B21809EE300DCCE1B /* INewsDesign.swift in Sources */,
+				FF4335D021AD1C9500F0F5F0 /* IRootDesign.swift in Sources */,
 				FF4335C121A7D7D400F0F5F0 /* CGRectEx.swift in Sources */,
 				FF5614902180A1A800DCCE1B /* СompanyServicesRouter.swift in Sources */,
 				FFAB4F13216392D400AE82EA /* PopMenuPresentAnimationController.swift in Sources */,
@@ -2407,6 +2422,7 @@
 				FF72AF4D21761B13002D04DA /* WelcomePage.swift in Sources */,
 				FF72AF5021770AB6002D04DA /* WelcomePagesDataSource.swift in Sources */,
 				FF5614582180943200DCCE1B /* StateEngineTemplate.swift in Sources */,
+				FF4335D221AD1D9D00F0F5F0 /* RootDesign.swift in Sources */,
 				FF56148A2180A1A800DCCE1B /* IСompanyServicesDirector.swift in Sources */,
 				FFF9534121A2A4D900612C10 /* Section.swift in Sources */,
 				FF3897FA2178CB7D005CE562 /* AnimatorImage.swift in Sources */,
