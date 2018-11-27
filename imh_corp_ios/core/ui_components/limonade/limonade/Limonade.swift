@@ -14,7 +14,7 @@ class Limonade : NSObject, UITableViewDelegate, UITableViewDataSource {
     private var handlerDidScrool:((UIScrollView)->())?
     private var handlerDidEndDragging:((UIScrollView)->())?
     private var handlerDidEndDecelerating:((UIScrollView)->())?
-    private var headerConfigurator:((_ header:UIView, _ nameSection:String)->())?
+    private var headerConfigurator:((_ header:UIView, _ model:AnyObject?)->())?
     
     required init(tableView:UITableView){
         self.tableView = tableView
@@ -50,18 +50,20 @@ class Limonade : NSObject, UITableViewDelegate, UITableViewDataSource {
         container.add(item: section)
     }
     
-    public func appendSectionIfNeed(item:ILimonadeItem, animation: UITableView.RowAnimation, header:UIView?=nil){
+    public func appendSectionIfNeed(item:ILimonadeItem,
+                                    animation: UITableView.RowAnimation,
+                                    header:String?=nil){
         
         guard self.container.item(id: item.limonadeId) == nil else  {
             return
         }
         
         if header != nil {
-            let section:Section = Section(id: item.limonadeId, sortKey: item.limonadeSortKey, header:Header(viewHeader: header!))
+            let section:Section = Section(id: item.limonadeId, sortKey: item.limonadeSortKey, model:item, header:Header(viewHeader:  Bundle.loadView(name:header!)))
             container.add(item: section)
         }
         else {
-            let section:Section = Section(id: item.limonadeId, sortKey: item.limonadeSortKey)
+            let section:Section = Section(id: item.limonadeId, sortKey: item.limonadeSortKey, model:item)
             container.add(item: section)
         }
         self.addSectionAnimate(sectionItem: item, animation: animation)
@@ -227,7 +229,7 @@ class Limonade : NSObject, UITableViewDelegate, UITableViewDataSource {
         self.handlerSelectCell = handler
     }
     
-    public func setHandlerConfigureHeader(handler:@escaping (_ header:UIView, _ nameSection:String)->()){
+    public func setHandlerConfigureHeader(handler:@escaping (_ header:UIView, _ model:AnyObject?)->()){
         self.headerConfigurator = handler
     }
     
@@ -280,7 +282,13 @@ class Limonade : NSObject, UITableViewDelegate, UITableViewDataSource {
         let header = section.header?.viewHeader
         
         if header != nil {
-            self.headerConfigurator?(header!, section.id)
+            
+            if section.model != nil{
+                self.headerConfigurator?(header!, section.model)
+            }
+            else {
+                self.headerConfigurator?(header!, section.id as AnyObject)
+            }
         }
         
         return header

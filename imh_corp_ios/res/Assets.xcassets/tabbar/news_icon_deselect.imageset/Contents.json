@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "news_icon.png",
+      "filename" : "news_icon_disabled_24.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "news_icon_disabled_48.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "news_icon_disabled_72.png",
       "scale" : "3x"
     }
   ],

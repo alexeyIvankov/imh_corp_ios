@@ -11,15 +11,18 @@ public struct Section : IContainer, IContainerItem
     public let id:String;
     public let sortKey:String?;
     public var header:Header?
+    public var model:AnyObject?
     
     fileprivate var rows:ContainerTemplate = ContainerTemplate()
 
     public init(id:String = "",
                 sortKey:String? = nil,
+                model:AnyObject? = nil,
                 header:Header? = nil)
     {
         self.id = id
         self.sortKey = sortKey
+        self.model = model
         self.header = header
     }
     

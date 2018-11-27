@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Imf-ek-d8Y" customClass="NewsSectionHeader" customModule="imh_corp_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Today" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUk-Eg-ztj">
+                    <rect key="frame" x="16" y="2" width="359" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="qJm-ID-DRr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="sUk-Eg-ztj" firstAttribute="leading" secondItem="TIu-mc-3ML" secondAttribute="leading" constant="16" id="XQV-gA-Ucl"/>
+                <constraint firstItem="TIu-mc-3ML" firstAttribute="trailing" secondItem="sUk-Eg-ztj" secondAttribute="trailing" id="alv-6G-5SX"/>
+                <constraint firstItem="sUk-Eg-ztj" firstAttribute="centerY" secondItem="Imf-ek-d8Y" secondAttribute="centerY" id="hbg-6m-33Y"/>
+                <constraint firstItem="TIu-mc-3ML" firstAttribute="bottom" secondItem="sUk-Eg-ztj" secondAttribute="bottom" constant="2" id="tD7-f1-SDH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="TIu-mc-3ML"/>
+            <connections>
+                <outlet property="labelTitle" destination="sUk-Eg-ztj" id="eJk-ww-QJg"/>
+            </connections>
+            <point key="canvasLocation" x="-185.5" y="-69"/>
+        </view>
+    </objects>
+</document>

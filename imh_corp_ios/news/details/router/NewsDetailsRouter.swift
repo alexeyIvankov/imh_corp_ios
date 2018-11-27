@@ -1,16 +1,18 @@
 //
-//  LoginRouter.swift
-//  IMH_BI
+//  NewsDetailsRouter.swift
+//  imh_corp_ios
 //
-//  Created by Alexey Ivankov on 24.08.2018.
+//  Created by Alexey Ivankov on 27/11/2018.
 //  Copyright © 2018 Industrial Metallurgical Holding. All rights reserved.
 //
 
 import Foundation
+
+import Foundation
 import UIKit
 
-class NewsRouter : INewsRouter{
-
+class NewsDetailsRouter : INewsDetailsRouter{
+    
     var owner:UIViewController?
     var loaderService:ILoaderService
     
@@ -22,15 +24,8 @@ class NewsRouter : INewsRouter{
         self.owner = ownwer
     }
     
-    func handleSelect(news:INews){
-        
-        let newsDetailsController:NewsDetailsController = UIStoryboard.load(type: UIStoryboard.TypeSB.news).load()!
-        newsDetailsController.news = news
-        self.owner?.navigationController?.pushViewController(newsDetailsController, animated: true)
-    }
-
     func showLoader(){
-       self.loaderService.showIfNeed()
+        self.loaderService.showIfNeed()
     }
     
     func hideLoader(){

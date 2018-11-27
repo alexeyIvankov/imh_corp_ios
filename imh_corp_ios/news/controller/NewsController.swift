@@ -38,6 +38,7 @@ class NewsController : UIViewController {
         
         self.navigationItem.title = "Новости"
         self.configureTableViewComponents()
+        self.handleSelectCell()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +51,16 @@ class NewsController : UIViewController {
         super.viewWillDisappear(animated)
     }
     
+    //MARK: Actions
+    private func handleSelectCell(){
+        self.limonade.setHandlerSelectCell { [unowned self] (model, cell, _, _)  in
+            if let news = model as? INews{
+                self.cake.router.handleSelect(news: news)
+            }
+        }
+    }
+    
+    //MARK: - Data source
     private func tryShowCashedContent(){
         let group = self.cake.director.getGroup(name: "Пресса ПМХ")
         if group != nil {
@@ -77,7 +88,7 @@ class NewsController : UIViewController {
     private func createOrUpdateDataSource(groups:[INewsGroup]){
         
         for group:INewsGroup in groups{
-            self.limonade.appendSectionIfNeed(item: group, animation: UITableView.RowAnimation.bottom, header: nil)
+            self.limonade.appendSectionIfNeed(item: group, animation: UITableView.RowAnimation.bottom, header: "NewsSectionHeader")
             
             for news:INews in group.getNews(){
                 self.limonade.tryAppendOrUpdateRow(rowItem: news,
@@ -88,7 +99,7 @@ class NewsController : UIViewController {
         }
     }
     
-    
+    //MARK - configure table view controlls
     private func configureTableViewComponents(){
         
         self.limonade?.setHandlerConfigureCell(handler: { (cell, model, nameRow, nameSection) in
@@ -99,6 +110,14 @@ class NewsController : UIViewController {
                 cell.configure(news: news)
             }
         })
+        
+        self.limonade.setHandlerConfigureHeader { (view, model) in
+            
+            if let header = view as? NewsSectionHeader,
+                let group = model as? INewsGroup{
+                header.set(text: group.name)
+            }
+        }
     }
 }
 

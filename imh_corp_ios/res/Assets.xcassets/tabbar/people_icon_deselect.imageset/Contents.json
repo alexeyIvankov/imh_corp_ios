@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "more_icon.png",
+      "filename" : "people_icon_disabled_24.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "people_icon_disabled_48.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "people_icon_disabled_72.png",
       "scale" : "3x"
     }
   ],

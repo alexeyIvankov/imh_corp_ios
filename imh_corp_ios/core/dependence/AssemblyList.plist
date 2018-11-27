@@ -20,5 +20,6 @@
 	<string>СompanyServicesCakeAssembly</string>
 	<string>NewsCakeAssembly</string>
 	<string>LazyParametersManagerAssembly</string>
+	<string>NewsDetailsCakeAssembly</string>
 </array>
 </plist>
