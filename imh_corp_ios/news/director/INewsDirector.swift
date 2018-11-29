@@ -11,6 +11,7 @@ import Foundation
 protocol INewsDirector : AnyObject {
  
     func loadYammerNews(groupId:String,
+                        lastMessageId:String?,
                         success:@escaping ()->(),
                         failed: @escaping (NSError?)->())
     

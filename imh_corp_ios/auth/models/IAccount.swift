@@ -10,9 +10,10 @@ import Foundation
 
 public protocol IAccount : AnyObject {
     
-    var name:String? { get }
+    var name:String! { get }
     var position:String? { get }
-    var phone:String? { get }
+    var id:String! { get }
+    var phone:String! { get }
     
     func getAuth() -> IAuth
     func getGroupsNews()->[INewsGroup]

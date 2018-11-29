@@ -11,15 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="76b-yj-wLV" customClass="NewCell" customModule="imh_corp_ios" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="198" id="76b-yj-wLV" customClass="NewCell" customModule="imh_corp_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="134"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="76b-yj-wLV" id="eip-R4-tLb">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kfl-AX-PZF" userLabel="view">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZQ-fR-NyL">
                                 <rect key="frame" x="16" y="14" width="343" height="24"/>
@@ -33,16 +33,34 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELu-jt-z9Y">
+                                <rect key="frame" x="16" y="85.5" width="343" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxN-su-v86">
+                                <rect key="frame" x="16" y="106.5" width="343" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ecr-eL-6Kw" firstAttribute="leading" secondItem="Kfl-AX-PZF" secondAttribute="leading" constant="16" id="0yc-5W-Gug"/>
+                            <constraint firstItem="ELu-jt-z9Y" firstAttribute="leading" secondItem="Kfl-AX-PZF" secondAttribute="leading" constant="16" id="8Pb-ug-BlS"/>
+                            <constraint firstItem="BxN-su-v86" firstAttribute="leading" secondItem="Kfl-AX-PZF" secondAttribute="leading" constant="16" id="Qed-Ks-TII"/>
                             <constraint firstItem="0ZQ-fR-NyL" firstAttribute="top" secondItem="Kfl-AX-PZF" secondAttribute="top" constant="14" id="TtN-tF-oWw"/>
+                            <constraint firstAttribute="bottom" secondItem="BxN-su-v86" secondAttribute="bottom" constant="10" id="WZq-gF-kYO"/>
+                            <constraint firstItem="ELu-jt-z9Y" firstAttribute="top" secondItem="ecr-eL-6Kw" secondAttribute="bottom" constant="14" id="XGt-7K-a9C"/>
+                            <constraint firstItem="BxN-su-v86" firstAttribute="top" secondItem="ELu-jt-z9Y" secondAttribute="bottom" constant="4" id="efV-r4-Ntb"/>
                             <constraint firstAttribute="trailing" secondItem="ecr-eL-6Kw" secondAttribute="trailing" constant="16" id="jRM-QS-LQ5"/>
                             <constraint firstItem="ecr-eL-6Kw" firstAttribute="top" secondItem="0ZQ-fR-NyL" secondAttribute="bottom" constant="14" id="m2V-ea-NR8"/>
+                            <constraint firstAttribute="trailing" secondItem="ELu-jt-z9Y" secondAttribute="trailing" constant="16" id="nv8-Jl-Sg7"/>
                             <constraint firstItem="0ZQ-fR-NyL" firstAttribute="leading" secondItem="Kfl-AX-PZF" secondAttribute="leading" constant="16" id="o6X-1M-uwj"/>
                             <constraint firstAttribute="trailing" secondItem="0ZQ-fR-NyL" secondAttribute="trailing" constant="16" id="qHB-kq-Jyl"/>
-                            <constraint firstAttribute="bottom" secondItem="ecr-eL-6Kw" secondAttribute="bottom" constant="10" id="tmT-Sh-fOr"/>
+                            <constraint firstAttribute="trailing" secondItem="BxN-su-v86" secondAttribute="trailing" constant="16" id="rOe-7s-ayG"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -56,10 +74,12 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="labelDateCreated" destination="BxN-su-v86" id="Zee-LS-EUr"/>
+                <outlet property="labelGroupName" destination="ELu-jt-z9Y" id="nPL-lf-vCH"/>
                 <outlet property="labelSubTitleNews" destination="ecr-eL-6Kw" id="ym3-So-gCb"/>
                 <outlet property="labelTitleNews" destination="0ZQ-fR-NyL" id="FF5-Yi-4ix"/>
             </connections>
-            <point key="canvasLocation" x="88.799999999999997" y="-22.03898050974513"/>
+            <point key="canvasLocation" x="88.799999999999997" y="29.685157421289357"/>
         </tableViewCell>
     </objects>
 </document>

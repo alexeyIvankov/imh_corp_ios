@@ -14,6 +14,19 @@ class NewCell : UITableViewCell,  INewsCell{
     @IBOutlet weak var labelTitleNews:UILabel!
     @IBOutlet weak var labelSubTitleNews:UILabel!
     @IBOutlet weak var labelGroupName:UILabel!
+    @IBOutlet weak var labelDateCreated:UILabel!
+    
+    var dateFormaterParser:DateFormatter {
+        let formater = DateFormatter()
+        formater.dateFormat = "yyyy/MM/dd HH:mm:ss +zzzz"
+        return formater
+    }
+    
+    var dateFormaterConverter:DateFormatter {
+        let formater = DateFormatter()
+        formater.dateFormat = "dd.MM.yyyy HH:mm:ss"
+        return formater
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -23,7 +36,11 @@ class NewCell : UITableViewCell,  INewsCell{
     func configure(news: INews) {
         self.labelTitleNews.text = news.body
         self.labelSubTitleNews.text = news.body
-        //self.labelGroupName.text = news.getGroup().name
+        self.labelGroupName.text = "#" + news.getGroup().name
+        
+        if let date = self.dateFormaterParser.date(from:news.dateCreated!){
+             self.labelDateCreated.text = self.dateFormaterConverter.string(from:date)
+        }
     }
     
     private func addTopContentInset(){

@@ -30,6 +30,7 @@ class AuthDataStorage : IAuthDataStorage{
             let account:Account = Account()
             account.name = name
             account.phone = phone
+            account.id = phone
             account.auth = auth
             
             let session:Session = Session()

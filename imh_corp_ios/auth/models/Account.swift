@@ -11,9 +11,11 @@ import RealmSwift
 
 class Account :  Object, IAccount{
     
-    @objc dynamic var name:String? = nil
+    @objc dynamic var name:String! = nil
     @objc dynamic var position:String? = nil
-    @objc dynamic var phone:String? = nil
+    @objc dynamic var phone:String! = nil
+    @objc dynamic var id:String! = nil
+   
     
     @objc dynamic var auth:Auth!
     var groups = List<NewsGroup>()

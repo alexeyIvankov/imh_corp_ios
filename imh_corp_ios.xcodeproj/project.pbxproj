@@ -139,6 +139,8 @@
 		FF6FB01D21AD696D00C818BC /* NewsDetailsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FB01C21AD696D00C818BC /* NewsDetailsAssembly.swift */; };
 		FF6FB02021AD6B3D00C818BC /* INewsDetailsDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FB01F21AD6B3D00C818BC /* INewsDetailsDirector.swift */; };
 		FF6FB02221AD6B4900C818BC /* NewsDetailsDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FB02121AD6B4900C818BC /* NewsDetailsDirector.swift */; };
+		FF6FB02421AFDE9200C818BC /* IServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FB02321AFDE9200C818BC /* IServerModel.swift */; };
+		FF6FB02921AFFB8F00C818BC /* LimonadeItemTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FB02821AFFB8F00C818BC /* LimonadeItemTemplate.swift */; };
 		FF72AEF32175BFBB002D04DA /* IRootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF12175BFBB002D04DA /* IRootDirector.swift */; };
 		FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF22175BFBB002D04DA /* RootDirector.swift */; };
 		FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF62175BFF5002D04DA /* LoginDirector.swift */; };
@@ -435,6 +437,8 @@
 		FF6FB01C21AD696D00C818BC /* NewsDetailsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsAssembly.swift; sourceTree = "<group>"; };
 		FF6FB01F21AD6B3D00C818BC /* INewsDetailsDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INewsDetailsDirector.swift; sourceTree = "<group>"; };
 		FF6FB02121AD6B4900C818BC /* NewsDetailsDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsDirector.swift; sourceTree = "<group>"; };
+		FF6FB02321AFDE9200C818BC /* IServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IServerModel.swift; sourceTree = "<group>"; };
+		FF6FB02821AFFB8F00C818BC /* LimonadeItemTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimonadeItemTemplate.swift; sourceTree = "<group>"; };
 		FF72AEF12175BFBB002D04DA /* IRootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF22175BFBB002D04DA /* RootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF62175BFF5002D04DA /* LoginDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDirector.swift; sourceTree = "<group>"; };
@@ -1277,6 +1281,7 @@
 			children = (
 				FFF9532621A2970100612C10 /* file */,
 				FF5615462181CBD400DCCE1B /* error */,
+				FF6FB02321AFDE9200C818BC /* IServerModel.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -2174,6 +2179,7 @@
 			children = (
 				FFF9533021A2A4D900612C10 /* Limonade.swift */,
 				FF4335CC21ABF85A00F0F5F0 /* ILimonadeItem.swift */,
+				FF6FB02821AFFB8F00C818BC /* LimonadeItemTemplate.swift */,
 			);
 			path = limonade;
 			sourceTree = "<group>";
@@ -2484,6 +2490,7 @@
 				FFAB4FA92163971A00AE82EA /* NetworkAssembly.swift in Sources */,
 				FFAB4F382163936B00AE82EA /* Application.swift in Sources */,
 				FF72AF022175C1F5002D04DA /* AuthDirector.swift in Sources */,
+				FF6FB02921AFFB8F00C818BC /* LimonadeItemTemplate.swift in Sources */,
 				FF4335C921A7E22000F0F5F0 /* NewsDataStorage.swift in Sources */,
 				FF3897C02178AC78005CE562 /* RQShineLabel.m in Sources */,
 				FF5614AC2180A2C200DCCE1B /* EventsRouter.swift in Sources */,
@@ -2627,6 +2634,7 @@
 				FF5614AB2180A2C200DCCE1B /* IEventsRouter.swift in Sources */,
 				FF3897F72178C8A4005CE562 /* IAnimator.swift in Sources */,
 				FF56144921805B4600DCCE1B /* ConfirmationCake.swift in Sources */,
+				FF6FB02421AFDE9200C818BC /* IServerModel.swift in Sources */,
 				FF3897D62178C3F5005CE562 /* ChainableAnimator.swift in Sources */,
 				FF6FB02221AD6B4900C818BC /* NewsDetailsDirector.swift in Sources */,
 				FF72AF8921776230002D04DA /* UIView+Shadow.swift in Sources */,

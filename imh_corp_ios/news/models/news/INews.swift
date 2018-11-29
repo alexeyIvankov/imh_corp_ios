@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol INews :  ILimonadeItem {
+public protocol INews :  ILimonadeItem, IServerModel {
     
     var newsId:String! { get }
     var body:String! { get }

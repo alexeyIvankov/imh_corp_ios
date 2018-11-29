@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class NewsGroup: Object, INewsGroup {
-  
+   
     @objc dynamic var name:String! = nil
     @objc dynamic var groupId:String! = nil
     @objc dynamic var descript:String! = nil
@@ -32,5 +32,26 @@ class NewsGroup: Object, INewsGroup {
     
     func getNews() -> [INews]{
         return self.news.toArray()
+    }
+    
+    //MARK: IServerModel
+    func update(json: [String : Any]) {
+        
+        let group_id:Int? = json["id"] as? Int
+        let name:String? = json["name"] as? String
+        let descript = json["description"] as? String
+        
+        if group_id != nil{
+             self.groupId = String(group_id!)
+        }
+       
+        if name != nil{
+            self.name = name
+        }
+        
+        if self.descript != nil{
+            self.descript = descript
+        }
+      
     }
 }

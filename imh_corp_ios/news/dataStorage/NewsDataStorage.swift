@@ -16,10 +16,10 @@ class NewsDataStorage : INewsDataStorage{
         self.db = db
     }
     
-    func saveOrUpdateNewsGroups(account:IAccount,
+    func saveOrUpdateNewsGroups(accountId:String,
                                 groupsJson:[Any]){
     
-        guard let accountDb = account as? Account else{
+        guard let accountDb:Account = self.getAccount(id: accountId) else{
             return
         }
         
@@ -27,8 +27,8 @@ class NewsDataStorage : INewsDataStorage{
             
             if let groupDict:[String:Any] = item as? [String:Any],
                 let group_id:Int = groupDict["id"] as? Int,
-                let name:String = groupDict["name"] as? String,
-                let descript = groupDict["description"] as? String{
+                let _:String = groupDict["name"] as? String{
+                
                 
                 let group_id_str = String(group_id)
                 
@@ -40,21 +40,18 @@ class NewsDataStorage : INewsDataStorage{
                         groupDb = NewsGroup()
                         accountDb.groups.append(groupDb!)
                     }
-                    
-                    groupDb!.groupId = group_id_str
-                    groupDb!.name = name
-                    groupDb?.descript = descript
+                    groupDb?.update(json: groupDict)
                 }
                 
             }
         }
     }
     
-    func saveOrUpdateNews(account:IAccount,
+    func saveOrUpdateNews(accountId:String,
                           groupId:String,
                           newsJson:[Any]){
         
-        guard let accountDb = account as? Account else{
+        guard let accountDb:Account = self.getAccount(id: accountId) else{
             return
         }
         
@@ -69,7 +66,7 @@ class NewsDataStorage : INewsDataStorage{
             if let newsDict:[String:Any] = item as? [String:Any],
                 let newsId:Int = newsDict["id"] as? Int,
                 let body:String = newsDict["body"] as? String,
-                let dateCreated = newsDict["date_created"] as? String,
+                let _ = newsDict["date_created"] as? String,
                 body.count > 10{
                 
                 let newsIdStr = String(newsId)
@@ -81,15 +78,39 @@ class NewsDataStorage : INewsDataStorage{
                         newsDb = News()
                         groupDb?.news.append(newsDb!)
                     }
-                    newsDb?.newsId = newsIdStr
-                    newsDb?.body = body
-                    newsDb?.dateCreated = dateCreated
+                    newsDb?.update(json: newsDict)
+                    
+                    let attachments = newsDict["attachments"] as? [[String:Any]]
+                    
+                    if attachments != nil{
+                       
+                        for attach_dict in attachments!{
+                            
+                            if let fileId = attach_dict["id"] as? Int,
+                                let _ = attach_dict["type"],
+                                let _ = attach_dict["content_type"],
+                                let _ = attach_dict["download_url"]{
+                            
+                                var fileDb:File? = self.getFile(id:String(fileId))
+                                if fileDb == nil{
+                                    fileDb = File()
+                                    newsDb?.files.append(fileDb!)
+                                }
+                                fileDb?.update(json: attach_dict)
+                            }
+                        }
+                    }
+                
                 }
             }
         }
-        
     }
     
+    func getAccount(id:String) -> Account? {
+        
+        let account:Account? = self.db.synchFetch(options: FetchOptions(predicate:  NSPredicate(format: "id='\(id)'"), sortBy: nil)).first
+        return account
+    }
     
     func getGroup(id:String) -> NewsGroup? {
         
@@ -101,5 +122,11 @@ class NewsDataStorage : INewsDataStorage{
         
         let news:News? = self.db.synchFetch(options: FetchOptions(predicate:  NSPredicate(format: "newsId='\(id)'"), sortBy: nil)).first
         return news
+    }
+    
+    func getFile(id:String) -> File? {
+        
+        let file:File? = self.db.synchFetch(options: FetchOptions(predicate:  NSPredicate(format: "fileId='\(id)'"), sortBy: nil)).first
+        return file
     }
 }

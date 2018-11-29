@@ -55,7 +55,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdT-Nc-d4u">
-                                                <rect key="frame" x="30" y="30" width="315" height="21.5"/>
+                                                <rect key="frame" x="16" y="30" width="343" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                                 <color key="textColor" red="0.2627450980392157" green="0.41960784313725491" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -70,8 +70,8 @@
                                         <constraints>
                                             <constraint firstItem="Up9-UU-QUl" firstAttribute="leading" secondItem="82o-e7-CEh" secondAttribute="leading" constant="16" id="3Au-rn-XTn"/>
                                             <constraint firstItem="Up9-UU-QUl" firstAttribute="centerX" secondItem="82o-e7-CEh" secondAttribute="centerX" id="3h9-3E-a85"/>
-                                            <constraint firstAttribute="trailing" secondItem="RdT-Nc-d4u" secondAttribute="trailing" constant="30" id="4zh-7M-e2X"/>
-                                            <constraint firstItem="RdT-Nc-d4u" firstAttribute="leading" secondItem="82o-e7-CEh" secondAttribute="leading" constant="30" id="Xos-9b-n3Y"/>
+                                            <constraint firstAttribute="trailing" secondItem="RdT-Nc-d4u" secondAttribute="trailing" constant="16" id="4zh-7M-e2X"/>
+                                            <constraint firstItem="RdT-Nc-d4u" firstAttribute="leading" secondItem="82o-e7-CEh" secondAttribute="leading" constant="16" id="Xos-9b-n3Y"/>
                                             <constraint firstItem="RdT-Nc-d4u" firstAttribute="centerX" secondItem="82o-e7-CEh" secondAttribute="centerX" id="Xyh-g4-fN0"/>
                                             <constraint firstAttribute="trailing" secondItem="Up9-UU-QUl" secondAttribute="trailing" constant="16" id="YxA-u9-bqb"/>
                                             <constraint firstItem="Up9-UU-QUl" firstAttribute="top" secondItem="RdT-Nc-d4u" secondAttribute="bottom" constant="40" id="hHL-Kb-aHl"/>

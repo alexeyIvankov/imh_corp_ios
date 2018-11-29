@@ -62,7 +62,7 @@ class NewsController : UIViewController {
     
     //MARK: - Data source
     private func tryShowCashedContent(){
-        let group = self.cake.director.getGroup(name: "Пресса ПМХ")
+        let group = self.cake.director.getGroup(name: "Обучение")
         if group != nil {
             self.createOrUpdateDataSource(groups: [group!])
         }
@@ -71,9 +71,9 @@ class NewsController : UIViewController {
     private func loadNews(){
         
         self.cake.director.loadYammerGroups(success: { [unowned self] in
-            let group = self.cake.director.getGroup(name: "Пресса ПМХ")
+            let group = self.cake.director.getGroup(name: "Обучение")
             if group != nil  && group?.groupId != nil{
-                self.cake.director.loadYammerNews(groupId: group!.groupId!, success: {  [unowned self] in
+                self.cake.director.loadYammerNews(groupId: group!.groupId!, lastMessageId: nil, success: {  [unowned self] in
                     self.createOrUpdateDataSource(groups: [group!])
                 }, failed: { (error) in
                     
@@ -87,12 +87,13 @@ class NewsController : UIViewController {
     
     private func createOrUpdateDataSource(groups:[INewsGroup]){
         
+        self.limonade.appendSectionIfNeed(item: LimonadeItemTemplate(value: "root"), animation: UITableView.RowAnimation.bottom)
+        
         for group:INewsGroup in groups{
-            self.limonade.appendSectionIfNeed(item: group, animation: UITableView.RowAnimation.bottom, header: "NewsSectionHeader")
             
             for news:INews in group.getNews(){
                 self.limonade.tryAppendOrUpdateRow(rowItem: news,
-                                                   sectionItem: group,
+                                                   sectionItem: LimonadeItemTemplate(value: "root"),
                                                    nameCell: "NewsCell",
                                                    animation: UITableView.RowAnimation.bottom)
             }

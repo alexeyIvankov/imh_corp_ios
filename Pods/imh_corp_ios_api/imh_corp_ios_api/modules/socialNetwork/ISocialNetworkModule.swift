@@ -18,6 +18,7 @@ public protocol ISocialNetworkModule : AnyObject{
     func messagesFromGroup(groupId:String,
                            accessToken:String,
                            networkType:String,
+                           lastMessageId:String?,
                            success:@escaping (RPCResponce)->(),
                            failed:@escaping (NSError)->())
 }

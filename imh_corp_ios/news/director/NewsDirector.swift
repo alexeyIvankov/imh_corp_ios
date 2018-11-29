@@ -24,40 +24,69 @@ class NewsDirector : INewsDirector {
     }
   
     func loadYammerNews(groupId:String,
+                        lastMessageId:String?,
                         success:@escaping ()->(),
                         failed: @escaping (NSError?)->()) {
         
-        self.network.apiDirector.socialNetworkModule.messagesFromGroup(groupId: groupId,
-                                                                       accessToken: self.session.getAccount().getAuth().accessToken!,
-                                                                       networkType: "yammer",
-                                                                       success: { (responce) in
-                                                                        
-                                                                        if let data = responce.success?["data"] as? [String:Any],
-                                                                            let news = data["messages"] as? [Any]{
-                                                                            self.dataStorage.saveOrUpdateNews(account: self.session.getAccount(), groupId: groupId, newsJson: news)
-                                                                            success()
-                                                                        }
-                                                                        else{
-                                                                            failed(NSError(domain: "Не удалось загрузить новости", code: -1, userInfo: nil))
-                                                                        }
+        let token = self.session.getAccount().getAuth().accessToken!
+        
+        DispatchQueue.global().async {
             
-        }, failed: failed)
+            self.network
+                .apiDirector
+                .socialNetworkModule
+                .messagesFromGroup(groupId: groupId,
+                                   accessToken: token,
+                                   networkType: "yammer", lastMessageId: lastMessageId,
+                                   success: { (responce) in
+                                    
+                                    if let data = responce.success?["data"] as? [String:Any],
+                                        let news = data["messages"] as? [[String:Any]]{
+                                        self.dataStorage.saveOrUpdateNews(accountId: self.session.getAccount().id, groupId: groupId, newsJson: news)
+                                        
+                                        DispatchQueue.main.async {
+                                              success()
+                                        }
+                                      
+                                    }
+                                    else{
+                                        DispatchQueue.main.async {
+                                             failed(NSError(domain: "Не удалось загрузить новости", code: -1, userInfo: nil))
+                                        }
+                                    }
+                                    
+                                    
+                }, failed: failed)
+            
+        }
     }
     
     func loadYammerGroups(success:@escaping ()->(),
                     failed: @escaping (NSError?)->()){
-        self.network.apiDirector.socialNetworkModule.allGroups(accessToken:self.session.getAccount().getAuth().accessToken!, networkType: "yammer", success: { (responce) in
-         
-            if let data = responce.success?["data"] as? [String:Any],
-                let groups = data["groups"] as? [Any]{
-                self.dataStorage.saveOrUpdateNewsGroups(account: self.session.getAccount(), groupsJson: groups)
-                success()
-            }
-            else{
-                failed(NSError(domain: "Не удалось загрузить группы!", code: -1, userInfo: nil))
-            }
-
-        }, failed: failed)
+        
+          let token = self.session.getAccount().getAuth().accessToken!
+        
+        DispatchQueue.global().async {
+            
+            self.network.apiDirector.socialNetworkModule.allGroups(accessToken:token, networkType: "yammer", success: { (responce) in
+                
+                if let data = responce.success?["data"] as? [String:Any],
+                    let groups = data["groups"] as? [Any]{
+                    self.dataStorage.saveOrUpdateNewsGroups(accountId: self.session.getAccount().id, groupsJson: groups)
+                    
+                    DispatchQueue.main.async {
+                        success()
+                    }
+                }
+                else{
+                    
+                    DispatchQueue.main.async {
+                        failed(NSError(domain: "Не удалось загрузить группы!", code: -1, userInfo: nil))
+                    }
+                }
+                
+            }, failed: failed)
+        }
     }
     
     func getAllYammerGroups() -> [INewsGroup]{
