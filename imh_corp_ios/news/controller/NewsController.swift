@@ -43,7 +43,7 @@ class NewsController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tryShowCashedContent()
+        //self.tryShowCashedContent()
         self.loadNews()
     }
     
@@ -71,13 +71,20 @@ class NewsController : UIViewController {
     private func loadNews(){
         
         self.cake.director.loadYammerGroups(success: { [unowned self] in
-            let group = self.cake.director.getGroup(name: "Обучение")
-            if group != nil  && group?.groupId != nil{
-                self.cake.director.loadYammerNews(groupId: group!.groupId!, lastMessageId: nil, success: {  [unowned self] in
-                    self.createOrUpdateDataSource(groups: [group!])
-                }, failed: { (error) in
-                    
-                })
+            
+            self.cake.director.getGroup(name: "Обучение") { (group) in
+
+                if group != nil  && group?.groupId != nil{
+                    let groupId = group!.groupId
+
+                    self.cake.director.loadYammerNews(groupId: groupId!, lastMessageId: nil, success: {  [unowned self] in
+                        print("!!!!")
+                        //self.createOrUpdateDataSource(groups: [group!])
+                        self.tryShowCashedContent()
+                        }, failed: { (error) in
+                            print(error)
+                    })
+                }
             }
 
         }) { (error) in
@@ -87,7 +94,9 @@ class NewsController : UIViewController {
     
     private func createOrUpdateDataSource(groups:[INewsGroup]){
         
-        self.limonade.appendSectionIfNeed(item: LimonadeItemTemplate(value: "root"), animation: UITableView.RowAnimation.bottom)
+        self.limonade.appendSectionIfNeed(item: LimonadeItemTemplate(value: "root"),
+                                          animation: UITableView.RowAnimation.bottom,
+                                          sortType:.descending)
         
         for group:INewsGroup in groups{
             

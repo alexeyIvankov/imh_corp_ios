@@ -8,6 +8,11 @@
 
 import Foundation
 
+public enum SortItemType {
+    case descending
+    case ascending
+}
+
 public protocol IContainer
 {
     func add(item:IContainerItem)
@@ -26,4 +31,3 @@ public protocol IContainer
  
     func count() -> Int;
 }
-

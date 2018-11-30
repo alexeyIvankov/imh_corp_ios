@@ -26,7 +26,7 @@ public class NewsDetailsCakeAssembly : AssemblyProviderImpl {
 
 
             let router = NewsDetailsRouter(loaderService: loaderService)
-            let director = NewsDetailsDirector(network: network, dataStorage: dataStorage, session:sessionService.activeSession!)
+            let director = NewsDetailsDirector(network: network, dataStorage: dataStorage, sessionService:sessionService)
             let design = NewsDetailsDesign(appDesign: appDesign)
 
             let cake:INewsDetailsCake = NewsDetailsCake(router: router,

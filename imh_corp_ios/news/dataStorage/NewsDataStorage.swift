@@ -17,33 +17,95 @@ class NewsDataStorage : INewsDataStorage{
     }
     
     func saveOrUpdateNewsGroups(accountId:String,
-                                groupsJson:[Any]){
-    
-        guard let accountDb:Account = self.getAccount(id: accountId) else{
-            return
-        }
+                                groupsJson:[Any],
+                                completion:@escaping ()->()){
         
-        for item in groupsJson{
+        self.db.asynch(block: {
             
-            if let groupDict:[String:Any] = item as? [String:Any],
-                let group_id:Int = groupDict["id"] as? Int,
-                let _:String = groupDict["name"] as? String{
+            self.getAccount(id: accountId, completion: { (account) in
                 
-                
-                let group_id_str = String(group_id)
-                
-                var groupDb:NewsGroup? = self.getGroup(id: group_id_str)
-
-                self.db.synch {
-                    
-                    if groupDb == nil{
-                        groupDb = NewsGroup()
-                        accountDb.groups.append(groupDb!)
-                    }
-                    groupDb?.update(json: groupDict)
+                guard account != nil else {
+                    return
                 }
                 
+                for item in groupsJson{
+                    
+                    if let groupDict:[String:Any] = item as? [String:Any],
+                        let group_id:Int = groupDict["id"] as? Int,
+                        let _:String = groupDict["name"] as? String{
+                        
+                        let group_id_str = String(group_id)
+                        
+                        self.getGroup(id: group_id_str, completion: { (group) in
+                            
+                            self.db.asynch(block: {
+                                var groupDb = group
+                                
+                                if groupDb == nil{
+                                    groupDb = NewsGroup()
+                                    account?.groups.append(groupDb!)
+                                }
+                                groupDb?.update(json: groupDict)
+                                
+                            }, completion:{_ in })
+                        })
+                    }
+                }
+            })
+
+        }, completion: { _ in
+            completion()
+        })
+    }
+    
+    func saveOrUpdateNewsAsynch(accountId:String,
+                                groupId:String,
+                                newsJson:[Any],
+                                completion:@escaping ()->()){
+        
+        self.getAccount(id: accountId) { (account) in
+            
+            guard account != nil else {
+                return
             }
+            
+            let groupDb:NewsGroup? = account?.getGroupsNews().filter(){ $0.groupId == groupId }.first as? NewsGroup
+            
+            guard groupDb != nil else  {
+                return
+            }
+            
+            for item in newsJson{
+                
+                if let newsDict:[String:Any] = item as? [String:Any],
+                    let newsId:Int = newsDict["id"] as? Int,
+                    let body:String = newsDict["body"] as? String,
+                    let _ = newsDict["date_created"] as? String,
+                    body.count > 10{
+                    
+                    let newsIdStr = String(newsId)
+                    
+                    self.getNews(id: newsIdStr, completion: { (news) in
+                        
+                        var newsDb = news
+                        
+                        self.db.asynch(block: {
+                            
+                            if newsDb == nil{
+                                newsDb = News()
+                                groupDb?.news.append(newsDb!)
+                            }
+                            newsDb?.update(json: newsDict)
+                            
+                        }, completion: {_ in
+                            completion()
+                        })
+                        
+                    })
+                    
+                }
+            }
+            
         }
     }
     
@@ -73,24 +135,24 @@ class NewsDataStorage : INewsDataStorage{
                 var newsDb:News? = self.getNews(id: newsIdStr)
                 
                 self.db.synch {
-                    
+
                     if newsDb == nil{
                         newsDb = News()
                         groupDb?.news.append(newsDb!)
                     }
                     newsDb?.update(json: newsDict)
-                    
+
                     let attachments = newsDict["attachments"] as? [[String:Any]]
-                    
+
                     if attachments != nil{
-                       
+
                         for attach_dict in attachments!{
-                            
+
                             if let fileId = attach_dict["id"] as? Int,
                                 let _ = attach_dict["type"],
                                 let _ = attach_dict["content_type"],
                                 let _ = attach_dict["download_url"]{
-                            
+
                                 var fileDb:File? = self.getFile(id:String(fileId))
                                 if fileDb == nil{
                                     fileDb = File()
@@ -100,9 +162,15 @@ class NewsDataStorage : INewsDataStorage{
                             }
                         }
                     }
-                
                 }
             }
+        }
+    }
+    
+    func getAccount(id:String, completion:@escaping (Account?)->()){
+        
+        self.db.asynchFetch(type: Account.self, options: FetchOptions(predicate:  NSPredicate(format: "id='\(id)'"), sortBy: nil)) { (res, ctx)  in
+            completion(res.first)
         }
     }
     
@@ -112,10 +180,32 @@ class NewsDataStorage : INewsDataStorage{
         return account
     }
     
+    func getGroup(id:String, completion:@escaping (NewsGroup?)->()){
+        
+        self.db.asynchFetch(type: NewsGroup.self, options: FetchOptions(predicate:  NSPredicate(format: "groupId='\(id)'"), sortBy: nil)) { (res, ctx) in
+            completion(res.first)
+        }
+    }
+    
+    func getGroup(name:String,
+                  completion:@escaping (NewsGroup?)->()){
+        
+        self.db.asynchFetch(type: NewsGroup.self, options: FetchOptions(predicate:  NSPredicate(format: "name='\(name)'"), sortBy: nil)) { (res, ctx) in
+            completion(res.first)
+        }
+    }
+    
     func getGroup(id:String) -> NewsGroup? {
         
         let group:NewsGroup? = self.db.synchFetch(options: FetchOptions(predicate:  NSPredicate(format: "groupId='\(id)'"), sortBy: nil)).first
         return group
+    }
+    
+    func getNews(id:String, completion:@escaping (News?)->()){
+        
+        self.db.asynchFetch(type: News.self, options: FetchOptions(predicate:  NSPredicate(format: "newsId='\(id)'"), sortBy: nil)) { (res, ctx) in
+            completion(res.first)
+        }
     }
     
     func getNews(id:String) -> News? {
@@ -128,5 +218,12 @@ class NewsDataStorage : INewsDataStorage{
         
         let file:File? = self.db.synchFetch(options: FetchOptions(predicate:  NSPredicate(format: "fileId='\(id)'"), sortBy: nil)).first
         return file
+    }
+    
+    func getFile(id:String, completion:@escaping (File?)->()){
+        
+        self.db.asynchFetch(type: File.self, options: FetchOptions(predicate:  NSPredicate(format: "fileId='\(id)'"), sortBy: nil)) { (res, ctx) in
+            completion(res.first)
+        }
     }
 }

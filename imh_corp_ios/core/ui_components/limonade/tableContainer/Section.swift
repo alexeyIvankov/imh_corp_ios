@@ -13,10 +13,11 @@ public struct Section : IContainer, IContainerItem
     public var header:Header?
     public var model:AnyObject?
     
-    fileprivate var rows:ContainerTemplate = ContainerTemplate()
+    fileprivate var rows:ContainerTemplate
 
     public init(id:String = "",
                 sortKey:String? = nil,
+                sortType:SortItemType = .ascending,
                 model:AnyObject? = nil,
                 header:Header? = nil)
     {
@@ -24,6 +25,7 @@ public struct Section : IContainer, IContainerItem
         self.sortKey = sortKey
         self.model = model
         self.header = header
+        self.rows = ContainerTemplate(sortType:sortType)
     }
     
     //MARK: Container
@@ -66,5 +68,4 @@ public struct Section : IContainer, IContainerItem
     public func count() -> Int{
         return self.rows.count()
     }
-    
 }

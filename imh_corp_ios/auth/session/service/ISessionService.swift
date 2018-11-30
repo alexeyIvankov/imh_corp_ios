@@ -9,5 +9,6 @@
 import Foundation
 
 public protocol ISessionService : AnyObject{
-    var activeSession:ISession?  { get }
+    func getActiveSession() -> ISession?
+    func activeSession(completion: @escaping(ISession?)->())
 }

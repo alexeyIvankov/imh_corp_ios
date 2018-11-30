@@ -8,13 +8,27 @@ import Foundation
 class ContainerTemplate : IContainer
 {
     fileprivate var items:Array<IContainerItem> = Array<IContainerItem>();
+    private let sortType:SortItemType
+    
+    required init(sortType:SortItemType  = .ascending){
+        self.sortType = sortType
+    }
     
     func sort_items()
     {
         self.items.sort { (item1, item2) -> Bool in
             
             if item1.sortKey != nil && item2.sortKey != nil{
-                return item1.sortKey! < item2.sortKey!
+                
+                if sortType == .ascending{
+                    return item1.sortKey! < item2.sortKey!
+                }
+                else if sortType == .descending{
+                    return item1.sortKey! > item2.sortKey!
+                }
+                else {
+                    return item1.sortKey! == item2.sortKey!
+                }
             }
             else{
                 return false

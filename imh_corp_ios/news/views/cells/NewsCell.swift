@@ -16,12 +16,6 @@ class NewCell : UITableViewCell,  INewsCell{
     @IBOutlet weak var labelGroupName:UILabel!
     @IBOutlet weak var labelDateCreated:UILabel!
     
-    var dateFormaterParser:DateFormatter {
-        let formater = DateFormatter()
-        formater.dateFormat = "yyyy/MM/dd HH:mm:ss +zzzz"
-        return formater
-    }
-    
     var dateFormaterConverter:DateFormatter {
         let formater = DateFormatter()
         formater.dateFormat = "dd.MM.yyyy HH:mm:ss"
@@ -38,8 +32,9 @@ class NewCell : UITableViewCell,  INewsCell{
         self.labelSubTitleNews.text = news.body
         self.labelGroupName.text = "#" + news.getGroup().name
         
-        if let date = self.dateFormaterParser.date(from:news.dateCreated!){
-             self.labelDateCreated.text = self.dateFormaterConverter.string(from:date)
+        if let timeIntervalDate = TimeInterval(news.dateCreated){
+            let date = Date.init(timeIntervalSince1970: timeIntervalDate)
+            self.labelDateCreated.text = self.dateFormaterConverter.string(from:date)
         }
     }
     

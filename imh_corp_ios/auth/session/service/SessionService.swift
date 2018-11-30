@@ -9,10 +9,6 @@
 import Foundation
 
 class SessionService : ISessionService{
-   
-    var activeSession: ISession? {
-        return getSession()
-    }
     
     private var dataBase:IDataBase
     
@@ -20,8 +16,13 @@ class SessionService : ISessionService{
         self.dataBase = dataBase
     }
     
-    private func getSession() -> ISession?{
+    func getActiveSession() -> ISession?{
         let sesion:Session? = self.dataBase.synchFetch(options: nil).first
         return sesion
+    }
+    func activeSession(completion: @escaping(ISession?)->()){
+        self.dataBase.asynchFetch(type: Session.self, options: nil) { (sessions, ctx)  in
+            completion(sessions.first)
+        }
     }
 }

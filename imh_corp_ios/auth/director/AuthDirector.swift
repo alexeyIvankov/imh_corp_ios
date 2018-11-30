@@ -24,7 +24,7 @@ class AuthDirector : IAuthDirector {
     }
     
     func isAuth() -> Bool{
-        if self.sessionService.activeSession != nil{
+        if self.sessionService.getActiveSession() != nil{
             return true
         }
         else {
@@ -48,7 +48,7 @@ class AuthDirector : IAuthDirector {
                                                             if let data = responce.success?["data"] as? [String:Any], let account = data["account"] as? [String:Any]{
                                                                 self.dataStorage.trySaveAuthorization(account: account)
                                                                 
-                                                                if let session = self.sessionService.activeSession{
+                                                                if let session = self.sessionService.getActiveSession(){
                                                                     success(session)
                                                                 }
                                                                 else {

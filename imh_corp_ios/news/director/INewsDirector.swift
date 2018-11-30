@@ -20,5 +20,16 @@ protocol INewsDirector : AnyObject {
     
     func getAllYammerGroups() -> [INewsGroup]
     func getGroup(name:String) -> INewsGroup?
-    func getNews(groupName:String) -> [INews]
+    
+    func getGroup(id:String,
+                  completion:@escaping (NewsGroup?)->())
+    
+    func getGroup(name:String,
+                  completion:@escaping (NewsGroup?)->())
+    
+    func getNews(id:String,
+                 completion:@escaping (News?)->())
+    
+    func getAccount(id:String,
+                    completion:@escaping (Account?)->())
 }

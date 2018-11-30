@@ -52,18 +52,19 @@ class Limonade : NSObject, UITableViewDelegate, UITableViewDataSource {
     
     public func appendSectionIfNeed(item:ILimonadeItem,
                                     animation: UITableView.RowAnimation,
-                                    header:String?=nil){
+                                    header:String?=nil,
+                                    sortType:SortItemType = .ascending){
         
         guard self.container.item(id: item.limonadeId) == nil else  {
             return
         }
         
         if header != nil {
-            let section:Section = Section(id: item.limonadeId, sortKey: item.limonadeSortKey, model:item, header:Header(viewHeader:  Bundle.loadView(name:header!)))
+            let section:Section = Section(id: item.limonadeId, sortKey: item.limonadeSortKey, sortType:sortType, model:item, header:Header(viewHeader:  Bundle.loadView(name:header!)))
             container.add(item: section)
         }
         else {
-            let section:Section = Section(id: item.limonadeId, sortKey: item.limonadeSortKey, model:item)
+            let section:Section = Section(id: item.limonadeId, sortKey: item.limonadeSortKey,sortType:sortType, model:item)
             container.add(item: section)
         }
         self.addSectionAnimate(sectionItem: item, animation: animation)

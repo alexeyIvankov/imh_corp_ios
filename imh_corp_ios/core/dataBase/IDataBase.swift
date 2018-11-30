@@ -1,6 +1,9 @@
 
-
 import Foundation
+
+public protocol IDataBaseContext : class{
+    
+}
 
 public protocol IDataBase : class {
     
@@ -12,10 +15,20 @@ public protocol IDataBase : class {
     func synchRemove<T>(objects: [T])
     
     //MARK: Asynch
-    func asynchCreate<T>(type: T.Type, completion: @escaping (T) -> ())
-    func asynchWrite<T>(type: T.Type, obj:[T], completion: () -> ())
-    func asynchFetch<T>(options: FetchOptions?,  completion: @escaping ([T]) -> ())
-    func asynchRemove<T>(objects: [T], completion: () -> ())
+    func asynch(block:@escaping ()->(),
+                completion: @escaping (IDataBaseContext) -> ())
+    
+    func asynch(context:IDataBaseContext,
+                block:@escaping ()->(),
+                completion: @escaping (IDataBaseContext) -> ())
+    
+    
+    func asynchFetch<T>(type: T.Type, options: FetchOptions?,
+                        completion: @escaping ([T], IDataBaseContext) -> ())
+    
+    func asynchFetch<T>(context:IDataBaseContext,
+                        type: T.Type,
+                        options: FetchOptions?,
+                        completion: @escaping ([T], IDataBaseContext) -> ())
 }
-
 

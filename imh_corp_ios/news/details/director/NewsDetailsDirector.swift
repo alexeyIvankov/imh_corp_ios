@@ -12,14 +12,14 @@ class NewsDetailsDirector: INewsDetailsDirector{
     
     var network:INetwork
     var dataStorage:INewsDataStorage
-    var session:ISession
+    var sessionService:ISessionService
     
     required init( network:INetwork,
                    dataStorage:INewsDataStorage,
-                   session:ISession){
+                   sessionService:ISessionService){
         
         self.network = network
         self.dataStorage = dataStorage
-        self.session = session
+        self.sessionService = sessionService
     }
 }

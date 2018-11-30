@@ -16,6 +16,12 @@ class News: Object, INews {
     @objc dynamic var dateCreated:String! = nil
     let groups = LinkingObjects(fromType: NewsGroup.self, property: "news")
     
+    var dateFormaterParser:DateFormatter {
+        let formater = DateFormatter()
+        formater.dateFormat = "yyyy/MM/dd HH:mm:ss +zzzz"
+        return formater
+    }
+    
     //MARK: ILimonadeItem
     var limonadeId: String!{
         return String(self.newsId!)
@@ -54,8 +60,9 @@ class News: Object, INews {
             self.body = body
         }
         
-        if dateCreated != nil{
-            self.dateCreated  = dateCreated
+        if dateCreated != nil,
+            let date = self.dateFormaterParser.date(from: dateCreated!){
+            self.dateCreated  = String(date.timeIntervalSince1970)
         }
         
     }
