@@ -18,18 +18,11 @@ protocol INewsDirector : AnyObject {
     func loadYammerGroups(success:@escaping ()->(),
                           failed: @escaping (NSError?)->())
     
+    
     func getAllYammerGroups() -> [INewsGroup]
-    func getGroup(name:String) -> INewsGroup?
     
-    func getGroup(id:String,
-                  completion:@escaping (NewsGroup?)->())
+    func getYammerGroup(name:String) -> INewsGroup?
+    func getYammerGroup(name:String,
+                        completion:@escaping (INewsGroup?)->())
     
-    func getGroup(name:String,
-                  completion:@escaping (NewsGroup?)->())
-    
-    func getNews(id:String,
-                 completion:@escaping (News?)->())
-    
-    func getAccount(id:String,
-                    completion:@escaping (Account?)->())
 }

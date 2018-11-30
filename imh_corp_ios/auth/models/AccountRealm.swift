@@ -1,5 +1,5 @@
 //
-//  Account.swift
+//  AccountRealm.swift
 //  imh_corp_ios
 //
 //  Created by Alexey Ivankov on 19/11/2018.
@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Account :  Object, IAccount{
+class AccountRealm :  Object, IAccount{
     
     @objc dynamic var name:String! = nil
     @objc dynamic var position:String? = nil
@@ -17,15 +17,15 @@ class Account :  Object, IAccount{
     @objc dynamic var id:String! = nil
    
     
-    @objc dynamic var auth:Auth!
-    var groups = List<NewsGroup>()
+    @objc dynamic var auth:AuthRealm!
+    var groups = List<NewsGroupRealm>()
     
     func getAuth() -> IAuth{
         return self.auth
     }
     
     func getGroupsNews()->[INewsGroup]{
-        return self.groups.toArray()
+        return self.groups.convertToArray()
     }
     
     override static func primaryKey() -> String? {

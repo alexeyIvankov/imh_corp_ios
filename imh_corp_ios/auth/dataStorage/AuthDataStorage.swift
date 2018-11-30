@@ -23,11 +23,11 @@ class AuthDataStorage : IAuthDataStorage{
             let accessToken:String = (account["tokens"] as? [String:Any])?["access"] as? String,
             let refreshToken:String = (account["tokens"] as? [String:Any])?["refresh"] as? String{
             
-            let auth:Auth = Auth()
+            let auth:AuthRealm = AuthRealm()
             auth.accessToken = accessToken
             auth.refreshToken = refreshToken
             
-            let account:Account = Account()
+            let account:AccountRealm = AccountRealm()
             account.name = name
             account.phone = phone
             account.id = phone

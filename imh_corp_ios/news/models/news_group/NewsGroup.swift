@@ -2,56 +2,52 @@
 //  NewsGroup.swift
 //  imh_corp_ios
 //
-//  Created by Alexey Ivankov on 19/11/2018.
+//  Created by Alexey Ivankov on 30/11/2018.
 //  Copyright © 2018 Industrial Metallurgical Holding. All rights reserved.
 //
 
 import Foundation
-import RealmSwift
 
-class NewsGroup: Object, INewsGroup {
-   
-    @objc dynamic var name:String! = nil
-    @objc dynamic var groupId:String! = nil
-    @objc dynamic var descript:String! = nil
+class NewsGroup : INewsGroup {
     
-    //MARK: ILimonadeItem 
-    var limonadeId: String!{
-        return String(self.groupId!)
+    private let news:[INews]
+    private let hashLimonade:Int
+    
+    var limonadeId: String!
+    var limonadeSortKey: String!
+    
+    var name: String!
+    var groupId: String!
+    var descript: String!
+    
+    static func createGroups(groups:[INewsGroup]) -> [INewsGroup]{
+        var container = [INewsGroup]()
+        
+        for item in groups{
+            container.append(NewsGroup(newsGroup: item))
+        }
+        return container
     }
     
-    var limonadeSortKey: String!{
-        return String(self.name!)
+    required init(newsGroup:INewsGroup){
+        self.name = newsGroup.name
+        self.groupId = newsGroup.groupId
+        self.descript = newsGroup.descript
+        self.limonadeId = newsGroup.limonadeId
+        self.limonadeSortKey = newsGroup.limonadeSortKey
+        self.news = News.createNews(news:newsGroup.getNews())
+        self.hashLimonade = newsGroup.getHashLimonade()
+    }
+    
+    func getNews() -> [INews] {
+        return self.news
     }
     
     func getHashLimonade() -> Int {
-        return self.name.hashValue ^ self.descript.hashValue
+        return self.hashLimonade
     }
     
-    var news = List<News>()
-    
-    func getNews() -> [INews]{
-        return self.news.toArray()
-    }
-    
-    //MARK: IServerModel
     func update(json: [String : Any]) {
         
-        let group_id:Int? = json["id"] as? Int
-        let name:String? = json["name"] as? String
-        let descript = json["description"] as? String
-        
-        if group_id != nil{
-             self.groupId = String(group_id!)
-        }
-       
-        if name != nil{
-            self.name = name
-        }
-        
-        if self.descript != nil{
-            self.descript = descript
-        }
-      
     }
 }

@@ -15,7 +15,7 @@ public class DataBase : IDataBase {
         poolAsynchContext = [:]
     }
     
-    private func getAsynchContext(block: @escaping(Realm)->()){
+    private func getNeededAsynchContextFromPool(block: @escaping(Realm)->()){
         
         self.queueAsynchOperation.async {
             
@@ -75,9 +75,18 @@ public class DataBase : IDataBase {
     public func asynch(block:@escaping ()->(),
                        completion: @escaping (IDataBaseContext) -> ()){
         
-        self.getAsynchContext { (context) in
+        self.getNeededAsynchContextFromPool { (context) in
             context.saveContext(transaction: block)
              completion(context)
+        }
+    }
+    
+    public func asynch(transactions:[()->()],
+                completion: @escaping (IDataBaseContext) -> ()){
+        
+        self.getNeededAsynchContextFromPool { (context) in
+            context.saveContext(transactions: transactions)
+            completion(context)
         }
     }
     
@@ -89,9 +98,17 @@ public class DataBase : IDataBase {
         completion(context)
     }
     
+    public func asynch(context:IDataBaseContext,
+                transactions:[()->()],
+                completion: @escaping (IDataBaseContext) -> ()){
+        let realmContext = context as! Realm
+        realmContext.saveContext(transactions:transactions)
+        completion(context)
+    }
+    
     public func asynchFetch<T>(type: T.Type, options: FetchOptions?,
                                completion: @escaping ([T], IDataBaseContext) -> ()) {
-        self.getAsynchContext { (context) in
+        self.getNeededAsynchContextFromPool { (context) in
             let objects = context.read(type as! Object.Type, options:options )
             completion(Array(objects) as! [T], context)
         }
@@ -120,6 +137,25 @@ extension Realm : IDataBaseContext{
             
             try self.commitWrite()
             self.refresh()
+        }
+        catch {
+            print("error!!!!!!!! \(error)")
+        }
+    }
+    
+    public func saveContext(transactions:[()->()]){
+        do{
+            for transaction in transactions{
+                
+                if self.isInWriteTransaction == false{
+                    self.beginWrite()
+                }
+                
+                transaction()
+                
+                try self.commitWrite()
+                self.refresh()
+            }
         }
         catch {
             print("error!!!!!!!! \(error)")

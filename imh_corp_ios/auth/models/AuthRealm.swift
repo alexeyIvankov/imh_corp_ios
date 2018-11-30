@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Auth: Object, IAuth{
+class AuthRealm: Object, IAuth{
     @objc dynamic var accessToken:String? = nil
     @objc dynamic var refreshToken:String? = nil
     

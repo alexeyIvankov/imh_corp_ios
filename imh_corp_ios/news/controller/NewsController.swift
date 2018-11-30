@@ -43,7 +43,7 @@ class NewsController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //self.tryShowCashedContent()
+        self.tryShowCashedContent()
         self.loadNews()
     }
     
@@ -62,9 +62,14 @@ class NewsController : UIViewController {
     
     //MARK: - Data source
     private func tryShowCashedContent(){
-        let group = self.cake.director.getGroup(name: "Обучение")
-        if group != nil {
-            self.createOrUpdateDataSource(groups: [group!])
+        
+        self.cake.director.getYammerGroup(name: "Обучение") { (group) in
+            if group != nil {
+                DispatchQueue.main.async {
+                      self.createOrUpdateDataSource(groups: [group!])
+                }
+              
+            }
         }
     }
     
@@ -72,14 +77,12 @@ class NewsController : UIViewController {
         
         self.cake.director.loadYammerGroups(success: { [unowned self] in
             
-            self.cake.director.getGroup(name: "Обучение") { (group) in
+            self.cake.director.getYammerGroup(name: "Обучение") { (group) in
 
                 if group != nil  && group?.groupId != nil{
                     let groupId = group!.groupId
 
                     self.cake.director.loadYammerNews(groupId: groupId!, lastMessageId: nil, success: {  [unowned self] in
-                        print("!!!!")
-                        //self.createOrUpdateDataSource(groups: [group!])
                         self.tryShowCashedContent()
                         }, failed: { (error) in
                             print(error)

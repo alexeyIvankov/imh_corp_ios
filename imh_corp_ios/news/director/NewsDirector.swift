@@ -51,18 +51,12 @@ class NewsDirector : INewsDirector {
                                         if let data = responce.success?["data"] as? [String:Any],
                                             let news = data["messages"] as? [[String:Any]]{
                                             
-                                            self.dataStorage.saveOrUpdateNewsAsynch(accountId: accountId!, groupId: groupId, newsJson: news, completion: {
+                                            self.dataStorage.saveOrUpdateNews(accountId: accountId!, groupId: groupId, newsJson: news, completion: {
                                                 
                                                 DispatchQueue.main.async {
                                                     success()
                                                 }
                                             })
-                                            
-                                            //                                        self.dataStorage.saveOrUpdateNews(accountId: self.session.getAccount().id, groupId: groupId, newsJson: news)
-                                            
-                                            //                                        DispatchQueue.main.async {
-                                            //                                              success()
-                                            //                                        }
                                             
                                         }
                                         else{
@@ -118,40 +112,30 @@ class NewsDirector : INewsDirector {
         guard let session = self.sessionService.getActiveSession() else {
             fatalError("session is nill")
         }
-        return session.getAccount().getGroupsNews()
+        let groupsRealm = session.getAccount().getGroupsNews()
+        return NewsGroup.createGroups(groups: groupsRealm)
     }
     
-    func getGroup(name:String) -> INewsGroup?{
-        return self.getAllYammerGroups().filter() { $0.name == name }.first
-    }
-    
-    func getGroup(id:String,
-                  completion:@escaping (NewsGroup?)->()){
-        return self.dataStorage.getGroup(id:id, completion:completion)
-    }
-    
-    func getGroup(name:String,
-                  completion:@escaping (NewsGroup?)->()){
-        return self.dataStorage.getGroup(name:name, completion:completion)
-    }
-    
-    func getNews(id:String,
-                 completion:@escaping (News?)->()){
-        return self.dataStorage.getNews(id:id,  completion:completion)
-    }
-    
-    func getAccount(id:String,
-                    completion:@escaping (Account?)->()){
-        return self.dataStorage.getAccount(id:id, completion:completion)
-    }
-    
-    func getNews(groupName:String) -> [INews]{
-        var news:[INews] =  [INews]()
-        
-        if let group = self.getGroup(name: groupName){
-            news = group.getNews()
+    func getYammerGroup(name:String) -> INewsGroup?{
+        let groupRealm = self.getAllYammerGroups().filter() { $0.name == name }.first
+        guard groupRealm != nil else {
+            return nil
         }
+        return NewsGroup(newsGroup: groupRealm!)
+    }
+    
+    
+    func getYammerGroup(name:String,
+                  completion:@escaping (INewsGroup?)->()){
         
-        return news
+        self.dataStorage.getGroup(name: name) { (groupRealm) in
+            
+            if groupRealm == nil{
+                completion(nil)
+            }
+            else {
+                completion(NewsGroup(newsGroup: groupRealm!))
+            }
+        }
     }
 }

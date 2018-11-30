@@ -15,7 +15,7 @@ class Session : Object, ISession{
     @objc dynamic var dateCreated:String? = nil
     @objc dynamic var lastUpdate:String? = nil
     
-    @objc dynamic var account:Account!
+    @objc dynamic var account:AccountRealm!
     
     func getAccount() -> IAccount{
         return self.account

@@ -14,24 +14,15 @@ protocol INewsDataStorage : AnyObject {
                                 groupsJson:[Any],
                                 completion:@escaping ()->())
     
+    
     func saveOrUpdateNews(accountId:String,
                           groupId:String,
-                          newsJson:[Any])
-    
-    func saveOrUpdateNewsAsynch(accountId:String,
-                                groupId:String,
-                                newsJson:[Any],
-                                completion:@escaping ()->())
-    
-    func getGroup(id:String,
-                  completion:@escaping (NewsGroup?)->())
+                          newsJson:[Any],
+                          completion:@escaping ()->())
     
     func getGroup(name:String,
-                  completion:@escaping (NewsGroup?)->())
+                  completion:@escaping (NewsGroupRealm?)->())
     
     func getNews(id:String,
-                 completion:@escaping (News?)->())
-    
-    func getAccount(id:String,
-                    completion:@escaping (Account?)->())
+                 completion:@escaping (NewsRealm?)->())
 }

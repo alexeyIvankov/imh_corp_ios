@@ -12,7 +12,7 @@ enum FileType:String {
     case image = "image"
 }
 
-public protocol IFile : AnyObject, IServerModel {
+public protocol IFile : IServerModel {
     
     var fileId: String! { get }
     var name: String? { get }

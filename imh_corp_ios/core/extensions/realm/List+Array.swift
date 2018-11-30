@@ -11,7 +11,7 @@ import RealmSwift
 
 extension List{
     
-    func toArray() -> [List.Element] {
+    func convertToArray() -> [List.Element] {
         var array = [List.Element]()
         
         for obj in self{

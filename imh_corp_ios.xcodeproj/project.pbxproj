@@ -45,7 +45,7 @@
 		FF4335AE21A6CF8C00F0F5F0 /* ISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335AD21A6CF8C00F0F5F0 /* ISession.swift */; };
 		FF4335B021A6CF9500F0F5F0 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335AF21A6CF9500F0F5F0 /* Session.swift */; };
 		FF4335B321A6D5A500F0F5F0 /* SessionServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335B221A6D5A500F0F5F0 /* SessionServiceAssembly.swift */; };
-		FF4335B621A6D88800F0F5F0 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335B421A6D88800F0F5F0 /* Account.swift */; };
+		FF4335B621A6D88800F0F5F0 /* AccountRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335B421A6D88800F0F5F0 /* AccountRealm.swift */; };
 		FF4335B721A6D88800F0F5F0 /* IAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335B521A6D88800F0F5F0 /* IAccount.swift */; };
 		FF4335C021A7D7D400F0F5F0 /* SpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335BB21A7D7D400F0F5F0 /* SpinerLayer.swift */; };
 		FF4335C121A7D7D400F0F5F0 /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335BC21A7D7D400F0F5F0 /* CGRectEx.swift */; };
@@ -260,12 +260,15 @@
 		FFAB4FA72163971A00AE82EA /* INetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4FA02163971A00AE82EA /* INetwork.swift */; };
 		FFAB4FA82163971A00AE82EA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4FA12163971A00AE82EA /* Network.swift */; };
 		FFAB4FA92163971A00AE82EA /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAB4FA32163971A00AE82EA /* NetworkAssembly.swift */; };
-		FFF9532021A292C600612C10 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9531D21A292C600612C10 /* News.swift */; };
+		FFDEE15721B148A900D25CAE /* NewsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDEE15621B148A900D25CAE /* NewsGroup.swift */; };
+		FFDEE15921B14BEC00D25CAE /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDEE15821B14BEC00D25CAE /* News.swift */; };
+		FFDEE15B21B152EC00D25CAE /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDEE15A21B152EB00D25CAE /* File.swift */; };
+		FFF9532021A292C600612C10 /* NewsRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9531D21A292C600612C10 /* NewsRealm.swift */; };
 		FFF9532121A292C600612C10 /* INews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9531E21A292C600612C10 /* INews.swift */; };
-		FFF9532321A292D500612C10 /* NewsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9532221A292D500612C10 /* NewsGroup.swift */; };
+		FFF9532321A292D500612C10 /* NewsGroupRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9532221A292D500612C10 /* NewsGroupRealm.swift */; };
 		FFF9532521A292E000612C10 /* INewsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9532421A292E000612C10 /* INewsGroup.swift */; };
 		FFF9532821A2970E00612C10 /* IFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9532721A2970E00612C10 /* IFile.swift */; };
-		FFF9532A21A2971500612C10 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9532921A2971500612C10 /* File.swift */; };
+		FFF9532A21A2971500612C10 /* FileRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9532921A2971500612C10 /* FileRealm.swift */; };
 		FFF9532D21A29F9A00612C10 /* List+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9532C21A29F9A00612C10 /* List+Array.swift */; };
 		FFF9533B21A2A4D900612C10 /* Limonade.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9533021A2A4D900612C10 /* Limonade.swift */; };
 		FFF9533C21A2A4D900612C10 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9533221A2A4D900612C10 /* Cell.swift */; };
@@ -277,7 +280,7 @@
 		FFF9534221A2A4D900612C10 /* TableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9533921A2A4D900612C10 /* TableContainer.swift */; };
 		FFF9534321A2A4D900612C10 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9533A21A2A4D900612C10 /* Row.swift */; };
 		FFF9535E21A2BDED00612C10 /* IAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9535D21A2BDED00612C10 /* IAuth.swift */; };
-		FFF9536021A2BDF600612C10 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9535F21A2BDF600612C10 /* Auth.swift */; };
+		FFF9536021A2BDF600612C10 /* AuthRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9535F21A2BDF600612C10 /* AuthRealm.swift */; };
 		FFF9536221A2C1EF00612C10 /* DynamicAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF9536121A2C1EF00612C10 /* DynamicAssembly.swift */; };
 /* End PBXBuildFile section */
 
@@ -343,7 +346,7 @@
 		FF4335AD21A6CF8C00F0F5F0 /* ISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISession.swift; sourceTree = "<group>"; };
 		FF4335AF21A6CF9500F0F5F0 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		FF4335B221A6D5A500F0F5F0 /* SessionServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionServiceAssembly.swift; sourceTree = "<group>"; };
-		FF4335B421A6D88800F0F5F0 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		FF4335B421A6D88800F0F5F0 /* AccountRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountRealm.swift; sourceTree = "<group>"; };
 		FF4335B521A6D88800F0F5F0 /* IAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAccount.swift; sourceTree = "<group>"; };
 		FF4335BB21A7D7D400F0F5F0 /* SpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinerLayer.swift; sourceTree = "<group>"; };
 		FF4335BC21A7D7D400F0F5F0 /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
@@ -566,12 +569,15 @@
 		FFAB4FA02163971A00AE82EA /* INetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INetwork.swift; sourceTree = "<group>"; };
 		FFAB4FA12163971A00AE82EA /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		FFAB4FA32163971A00AE82EA /* NetworkAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
-		FFF9531D21A292C600612C10 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		FFDEE15621B148A900D25CAE /* NewsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsGroup.swift; sourceTree = "<group>"; };
+		FFDEE15821B14BEC00D25CAE /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		FFDEE15A21B152EB00D25CAE /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		FFF9531D21A292C600612C10 /* NewsRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRealm.swift; sourceTree = "<group>"; };
 		FFF9531E21A292C600612C10 /* INews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INews.swift; sourceTree = "<group>"; };
-		FFF9532221A292D500612C10 /* NewsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsGroup.swift; sourceTree = "<group>"; };
+		FFF9532221A292D500612C10 /* NewsGroupRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsGroupRealm.swift; sourceTree = "<group>"; };
 		FFF9532421A292E000612C10 /* INewsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INewsGroup.swift; sourceTree = "<group>"; };
 		FFF9532721A2970E00612C10 /* IFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFile.swift; sourceTree = "<group>"; };
-		FFF9532921A2971500612C10 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		FFF9532921A2971500612C10 /* FileRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRealm.swift; sourceTree = "<group>"; };
 		FFF9532C21A29F9A00612C10 /* List+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List+Array.swift"; sourceTree = "<group>"; };
 		FFF9533021A2A4D900612C10 /* Limonade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Limonade.swift; sourceTree = "<group>"; };
 		FFF9533221A2A4D900612C10 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
@@ -583,7 +589,7 @@
 		FFF9533921A2A4D900612C10 /* TableContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableContainer.swift; sourceTree = "<group>"; };
 		FFF9533A21A2A4D900612C10 /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		FFF9535D21A2BDED00612C10 /* IAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAuth.swift; sourceTree = "<group>"; };
-		FFF9535F21A2BDF600612C10 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		FFF9535F21A2BDF600612C10 /* AuthRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRealm.swift; sourceTree = "<group>"; };
 		FFF9536121A2C1EF00612C10 /* DynamicAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2133,8 +2139,9 @@
 		FFF9531C21A292C600612C10 /* news */ = {
 			isa = PBXGroup;
 			children = (
-				FFF9531D21A292C600612C10 /* News.swift */,
+				FFF9531D21A292C600612C10 /* NewsRealm.swift */,
 				FFF9531E21A292C600612C10 /* INews.swift */,
+				FFDEE15821B14BEC00D25CAE /* News.swift */,
 			);
 			path = news;
 			sourceTree = "<group>";
@@ -2142,8 +2149,9 @@
 		FFF9531F21A292C600612C10 /* news_group */ = {
 			isa = PBXGroup;
 			children = (
-				FFF9532221A292D500612C10 /* NewsGroup.swift */,
+				FFF9532221A292D500612C10 /* NewsGroupRealm.swift */,
 				FFF9532421A292E000612C10 /* INewsGroup.swift */,
+				FFDEE15621B148A900D25CAE /* NewsGroup.swift */,
 			);
 			path = news_group;
 			sourceTree = "<group>";
@@ -2152,7 +2160,8 @@
 			isa = PBXGroup;
 			children = (
 				FFF9532721A2970E00612C10 /* IFile.swift */,
-				FFF9532921A2971500612C10 /* File.swift */,
+				FFF9532921A2971500612C10 /* FileRealm.swift */,
+				FFDEE15A21B152EB00D25CAE /* File.swift */,
 			);
 			path = file;
 			sourceTree = "<group>";
@@ -2210,10 +2219,10 @@
 		FFF9535C21A2BDE100612C10 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				FF4335B421A6D88800F0F5F0 /* Account.swift */,
+				FF4335B421A6D88800F0F5F0 /* AccountRealm.swift */,
 				FF4335B521A6D88800F0F5F0 /* IAccount.swift */,
 				FFF9535D21A2BDED00612C10 /* IAuth.swift */,
-				FFF9535F21A2BDF600612C10 /* Auth.swift */,
+				FFF9535F21A2BDF600612C10 /* AuthRealm.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -2477,6 +2486,7 @@
 			files = (
 				FFAB4F1F216392D400AE82EA /* IRouter.swift in Sources */,
 				FFAB4F752163959700AE82EA /* IAuthCake.swift in Sources */,
+				FFDEE15921B14BEC00D25CAE /* News.swift in Sources */,
 				FF56146B21809EE300DCCE1B /* INewsDesign.swift in Sources */,
 				FF4335D021AD1C9500F0F5F0 /* IRootDesign.swift in Sources */,
 				FF4335C121A7D7D400F0F5F0 /* CGRectEx.swift in Sources */,
@@ -2516,6 +2526,7 @@
 				FFAB4F6B2163959700AE82EA /* LoginCake.swift in Sources */,
 				FFAB4F672163959700AE82EA /* LoginController.swift in Sources */,
 				FF72AF7D217761B2002D04DA /* Image+Color.swift in Sources */,
+				FFDEE15721B148A900D25CAE /* NewsGroup.swift in Sources */,
 				FF43358F21A69CF100F0F5F0 /* LazyParametersManager.swift in Sources */,
 				FF72AF3D2175E35C002D04DA /* FSPageViewLayout.swift in Sources */,
 				FF3897D52178C3F5005CE562 /* UIView+ChainableAnimator.swift in Sources */,
@@ -2560,7 +2571,7 @@
 				FFF9533C21A2A4D900612C10 /* Cell.swift in Sources */,
 				FF56144821805B4600DCCE1B /* IConfirmationCake.swift in Sources */,
 				FFAB4F662163959700AE82EA /* LoginCakeAssembly.swift in Sources */,
-				FFF9536021A2BDF600612C10 /* Auth.swift in Sources */,
+				FFF9536021A2BDF600612C10 /* AuthRealm.swift in Sources */,
 				FF72AEF92175BFF5002D04DA /* ILoginDirector.swift in Sources */,
 				FF72AF7C217761B2002D04DA /* UIImage+NSData.m in Sources */,
 				FF43359E21A6A8F000F0F5F0 /* DataBase.swift in Sources */,
@@ -2603,7 +2614,7 @@
 				FF72AF3A2175E35C002D04DA /* FSPageViewTransformer.swift in Sources */,
 				FF3897EF2178C462005CE562 /* DKChainableAnimationKit+Bezier.swift in Sources */,
 				FF72AF4B21761B09002D04DA /* IWelcomePage.swift in Sources */,
-				FFF9532A21A2971500612C10 /* File.swift in Sources */,
+				FFF9532A21A2971500612C10 /* FileRealm.swift in Sources */,
 				FFAB4F872163960900AE82EA /* RootCakeAssebly.swift in Sources */,
 				FF72AF3C2175E35C002D04DA /* FSPagerViewLayoutAttributes.swift in Sources */,
 				FFAB4F3C2163936B00AE82EA /* main.swift in Sources */,
@@ -2611,7 +2622,7 @@
 				FF5614552180943200DCCE1B /* ValidatorTemplate.swift in Sources */,
 				FF3897D92178C3F5005CE562 /* JHChainableAnimator.m in Sources */,
 				FF6FB01721AD692900C818BC /* NewsDetailsController.swift in Sources */,
-				FFF9532021A292C600612C10 /* News.swift in Sources */,
+				FFF9532021A292C600612C10 /* NewsRealm.swift in Sources */,
 				FFAB4F1E216392D400AE82EA /* Global.swift in Sources */,
 				FFAB4F3B2163936B00AE82EA /* IApplication.swift in Sources */,
 				FF3897F02178C462005CE562 /* DKChainableAnimationKit+Frame.swift in Sources */,
@@ -2626,7 +2637,7 @@
 				FF5614C62180A40900DCCE1B /* MoreCake.swift in Sources */,
 				FF3897BC2178A085005CE562 /* IViewWithDisplayAnimation.swift in Sources */,
 				FFAB4FA42163971A00AE82EA /* SecurityServiceAssembly.swift in Sources */,
-				FFF9532321A292D500612C10 /* NewsGroup.swift in Sources */,
+				FFF9532321A292D500612C10 /* NewsGroupRealm.swift in Sources */,
 				FF72AF3F2175E35C002D04DA /* FSPagerCollectionView.swift in Sources */,
 				FF56144321805B4600DCCE1B /* ConfirmationDirector.swift in Sources */,
 				FF72AF3B2175E35C002D04DA /* FSPagerViewCell.swift in Sources */,
@@ -2685,6 +2696,7 @@
 				FF3897ED2178C462005CE562 /* DKKeyframeAnimationFunction.swift in Sources */,
 				FF56144B21805B4600DCCE1B /* ConfirmationRouter.swift in Sources */,
 				FF5614A82180A2C200DCCE1B /* EventsController.swift in Sources */,
+				FFDEE15B21B152EC00D25CAE /* File.swift in Sources */,
 				FF3897F22178C462005CE562 /* DKKeyFrameAnimation.swift in Sources */,
 				FFF9534321A2A4D900612C10 /* Row.swift in Sources */,
 				FF4335B721A6D88800F0F5F0 /* IAccount.swift in Sources */,
@@ -2712,7 +2724,7 @@
 				FFF9534021A2A4D900612C10 /* Header.swift in Sources */,
 				FFAB4F2A216392D400AE82EA /* FullScreenLoader.swift in Sources */,
 				FF56144D2180631400DCCE1B /* UINavigationControllerTransparentBar.swift in Sources */,
-				FF4335B621A6D88800F0F5F0 /* Account.swift in Sources */,
+				FF4335B621A6D88800F0F5F0 /* AccountRealm.swift in Sources */,
 				FF5614A42180A2C200DCCE1B /* EventsDesign.swift in Sources */,
 				FF4335C021A7D7D400F0F5F0 /* SpinerLayer.swift in Sources */,
 				FF72AF83217761B2002D04DA /* String+Size.swift in Sources */,
