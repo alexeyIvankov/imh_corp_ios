@@ -13,14 +13,26 @@ class NewsDirector : INewsDirector {
     var network:INetwork
     var dataStorage:INewsDataStorage
     var sessionService:ISessionService
+    var newsLoaderService:INewsLoaderService
     
     required init( network:INetwork,
                    dataStorage:INewsDataStorage,
-                   sessionService:ISessionService){
+                   sessionService:ISessionService,
+                   newsLoaderSerice:INewsLoaderService){
         
         self.network = network
         self.dataStorage = dataStorage
         self.sessionService = sessionService
+        self.newsLoaderService = newsLoaderSerice
+    }
+    
+    func loadYammerNewsToAvailableGroups(success:@escaping ()->(),
+                                         failed: @escaping (NSError?)->()){
+        self.newsLoaderService.addTransationToLoadBatchNews(completionBatch: success, failedBatch: failed)
+    }
+    
+    func cancelLoadloadYammerNewsToAvailableGroups(){
+        self.newsLoaderService.cancelAllTransactions()
     }
   
     func loadYammerNews(groupId:String,
@@ -71,7 +83,7 @@ class NewsDirector : INewsDirector {
         }
     }
     
-    func loadYammerGroups(success:@escaping ()->(),
+    func loadAllYammerGroups(success:@escaping ()->(),
                     failed: @escaping (NSError?)->()){
         
         self.sessionService.activeSession { (session) in
@@ -107,6 +119,19 @@ class NewsDirector : INewsDirector {
         }
     }
     
+    func addAllYammerGroupsToAvailableList(completion:@escaping ()->()){
+        
+        self.sessionService.activeSession { (session) in
+            
+            if session == nil{
+                fatalError("session is nill")
+            }
+            
+            self.dataStorage.addAllGroupsToAvailableList(accountId: session!.getAccount().id, completion: completion)
+        }
+      
+    }
+    
     func getAllYammerGroups() -> [INewsGroup]{
         
         guard let session = self.sessionService.getActiveSession() else {
@@ -134,8 +159,20 @@ class NewsDirector : INewsDirector {
                 completion(nil)
             }
             else {
-                completion(NewsGroup(newsGroup: groupRealm!))
+                completion(NewsGroup.createGroup(group: groupRealm!))
             }
+        }
+    }
+    
+    func getYammerNews(completion:@escaping ([INews])->()){
+        
+        self.sessionService.activeSession { (session) in
+            
+            if session == nil{
+                fatalError("session is nill")
+            }
+            
+           self.dataStorage.getNewsAvailableGroups(accountId: session!.getAccount().id, completion: completion)
         }
     }
 }

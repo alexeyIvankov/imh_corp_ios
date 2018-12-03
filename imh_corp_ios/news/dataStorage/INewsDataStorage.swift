@@ -20,6 +20,16 @@ protocol INewsDataStorage : AnyObject {
                           newsJson:[Any],
                           completion:@escaping ()->())
     
+    func saveLastUpdateDate(groupId:String,
+                            date:Date,
+                            completion:@escaping ()->())
+    
+    func addAllGroupsToAvailableList(accountId:String,
+                                     completion:@escaping ()->())
+    
+    func getNewsAvailableGroups(accountId:String,
+                                completion:@escaping ([INews])->())
+    
     func getGroup(name:String,
                   completion:@escaping (NewsGroupRealm?)->())
     

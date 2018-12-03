@@ -2,26 +2,32 @@
 //  Session.swift
 //  imh_corp_ios
 //
-//  Created by Alexey Ivankov on 22/11/2018.
+//  Created by Alexey Ivankov on 03/12/2018.
 //  Copyright © 2018 Industrial Metallurgical Holding. All rights reserved.
 //
 
 import Foundation
-import RealmSwift
 
-class Session : Object, ISession{
+class Session : ISession{
     
-    @objc dynamic var name:String? = nil
-    @objc dynamic var dateCreated:String? = nil
-    @objc dynamic var lastUpdate:String? = nil
+    var name: String?
+    var dateCreated: String?
+    var lastUpdate: String?
+    var account:IAccount!
     
-    @objc dynamic var account:AccountRealm!
-    
-    func getAccount() -> IAccount{
-        return self.account
+    static func createSession(session:ISession) -> ISession{
+        let newSession = Session(session: session)
+        newSession.account = Account.createAccount(account: session.getAccount())
+        return session
     }
     
-    override static func primaryKey() -> String? {
-        return "dateCreated"
+    required init(session:ISession) {
+        self.name = session.name
+        self.dateCreated = session.dateCreated
+        self.lastUpdate = session.lastUpdate
+    }
+    
+    func getAccount() -> IAccount {
+        return self.account
     }
 }

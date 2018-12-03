@@ -13,7 +13,10 @@ public protocol INewsGroup : ILimonadeItem, IServerModel {
     var name:String! { get }
     var groupId:String! { get }
     var descript:String! { get }
+    var lastUpdateMessages:String! { get }
     
     func getNews() -> [INews]
+    
+    func getLastMessageId() ->String?
 }
 

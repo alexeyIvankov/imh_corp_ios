@@ -44,7 +44,8 @@ class NewsController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tryShowCashedContent()
-        self.loadNews()
+        self.cake.director.cancelLoadloadYammerNewsToAvailableGroups()
+        self.loadOrUpdateContent()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -61,21 +62,17 @@ class NewsController : UIViewController {
     }
     
     //MARK: - Data source
-    private func tryShowCashedContent(){
-        
-        self.cake.director.getYammerGroup(name: "Обучение") { (group) in
-            if group != nil {
-                DispatchQueue.main.async {
-                      self.createOrUpdateDataSource(groups: [group!])
-                }
-              
+    private func tryShowCashedContent(){        
+        self.cake.director.getYammerNews { (news) in
+            DispatchQueue.main.async {
+                self.createOrUpdateDataSource(news: news)
             }
         }
     }
     
     private func loadNews(){
         
-        self.cake.director.loadYammerGroups(success: { [unowned self] in
+        self.cake.director.loadAllYammerGroups(success: { [unowned self] in
             
             self.cake.director.getYammerGroup(name: "Обучение") { (group) in
 
@@ -95,6 +92,24 @@ class NewsController : UIViewController {
         }
     }
     
+    private func loadOrUpdateContent(){
+        
+        self.cake.director.loadAllYammerGroups(success: { [unowned self] in
+            self.cake.director.addAllYammerGroupsToAvailableList { [unowned self] in
+                
+                self.cake.director.loadYammerNewsToAvailableGroups(success: {
+                    print("sucess")
+                    self.tryShowCashedContent()
+                }, failed: { (error) in
+                    print("failed")
+                })
+            }
+            
+        }) { (error) in
+            
+        }
+    }
+    
     private func createOrUpdateDataSource(groups:[INewsGroup]){
         
         self.limonade.appendSectionIfNeed(item: LimonadeItemTemplate(value: "root"),
@@ -109,6 +124,20 @@ class NewsController : UIViewController {
                                                    nameCell: "NewsCell",
                                                    animation: UITableView.RowAnimation.bottom)
             }
+        }
+    }
+    
+    private func createOrUpdateDataSource(news:[INews]){
+        
+        self.limonade.appendSectionIfNeed(item: LimonadeItemTemplate(value: "root"),
+                                          animation: UITableView.RowAnimation.automatic,
+                                          sortType:.descending)
+        
+        for news:INews in news{
+            self.limonade.tryAppendOrUpdateRow(rowItem: news,
+                                               sectionItem: LimonadeItemTemplate(value: "root"),
+                                               nameCell: "NewsCell",
+                                               animation: UITableView.RowAnimation.none)
         }
     }
     

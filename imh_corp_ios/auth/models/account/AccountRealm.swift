@@ -16,12 +16,17 @@ class AccountRealm :  Object, IAccount{
     @objc dynamic var phone:String! = nil
     @objc dynamic var id:String! = nil
    
-    
     @objc dynamic var auth:AuthRealm!
+    @objc dynamic var settings:SettingsRealm!
+    
     var groups = List<NewsGroupRealm>()
     
     func getAuth() -> IAuth{
         return self.auth
+    }
+    
+    func getSettings() -> ISettings{
+        return self.settings
     }
     
     func getGroupsNews()->[INewsGroup]{

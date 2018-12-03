@@ -16,5 +16,6 @@ public protocol IAccount : AnyObject {
     var phone:String! { get }
     
     func getAuth() -> IAuth
+    func getSettings() -> ISettings
     func getGroupsNews()->[INewsGroup]
 }

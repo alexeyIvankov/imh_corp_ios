@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class NewsDataStorage : INewsDataStorage{
     
@@ -46,7 +47,9 @@ class NewsDataStorage : INewsDataStorage{
                                                 
                                                 if group == nil{
                                                     group = NewsGroupRealm()
+                                                    group?.groupId = group_id_str
                                                     account.groups.append(group!)
+                                                    group?.account = account
                                                 }
                                                 group?.update(json: groupDict)
                                             }
@@ -100,7 +103,9 @@ class NewsDataStorage : INewsDataStorage{
                                                     
                                                     if newsDb == nil{
                                                         newsDb = NewsRealm()
+                                                        newsDb?.newsId = newsIdStr
                                                         group?.news.append(newsDb!)
+                                                        newsDb?.group = group
                                                     }
                                                     newsDb?.update(json: newsDict)
                                                 }
@@ -112,6 +117,63 @@ class NewsDataStorage : INewsDataStorage{
                                     })
             })
         }
+    }
+    
+    func saveLastUpdateDate(groupId:String,
+                            date:Date,
+                            completion:@escaping ()->()){
+        
+        self.db.asynchFetch(type: NewsGroupRealm.self, options: FetchOptions(predicate:  NSPredicate(format: "groupId='\(groupId)'"), sortBy: nil)) { (res, ctx) in
+            
+            guard let group = res.first else {
+                return completion()
+            }
+            
+            self.db.asynch(context: ctx, block: {
+                
+                group.lastUpdateMessages = String(date.timeIntervalSince1970)
+                
+            }, completion: { (_) in
+                completion()
+            })
+
+        }
+        
+    }
+    
+    func addAllGroupsToAvailableList(accountId:String,
+                                     completion:@escaping ()->()){
+        
+        self.db.asynchFetch(type: AccountRealm.self, options: FetchOptions(predicate:  NSPredicate(format: "id='\(accountId)'"), sortBy: nil)) { (res, context)  in
+            
+            guard let account = res.first else  {
+                return completion()
+            }
+            
+            self.db.asynch(context: context, block: {
+                
+                let groups = account.groups
+                for group in groups {
+                    if account.settings.availableGroups.contains(group) == false{
+                        account.settings.availableGroups.append(group)
+                    }
+                }
+                
+            }, completion: { (_) in
+                completion()
+            })
+        }
+    }
+    
+    func getNewsAvailableGroups(accountId:String,
+                                completion:@escaping ([INews])->()){
+        
+        self.db.asynchFetch(type: NewsRealm.self,
+                            options: FetchOptions(predicate:  NSPredicate(format: "group.account.id='\(accountId)'"), sortBy: nil),
+                            completion: { (resNews, _) in
+                                completion(News.createNews(news: resNews))
+                                
+        })
     }
 
     

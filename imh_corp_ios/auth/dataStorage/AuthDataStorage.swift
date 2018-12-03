@@ -33,10 +33,14 @@ class AuthDataStorage : IAuthDataStorage{
             account.id = phone
             account.auth = auth
             
-            let session:Session = Session()
+            let session:SessionRealm = SessionRealm()
             session.dateCreated = String(NSDate().timeIntervalSince1970)
             session.lastUpdate = String(NSDate().timeIntervalSince1970)
             session.account = account
+            
+            let settings:SettingsRealm = SettingsRealm()
+            settings.account = account
+            account.settings = settings
             
             self.db.synchWrite(obj: [auth, account, session])
         }

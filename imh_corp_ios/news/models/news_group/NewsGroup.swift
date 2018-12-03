@@ -10,11 +10,12 @@ import Foundation
 
 class NewsGroup : INewsGroup {
     
-    private let news:[INews]
+    private var news:[INews] = []
     private let hashLimonade:Int
     
     var limonadeId: String!
     var limonadeSortKey: String!
+    var lastUpdateMessages:String!
     
     var name: String!
     var groupId: String!
@@ -24,9 +25,17 @@ class NewsGroup : INewsGroup {
         var container = [INewsGroup]()
         
         for item in groups{
-            container.append(NewsGroup(newsGroup: item))
+            let group = NewsGroup(newsGroup: item)
+            group.news = News.createNews(news: item.getNews())
+            container.append(group)
         }
         return container
+    }
+    
+    static func createGroup(group:INewsGroup) -> INewsGroup{
+        let newGroup = NewsGroup(newsGroup: group)
+        newGroup.news = News.createNews(news: group.getNews())
+        return newGroup
     }
     
     required init(newsGroup:INewsGroup){
@@ -35,8 +44,8 @@ class NewsGroup : INewsGroup {
         self.descript = newsGroup.descript
         self.limonadeId = newsGroup.limonadeId
         self.limonadeSortKey = newsGroup.limonadeSortKey
-        self.news = News.createNews(news:newsGroup.getNews())
         self.hashLimonade = newsGroup.getHashLimonade()
+        self.lastUpdateMessages = newsGroup.lastUpdateMessages
     }
     
     func getNews() -> [INews] {
@@ -45,6 +54,31 @@ class NewsGroup : INewsGroup {
     
     func getHashLimonade() -> Int {
         return self.hashLimonade
+    }
+    
+    func getLastMessageId() ->String?{
+        
+        var lastMessageId:String? = nil
+        
+        if self.getNews().count > 0{
+            let sortedNews = self.getNews().sorted(by: { (new1, new2) -> Bool in
+                if let dt1 = Double(new1.dateCreated),
+                    let dt2 = Double(new2.dateCreated){
+                    
+                    if dt1 > dt2 {
+                        return false
+                    }
+                    else {
+                        return true
+                    }
+                }
+                else {
+                    return false
+                }
+            })
+            lastMessageId = sortedNews.first!.newsId
+        }
+        return lastMessageId
     }
     
     func update(json: [String : Any]) {

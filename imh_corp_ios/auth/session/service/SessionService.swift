@@ -17,12 +17,24 @@ class SessionService : ISessionService{
     }
     
     func getActiveSession() -> ISession?{
-        let sesion:Session? = self.dataBase.synchFetch(options: nil).first
-        return sesion
+        let sesion:SessionRealm? = self.dataBase.synchFetch(options: nil).first
+        
+        if sesion == nil{
+            return nil
+        }
+        
+        return Session.createSession(session: sesion!)
     }
     func activeSession(completion: @escaping(ISession?)->()){
-        self.dataBase.asynchFetch(type: Session.self, options: nil) { (sessions, ctx)  in
-            completion(sessions.first)
+        self.dataBase.asynchFetch(type: SessionRealm.self, options: nil) { (sessions, ctx)  in
+            
+            if sessions.count == 0{
+                completion(nil)
+            }
+            else {
+                 completion(Session.createSession(session: sessions.first!))
+            }
+           
         }
     }
 }

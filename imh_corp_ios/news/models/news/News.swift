@@ -18,16 +18,26 @@ class News : INews{
     var hashLimonade:Int
     
     var group:INewsGroup!
-    var files:[IFile]
+    var files:[IFile] = []
     
     static func createNews(news:[INews]) -> [INews]{
         
         var container = [INews]()
         
         for item in news{
-            container.append(News(news: item))
+            let currentNews = News(news: item)
+            currentNews.group = NewsGroup(newsGroup: item.getGroup())
+            currentNews.files = File.createFiles(files: item.getFiles())
+            container.append(currentNews)
         }
         return container
+    }
+    
+    static func createNew(new:INews) -> INews{
+        let convertNews = News(news: new)
+        convertNews.group = NewsGroup(newsGroup: new.getGroup())
+        convertNews.files = File.createFiles(files: new.getFiles())
+        return convertNews
     }
     
     required init(news:INews){
@@ -37,8 +47,6 @@ class News : INews{
         self.dateCreated = news.dateCreated
         self.limonadeId = news.limonadeId
         self.limonadeSortKey = news.limonadeSortKey
-        //self.group = group
-        self.files = File.createFiles(files: news.getFiles())
         self.hashLimonade = news.getHashLimonade()
     }
 

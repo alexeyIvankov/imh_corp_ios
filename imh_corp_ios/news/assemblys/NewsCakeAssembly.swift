@@ -23,10 +23,15 @@ public class NewsCakeAssembly : AssemblyProviderImpl {
             let db:IDataBase = injector.tryInject()!
             let sessionService:ISessionService = injector.tryInject()!
             let dataStorage:INewsDataStorage = NewsDataStorage(db: db)
+            let newsLoaderService:INewsLoaderService = NewsLoaderService(sessionService: sessionService, dataStorage: dataStorage, network:network)
            
             
             let router = NewsRouter(loaderService: loaderService)
-            let director = NewsDirector(network: network, dataStorage: dataStorage, sessionService:sessionService)
+            let director = NewsDirector(network: network,
+                                        dataStorage: dataStorage,
+                                        sessionService:sessionService,
+                                        newsLoaderSerice: newsLoaderService)
+            
             let design = NewsDesign(appDesign: appDesign)
             
             let cake:INewsCake = NewsCake(router: router,

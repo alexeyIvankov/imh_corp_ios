@@ -14,7 +14,12 @@ class NewsRealm: Object, INews {
     @objc dynamic var newsId:String! = nil
     @objc dynamic var body:String! = nil
     @objc dynamic var dateCreated:String! = nil
-    let groups = LinkingObjects(fromType: NewsGroupRealm.self, property: "news")
+    
+    @objc dynamic var group:NewsGroupRealm!
+    
+    override static func primaryKey() -> String? {
+        return "newsId"
+    }
     
     var dateFormaterParser:DateFormatter {
         let formater = DateFormatter()
@@ -38,7 +43,7 @@ class NewsRealm: Object, INews {
     var files = List<FileRealm>()
     
     func getGroup() -> INewsGroup{
-        return self.groups.first!
+        return self.group
     }
     
     func getFiles() -> [IFile]{
@@ -48,14 +53,9 @@ class NewsRealm: Object, INews {
     //MARK: IServerModel
     func update(json: [String : Any]) {
         
-        let newsId:Int? = json["id"] as? Int
         let body:String? = json["body"] as? String
         let dateCreated = json["date_created"] as? String
         
-        if newsId != nil{
-            self.newsId = String(newsId!)
-        }
-       
         if body != nil{
             self.body = body
         }
