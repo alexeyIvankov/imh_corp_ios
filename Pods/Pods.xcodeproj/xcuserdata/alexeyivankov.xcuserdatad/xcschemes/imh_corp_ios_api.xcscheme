@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B24EC95BAD1E71441B3B15DD0A636507"
+               BlueprintIdentifier = "0A56848E2650E2217269F56199A30D38"
                BlueprintName = "imh_corp_ios_api"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "imh_corp_ios_api.framework">

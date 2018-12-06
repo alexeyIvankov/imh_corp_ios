@@ -10,29 +10,14 @@ import Foundation
 
 protocol INewsDataStorage : AnyObject {
     
-    func saveOrUpdateNewsGroups(accountId:String,
-                                groupsJson:[Any],
-                                completion:@escaping ()->())
-    
-    
-    func saveOrUpdateNews(accountId:String,
-                          groupId:String,
-                          newsJson:[Any],
-                          completion:@escaping ()->())
-    
-    func saveLastUpdateDate(groupId:String,
-                            date:Date,
+    func createOrUpdateNews(accountId:String,
+                            newsJson:[Any],
                             completion:@escaping ()->())
     
-    func addAllGroupsToAvailableList(accountId:String,
-                                     completion:@escaping ()->())
     
-    func getNewsAvailableGroups(accountId:String,
-                                completion:@escaping ([INews])->())
+    func getNews(accountId:String,
+                    startDate:Int,
+                    count:Int,
+                    completion:@escaping ([INews])->())
     
-    func getGroup(name:String,
-                  completion:@escaping (NewsGroupRealm?)->())
-    
-    func getNews(id:String,
-                 completion:@escaping (NewsRealm?)->())
 }

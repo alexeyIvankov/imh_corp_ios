@@ -30,12 +30,10 @@ class NewCell : UITableViewCell,  INewsCell{
     func configure(news: INews) {
         self.labelTitleNews.text = news.body
         self.labelSubTitleNews.text = news.body
-        self.labelGroupName.text = "#" + news.getGroup().name
+        self.labelGroupName.text = "#" + news.groupName
         
-        if let timeIntervalDate = TimeInterval(news.dateCreated){
-            let date = Date.init(timeIntervalSince1970: timeIntervalDate)
-            self.labelDateCreated.text = self.dateFormaterConverter.string(from:date)
-        }
+        let date = Date.init(timeIntervalSince1970: TimeInterval(news.dateCreated))
+        self.labelDateCreated.text = self.dateFormaterConverter.string(from:date)
     }
     
     private func addTopContentInset(){

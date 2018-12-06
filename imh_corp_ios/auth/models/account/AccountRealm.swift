@@ -19,7 +19,6 @@ class AccountRealm :  Object, IAccount{
     @objc dynamic var auth:AuthRealm!
     @objc dynamic var settings:SettingsRealm!
     
-    var groups = List<NewsGroupRealm>()
     
     func getAuth() -> IAuth{
         return self.auth
@@ -29,9 +28,6 @@ class AccountRealm :  Object, IAccount{
         return self.settings
     }
     
-    func getGroupsNews()->[INewsGroup]{
-        return self.groups.convertToArray()
-    }
     
     override static func primaryKey() -> String? {
         return "name"

@@ -4,7 +4,7 @@ import Foundation
 import RealmSwift
 
 public class DataBase : IDataBase {
- 
+
     private var contextSynch: Realm!
     private var queueAsynchOperation:DispatchQueue
     private var poolAsynchContext:[Thread:Realm]
@@ -18,7 +18,7 @@ public class DataBase : IDataBase {
     private func getNeededAsynchContextFromPool(block: @escaping(Realm)->()){
         
         self.queueAsynchOperation.async {
-            
+
             var context = self.poolAsynchContext[Thread.current]
          
             if context != nil{
@@ -59,7 +59,7 @@ public class DataBase : IDataBase {
         self.contextSynch.saveContext(transaction: block)
     }
     
-    public func synchFetch<T>(options: FetchOptions?) -> [T] {
+    public func synchFetch<T>(options: IFetchOptions?) -> [T] {
         let objects = self.contextSynch.read(T.self as! Object.Type, options:options )
         return Array(objects) as! [T]
     }
@@ -72,41 +72,46 @@ public class DataBase : IDataBase {
     }
     
     //MARK: Asynch
-    public func asynch(block:@escaping ()->(),
-                       completion: @escaping (IDataBaseContext) -> ()){
-        
-        self.getNeededAsynchContextFromPool { (context) in
-            context.saveContext(transaction: block)
-             completion(context)
-        }
-    }
+
     
-    public func asynch(transactions:[()->()],
-                completion: @escaping (IDataBaseContext) -> ()){
+    public func asynchWrite<T>(transaction:@escaping ()->([T]),
+                        completion: @escaping (IDataBaseContext) -> ()){
         
         self.getNeededAsynchContextFromPool { (context) in
-            context.saveContext(transactions: transactions)
+            
+            context.saveContext{
+                context.add(transaction() as! [Object])
+            }
             completion(context)
         }
     }
     
-    public func asynch(context:IDataBaseContext,
-                block:@escaping ()->(),
-                completion: @escaping (IDataBaseContext) -> ()){
-        let realmContext = context as! Realm
-        realmContext.saveContext(transaction: block)
-        completion(context)
+    
+    public func asynchWrite<T>(transactions:[()->([T])],
+                        completion: @escaping (IDataBaseContext) -> ()){
+       
+        self.getNeededAsynchContextFromPool { (context) in
+            
+            for transaction in transactions{
+                context.saveContext{
+                    context.add(transaction() as! [Object])
+                }
+            }
+            completion(context)
+        }
     }
     
-    public func asynch(context:IDataBaseContext,
-                transactions:[()->()],
-                completion: @escaping (IDataBaseContext) -> ()){
-        let realmContext = context as! Realm
-        realmContext.saveContext(transactions:transactions)
-        completion(context)
+    public func asynchUpdate(context:IDataBaseContext,
+                      block: @escaping ()->(),
+                      completion: @escaping (IDataBaseContext) -> ()){
+        
+        (context as? Realm)?.saveContext {
+            block()
+            completion(context)
+        }
     }
     
-    public func asynchFetch<T>(type: T.Type, options: FetchOptions?,
+    public func asynchFetch<T>(type: T.Type, options: IFetchOptions?,
                                completion: @escaping ([T], IDataBaseContext) -> ()) {
         self.getNeededAsynchContextFromPool { (context) in
             let objects = context.read(type as! Object.Type, options:options )
@@ -116,7 +121,7 @@ public class DataBase : IDataBase {
     
     public func asynchFetch<T>(context: IDataBaseContext,
                                type: T.Type,
-                               options: FetchOptions?,
+                               options: IFetchOptions?,
                                completion: @escaping ([T], IDataBaseContext) -> ()) {
         let realmContext = context as! Realm
         let objects = realmContext.read(type as! Object.Type, options:options )
@@ -139,35 +144,17 @@ extension Realm : IDataBaseContext{
             self.refresh()
         }
         catch {
-            print("error!!!!!!!! \(error)")
+            fatalError("save object failed")
         }
     }
     
-    public func saveContext(transactions:[()->()]){
-        do{
-            for transaction in transactions{
-                
-                if self.isInWriteTransaction == false{
-                    self.beginWrite()
-                }
-                
-                transaction()
-                
-                try self.commitWrite()
-                self.refresh()
-            }
-        }
-        catch {
-            print("error!!!!!!!! \(error)")
-        }
-    }
     
     public func createObj<T: Object>(type:T.Type) -> T{
         return self.create(type as Object.Type) as! T
     }
     
     public func read<T: Object>(_ type: T.Type,
-                                 options: FetchOptions?) -> Results<T> {
+                                 options: IFetchOptions?) -> Results<T> {
         
         var objects = self.objects(type)
         
@@ -175,13 +162,15 @@ extension Realm : IDataBaseContext{
             return objects
         }
         
-        if options!.predicate != nil {
-            objects = objects.filter(options!.predicate!)
+        if let fetchPredicate:FetchOptionsPredicate = options as? FetchOptionsPredicate{
+           
+            objects = objects.filter(fetchPredicate.predicate)
+            
+            if fetchPredicate.sortBy != nil {
+                objects = objects.sorted(byKeyPath: fetchPredicate.sortBy!.keyPath, ascending: fetchPredicate.sortBy!.ascending)
+            }
         }
         
-        if options!.sortBy != nil {
-            objects = objects.sorted(byKeyPath: options!.sortBy!.keyPath, ascending: options!.sortBy!.ascending)
-        }
         
         return objects
     }

@@ -15,4 +15,7 @@ public protocol IAPIDirector : AnyObject{
     //MARK: Modules
     var authModule:IAuthModule { get }
     var socialNetworkModule:ISocialNetworkModule { get }
+    
+    //MARK: Services
+    var fileService:IFileService { get }
 }

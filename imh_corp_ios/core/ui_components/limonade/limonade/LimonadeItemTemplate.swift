@@ -10,21 +10,23 @@ import Foundation
 
 class LimonadeItemTemplate: ILimonadeItem{
     
-    let value:String
+    let hashLimonage:Int
+    var limonadeId: String!
+    var limonadeSortKey: String!
+    var model:Any?
     
-    init(value:String){
-        self.value = value
-    }
-    
-    var limonadeId: String!{
-        return self.value
-    }
-    
-    var limonadeSortKey: String!{
-        return self.value
+    init(limonadeId:String,
+         limonadeSortKey:String,
+         hashLimonage:Int,
+         model:Any?=nil){
+        
+        self.limonadeId = limonadeId
+        self.limonadeSortKey = limonadeSortKey
+        self.hashLimonage = hashLimonage
+        self.model = model
     }
     
     func getHashLimonade() -> Int {
-        return self.value.hashValue
+        return self.hashLimonage
     }
 }

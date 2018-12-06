@@ -15,10 +15,10 @@ public protocol ISocialNetworkModule : AnyObject{
                    success:@escaping (RPCResponce)->(),
                    failed:@escaping (NSError)->())
     
-    func messagesFromGroup(groupId:String,
-                           accessToken:String,
-                           networkType:String,
-                           lastMessageId:String?,
-                           success:@escaping (RPCResponce)->(),
-                           failed:@escaping (NSError)->())
+    func allNews(accessToken:String,
+                 networkType:String,
+                 startDate:Int?,
+                 countMessages:Int?,
+                 success:@escaping (RPCResponce)->(),
+                 failed:@escaping (NSError)->())
 }

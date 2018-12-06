@@ -10,225 +10,127 @@ import Foundation
 import RealmSwift
 
 class NewsDataStorage : INewsDataStorage{
-    
+
     private let db:IDataBase
     
     required init(db:IDataBase) {
         self.db = db
     }
     
-    func saveOrUpdateNewsGroups(accountId:String,
-                                groupsJson:[Any],
-                                completion:@escaping ()->()){
-        
-        self.db.asynchFetch(type: AccountRealm.self, options: FetchOptions(predicate:  NSPredicate(format: "id='\(accountId)'"), sortBy: nil)) { (res, context)  in
-         
-            guard let account = res.first else  {
-                return completion()
-            }
-            
-            var transactions = [()->()]()
-        
-            for item in groupsJson{
-                
-                if let groupDict:[String:Any] = item as? [String:Any],
-                    let group_id:Int = groupDict["id"] as? Int,
-                    let _:String = groupDict["name"] as? String{
-                    
-                    let group_id_str = String(group_id)
-                    
-                    self.db.asynchFetch(context:context,
-                                        type: NewsGroupRealm.self,
-                                        options: FetchOptions(predicate:  NSPredicate(format: "groupId='\(group_id_str)'"), sortBy: nil), completion: { (resGroups, ctx) in
-                        
-                                            var group = resGroups.first
-                                            
-                                            transactions.append {
-                                                
-                                                if group == nil{
-                                                    group = NewsGroupRealm()
-                                                    group?.groupId = group_id_str
-                                                    account.groups.append(group!)
-                                                    group?.account = account
-                                                }
-                                                group?.update(json: groupDict)
-                                            }
-                        })
-                }
-            }
-            self.db.asynch(context: context, transactions: transactions, completion: { (_) in
-                completion()
-            })
-        }
-    }
     
-    func saveOrUpdateNews(accountId:String,
-                          groupId:String,
-                          newsJson:[Any],
-                          completion:@escaping ()->()){
-        
-        self.db.asynchFetch(type: AccountRealm.self, options: FetchOptions(predicate:  NSPredicate(format: "id='\(accountId)'"), sortBy: nil)) { (res, context)  in
-            
-            guard res.first != nil else  {
-                return completion()
-            }
-            
-            self.db.asynchFetch(context:context,
-                                type: NewsGroupRealm.self,
-                                options: FetchOptions(predicate:  NSPredicate(format: "groupId='\(groupId)'"), sortBy: nil), completion: { (resGroups, ctx) in
-                                    
-                                    let group = resGroups.first
-                                    
-                                    guard group != nil else  {
-                                        return completion()
-                                    }
-                                    
-                                    var transactions = [()->()]()
-                                    
-                                    for item in newsJson{
-                                        
-                                        if let newsDict:[String:Any] = item as? [String:Any],
-                                            let newsId:Int = newsDict["id"] as? Int,
-                                            let body:String = newsDict["body"] as? String,
-                                            let _ = newsDict["date_created"] as? String,
-                                            body.count > 10{
-                                            
-                                            let newsIdStr = String(newsId)
-                                            
-                                            self.db.asynchFetch(context:ctx, type: NewsRealm.self, options: FetchOptions(predicate:  NSPredicate(format: "newsId='\(newsIdStr)'"), sortBy: nil), completion: { (resNews, ctx) in
-                                                
-                                                var newsDb = resNews.first
-                                                
-                                                transactions.append {
-                                                    
-                                                    if newsDb == nil{
-                                                        newsDb = NewsRealm()
-                                                        newsDb?.newsId = newsIdStr
-                                                        group?.news.append(newsDb!)
-                                                        newsDb?.group = group
-                                                    }
-                                                    newsDb?.update(json: newsDict)
-                                                }
-                                            })
-                                        }
-                                    }
-                                    self.db.asynch(context: context, transactions: transactions, completion: { (_) in
-                                        completion()
-                                    })
-            })
-        }
-    }
-    
-    func saveLastUpdateDate(groupId:String,
-                            date:Date,
+    func createOrUpdateNews(accountId:String,
+                            newsJson:[Any],
                             completion:@escaping ()->()){
         
-        self.db.asynchFetch(type: NewsGroupRealm.self, options: FetchOptions(predicate:  NSPredicate(format: "groupId='\(groupId)'"), sortBy: nil)) { (res, ctx) in
-            
-            guard let group = res.first else {
-                return completion()
-            }
-            
-            self.db.asynch(context: ctx, block: {
-                
-                group.lastUpdateMessages = String(date.timeIntervalSince1970)
-                
-            }, completion: { (_) in
-                completion()
-            })
-
-        }
+        let groupDbOperations = DispatchGroup()
         
-    }
-    
-    func addAllGroupsToAvailableList(accountId:String,
-                                     completion:@escaping ()->()){
-        
-        self.db.asynchFetch(type: AccountRealm.self, options: FetchOptions(predicate:  NSPredicate(format: "id='\(accountId)'"), sortBy: nil)) { (res, context)  in
+        for item in newsJson{
             
-            guard let account = res.first else  {
-                return completion()
-            }
-            
-            self.db.asynch(context: context, block: {
+            if let newsDict:[String:Any] = item as? [String:Any],
+                let newsId:Int = newsDict["id"] as? Int,
+                let body = newsDict["body"] as? String,
+                let groupDict:[String:Any] = newsDict["group"] as? [String:Any],
+                let groupId:Int = groupDict["id"] as? Int,
+                let groupName = groupDict["name"] as? String,
+                let dateCreatedNews = newsDict["date_created"] as? Int{
                 
-                let groups = account.groups
-                for group in groups {
-                    if account.settings.availableGroups.contains(group) == false{
-                        account.settings.availableGroups.append(group)
+                var attachesImages = [Any]()
+                var attachesFiles = [Any]()
+                var attachesAll = [Any]()
+                groupDbOperations.enter()
+                
+                if let attaches = newsDict["attaches"] as? [String:Any]{
+                    
+                    if let imagesDict = attaches["images"] as? [[String:Any]]{
+                        
+                        for curentImageDict in imagesDict{
+                            if let _ = curentImageDict["id"] as? String,
+                                let _ = curentImageDict["type"] as? String,
+                                let _ = curentImageDict["content_type"] as? String{
+                                attachesImages.append(curentImageDict)
+                            }
+                        }
+                    }
+                    
+                    if let filesDict = attaches["files"] as? [[String:Any]]{
+                        
+                        for currentFileDict in filesDict{
+                            if let _ = currentFileDict["id"] as? String,
+                                let _ = currentFileDict["type"] as? String,
+                                let _ = currentFileDict["content_type"] as? String{
+                                attachesFiles.append(currentFileDict)
+                            }
+                        }
                     }
                 }
+                attachesAll = attachesFiles + attachesImages
+               
                 
-            }, completion: { (_) in
-                completion()
-            })
+                let newsIdStr = String(newsId)
+                let groupIdStr = String(groupId)
+                
+            
+                self.db.asynchFetch(type: NewsRealm.self,
+                                    options: FetchOptionsPredicate(predicate:  NSPredicate(format: "newsId='\(newsIdStr)' AND accountId='\(accountId)'"), sortBy: nil), completion: { (res, ctx) in
+                                       let newsDb = res.first
+                                        
+                                        if newsDb == nil{
+                                            
+                                            self.db.asynchWrite(transaction: { () -> ([NewsRealm]) in
+                                                
+                                                let newsDb = NewsRealm()
+                                                newsDb.newsId = newsIdStr
+                                                newsDb.groupName = groupName
+                                                newsDb.groupId = groupIdStr
+                                                newsDb.accountId = accountId
+                                                newsDb.dateCreated = dateCreatedNews
+                                                newsDb.body = body
+                                                
+                                                return [newsDb]
+                                                
+                                            }, completion: { (_) in
+                                                groupDbOperations.leave()
+                                            })
+                                            
+                                        }
+                                        else {
+                                            if newsDb!.body.hashValue != body.hashValue{
+                                                
+                                                self.db.asynchUpdate(context: ctx, block: {
+                                                    newsDb!.body = body
+                                                    
+                                                }, completion: { (ctx) in
+                                                    groupDbOperations.leave()
+                                                })
+                                            }
+                                            else{
+                                                groupDbOperations.leave()
+                                            }
+                                        }
+                })
+            }
+        }
+        
+        groupDbOperations.notify(queue: .main) {
+            completion()
         }
     }
     
-    func getNewsAvailableGroups(accountId:String,
-                                completion:@escaping ([INews])->()){
+    func getNews(accountId:String,
+                 startDate:Int,
+                 count:Int,
+                 completion:@escaping ([INews])->()){
         
-        self.db.asynchFetch(type: NewsRealm.self,
-                            options: FetchOptions(predicate:  NSPredicate(format: "group.account.id='\(accountId)'"), sortBy: nil),
-                            completion: { (resNews, _) in
-                                completion(News.createNews(news: resNews))
-                                
-        })
-    }
-
-    
-    func getAccount(id:String, completion:@escaping (AccountRealm?)->()){
         
-        self.db.asynchFetch(type: AccountRealm.self, options: FetchOptions(predicate:  NSPredicate(format: "id='\(id)'"), sortBy: nil)) { (res, ctx)  in
-            completion(res.first)
+        self.db.asynchFetch(type: NewsRealm.self, options: FetchOptionsPredicate(predicate:  NSPredicate(format: "accountId='\(accountId)'"), sortBy: ("dateCreated", true))) { (res, ctx)  in
+            
+            if res.count <= count{
+                completion(News.createNews(news: res))
+            }
+            else {
+                completion(News.createNews(news: Array(res[0..<count])))
+            }
         }
-    }
-    
-    func getAccount(id:String) -> AccountRealm? {
         
-        let account:AccountRealm? = self.db.synchFetch(options: FetchOptions(predicate:  NSPredicate(format: "id='\(id)'"), sortBy: nil)).first
-        return account
-    }
-    
-    func getGroup(id:String, completion:@escaping (NewsGroupRealm?)->()){
-        
-        self.db.asynchFetch(type: NewsGroupRealm.self, options: FetchOptions(predicate:  NSPredicate(format: "groupId='\(id)'"), sortBy: nil)) { (res, ctx) in
-            completion(res.first)
-        }
-    }
-    
-    func getGroup(name:String,
-                  completion:@escaping (NewsGroupRealm?)->()){
-        
-        self.db.asynchFetch(type: NewsGroupRealm.self, options: FetchOptions(predicate:  NSPredicate(format: "name='\(name)'"), sortBy: nil)) { (res, ctx) in
-            completion(res.first)
-        }
-    }
-    
-    
-    func getNews(id:String, completion:@escaping (NewsRealm?)->()){
-        
-        self.db.asynchFetch(type: NewsRealm.self, options: FetchOptions(predicate:  NSPredicate(format: "newsId='\(id)'"), sortBy: nil)) { (res, ctx) in
-            completion(res.first)
-        }
-    }
-    
-    func getNews(id:String) -> NewsRealm? {
-        
-        let news:NewsRealm? = self.db.synchFetch(options: FetchOptions(predicate:  NSPredicate(format: "newsId='\(id)'"), sortBy: nil)).first
-        return news
-    }
-    
-    func getFile(id:String) -> FileRealm? {
-        
-        let file:FileRealm? = self.db.synchFetch(options: FetchOptions(predicate:  NSPredicate(format: "fileId='\(id)'"), sortBy: nil)).first
-        return file
-    }
-    
-    func getFile(id:String, completion:@escaping (FileRealm?)->()){
-        
-        self.db.asynchFetch(type: FileRealm.self, options: FetchOptions(predicate:  NSPredicate(format: "fileId='\(id)'"), sortBy: nil)) { (res, ctx) in
-            completion(res.first)
-        }
     }
 }

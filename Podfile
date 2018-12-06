@@ -10,7 +10,7 @@ def default_pods
     pod 'Cocaine', :git => 'git@github.com:alexeyIvankov/Cocaine.git', :branch => 'release_1_3'
     pod 'KeyboardHandler', :git => 'https://github.com/alexeyIvankov/KeyboardHandler.git', :branch => 'swift_4.2'
     pod 'EventSender', :git => 'https://github.com/alexeyIvankov/EventSender.git', :branch => 'master'
-    pod 'imh_corp_ios_api', :git => 'https://aivankov@bitbucket.org/aivankov/imh_corp_ios_api.git', :branch => 'master', :tag => '1.4'
+    pod 'imh_corp_ios_api', :git => 'https://aivankov@bitbucket.org/aivankov/imh_corp_ios_api.git', :branch => 'master', :tag => '1.6'
 
     pod 'Fabric'
     pod 'Crashlytics'

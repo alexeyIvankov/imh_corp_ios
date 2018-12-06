@@ -8,15 +8,11 @@
 
 import Foundation
 
-public protocol INewsGroup : ILimonadeItem, IServerModel {
+public protocol INewsGroup {
     
     var name:String! { get }
     var groupId:String! { get }
+    var accountId:String! { get }
     var descript:String! { get }
-    var lastUpdateMessages:String! { get }
-    
-    func getNews() -> [INews]
-    
-    func getLastMessageId() ->String?
 }
 

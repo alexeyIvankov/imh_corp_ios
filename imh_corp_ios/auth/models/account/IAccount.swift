@@ -17,5 +17,4 @@ public protocol IAccount : AnyObject {
     
     func getAuth() -> IAuth
     func getSettings() -> ISettings
-    func getGroupsNews()->[INewsGroup]
 }

@@ -24,7 +24,7 @@ DEPENDENCIES:
   - Crashlytics
   - EventSender (from `https://github.com/alexeyIvankov/EventSender.git`, branch `master`)
   - Fabric
-  - imh_corp_ios_api (from `https://aivankov@bitbucket.org/aivankov/imh_corp_ios_api.git`, branch `master`, tag `1.4`)
+  - imh_corp_ios_api (from `https://aivankov@bitbucket.org/aivankov/imh_corp_ios_api.git`, branch `master`, tag `1.6`)
   - KeyboardHandler (from `https://github.com/alexeyIvankov/KeyboardHandler.git`, branch `swift_4.2`)
   - KeychainSwift (~> 11.0)
   - RealmSwift
@@ -39,7 +39,7 @@ EXTERNAL SOURCES:
   imh_corp_ios_api:
     :branch: master
     :git: https://aivankov@bitbucket.org/aivankov/imh_corp_ios_api.git
-    :tag: 1.4
+    :tag: 1.6
   KeyboardHandler:
     :branch: swift_4.2
     :git: https://github.com/alexeyIvankov/KeyboardHandler.git
@@ -52,9 +52,9 @@ CHECKOUT OPTIONS:
     :commit: 74580311c906b96c64aebaad08be5d203c2d5eb6
     :git: https://github.com/alexeyIvankov/EventSender.git
   imh_corp_ios_api:
-    :commit: 0c178cacc6aa39073574ed5a13faa506c789384c
+    :commit: 38595d5799eb5a6c8502b415194e4882273d423a
     :git: https://aivankov@bitbucket.org/aivankov/imh_corp_ios_api.git
-    :tag: 1.4
+    :tag: 1.6
   KeyboardHandler:
     :commit: 86910f285b25aa53129e184a3f1781363b1b9d8c
     :git: https://github.com/alexeyIvankov/KeyboardHandler.git
@@ -72,6 +72,6 @@ SPEC CHECKSUMS:
   Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
   RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
 
-PODFILE CHECKSUM: 81ee1117f539392184ce16b26d8456bf5d7a40af
+PODFILE CHECKSUM: 13244d296be450457c02cc66c4b4735c25c1383e
 
 COCOAPODS: 1.4.0

@@ -10,19 +10,19 @@ import Foundation
 import RealmSwift
 
 class FileRealm : Object, IFile{
-   
+
     @objc dynamic var fileId: String! = nil
+    @objc dynamic var newsId: String! = nil
     @objc dynamic var name: String? = nil
     @objc dynamic var type: String! = nil
     @objc dynamic var contentType: String! = nil
     @objc dynamic var dateCreated: String? = nil
-    @objc dynamic var downloadUrl: String! = nil
+    @objc dynamic var url: String? = nil
     @objc dynamic var largeIconUrl: String? = nil
     @objc dynamic var previewUrl: String? = nil
     @objc dynamic var smalIconUrl: String? = nil
+    @objc dynamic var contentClass: String? = nil
     @objc dynamic var size: String? = nil
-    @objc dynamic var url: String? = nil
-    @objc dynamic var webUrl: String? = nil
     @objc dynamic var localPath: String? = nil
     
     func update(json: [String : Any]) {
@@ -32,13 +32,12 @@ class FileRealm : Object, IFile{
         let size = json["size"] as? Int
         let type = json["type"] as? String
         let contentType =  json["content_type"] as? String
+        let contentClass = json["content_class"] as? String
         let dateCreated =  json["date_created"] as? String
-        let downloadUrl =  json["download_url"] as? String
         let largeIconUrl =  json["large_icon_ur"] as? String
         let previewUrl =  json["preview_ur"] as? String
         let smallIconUrl =  json["small_icon_ur"] as? String
         let url =  json["url"] as? String
-        let webUrl = json["web_url"] as? String
 
         
         if fileId != nil{
@@ -53,21 +52,18 @@ class FileRealm : Object, IFile{
             self.contentType = contentType
         }
         
-        if downloadUrl != nil{
-            self.downloadUrl = downloadUrl
-        }
-        
-        if size != nil{
-            self.size = String(size!)
-        }
-        
         self.name = name
         self.dateCreated = dateCreated
         self.largeIconUrl = largeIconUrl
         self.previewUrl = previewUrl
         self.smalIconUrl = smallIconUrl
+        self.contentClass = contentClass
         self.url = url
-        self.webUrl = webUrl
+        
+        if size != nil{
+             self.size = String(size!)
+        }
+       
     }
     
     

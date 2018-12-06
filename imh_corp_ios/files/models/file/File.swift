@@ -11,6 +11,7 @@ import Foundation
 class File : IFile {
     
     var fileId: String!
+    var newsId:String!
     var name: String?
     var type: String!
     var contentType: String!
@@ -23,6 +24,7 @@ class File : IFile {
     var url: String?
     var webUrl: String?
     var localPath: String?
+    var contentClass: String?
     
     static func createFiles(files:[IFile])-> [IFile]{
         var container = [IFile]()
@@ -35,23 +37,17 @@ class File : IFile {
     
     required init(file:IFile){
         self.fileId = file.fileId
+        self.newsId = file.newsId
         self.name = file.name
         self.type = file.type
         self.contentType = file.contentType
         self.dateCreated = file.dateCreated
-        self.downloadUrl = file.downloadUrl
         self.largeIconUrl = file.largeIconUrl
         self.previewUrl = file.previewUrl
         self.smalIconUrl = file.smalIconUrl
         self.size = file.size
         self.url = file.url
-        self.webUrl = file.webUrl
         self.localPath = file.localPath
+        self.contentClass = file.contentClass
     }
-    
-    func update(json: [String : Any]) {
-        
-    }
-    
-    
 }

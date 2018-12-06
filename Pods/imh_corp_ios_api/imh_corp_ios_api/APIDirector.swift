@@ -20,10 +20,13 @@ public class APIDirector: IAPIDirector{
     
     private let sessionManager:SessionManager
     private let requestExecutor:IRequestExecutor
-    
+   
     //MARK: Modules
     public let authModule: IAuthModule
     public let socialNetworkModule:ISocialNetworkModule
+    
+    //MARK: Services
+    public let fileService: IFileService
     
     public required init(serverUrl:String){
         self.serverUrl = serverUrl
@@ -31,7 +34,6 @@ public class APIDirector: IAPIDirector{
         self.requestExecutor = RequestExecutor(sessionManager: self.sessionManager)
         self.authModule = AuthModule(requestExecutor: self.requestExecutor, url: self.serverUrl + PathModules.auth.rawValue)
         self.socialNetworkModule = SocialNetworkModule(requestExecutor: self.requestExecutor, url: self.serverUrl + PathModules.socialNetwork.rawValue)
+        self.fileService = FileSerice()
     }
-    
-    
 }

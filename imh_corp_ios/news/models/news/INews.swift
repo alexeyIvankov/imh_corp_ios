@@ -8,13 +8,13 @@
 
 import Foundation
 
-public protocol INews :  ILimonadeItem, IServerModel {
+public protocol INews {
     
+    var accountId:String! { get }
     var newsId:String! { get }
+    var groupId:String! { get }
+    var groupName:String! { get }
     var body:String! { get }
-    var dateCreated:String! { get }
-    
-    func getGroup() -> INewsGroup
-    func getFiles() -> [IFile]
+    var dateCreated:Int { get }
 }
 

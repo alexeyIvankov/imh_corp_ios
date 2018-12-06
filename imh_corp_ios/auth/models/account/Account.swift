@@ -16,13 +16,11 @@ class Account : IAccount{
     
     var auth:IAuth!
     var settings:ISettings!
-    var groups:[INewsGroup] = []
     
     static func createAccount(account:IAccount) -> IAccount{
         
         let newAccount = Account(account: account)
         newAccount.auth = Auth(auth: account.getAuth())
-        newAccount.groups = NewsGroup.createGroups(groups: account.getGroupsNews())
         newAccount.settings = Settings(settings: account.getSettings())
         
         return newAccount
@@ -42,10 +40,4 @@ class Account : IAccount{
     func getSettings() -> ISettings {
         return self.settings
     }
-    
-    func getGroupsNews() -> [INewsGroup] {
-        return self.groups
-    }
-    
-    
 }

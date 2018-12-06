@@ -12,7 +12,7 @@ public class SocialNetworkModule : ISocialNetworkModule{
 
     enum RemoteMethods : String{
         case allGroups = "all_groups"
-        case messagesFromGroup = "messages_from_group"
+        case allNews = "all_news"
     }
     
     let requestExecutor:IRequestExecutor
@@ -35,22 +35,26 @@ public class SocialNetworkModule : ISocialNetworkModule{
         self.requestExecutor.executeRPCRequest(url: self.url, method:RemoteMethods.allGroups.rawValue , params: params,success: success, failed: failed)
     }
     
-    public func messagesFromGroup(groupId: String,
-                                  accessToken: String,
-                                  networkType: String,
-                                  lastMessageId:String?,
-                                  success: @escaping (RPCResponce) -> (),
-                                  failed: @escaping (NSError) -> ()) {
+    public func allNews(accessToken:String,
+                        networkType:String,
+                        startDate:Int?,
+                        countMessages:Int?,
+                        success:@escaping (RPCResponce)->(),
+                        failed:@escaping (NSError)->()){
         
         var params:[String:Any] = [:]
         params["access_token"] = accessToken
         params["network_type"] = networkType
-        params["group_id"] = groupId
         
-        if lastMessageId != nil{
-            params["last_message_id"] = String(lastMessageId!)
+        if startDate != nil{
+            params["start_date"] = startDate!
         }
         
-        self.requestExecutor.executeRPCRequest(url: self.url, method:RemoteMethods.messagesFromGroup.rawValue , params: params,success: success, failed: failed)
+        if countMessages != nil{
+            params["count"] = countMessages!
+        }
+        
+        self.requestExecutor.executeRPCRequest(url: self.url, method:RemoteMethods.allNews.rawValue , params: params,success: success, failed: failed)
     }
+
 }

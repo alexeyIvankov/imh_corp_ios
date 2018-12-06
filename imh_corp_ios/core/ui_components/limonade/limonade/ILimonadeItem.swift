@@ -11,6 +11,7 @@ import Foundation
 public protocol ILimonadeItem : AnyObject {
     var limonadeId:String! { get }
     var limonadeSortKey:String! { get }
+    var model:Any? { get }
     
     func getHashLimonade() -> Int
 }
