@@ -9,9 +9,6 @@
 import Foundation
 
 protocol INewsDirector : AnyObject {
-     
-    func giveMeYammerNews(startDate:Int,
-                          count:Int,
-                          success:@escaping ([INews])->(),
-                          failed: @escaping (NSError?)->())
+    
+    var serviceNews:IServiceNews { get }
 }

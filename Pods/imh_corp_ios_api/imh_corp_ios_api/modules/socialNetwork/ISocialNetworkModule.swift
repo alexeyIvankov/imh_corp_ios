@@ -18,6 +18,7 @@ public protocol ISocialNetworkModule : AnyObject{
     func allNews(accessToken:String,
                  networkType:String,
                  startDate:Int?,
+                 endDate:Int?,
                  countMessages:Int?,
                  success:@escaping (RPCResponce)->(),
                  failed:@escaping (NSError)->())

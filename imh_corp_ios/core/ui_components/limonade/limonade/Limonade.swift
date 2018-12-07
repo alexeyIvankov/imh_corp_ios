@@ -9,12 +9,42 @@ class Limonade : NSObject, UITableViewDelegate, UITableViewDataSource {
     let container:TableContainer
     
     private var registeredNibCells:Array<String>
-    private var cellConfigurator:((_ cell:UITableViewCell, _ model:AnyObject?, _ nameRow:String, _ nameSection:String)->())?
-    private var handlerSelectCell:((_ model:AnyObject?, _ cell:UITableViewCell?, _ nameRow:String, _ nameSection:String)->())?
-    private var handlerDidScrool:((UIScrollView)->())?
-    private var handlerDidEndDragging:((UIScrollView)->())?
-    private var handlerDidEndDecelerating:((UIScrollView)->())?
-    private var headerConfigurator:((_ header:UIView, _ model:AnyObject?)->())?
+    
+    private var handlerCreateCellFoRow:((
+    _ cell:UITableViewCell,
+    _ model:AnyObject?,
+    _ nameRow:String,
+    _ nameSection:String)->())?
+    
+    private var handlerWillDisplayCellFoRow:((
+    _ cell:UITableViewCell,
+    _ model:AnyObject?,
+    _ nameRow:String,
+    _ nameSection:String,
+    _ sectionPosition:Int,
+    _ rowPosition:Int,
+    _ countSections:Int,
+    _ countRows:Int)->())?
+    
+    private var handlerSelectCell:((
+    _ model:AnyObject?,
+    _ cell:UITableViewCell?,
+    _ nameRow:String,
+    _ nameSection:String)->())?
+    
+    private var handlerCreateHeaderViewFoSection:((
+    _ header:UIView,
+    _ model:AnyObject?)->())?
+    
+    private var handlerDidScrool:((
+    UIScrollView)->())?
+    
+    private var handlerDidEndDragging:((
+    UIScrollView)->())?
+    
+    private var handlerDidEndDecelerating:((
+    UIScrollView)->())?
+ 
     
     required init(tableView:UITableView){
         self.tableView = tableView
@@ -222,16 +252,48 @@ class Limonade : NSObject, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    public func setHandlerConfigureCell(handler:@escaping (_ cell:UITableViewCell, _ model:AnyObject?, _ nameRow:String, _ nameSection:String)->()){
-        self.cellConfigurator = handler
+    public func getLastModelRowIn(sectionId:String) -> Any{
+        let section:Section = self.container.item(id: sectionId) as! Section
+        let row:Row = section.allItems().last as! Row
+        return row.model
     }
     
-    public func setHandlerSelectCell(handler:@escaping (_ model:AnyObject?,_ cell:UITableViewCell?, _ nameRow:String, _ nameSection:String)->()){
+    public func setHandlerCreateCellFoRow(handler:@escaping (
+        _ cell:UITableViewCell,
+        _ model:AnyObject?,
+        _ nameRow:String,
+        _ nameSection:String)->()){
+        
+        self.handlerCreateCellFoRow = handler
+    }
+    
+    public func setHandlerWillDisplayCellFoRow(handler:@escaping (
+        _ cell:UITableViewCell,
+        _ model:AnyObject?,
+        _ nameRow:String,
+        _ nameSection:String,
+        _ sectionPosition:Int,
+        _ rowPosition:Int,
+        _ countSections:Int,
+        _ countRows:Int)->()){
+        
+        self.handlerWillDisplayCellFoRow = handler
+    }
+    
+    public func setHandlerSelectCell(handler:@escaping (
+        _ model:AnyObject?,
+        _ cell:UITableViewCell?,
+        _ nameRow:String,
+        _ nameSection:String)->()){
+        
         self.handlerSelectCell = handler
     }
     
-    public func setHandlerConfigureHeader(handler:@escaping (_ header:UIView, _ model:AnyObject?)->()){
-        self.headerConfigurator = handler
+    public func setHandlerCreateHeaderViewFoSection(handler:@escaping (
+        _ header:UIView,
+        _ model:AnyObject?)->()){
+        
+        self.handlerCreateHeaderViewFoSection = handler
     }
     
     public func setHandlerDidScrooll(handler:@escaping (UIScrollView)->()){
@@ -246,7 +308,8 @@ class Limonade : NSObject, UITableViewDelegate, UITableViewDataSource {
         self.handlerDidEndDecelerating = handler
     }
     
-    private func registerCellIfNeeded(nameNib:String, reuseId:String){
+    private func registerCellIfNeeded(nameNib:String,
+                                      reuseId:String){
         
         guard self.registeredNibCells.contains(nameNib) == false else {
             return
@@ -258,7 +321,8 @@ class Limonade : NSObject, UITableViewDelegate, UITableViewDataSource {
     
     
     //MARK: - UITabBarDelegate, UITableViewDataSource
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
         return (self.container.item(index:section) as! IContainer).count()
     }
     
@@ -266,14 +330,31 @@ class Limonade : NSObject, UITableViewDelegate, UITableViewDataSource {
         return container.count()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let section:Section = self.container.item(index: indexPath.section) as! Section
         let row:Row = section.item(index: indexPath.row) as! Row
         let cell = tableView.dequeueReusableCell(withIdentifier: row.cell.reuseId, for: indexPath)
-        self.cellConfigurator?(cell, row.model, row.id, section.id)
+        self.handlerCreateCellFoRow?(cell, row.model, row.id, section.id)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
+        
+        let section:Section = self.container.item(index: indexPath.section) as! Section
+        let row:Row = section.item(index: indexPath.row) as! Row
+        self.handlerWillDisplayCellFoRow?(cell,
+                                          row.model,
+                                          row.id,
+                                          section.id,
+                                          indexPath.section,
+                                          indexPath.row,
+                                          self.container.count(),
+                                          section.count())
     }
     
     
@@ -285,17 +366,18 @@ class Limonade : NSObject, UITableViewDelegate, UITableViewDataSource {
         if header != nil {
             
             if section.model != nil{
-                self.headerConfigurator?(header!, section.model)
+                self.handlerCreateHeaderViewFoSection?(header!, section.model)
             }
             else {
-                self.headerConfigurator?(header!, section.id as AnyObject)
+                self.handlerCreateHeaderViewFoSection?(header!, section.id as AnyObject)
             }
         }
         
         return header
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView,
+                   heightForHeaderInSection section: Int) -> CGFloat {
         
         let section:Section = self.container.item(index: section) as! Section
         var height:CGFloat = 0.00001
@@ -307,7 +389,9 @@ class Limonade : NSObject, UITableViewDelegate, UITableViewDataSource {
         return height
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: true)
         let section:Section = self.container.item(index: indexPath.section) as! Section
         let row:Row = section.item(index: indexPath.row) as! Row

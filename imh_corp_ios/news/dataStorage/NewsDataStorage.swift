@@ -122,7 +122,7 @@ class NewsDataStorage : INewsDataStorage{
                  completion:@escaping ([INews])->()){
         
         
-        self.db.asynchFetch(type: NewsRealm.self, options: FetchOptionsPredicate(predicate:  NSPredicate(format: "accountId='\(accountId)'"), sortBy: ("dateCreated", true))) { (res, ctx)  in
+        self.db.asynchFetch(type: NewsRealm.self, options: FetchOptionsPredicate(predicate:  NSPredicate(format: "accountId='\(accountId)' AND dateCreated > \(startDate)"), sortBy: ("dateCreated", true))) { (res, ctx)  in
             
             if res.count <= count{
                 completion(News.createNews(news: res))
@@ -131,6 +131,37 @@ class NewsDataStorage : INewsDataStorage{
                 completion(News.createNews(news: Array(res[0..<count])))
             }
         }
+    }
+    
+    func getNews(accountId:String,
+                 startDate:Int?,
+                 endDate:Int?,
+                 count:Int,
+                 completion:@escaping ([INews])->()){
         
+        let predicate:NSPredicate?
+        
+        if startDate != nil && endDate != nil{
+            predicate = NSPredicate(format: "accountId='\(accountId)' AND dateCreated > \(startDate!) AND dateCreated < \(endDate!)")
+        }
+        else if startDate != nil{
+            predicate = NSPredicate(format: "accountId='\(accountId)' AND dateCreated > \(startDate!)")
+        }
+        else if endDate != nil{
+            predicate = NSPredicate(format: "accountId='\(accountId)' AND dateCreated < \(endDate!)")
+        }
+        else {
+            predicate = NSPredicate(format: "accountId='\(accountId)'")
+        }
+        
+        self.db.asynchFetch(type: NewsRealm.self, options: FetchOptionsPredicate(predicate: predicate!, sortBy: ("dateCreated", true))) { (res, ctx)  in
+            
+            if res.count <= count{
+                completion(News.createNews(news: res))
+            }
+            else {
+                completion(News.createNews(news: Array(res[0..<count])))
+            }
+        }
     }
 }

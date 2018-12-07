@@ -25,6 +25,8 @@ class NewsController : UIViewController {
     
     //MARK:
     private var limonade:Limonade!
+    private let countDaysFromLoadNewsBatch = 15
+    private let countMessagesFromNewsBatch = 50
     
 
     //MARK: Life cycle
@@ -39,11 +41,12 @@ class NewsController : UIViewController {
         self.navigationItem.title = "Новости"
         self.configureTableViewComponents()
         self.handleSelectCell()
+        self.setHandlersLimonade()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.showNewsPast(days: 15, countMessages: 25)
+        self.tryShowFirstBatchNewsPast(days: 15, countMessages: 50)
         
     }
     
@@ -65,29 +68,51 @@ class NewsController : UIViewController {
     }
     
     
-    //MARK: - Data source
-    private func showNewsPast(days:Int, countMessages:Int){
+    //MARK: - load news
+    private func tryShowFirstBatchNewsPast(days:Int, countMessages:Int){
         
         let today = Date()
         let calculateDate = Calendar.current.date(byAdding: .day, value: -days, to: today)?.timeIntervalSince1970.rounded()
         if calculateDate != nil{
-            self.showNews(startDate: Int(calculateDate!), count: countMessages)
+            self.tryShowNews(startDate: Int(calculateDate!), endDate: nil, count: countMessages)
+        }
+    }
+    
+    private func truShowNextBatchFrom(news:INews){
+        let date = Date(timeIntervalSince1970: TimeInterval(news.dateCreated))
+        self.tryShowNews(startDate: nil, endDate: Int(date.timeIntervalSince1970.rounded()), count: self.countMessagesFromNewsBatch)
+    }
+    
+    private func tryShowNews(startDate:Int?,
+                             endDate:Int?,
+                             count:Int){
+        
+        guard self.cake.director.serviceNews.getState() == .ready else{
+            return
         }
         
-    }
-    
-    private func showNews(startDate:Int, count:Int){
-        self.cake.director.giveMeYammerNews(startDate: startDate, count: count, success: { (news) in
+        
+        self.cake.director.serviceNews.giveMeYammerNews(startDate: startDate,
+                                                        endDate: endDate,
+                                                        count: count,
+                                                        oldCashedNews: { (cashedNews) in
+                                                            
+                                                DispatchQueue.main.async {
+                                                    self.createOrUpdateDataSource(news: cashedNews)
+                                                }
+            
+        }, newLoadedNews: { (newLoadedNews) in
             
             DispatchQueue.main.async {
-                self.createOrUpdateDataSource(news: news)
+                self.createOrUpdateDataSource(news: newLoadedNews)
             }
             
-        }) { (eror) in
+        }) { (error) in
             
         }
     }
     
+    //MARK: - Data source
     private func createOrUpdateDataSource(news:[INews]){
         
         let rootSection = LimonadeItemTemplate(limonadeId: "root", limonadeSortKey: "root", hashLimonage: "root".hashValue)
@@ -110,13 +135,28 @@ class NewsController : UIViewController {
     //MARK - configure table view controlls
     private func configureTableViewComponents(){
         
-        self.limonade?.setHandlerConfigureCell(handler: { (cell, model, nameRow, nameSection) in
+        self.limonade?.setHandlerCreateCellFoRow(handler: { (cell, model, nameRow, nameSection) in
             
             if let cell = cell as? INewsCell,
                 let item = model as? ILimonadeItem{
                 
                 if let news = item.model as? INews{
                     cell.configure(news: news)
+                }
+            }
+        })
+    }
+    
+    private func setHandlersLimonade(){
+        
+        self.limonade?.setHandlerDidScrooll(handler: { (scrollView) in
+            
+            if scrollView.contentOffset.y > 0 &&
+                scrollView.contentSize.height/scrollView.contentOffset.y < 2{
+                let item = self.limonade.getLastModelRowIn(sectionId: "root")
+                if let limonadeItem = item as? ILimonadeItem,
+                    let news = limonadeItem.model as? INews{
+                    self.truShowNextBatchFrom(news: news)
                 }
                 
             }

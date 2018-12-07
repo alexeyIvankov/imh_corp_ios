@@ -152,6 +152,8 @@
 		FF7000A521B92CF5003E4D84 /* FileRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7000A221B92CF5003E4D84 /* FileRealm.swift */; };
 		FF7000A621B92CF5003E4D84 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7000A321B92CF5003E4D84 /* File.swift */; };
 		FF7000A721B92CF5003E4D84 /* IFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7000A421B92CF5003E4D84 /* IFile.swift */; };
+		FF7000AA21BA5CF5003E4D84 /* IServiceNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7000A921BA5CF4003E4D84 /* IServiceNews.swift */; };
+		FF7000AC21BA5CFF003E4D84 /* ServiceNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7000AB21BA5CFF003E4D84 /* ServiceNews.swift */; };
 		FF72AEF32175BFBB002D04DA /* IRootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF12175BFBB002D04DA /* IRootDirector.swift */; };
 		FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF22175BFBB002D04DA /* RootDirector.swift */; };
 		FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF62175BFF5002D04DA /* LoginDirector.swift */; };
@@ -459,6 +461,8 @@
 		FF7000A221B92CF5003E4D84 /* FileRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileRealm.swift; sourceTree = "<group>"; };
 		FF7000A321B92CF5003E4D84 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		FF7000A421B92CF5003E4D84 /* IFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IFile.swift; sourceTree = "<group>"; };
+		FF7000A921BA5CF4003E4D84 /* IServiceNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IServiceNews.swift; sourceTree = "<group>"; };
+		FF7000AB21BA5CFF003E4D84 /* ServiceNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceNews.swift; sourceTree = "<group>"; };
 		FF72AEF12175BFBB002D04DA /* IRootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF22175BFBB002D04DA /* RootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF62175BFF5002D04DA /* LoginDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDirector.swift; sourceTree = "<group>"; };
@@ -997,6 +1001,7 @@
 		FF56145921809EE300DCCE1B /* news */ = {
 			isa = PBXGroup;
 			children = (
+				FF7000A821BA5CE3003E4D84 /* services */,
 				FF6FB00621AD67B100C818BC /* details */,
 				FF5614CF2180ACFB00DCCE1B /* NewsSB.storyboard */,
 				FF4335C521A7E1F300F0F5F0 /* dataStorage */,
@@ -1476,6 +1481,15 @@
 				FF7000A421B92CF5003E4D84 /* IFile.swift */,
 			);
 			path = file;
+			sourceTree = "<group>";
+		};
+		FF7000A821BA5CE3003E4D84 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				FF7000A921BA5CF4003E4D84 /* IServiceNews.swift */,
+				FF7000AB21BA5CFF003E4D84 /* ServiceNews.swift */,
+			);
+			path = services;
 			sourceTree = "<group>";
 		};
 		FF72AEEF2170AF8D002D04DA /* welcome */ = {
@@ -2688,6 +2702,7 @@
 				FF6FB01721AD692900C818BC /* NewsDetailsController.swift in Sources */,
 				FFF9532021A292C600612C10 /* NewsRealm.swift in Sources */,
 				FFAB4F1E216392D400AE82EA /* Global.swift in Sources */,
+				FF7000AC21BA5CFF003E4D84 /* ServiceNews.swift in Sources */,
 				FFAB4F3B2163936B00AE82EA /* IApplication.swift in Sources */,
 				FF3897F02178C462005CE562 /* DKChainableAnimationKit+Frame.swift in Sources */,
 				FF3897F32178C462005CE562 /* DKChainableAnimationKit.swift in Sources */,
@@ -2754,6 +2769,7 @@
 				FF4335CB21A8225B00F0F5F0 /* UIViewController+Keyboard.swift in Sources */,
 				FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */,
 				FF43359B21A6A8F000F0F5F0 /* DataBaseAssembly.swift in Sources */,
+				FF7000AA21BA5CF5003E4D84 /* IServiceNews.swift in Sources */,
 				FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */,
 				FF4335CD21ABF85A00F0F5F0 /* ILimonadeItem.swift in Sources */,
 				FFF9533F21A2A4D900612C10 /* ContainerTemplate.swift in Sources */,
