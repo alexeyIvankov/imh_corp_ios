@@ -117,6 +117,7 @@ class ServiceNews: IServiceNews {
                                 self.dataStorage.createOrUpdateNews(accountId: accountId, newsJson: news, completion: {
                                     success()
                                 })
+                               
                             }
                             else{
                                 DispatchQueue.main.async {

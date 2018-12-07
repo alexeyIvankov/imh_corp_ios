@@ -86,6 +86,18 @@ public class DataBase : IDataBase {
         }
     }
     
+    public func asynchWrite<T>(context:IDataBaseContext,
+                        transaction:@escaping ()->([T]),
+                        completion: @escaping (IDataBaseContext) -> ()){
+        
+        if let realm = context as? Realm{
+            realm.saveContext {
+                realm.add(transaction() as! [Object])
+            }
+            completion(context)
+        }
+    }
+    
     
     public func asynchWrite<T>(transactions:[()->([T])],
                         completion: @escaping (IDataBaseContext) -> ()){

@@ -11,62 +11,46 @@ import UIKit
 import WebKit
 import KeyboardHandler
 
-class NewsController : UIViewController {
+class NewsController : UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //MARK: IBOutlets
-    @IBOutlet weak var tableView:UITableView!{
-        didSet{
-            self.limonade = Limonade(tableView: self.tableView)
-        }
-    }
+    @IBOutlet weak var tableView:UITableView!
         
     //MARK: Dependence
     var cake:INewsCake = Depednence.tryInject()!
     
     //MARK:
-    private var limonade:Limonade!
-    private let countDaysFromLoadNewsBatch = 15
+    private var newsList:[INews] = [INews]()
     private let countMessagesFromNewsBatch = 50
+    private let queueUpdateTableDataSource = DispatchQueue(label: "NewsController.queue")
     
-
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.cake.router.setOwnwer(ownwer: self)
         self.cake.design.apply(vc: self)
         
-        self.tableView.estimatedRowHeight = UIScreen.main.bounds.size.height
-        self.tableView.rowHeight = UITableView.automaticDimension
-        
+        self.configureTableViewAndComponents()
         self.navigationItem.title = "Новости"
-        self.configureTableViewComponents()
-        self.handleSelectCell()
-        self.setHandlersLimonade()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tryShowFirstBatchNewsPast(days: 15, countMessages: 50)
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
     
-    //MARK: Actions
-    private func handleSelectCell(){
-        self.limonade.setHandlerSelectCell { [unowned self] (model, cell, _, _)  in
-
-            if let item = model as? ILimonadeItem{
-                
-                if let news = item.model as? INews{
-                    self.cake.router.handleSelect(news: news)
-                }
-            }
-        }
+    private func configureTableViewAndComponents(){
+        self.tableView.estimatedRowHeight = UIScreen.main.bounds.size.height
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
+        self.tableView.register(UINib(nibName:"NewsCell", bundle:nil), forCellReuseIdentifier: "NewsCell");
     }
-    
     
     //MARK: - load news
     private func tryShowFirstBatchNewsPast(days:Int, countMessages:Int){
@@ -115,52 +99,79 @@ class NewsController : UIViewController {
     //MARK: - Data source
     private func createOrUpdateDataSource(news:[INews]){
         
-        let rootSection = LimonadeItemTemplate(limonadeId: "root", limonadeSortKey: "root", hashLimonage: "root".hashValue)
+        guard news.count > 0 else{
+            return
+        }
         
-        self.limonade.appendSectionIfNeed(item:rootSection,
-                                          animation: UITableView.RowAnimation.automatic,
-                                          sortType:.descending)
         
-        for news:INews in news{
+        self.queueUpdateTableDataSource.async {
             
-            let currentItem = LimonadeItemTemplate(limonadeId: news.newsId, limonadeSortKey: String(news.dateCreated), hashLimonage: news.body.hashValue, model:news)
+            var copyNewsList = Array(self.newsList)
             
-            self.limonade.tryAppendOrUpdateRow(rowItem: currentItem,
-                                               sectionItem: rootSection,
-                                               nameCell: "NewsCell",
-                                               animation: UITableView.RowAnimation.none)
+            for currentNews in news{
+             
+                if self.newsList.contains(where: { (news) -> Bool in
+                    if currentNews.newsId == news.newsId{
+                        return true
+                    }
+                    else {
+                        return false
+                    }
+                }) == false{
+                    copyNewsList.append(currentNews)
+                }
+            }
+            
+            
+            let sortedList = copyNewsList.sorted { (new1, new2) -> Bool in
+                if new1.dateCreated > new2.dateCreated{
+                    return true
+                }
+                else {
+                    return false
+                }
+            }
+            
+            
+            
+            DispatchQueue.main.async {
+                self.newsList = sortedList
+                self.tableView.reloadData()
+            }
         }
     }
     
-    //MARK - configure table view controlls
-    private func configureTableViewComponents(){
-        
-        self.limonade?.setHandlerCreateCellFoRow(handler: { (cell, model, nameRow, nameSection) in
-            
-            if let cell = cell as? INewsCell,
-                let item = model as? ILimonadeItem{
-                
-                if let news = item.model as? INews{
-                    cell.configure(news: news)
-                }
-            }
-        })
+    
+    //MARK: UITableViewDataSource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         return self.newsList.count
     }
     
-    private func setHandlersLimonade(){
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        self.limonade?.setHandlerDidScrooll(handler: { (scrollView) in
-            
-            if scrollView.contentOffset.y > 0 &&
-                scrollView.contentSize.height/scrollView.contentOffset.y < 2{
-                let item = self.limonade.getLastModelRowIn(sectionId: "root")
-                if let limonadeItem = item as? ILimonadeItem,
-                    let news = limonadeItem.model as? INews{
-                    self.truShowNextBatchFrom(news: news)
-                }
-                
+        let news:INews = self.newsList[indexPath.row]
+        let cell:INewsCell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! INewsCell
+        cell.configure(news: news)
+        
+        return cell as! UITableViewCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        let news:INews = self.newsList[indexPath.row]
+        self.cake.router.handleSelect(news: news)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if scrollView.contentOffset.y > 0 &&
+            scrollView.contentSize.height/scrollView.contentOffset.y < 2{
+            let news = self.newsList.last
+            if news != nil{
+                self.truShowNextBatchFrom(news: news!)
             }
-        })
+        }
     }
 }
 

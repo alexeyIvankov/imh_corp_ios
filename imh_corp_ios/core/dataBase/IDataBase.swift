@@ -19,6 +19,11 @@ public protocol IDataBase : class {
     func asynchWrite<T>(transaction:@escaping ()->([T]),
                         completion: @escaping (IDataBaseContext) -> ())
     
+    func asynchWrite<T>(context:IDataBaseContext,
+                        transaction:@escaping ()->([T]),
+                        completion: @escaping (IDataBaseContext) -> ())
+    
+    
     func asynchWrite<T>(transactions:[()->([T])],
                         completion: @escaping (IDataBaseContext) -> ())
     

@@ -76,7 +76,8 @@ class NewsDataStorage : INewsDataStorage{
                                         
                                         if newsDb == nil{
                                             
-                                            self.db.asynchWrite(transaction: { () -> ([NewsRealm]) in
+                                            self.db.asynchWrite(context:ctx,
+                                                                transaction: { () -> ([NewsRealm]) in
                                                 
                                                 let newsDb = NewsRealm()
                                                 newsDb.newsId = newsIdStr
