@@ -50,6 +50,7 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
         self.tableView.dataSource = self
         
         self.tableView.register(UINib(nibName:"NewsCell", bundle:nil), forCellReuseIdentifier: "NewsCell");
+        self.tableView.register(UINib(nibName:"NewsAttachCell", bundle:nil), forCellReuseIdentifier: "NewsAttachCell");
     }
     
     //MARK: - load news
@@ -150,15 +151,15 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let news:INews = self.newsList[indexPath.row]
+        var cell:INewsCell!
         
-        if news.attaches.count > 0{
-            print("attach!!!")
+        if news.containsImages == true{
+            cell = tableView.dequeueReusableCell(withIdentifier: "NewsAttachCell", for: indexPath) as! INewsAttachCell
         }
         else {
-            print("no attach!!!")
+            cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as? INewsCell
         }
         
-        let cell:INewsCell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! INewsCell
         cell.configure(news: news)
         
         return cell as! UITableViewCell

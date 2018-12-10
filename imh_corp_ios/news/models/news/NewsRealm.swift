@@ -17,6 +17,7 @@ class NewsRealm: Object, INews {
     @objc dynamic var groupName:String! = nil
     @objc dynamic var body:String! = nil
     @objc dynamic var dateCreated:Int = 0
+    @objc dynamic var containsImages: Bool = false
     
     var attachesDb = List<FileRealm>()
     

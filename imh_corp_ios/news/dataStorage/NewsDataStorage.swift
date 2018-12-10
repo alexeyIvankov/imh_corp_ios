@@ -62,9 +62,13 @@ class NewsDataStorage : INewsDataStorage{
                                                                     
                                                                     if let attachDict = item as? [String:Any],
                                                                         let _ = attachDict["id"] as? Int,
-                                                                        let _ = attachDict["type"] as? String,
+                                                                        let typeAttach = attachDict["type"] as? String,
                                                                         let _ = attachDict["content_type"] as? String{
                                                                         
+                                                                        if typeAttach == "image"{
+                                                                            newsDb.containsImages = true
+                                                                        }
+                                                                                                                                        
                                                                         let values = self.convertAttachDictToValues(newsId: newsIdStr, attachDict: attachDict)
                                                                         
                                                                         let fileDb = ctx.createObj(type: FileRealm.self, value:values, update: true)

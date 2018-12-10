@@ -17,6 +17,8 @@ public protocol INews {
     var body:String! { get }
     var dateCreated:Int { get }
     
+    var containsImages:Bool { get }
+    
     var attaches:[IFile] { get}
 }
 

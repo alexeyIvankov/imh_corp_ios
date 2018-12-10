@@ -9,13 +9,14 @@
 import Foundation
 
 class News : INews{
-   
+    
     var newsId: String!
     var accountId: String!
     var groupId:String!
     var body: String!
     var groupName:String!
     var dateCreated: Int
+      var containsImages: Bool = false
     
     var attaches: [IFile] = []
     
@@ -44,6 +45,7 @@ class News : INews{
         self.dateCreated = news.dateCreated
         self.groupId = news.groupId
         self.groupName = news.groupName
+        self.containsImages = news.containsImages
     }
 
 }
