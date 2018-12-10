@@ -78,14 +78,11 @@ class NewsDataStorage : INewsDataStorage{
                                             
                                             self.db.asynchWrite(context:ctx,
                                                                 transaction: { () -> ([NewsRealm]) in
-                                                
-                                                let newsDb = NewsRealm()
-                                                newsDb.newsId = newsIdStr
-                                                newsDb.groupName = groupName
-                                                newsDb.groupId = groupIdStr
-                                                newsDb.accountId = accountId
-                                                newsDb.dateCreated = dateCreatedNews
-                                                newsDb.body = body
+                                                                    
+
+                                                                    
+                                                                    let newsDb = ctx.createObj(type: NewsRealm.self, value:[newsIdStr,accountId, groupIdStr,groupName, body, dateCreatedNews], update: true)
+
                                                 
                                                 return [newsDb]
                                                 

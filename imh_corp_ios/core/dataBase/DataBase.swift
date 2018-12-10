@@ -142,7 +142,7 @@ public class DataBase : IDataBase {
 }
 
 extension Realm : IDataBaseContext{
-    
+   
     public func saveContext(transaction:()->()){
         do{
             
@@ -161,8 +161,16 @@ extension Realm : IDataBaseContext{
     }
     
     
-    public func createObj<T: Object>(type:T.Type) -> T{
-        return self.create(type as Object.Type) as! T
+    public func createObj<T>(type:T.Type) -> T{
+        return self.create(type as! Object.Type) as! T
+    }
+    
+    public func createObj<T>(type:T.Type, value:Any, update:Bool) -> T{
+        return self.create(type as! Object.Type, value: value, update: update) as! T
+    }
+    
+    public  func getObj<T>(type:T.Type, primaryKey:String) -> T{
+        return self.object(ofType: type as! Object.Type, forPrimaryKey: primaryKey) as! T
     }
     
     public func read<T: Object>(_ type: T.Type,

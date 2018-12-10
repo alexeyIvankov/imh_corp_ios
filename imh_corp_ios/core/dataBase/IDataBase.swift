@@ -2,7 +2,9 @@
 import Foundation
 
 public protocol IDataBaseContext : class{
-    
+    func createObj<T>(type:T.Type) -> T
+    func createObj<T>(type:T.Type, value:Any, update:Bool) -> T
+    func getObj<T>(type:T.Type, primaryKey:String) -> T
 }
 
 public protocol IDataBase : class {
