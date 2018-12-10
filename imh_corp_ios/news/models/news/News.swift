@@ -9,7 +9,7 @@
 import Foundation
 
 class News : INews{
-    
+   
     var newsId: String!
     var accountId: String!
     var groupId:String!
@@ -17,12 +17,14 @@ class News : INews{
     var groupName:String!
     var dateCreated: Int
     
+    var attaches: [IFile] = []
+    
     static func createNews(news:[INews]) -> [INews]{
         
         var container = [INews]()
         
         for item in news{
-            let currentNews = News(news: item)
+            let currentNews = News.createNew(new: item)
             container.append(currentNews)
         }
         return container
@@ -30,6 +32,7 @@ class News : INews{
     
     static func createNew(new:INews) -> INews{
         let convertNews = News(news: new)
+        convertNews.attaches = File.createFiles(files: new.attaches)
         return convertNews
     }
     

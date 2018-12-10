@@ -92,7 +92,7 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
             }
             
         }) { (error) in
-            
+            print(error)
         }
     }
     
@@ -150,6 +150,14 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let news:INews = self.newsList[indexPath.row]
+        
+        if news.attaches.count > 0{
+            print("attach!!!")
+        }
+        else {
+            print("no attach!!!")
+        }
+        
         let cell:INewsCell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! INewsCell
         cell.configure(news: news)
         

@@ -16,13 +16,11 @@ class File : IFile {
     var type: String!
     var contentType: String!
     var dateCreated: String?
-    var downloadUrl: String!
     var largeIconUrl: String?
     var previewUrl: String?
     var smalIconUrl: String?
     var size: String?
     var url: String?
-    var webUrl: String?
     var localPath: String?
     var contentClass: String?
     

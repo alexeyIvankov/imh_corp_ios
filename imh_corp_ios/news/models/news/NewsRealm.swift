@@ -18,6 +18,14 @@ class NewsRealm: Object, INews {
     @objc dynamic var body:String! = nil
     @objc dynamic var dateCreated:Int = 0
     
+    var attachesDb = List<FileRealm>()
+    
+    var attaches: [IFile]{
+        get {
+            return self.attachesDb.convertToArray()
+        }
+    }
+    
     override static func primaryKey() -> String? {
         return "newsId"
     }

@@ -25,6 +25,10 @@ class FileRealm : Object, IFile{
     @objc dynamic var size: String? = nil
     @objc dynamic var localPath: String? = nil
     
+    override static func primaryKey() -> String? {
+        return "fileId"
+    }
+    
     func update(json: [String : Any]) {
         
         let fileId =  json["id"] as? Int
