@@ -14,6 +14,7 @@ enum FileType:String {
 
 public protocol IFile {
     
+    var accountId: String! { get }
     var fileId: String! { get }
     var newsId: String! { get }
     var name: String? { get }

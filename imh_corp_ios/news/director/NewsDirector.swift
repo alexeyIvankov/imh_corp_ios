@@ -14,15 +14,18 @@ class NewsDirector : INewsDirector {
     var dataStorage:INewsDataStorage
     var sessionService:ISessionService
     var serviceNews:IServiceNews
+    var fileDirector:IFileDirector
     
     required init( network:INetwork,
                    dataStorage:INewsDataStorage,
                    sessionService:ISessionService,
-                   serviceNews:IServiceNews){
+                   serviceNews:IServiceNews,
+                   fileDirector:IFileDirector){
         
         self.network = network
         self.dataStorage = dataStorage
         self.sessionService = sessionService
         self.serviceNews = serviceNews
+        self.fileDirector = fileDirector
     }
 }

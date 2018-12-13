@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/alexeyivankov/Desktop/work/industrial_metallurgical_holding/imh_corp_ios/imh_corp_ios/news/views/cells/newsAttach/INewsAttachCell.swift">
-   </FileRef>
-   <FileRef
       location = "group:imh_corp_ios.xcodeproj">
    </FileRef>
    <FileRef

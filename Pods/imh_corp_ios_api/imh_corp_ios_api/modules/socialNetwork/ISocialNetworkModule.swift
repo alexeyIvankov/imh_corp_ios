@@ -22,4 +22,18 @@ public protocol ISocialNetworkModule : AnyObject{
                  countMessages:Int?,
                  success:@escaping (RPCResponce)->(),
                  failed:@escaping (NSError)->())
+    
+    func attach(accessToken:String,
+                networkType:String,
+                attachUrl:String,
+                success:@escaping (Data)->(),
+                failed:@escaping (NSError)->())
+    
+    func image(accessToken:String,
+               networkType:String,
+               imageUrl:String,
+               width:Int,
+               height:Int,
+               success:@escaping (Data)->(),
+               failed:@escaping (NSError)->())
 }

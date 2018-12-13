@@ -7,6 +7,7 @@
 
 import Foundation
 
-protocol INewsAttachCell : INewsCell{
+protocol INewsAttachCell : INewsPresenter {
     
+    func setFileDirector(fileDirector:IFileDirector)
 }

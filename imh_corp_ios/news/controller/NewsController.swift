@@ -142,7 +142,6 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
         }
     }
     
-    
     //MARK: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          return self.newsList.count
@@ -151,13 +150,17 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let news:INews = self.newsList[indexPath.row]
-        var cell:INewsCell!
+        var cell:INewsPresenter!
         
         if news.containsImages == true{
-            cell = tableView.dequeueReusableCell(withIdentifier: "NewsAttachCell", for: indexPath) as! INewsAttachCell
+            cell = tableView.dequeueReusableCell(withIdentifier: "NewsAttachCell", for: indexPath) as? INewsPresenter
         }
         else {
-            cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as? INewsCell
+            cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as? INewsPresenter
+        }
+        
+        if let attachCell = cell as? INewsAttachCell{
+            attachCell.setFileDirector(fileDirector: self.cake.director.fileDirector)
         }
         
         cell.configure(news: news)

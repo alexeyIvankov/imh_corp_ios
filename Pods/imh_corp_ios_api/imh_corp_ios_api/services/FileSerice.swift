@@ -10,26 +10,28 @@ import Foundation
 import Alamofire
 
 class FileSerice: IFileService {
-    
+ 
+  
     func downloadFile(url:String,
                       progress:@escaping (Progress)->(),
-                      queue:DispatchQueue,
                       success:@escaping (Data)->(),
                       failed:@escaping (NSError)->()){
         
-        Alamofire.request(url).downloadProgress(closure: progress).responseData { (responce) in
+        Alamofire.request(url).downloadProgress(closure : { (progress) in
+            print(progress.fractionCompleted)
             
-            if responce.data != nil && responce.error == nil {
-                success(responce.data!)
-            }
-            else {
+        }).responseData{ (response) in
+            
+            switch response.result {
                 
-                if responce.error != nil {
-                    failed(NSError(domain: responce.error!.localizedDescription, code: -1, userInfo: nil))
+            case .success(let value): do {
+                success(value)
+            }
+                
+            case .failure(let error): do{
+                failed(NSError(domain: error.localizedDescription, code: -1, userInfo: nil))
                 }
-                else {
-                    failed(NSError(domain: "failed download", code: -1, userInfo: nil))
-                }
+                
             }
         }
     }

@@ -36,8 +36,7 @@ public class AuthModule : IAuthModule{
         params["country_code"] = countryCode
         params["sms_code"] = smsCode
         
-
-        self.requestExecutor.executeRPCRequest(url: self.url, method:RemoteMethods.authorization.rawValue , params: params,success: success, failed: failed)
+        self.requestExecutor.createRPCRequest(url: self.url, method: RemoteMethods.authorization.rawValue, params: params).rpcResponse(success: success, failed: failed)
     }
     
     public func sendVerifyCode(phone: String,
@@ -51,6 +50,6 @@ public class AuthModule : IAuthModule{
         params["phone"] = phone
         params["country_code"] = countryCode
         
-        self.requestExecutor.executeRPCRequest(url: self.url, method:RemoteMethods.sendVerifyCode.rawValue , params: params,success: success, failed: failed)
+        self.requestExecutor.createRPCRequest(url: self.url, method:RemoteMethods.sendVerifyCode.rawValue , params: params).rpcResponse(success: success, failed: failed)
     }
 }

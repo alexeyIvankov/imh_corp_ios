@@ -31,3 +31,6 @@ public func asynchMain(block:@escaping()->()){
     DispatchQueue.main.async(execute: block)
 }
 
+public func generateError(message:String) -> NSError{
+    return NSError(domain: message, code: -1, userInfo: nil)
+}

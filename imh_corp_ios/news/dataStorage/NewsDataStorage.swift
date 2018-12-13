@@ -69,7 +69,9 @@ class NewsDataStorage : INewsDataStorage{
                                                                             newsDb.containsImages = true
                                                                         }
                                                                                                                                         
-                                                                        let values = self.convertAttachDictToValues(newsId: newsIdStr, attachDict: attachDict)
+                                                                        let values = self.convertAttachDictToValues(accountId: accountId,
+                                                                                                                    newsId: newsIdStr,
+                                                                                                                    attachDict: attachDict)
                                                                         
                                                                         let fileDb = ctx.createObj(type: FileRealm.self, value:values, update: true)
                                                                         
@@ -132,60 +134,64 @@ class NewsDataStorage : INewsDataStorage{
     }
     
     
-    private func convertAttachDictToValues(newsId:String,
-                                           attachDict:[String:Any]) ->[Any]{
+    private func convertAttachDictToValues(accountId:String,
+                                           newsId:String,
+                                           attachDict:[String:Any]) ->[String:Any]{
         
         let attachId = attachDict["id"] as? Int
         let type = attachDict["type"] as? String
         let contentType = attachDict["content_type"] as? String
         
-        let attachIdStr = String(attachId!)
+        let fileId = String(attachId!)
         let name =  attachDict["name"] as? String
         let size = attachDict["size"] as? Int
         let contentClass = attachDict["content_class"] as? String
         let dateCreated =  attachDict["date_created"] as? String
-        let largeIconUrl =  attachDict["large_icon_ur"] as? String
-        let previewUrl =  attachDict["preview_ur"] as? String
-        let smallIconUrl =  attachDict["small_icon_ur"] as? String
+        let largeIconUrl =  attachDict["large_icon_url"] as? String
+        let previewUrl =  attachDict["preview_url"] as? String
+        let smallIconUrl =  attachDict["small_icon_url"] as? String
         let url =  attachDict["url"] as? String
         
-        var values = [Any]()
-        values.append(attachIdStr)
-        values.append(newsId)
+        var values = [String:Any]()
+        
+        values["accountId"] = accountId
+        values["fileId"] = fileId
+        values["newsId"] = newsId
         
         if name != nil{
-            values.append(name!)
+            values["name"] = name!
         }
         
-        values.append(type!)
-        values.append(contentType!)
+        values["type"] = type!
+        values["contentType"] = contentType!
+
         
         if dateCreated != nil{
-            values.append(dateCreated!)
+            values["dateCreated"] = dateCreated!
         }
         
         if url != nil{
-            values.append(url!)
+            values["url"] = url!
         }
         
         if largeIconUrl != nil{
-            values.append(largeIconUrl!)
+            values["largeIconUrl"] = largeIconUrl!
         }
         
         if previewUrl != nil{
-            values.append(previewUrl!)
+            values["previewUrl"] = previewUrl!
         }
         
         if smallIconUrl != nil{
-            values.append(smallIconUrl!)
+            values["smallIconUrl"] = smallIconUrl!
         }
         
         if  contentClass != nil{
-            values.append(contentClass!)
+            values["contentClass"] = contentClass!
         }
         
         if size != nil{
-            values.append(String(size!))
+            values["size"] = String(size!)
         }
         
         return values

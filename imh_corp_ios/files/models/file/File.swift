@@ -10,6 +10,7 @@ import Foundation
 
 class File : IFile {
     
+    var accountId: String!
     var fileId: String!
     var newsId:String!
     var name: String?
@@ -33,7 +34,13 @@ class File : IFile {
         return container
     }
     
+    static func createFile(file:IFile) -> IFile{
+        let newFile = File(file: file)
+        return newFile
+    }
+    
     required init(file:IFile){
+        self.accountId = file.accountId
         self.fileId = file.fileId
         self.newsId = file.newsId
         self.name = file.name

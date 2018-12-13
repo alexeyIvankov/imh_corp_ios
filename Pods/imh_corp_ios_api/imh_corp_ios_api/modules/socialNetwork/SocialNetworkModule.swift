@@ -13,6 +13,8 @@ public class SocialNetworkModule : ISocialNetworkModule{
     enum RemoteMethods : String{
         case allGroups = "all_groups"
         case allNews = "all_news"
+        case getAttach = "attach"
+        case getImage = "image"
     }
     
     let requestExecutor:IRequestExecutor
@@ -23,6 +25,7 @@ public class SocialNetworkModule : ISocialNetworkModule{
         self.url = url
     }
     
+    
     public func allGroups(accessToken: String,
                           networkType: String,
                           success: @escaping (RPCResponce) -> (),
@@ -31,8 +34,8 @@ public class SocialNetworkModule : ISocialNetworkModule{
         var params:[String:Any] = [:]
         params["access_token"] = accessToken
         params["network_type"] = networkType
-
-        self.requestExecutor.executeRPCRequest(url: self.url, method:RemoteMethods.allGroups.rawValue , params: params,success: success, failed: failed)
+        
+        self.requestExecutor.createRPCRequest(url: self.url, method:RemoteMethods.allGroups.rawValue , params: params).rpcResponse(success: success, failed: failed)
     }
     
     public func allNews(accessToken:String,
@@ -59,7 +62,64 @@ public class SocialNetworkModule : ISocialNetworkModule{
             params["count"] = countMessages!
         }
         
-        self.requestExecutor.executeRPCRequest(url: self.url, method:RemoteMethods.allNews.rawValue , params: params,success: success, failed: failed)
+        self.requestExecutor.createRPCRequest(url: self.url, method:RemoteMethods.allNews.rawValue , params: params).rpcResponse(success: success, failed: failed)
+    }
+    
+    public func attach(accessToken:String,
+                networkType:String,
+                attachUrl:String,
+                success:@escaping (Data)->(),
+                failed:@escaping (NSError)->()){
+        
+        var params:[String:Any] = [:]
+        params["access_token"] = accessToken
+        params["network_type"] = networkType
+        params["url"] = attachUrl
+        
+        self.requestExecutor.createRPCRequest(url: self.url, method: RemoteMethods.getAttach.rawValue, params: params).responseData { (responce) in
+            
+            switch responce.result {
+                
+            case .success(let value): do {
+                success(value)
+                }
+                
+            case .failure(let error): do{
+                failed(NSError(domain: error.localizedDescription, code: -1, userInfo: nil))
+                }
+            }
+        }
+    }
+    
+    public func image(accessToken:String,
+                      networkType:String,
+                      imageUrl:String,
+                      width:Int,
+                      height:Int,
+                      success:@escaping (Data)->(),
+                      failed:@escaping (NSError)->()){
+        
+        var params:[String:Any] = [:]
+        params["access_token"] = accessToken
+        params["network_type"] = networkType
+        params["url"] = imageUrl
+        params["width"] = width
+        params["height"] = height
+        
+        self.requestExecutor.createRPCRequest(url: self.url, method: RemoteMethods.getImage.rawValue, params: params).responseData { (responce) in
+            
+            switch responce.result {
+                
+            case .success(let value): do {
+                success(value)
+                }
+                
+            case .failure(let error): do{
+                failed(NSError(domain: error.localizedDescription, code: -1, userInfo: nil))
+                }
+            }
+        }
+        
     }
 
 }

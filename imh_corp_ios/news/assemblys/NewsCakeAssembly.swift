@@ -18,11 +18,13 @@ public class NewsCakeAssembly : AssemblyProviderImpl {
             
             let appDesign:IAppDesign = injector.tryInject()!
             let loaderService:ILoaderService = injector.tryInject()!
+            let fileDirector:IFileDirector = injector.tryInject()!
             
             let network:INetwork = injector.tryInject()!
             let db:IDataBase = injector.tryInject()!
             let sessionService:ISessionService = injector.tryInject()!
             let dataStorage:INewsDataStorage = NewsDataStorage(db: db)
+            
             
             let serviceNews:IServiceNews = ServiceNews(network: network,
                                                        dataStorage: dataStorage,
@@ -34,7 +36,8 @@ public class NewsCakeAssembly : AssemblyProviderImpl {
             let director = NewsDirector(network: network,
                                         dataStorage: dataStorage,
                                         sessionService:sessionService,
-                                        serviceNews: serviceNews)
+                                        serviceNews: serviceNews,
+                                        fileDirector: fileDirector)
             
             let design = NewsDesign(appDesign: appDesign)
             

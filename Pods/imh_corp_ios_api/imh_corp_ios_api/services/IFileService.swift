@@ -12,7 +12,6 @@ public protocol IFileService : AnyObject {
     
     func downloadFile(url:String,
                       progress:@escaping (Progress)->(),
-                      queue:DispatchQueue,
                       success:@escaping (Data)->(),
                       failed:@escaping (NSError)->())
 }

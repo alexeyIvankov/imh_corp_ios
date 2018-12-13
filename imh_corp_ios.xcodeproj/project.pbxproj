@@ -157,6 +157,13 @@
 		FF7000B621BEA305003E4D84 /* NewsAttachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7000B521BEA305003E4D84 /* NewsAttachCell.swift */; };
 		FF7000B821BEA31B003E4D84 /* INewsAttachCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7000B721BEA31B003E4D84 /* INewsAttachCell.swift */; };
 		FF7000BA21BEA3DC003E4D84 /* NewsAttachCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF7000B921BEA3DC003E4D84 /* NewsAttachCell.xib */; };
+		FF7000BD21BF9179003E4D84 /* IFileDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7000BC21BF9179003E4D84 /* IFileDirector.swift */; };
+		FF7000BF21BF9188003E4D84 /* FileDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7000BE21BF9188003E4D84 /* FileDirector.swift */; };
+		FF7000C221BF91EE003E4D84 /* FileDirectorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7000C121BF91EE003E4D84 /* FileDirectorAssembly.swift */; };
+		FF7000C521BF9588003E4D84 /* IFileDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7000C421BF9588003E4D84 /* IFileDataStorage.swift */; };
+		FF7000C721BF9596003E4D84 /* FileDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7000C621BF9596003E4D84 /* FileDataStorage.swift */; };
+		FF7000CB21BF9600003E4D84 /* FileDiskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7000C921BF9600003E4D84 /* FileDiskService.swift */; };
+		FF7000CC21BF9600003E4D84 /* IFileDiskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7000CA21BF9600003E4D84 /* IFileDiskService.swift */; };
 		FF72AEF32175BFBB002D04DA /* IRootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF12175BFBB002D04DA /* IRootDirector.swift */; };
 		FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF22175BFBB002D04DA /* RootDirector.swift */; };
 		FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF72AEF62175BFF5002D04DA /* LoginDirector.swift */; };
@@ -469,6 +476,13 @@
 		FF7000B521BEA305003E4D84 /* NewsAttachCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAttachCell.swift; sourceTree = "<group>"; };
 		FF7000B721BEA31B003E4D84 /* INewsAttachCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = INewsAttachCell.swift; path = /Users/alexeyivankov/Desktop/work/industrial_metallurgical_holding/imh_corp_ios/imh_corp_ios/news/views/cells/newsAttach/INewsAttachCell.swift; sourceTree = "<absolute>"; };
 		FF7000B921BEA3DC003E4D84 /* NewsAttachCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsAttachCell.xib; sourceTree = "<group>"; };
+		FF7000BC21BF9179003E4D84 /* IFileDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFileDirector.swift; sourceTree = "<group>"; };
+		FF7000BE21BF9188003E4D84 /* FileDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FileDirector.swift; path = /Users/alexeyivankov/Desktop/work/industrial_metallurgical_holding/imh_corp_ios/imh_corp_ios/files/director/FileDirector.swift; sourceTree = "<absolute>"; };
+		FF7000C121BF91EE003E4D84 /* FileDirectorAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDirectorAssembly.swift; sourceTree = "<group>"; };
+		FF7000C421BF9588003E4D84 /* IFileDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFileDataStorage.swift; sourceTree = "<group>"; };
+		FF7000C621BF9596003E4D84 /* FileDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDataStorage.swift; sourceTree = "<group>"; };
+		FF7000C921BF9600003E4D84 /* FileDiskService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDiskService.swift; sourceTree = "<group>"; };
+		FF7000CA21BF9600003E4D84 /* IFileDiskService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IFileDiskService.swift; sourceTree = "<group>"; };
 		FF72AEF12175BFBB002D04DA /* IRootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF22175BFBB002D04DA /* RootDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootDirector.swift; sourceTree = "<group>"; };
 		FF72AEF62175BFF5002D04DA /* LoginDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDirector.swift; sourceTree = "<group>"; };
@@ -1465,6 +1479,10 @@
 		FF70009F21B92CF5003E4D84 /* files */ = {
 			isa = PBXGroup;
 			children = (
+				FF7000C821BF9600003E4D84 /* diskService */,
+				FF7000C321BF9568003E4D84 /* dataStorage */,
+				FF7000C021BF91D5003E4D84 /* assembly */,
+				FF7000BB21BF911A003E4D84 /* director */,
 				FF7000A021B92CF5003E4D84 /* models */,
 			);
 			path = files;
@@ -1515,6 +1533,41 @@
 				FF7000B121BEA24E003E4D84 /* NewsCell.xib */,
 			);
 			path = news;
+			sourceTree = "<group>";
+		};
+		FF7000BB21BF911A003E4D84 /* director */ = {
+			isa = PBXGroup;
+			children = (
+				FF7000BE21BF9188003E4D84 /* FileDirector.swift */,
+				FF7000BC21BF9179003E4D84 /* IFileDirector.swift */,
+			);
+			path = director;
+			sourceTree = "<group>";
+		};
+		FF7000C021BF91D5003E4D84 /* assembly */ = {
+			isa = PBXGroup;
+			children = (
+				FF7000C121BF91EE003E4D84 /* FileDirectorAssembly.swift */,
+			);
+			path = assembly;
+			sourceTree = "<group>";
+		};
+		FF7000C321BF9568003E4D84 /* dataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				FF7000C421BF9588003E4D84 /* IFileDataStorage.swift */,
+				FF7000C621BF9596003E4D84 /* FileDataStorage.swift */,
+			);
+			path = dataStorage;
+			sourceTree = "<group>";
+		};
+		FF7000C821BF9600003E4D84 /* diskService */ = {
+			isa = PBXGroup;
+			children = (
+				FF7000C921BF9600003E4D84 /* FileDiskService.swift */,
+				FF7000CA21BF9600003E4D84 /* IFileDiskService.swift */,
+			);
+			path = diskService;
 			sourceTree = "<group>";
 		};
 		FF72AEEF2170AF8D002D04DA /* welcome */ = {
@@ -2668,6 +2721,7 @@
 				FF56146E21809EE300DCCE1B /* INewsDirector.swift in Sources */,
 				FF3897D82178C3F5005CE562 /* JHAnimationChainLink.m in Sources */,
 				FF5615482181CBDD00DCCE1B /* IError.swift in Sources */,
+				FF7000CC21BF9600003E4D84 /* IFileDiskService.swift in Sources */,
 				FFAB4F12216392D400AE82EA /* Haptics.swift in Sources */,
 				FF6FAFFC21AD5C7500C818BC /* INewsPresenter.swift in Sources */,
 				FF72AF142175CEE1002D04DA /* IWelcomeDirector.swift in Sources */,
@@ -2711,6 +2765,7 @@
 				FF6FB01521AD691800C818BC /* NewsDetailsDesign.swift in Sources */,
 				FFAB4F8D2163960900AE82EA /* RootCake.swift in Sources */,
 				FF72AF7F217761B2002D04DA /* UIImage+RoundedCorner.m in Sources */,
+				FF7000C221BF91EE003E4D84 /* FileDirectorAssembly.swift in Sources */,
 				FF4335C221A7D7D400F0F5F0 /* TransitionSubmitButton.swift in Sources */,
 				FF561428217DD3DC00DCCE1B /* BackgroundTimer.swift in Sources */,
 				FF5614C52180A40900DCCE1B /* IMoreCake.swift in Sources */,
@@ -2718,6 +2773,7 @@
 				FFAB4F632163959700AE82EA /* AuthCakeAssembly.swift in Sources */,
 				FF5614C32180A40900DCCE1B /* MoreCakeAssembly.swift in Sources */,
 				FF72AF3A2175E35C002D04DA /* FSPageViewTransformer.swift in Sources */,
+				FF7000C521BF9588003E4D84 /* IFileDataStorage.swift in Sources */,
 				FF3897EF2178C462005CE562 /* DKChainableAnimationKit+Bezier.swift in Sources */,
 				FF72AF4B21761B09002D04DA /* IWelcomePage.swift in Sources */,
 				FFAB4F872163960900AE82EA /* RootCakeAssebly.swift in Sources */,
@@ -2766,6 +2822,7 @@
 				FF72AF122175CECF002D04DA /* WelcomeController.swift in Sources */,
 				FFAB4F23216392D400AE82EA /* DispatchQueue+After.swift in Sources */,
 				FF72AF81217761B2002D04DA /* String+NSMutableAttributedString.swift in Sources */,
+				FF7000BF21BF9188003E4D84 /* FileDirector.swift in Sources */,
 				FFAB4F3A2163936B00AE82EA /* AppDelegate.swift in Sources */,
 				FFAB4F742163959700AE82EA /* AuthCake.swift in Sources */,
 				FF3897D72178C3F5005CE562 /* JHKeyframeAnimation.m in Sources */,
@@ -2802,9 +2859,12 @@
 				FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */,
 				FF4335CD21ABF85A00F0F5F0 /* ILimonadeItem.swift in Sources */,
 				FFF9533F21A2A4D900612C10 /* ContainerTemplate.swift in Sources */,
+				FF7000C721BF9596003E4D84 /* FileDataStorage.swift in Sources */,
 				FF43359A21A6A8F000F0F5F0 /* FetchOptions.swift in Sources */,
+				FF7000CB21BF9600003E4D84 /* FileDiskService.swift in Sources */,
 				FF3897ED2178C462005CE562 /* DKKeyframeAnimationFunction.swift in Sources */,
 				FF70009021B51E09003E4D84 /* Auth.swift in Sources */,
+				FF7000BD21BF9179003E4D84 /* IFileDirector.swift in Sources */,
 				FF56144B21805B4600DCCE1B /* ConfirmationRouter.swift in Sources */,
 				FF5614A82180A2C200DCCE1B /* EventsController.swift in Sources */,
 				FF3897F22178C462005CE562 /* DKKeyFrameAnimation.swift in Sources */,

@@ -11,12 +11,7 @@ import Alamofire
 
 public protocol IRequestExecutor {
     
-    func executeRPCRequest(url:URLConvertible,
-                           method:String,
-                           params:[String: Any],
-                           success:@escaping (RPCResponce)->(),
-                           failed: @escaping (NSError)->())
-    
-    func setHandleAllResponce(handler:@escaping (RPCResponce)->())
-    func setHandleAllError(handler:@escaping (NSError)->())
+    func createRPCRequest(url:URLConvertible,
+                          method:String,
+                          params:[String: Any]) -> DataRequest
 }
