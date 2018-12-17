@@ -22,5 +22,8 @@
 	<string>LazyParametersManagerAssembly</string>
 	<string>NewsDetailsCakeAssembly</string>
 	<string>FileDirectorAssembly</string>
+	<string>ListGroupsNewsCakeAssembly</string>
+	<string>ServiceNewsAssembly</string>
+	<string>ServiceGroupsAssembly</string>
 </array>
 </plist>

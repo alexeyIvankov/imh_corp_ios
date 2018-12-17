@@ -16,9 +16,10 @@ protocol INewsDataStorage : AnyObject {
     
     
     func getNews(accountId:String,
-                    startDate:Int?,
-                    endDate:Int?,
-                    count:Int,
-                    completion:@escaping ([INews])->())
+                 startDate:Int?,
+                 endDate:Int?,
+                 count:Int,
+                 completion:@escaping ([INews])->())
     
+    func getIdListGroupsOff(accountId:String) -> [String]
 }

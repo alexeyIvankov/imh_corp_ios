@@ -28,6 +28,11 @@ class NewsRouter : INewsRouter{
         newsDetailsController.news = news
         self.owner?.navigationController?.pushViewController(newsDetailsController, animated: true)
     }
+    
+    func handleTouchFilterButton(){
+        let navigationControllerFilter:UINavigationController = UIStoryboard.load(type: UIStoryboard.TypeSB.news).load(id:"NavigationListGroupsNewsController")!
+        self.owner?.navigationController?.present(navigationControllerFilter, animated: true, completion: nil)
+    }
 
     func showLoader(){
        self.loaderService.showIfNeed()

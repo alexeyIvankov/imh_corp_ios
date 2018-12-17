@@ -10,6 +10,6 @@ import Foundation
 
 public protocol ISettings {
  
-    func getAvailablesGroups() -> [INewsGroup]
+    func getIdListHidenNewsGroups() -> [String]
     func getAccount() -> IAccount
 }

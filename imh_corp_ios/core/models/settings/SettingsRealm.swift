@@ -12,10 +12,10 @@ import RealmSwift
 class SettingsRealm : Object, ISettings {
     
     @objc dynamic var account:AccountRealm!
-    var availableGroups = List<NewsGroupRealm>()
+    var idListHidenNewsGroups = List<String>()
     
-    func getAvailablesGroups() -> [INewsGroup]{
-        return self.availableGroups.convertToArray()
+    func getIdListHidenNewsGroups() -> [String]{
+        return self.idListHidenNewsGroups.convertToArray()
     }
     
     func getAccount() -> IAccount{

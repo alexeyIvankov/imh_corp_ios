@@ -21,8 +21,11 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
     
     //MARK:
     private var newsList:[INews] = [INews]()
+    private var listIdGroupOff:[String] = [String]()
     private let countMessagesFromNewsBatch = 50
     private let queueUpdateTableDataSource = DispatchQueue(label: "NewsController.queue")
+    
+    private var actionFilterButton:ActionHandler?
     
     //MARK: Life cycle
     override func viewDidLoad() {
@@ -32,15 +35,48 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
         
         self.configureTableViewAndComponents()
         self.navigationItem.title = "Новости"
+        
+        self.actionFilterButton = self.addRightBarRuttonToNavigationBar(image: UIImage(named: "filter"), handler: { [weak self] in
+        
+            self?.cake.router.handleTouchFilterButton()
+        })
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tryShowFirstBatchNewsPast(days: 15, countMessages: 50)
+        
+        self.selectBehaviorShowNews()
+        self.loadGroupsNews()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+    }
+    
+    private func selectBehaviorShowNews(){
+        
+        let listIdGroupOff = self.cake.director.serviceGroups.getIdListGroupsOff()
+        
+        if listIdGroupOff != self.listIdGroupOff{
+            self.listIdGroupOff = listIdGroupOff
+            reloadAllNews()
+        }
+        else {
+            self.listIdGroupOff = listIdGroupOff
+            updateFirstBatchNews()
+        }
+    }
+    
+    
+    private func reloadAllNews(){
+        self.newsList.removeAll()
+        self.tableView.reloadData()
+        self.tryShowFirstBatchNewsPast(days: 15, countMessages: 50)
+    }
+    
+    private func updateFirstBatchNews(){
+         self.tryShowFirstBatchNewsPast(days: 15, countMessages: 50)
     }
     
     private func configureTableViewAndComponents(){
@@ -51,6 +87,13 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
         
         self.tableView.register(UINib(nibName:"NewsCell", bundle:nil), forCellReuseIdentifier: "NewsCell");
         self.tableView.register(UINib(nibName:"NewsAttachCell", bundle:nil), forCellReuseIdentifier: "NewsAttachCell");
+    }
+    
+    //MARK: - load groups
+    private func loadGroupsNews(){
+        self.cake.director.serviceGroups.updateGroups { (error) in
+            print(error)
+        }
     }
     
     //MARK: - load news
@@ -108,10 +151,11 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
         self.queueUpdateTableDataSource.async {
             
             var copyNewsList = Array(self.newsList)
+             var isAddededNews = false
             
             for currentNews in news{
              
-                if self.newsList.contains(where: { (news) -> Bool in
+                if copyNewsList.contains(where: { (news) -> Bool in
                     if currentNews.newsId == news.newsId{
                         return true
                     }
@@ -119,7 +163,11 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
                         return false
                     }
                 }) == false{
-                    copyNewsList.append(currentNews)
+                   
+                    if self.listIdGroupOff.contains(currentNews.groupId) == false{
+                         isAddededNews = true
+                        copyNewsList.append(currentNews)
+                    }
                 }
             }
             
@@ -134,10 +182,11 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
             }
             
             
-            
             DispatchQueue.main.async {
-                self.newsList = sortedList
-                self.tableView.reloadData()
+                if isAddededNews {
+                    self.newsList = sortedList
+                    self.tableView.reloadData()
+                }
             }
         }
     }

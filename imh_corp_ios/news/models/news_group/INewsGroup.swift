@@ -13,6 +13,6 @@ public protocol INewsGroup {
     var name:String! { get }
     var groupId:String! { get }
     var accountId:String! { get }
-    var descript:String! { get }
+    var descript:String? { get }
 }
 

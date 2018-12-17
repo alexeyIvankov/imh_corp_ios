@@ -13,7 +13,7 @@ class NewsGroup : INewsGroup {
     var name: String!
     var groupId: String!
     var accountId:String!
-    var descript: String!
+    var descript: String?
     
     static func createGroups(groups:[INewsGroup]) -> [INewsGroup]{
         var container = [INewsGroup]()

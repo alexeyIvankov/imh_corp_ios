@@ -11,5 +11,7 @@ import Foundation
 protocol INewsDirector : AnyObject {
     
     var serviceNews:IServiceNews { get }
+    var serviceGroups:IServiceGroups { get }
     var fileDirector:IFileDirector { get }
+    
 }

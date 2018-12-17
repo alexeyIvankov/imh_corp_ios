@@ -1,19 +1,18 @@
 //
-//  ILoginRouter.swift
-//  IMH_BI
+//  INewsDetailsRouter.swift
+//  imh_corp_ios
 //
-//  Created by Alexey Ivankov on 24.08.2018.
+//  Created by Alexey Ivankov on 27/11/2018.
 //  Copyright © 2018 Industrial Metallurgical Holding. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-protocol INewsRouter : IRouter {
+protocol IListGroupsNewsRouter : IRouter {
     func setOwnwer<T:UIViewController>(ownwer:T)
     
-    func handleSelect(news:INews)
-    func handleTouchFilterButton()
+    func handleTouchDoneButton()
     
     func showLoader()
     func hideLoader()

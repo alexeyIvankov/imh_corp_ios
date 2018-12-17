@@ -1,34 +1,28 @@
 //
-//  LoginDirector.swift
-//  IMH_BI
+//  NewsDetailsDirector.swift
+//  imh_corp_ios
 //
-//  Created by Alexey Ivankov on 24.08.2018.
+//  Created by Alexey Ivankov on 27/11/2018.
 //  Copyright © 2018 Industrial Metallurgical Holding. All rights reserved.
 //
 
 import Foundation
 
-class NewsDirector : INewsDirector {
-
+class ListGroupsNewsDirector: IListGroupsNewsDirector{
+    
     var network:INetwork
     var dataStorage:INewsDataStorage
     var sessionService:ISessionService
-    var serviceNews:IServiceNews
     var serviceGroups:IServiceGroups
-    var fileDirector:IFileDirector
     
     required init( network:INetwork,
                    dataStorage:INewsDataStorage,
                    sessionService:ISessionService,
-                   serviceGroups:IServiceGroups,
-                   serviceNews:IServiceNews,
-                   fileDirector:IFileDirector){
+                   serviceGroups:IServiceGroups){
         
         self.network = network
         self.dataStorage = dataStorage
         self.sessionService = sessionService
-        self.serviceNews = serviceNews
         self.serviceGroups = serviceGroups
-        self.fileDirector = fileDirector
     }
 }

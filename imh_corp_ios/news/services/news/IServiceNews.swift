@@ -13,7 +13,7 @@ public enum ServiceNewsState {
     case ready
 }
 
-public protocol IServiceNews{
+public protocol IServiceNews : AnyObject{
     
     func getState() -> ServiceNewsState
     

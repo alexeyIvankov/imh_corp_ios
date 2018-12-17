@@ -10,9 +10,13 @@ import Foundation
 import RealmSwift
 
 class NewsGroupRealm: Object, INewsGroup {
-
+   
     @objc dynamic var name:String! = nil
     @objc dynamic var groupId:String! = nil
     @objc dynamic var accountId:String! = nil
-    @objc dynamic var descript:String! = nil
+    @objc dynamic var descript:String? = nil
+    
+    override static func primaryKey() -> String? {
+        return "groupId"
+    }
 }

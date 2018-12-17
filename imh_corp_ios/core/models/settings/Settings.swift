@@ -10,17 +10,17 @@ import Foundation
 
 
 class Settings : ISettings {
-    
+  
     var account:IAccount!
-    var availableGroips:[INewsGroup] = []
+    var idListHidenNewsGroups:[String] = []
     
     required init(settings:ISettings) {
         self.account = settings.getAccount()
-        self.availableGroips = settings.getAvailablesGroups()
+        self.idListHidenNewsGroups = settings.getIdListHidenNewsGroups()
     }
     
-    func getAvailablesGroups() -> [INewsGroup] {
-        return self.availableGroips
+    func getIdListHidenNewsGroups() -> [String] {
+        return self.idListHidenNewsGroups
     }
     
     func getAccount() -> IAccount {

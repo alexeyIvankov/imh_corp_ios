@@ -17,6 +17,12 @@ class NewsDataStorage : INewsDataStorage{
         self.db = db
     }
     
+    func getIdListGroupsOff(accountId:String) -> [String]{
+        let account:AccountRealm = self.db.synchFetch(options: FetchOptionsPredicate(predicate: NSPredicate(format: "id='\(accountId)'"), sortBy: nil)).first!
+        let settings:SettingsRealm = account.settings
+        return settings.getIdListHidenNewsGroups()
+    }
+    
     func createOrUpdateNews(accountId:String,
                             newsJson:[Any],
                             completion:@escaping ()->()){

@@ -10,6 +10,53 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="7un-op-U3e">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationListGroupsNewsController" id="iPk-bw-eWm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Aep-fx-IUY">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QQT-Tc-bIq" kind="relationship" relationship="rootViewController" id="hUz-EM-hsd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DJC-7t-maa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="17" y="-884"/>
+        </scene>
+        <!--List Groups News Controller-->
+        <scene sceneID="4OV-4n-yFo">
+            <objects>
+                <viewController storyboardIdentifier="ListGroupsNewsController" id="QQT-Tc-bIq" customClass="ListGroupsNewsController" customModule="imh_corp_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QR1-lG-8BH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="unD-HR-wYh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0i7-UA-5AI" firstAttribute="trailing" secondItem="unD-HR-wYh" secondAttribute="trailing" id="6Ld-VD-cpU"/>
+                            <constraint firstItem="0i7-UA-5AI" firstAttribute="bottom" secondItem="unD-HR-wYh" secondAttribute="bottom" id="Msu-fO-JGG"/>
+                            <constraint firstItem="unD-HR-wYh" firstAttribute="top" secondItem="0i7-UA-5AI" secondAttribute="top" id="Urz-cV-J8x"/>
+                            <constraint firstItem="unD-HR-wYh" firstAttribute="leading" secondItem="0i7-UA-5AI" secondAttribute="leading" id="cEQ-pa-CG9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0i7-UA-5AI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="F8V-EO-LDJ"/>
+                    <connections>
+                        <outlet property="tableView" destination="unD-HR-wYh" id="hNA-CX-FJ7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sHy-3X-zJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1164" y="-883"/>
+        </scene>
         <!--News Controller-->
         <scene sceneID="Jt6-4o-t3N">
             <objects>
