@@ -8,14 +8,14 @@
 
 import Foundation
 
-public class StateType<Type:Equatable>: Equatable {
+public class StateTypeWrapper<Type:Equatable>: Equatable {
  
     let type:Type
     required public init(type:Type) {
         self.type = type
     }
 
-    public static func ==(lhs: StateType<Type>, rhs: StateType<Type>) -> Bool {
+    public static func ==(lhs: StateTypeWrapper<Type>, rhs: StateTypeWrapper<Type>) -> Bool {
         return lhs.type == rhs.type
     }
 }

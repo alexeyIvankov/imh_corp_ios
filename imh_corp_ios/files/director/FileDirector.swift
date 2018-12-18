@@ -45,7 +45,55 @@ class FileDirector : IFileDirector {
            
             case .newsAttach(let newsId, let fileId): do {
                 
+                let path = self.generatePath(typeFile: typeFile, accountId: accountId)
+                let fileData = self.getFile(path: path)
+                
+                if fileData != nil{
+                    success(fileData!, operationId)
                 }
+                else {
+                    
+                    self.dataStorage.getNewsAttach(accountId: accountId, newsId: newsId, fileId: fileId, completion: { (file) in
+                        
+                        guard file != nil else {
+                            return failed(generateError(message: "file not found"), operationId)
+                        }
+                        
+                        guard file!.url != nil else {
+                            return failed(generateError(message: "file url not found"), operationId)
+                        }
+                        
+                        DispatchQueue.main.async {
+                            startLoad?()
+                        }
+                        
+                       
+                         self.network.apiDirector.socialNetworkModule.attach(accessToken: accessToken, networkType: "yammer", attachUrl: file!.url!, success: { (data) in
+                            
+                            DispatchQueue.global().async {
+                                let _ = self.diskService.saveFile(path: path, data: data as NSData)
+                                
+                                DispatchQueue.main.async {
+                                    endLoad?()
+                                    success(data, operationId)
+                                }
+                            }
+                            
+                        }, failed: { (error) in
+                            
+                            DispatchQueue.main.async {
+                                endLoad?()
+                                failed(error, operationId)
+                            }
+                        })
+                    })
+                }
+            }
+                
+                
+                
+                
+                
                 
             case .newsPreview(let newsId, let fileId): do {
                     let path = self.generatePath(typeFile: typeFile, accountId: accountId)
@@ -94,6 +142,7 @@ class FileDirector : IFileDirector {
             }
         }
     }
+    
     
     private func generatePath(typeFile:TypeFileRequest,
                               accountId:String) -> String{

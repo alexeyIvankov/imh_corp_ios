@@ -18,6 +18,7 @@ public class NewsDetailsCakeAssembly : AssemblyProviderImpl {
             
             let appDesign:IAppDesign = injector.tryInject()!
             let loaderService:ILoaderService = injector.tryInject()!
+            let fileDirecor:IFileDirector = injector.tryInject()!
 
             let network:INetwork = injector.tryInject()!
             let db:IDataBase = injector.tryInject()!
@@ -26,7 +27,11 @@ public class NewsDetailsCakeAssembly : AssemblyProviderImpl {
 
 
             let router = NewsDetailsRouter(loaderService: loaderService)
-            let director = NewsDetailsDirector(network: network, dataStorage: dataStorage, sessionService:sessionService)
+            let director = NewsDetailsDirector(network: network,
+                                               dataStorage: dataStorage,
+                                               sessionService:sessionService,
+                                               fileDirector: fileDirecor)
+            
             let design = NewsDetailsDesign(appDesign: appDesign)
 
             let cake:INewsDetailsCake = NewsDetailsCake(router: router,

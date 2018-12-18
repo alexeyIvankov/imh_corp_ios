@@ -18,9 +18,24 @@ extension UIViewController{
         return self.navigationController?.addRightBarRutton(title: title, style: style, handler: handler)
     }
     
+   
     func addRightBarRuttonToNavigationBar(image:UIImage?,
                            style: UIBarButtonItem.Style = .plain,
                            handler: @escaping()->()) -> ActionHandler?{
         return self.navigationController?.addRightBarRutton(image: image, style: style, handler: handler)
+    }
+    
+    
+    func addLeftBarRuttonToNavigationBar(title:String?,
+                                         style: UIBarButtonItem.Style = .plain,
+                                         handler: @escaping()->()) -> ActionHandler?{
+        
+        return self.navigationController?.addLeftBarRutton(title: title, style: style, handler: handler)
+    }
+    
+    func addLeftBarRuttonToNavigationBar(image:UIImage?,
+                                         style: UIBarButtonItem.Style = .plain,
+                                         handler: @escaping()->()) -> ActionHandler?{
+        return self.navigationController?.addLeftBarRutton(image: image, style: style, handler: handler)
     }
 }

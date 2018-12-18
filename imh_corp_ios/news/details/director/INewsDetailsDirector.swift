@@ -10,4 +10,5 @@ import Foundation
 
 protocol INewsDetailsDirector : AnyObject {
     
+    var fileDirector:IFileDirector { get }
 }

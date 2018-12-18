@@ -19,9 +19,11 @@ class ListGroupsNewsController : UIViewController, UITableViewDelegate, UITableV
     
     //MARK:
     private var actionDoneButton:ActionHandler?
+    private var actionSelectButton:ActionHandler?
     private var groupList:[INewsGroup] = [INewsGroup]()
     private var idListHidenGroups:[String] = [String]()
     private let queueUpdateTableDataSource = DispatchQueue(label: "NewsController.queue")
+    private var stateSelectAllGroups = false
     
     //MARK: Life cycle
     override func viewDidLoad() {
@@ -30,19 +32,7 @@ class ListGroupsNewsController : UIViewController, UITableViewDelegate, UITableV
         self.cake.router.setOwnwer(ownwer: self)
         self.cake.design.apply(vc: self)
         self.configureTableViewAndComponents()
-        
-        self.actionDoneButton = self.addRightBarRuttonToNavigationBar(title: "Готово",
-                                                                      handler: { [weak self] in
-                                                                        
-                                                                        let strongSelf = self
-                                                                        
-                                                                        if strongSelf != nil{
-                                                                           strongSelf!.cake.director.serviceGroups.saveIdListGroupsOff(idList: strongSelf!.idListHidenGroups)
-                                                                            strongSelf!.cake.router.handleTouchDoneButton()
-                                                                        }
-                                                                        
-                                                                        
-        })
+        self.createAndHandleBarButtons()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,15 +45,54 @@ class ListGroupsNewsController : UIViewController, UITableViewDelegate, UITableV
         super.viewWillDisappear(animated)
     }
     
+    //MARK: Config ui components
     private func configureTableViewAndComponents(){
         self.tableView.estimatedRowHeight = UIScreen.main.bounds.size.height
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.contentInset = UIEdgeInsets(top: -36, left: 0, bottom: 0, right: 0);
         
         self.tableView.register(UINib(nibName:"ListGroupViewCell", bundle:nil), forCellReuseIdentifier: "ListGroupViewCell");
     }
     
+    private func createAndHandleBarButtons(){
+        
+        self.actionDoneButton =
+            self.addRightBarRuttonToNavigationBar(title: "Готово",
+                                                  handler: { [weak self] in
+                                                    
+                                                    let strongSelf = self
+                                                    
+                                                    if strongSelf != nil{
+                                                        strongSelf!.cake.director.serviceGroups.saveIdListGroupsOff(idList: strongSelf!.idListHidenGroups)
+                                                        strongSelf!.cake.router.handleTouchDoneButton()
+                                                    }
+                                                    
+            })
+        
+        self.actionSelectButton =
+            self.addLeftBarRuttonToNavigationBar(title: "Снять/Выбрать все",
+                                                 handler: { [weak self] in
+                                                    
+                                                    let strongSelf = self
+                                                    
+                                                    if strongSelf != nil{
+                                                        
+                                                        if strongSelf!.stateSelectAllGroups == true{
+                                                            strongSelf!.deselectAllGroups()
+                                                        }
+                                                        else {
+                                                            strongSelf!.selectAllGroups()
+                                                        }
+                                                        strongSelf!.stateSelectAllGroups = !strongSelf!.stateSelectAllGroups
+                                                        
+                                                    }
+            })
+        
+    }
+    
+    //MARK: data source and load data
     private func tryShowGroups(){
         
         self.cake
@@ -121,6 +150,21 @@ class ListGroupsNewsController : UIViewController, UITableViewDelegate, UITableV
                 }
             }
         }
+    }
+    
+    //MARK: select/deselect groups
+    private func selectAllGroups(){
+        for group in self.groupList{
+            if self.idListHidenGroups.contains(group.groupId) == false{
+                self.idListHidenGroups.append(group.groupId)
+            }
+        }
+        self.tableView.reloadData()
+    }
+    
+    private func deselectAllGroups(){
+        self.idListHidenGroups.removeAll()
+        self.tableView.reloadData()
     }
     
     //MARK: UITableViewDataSource

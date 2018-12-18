@@ -8,14 +8,14 @@
 
 import Foundation
 
-public class StateTemplate<Type:Equatable> : Equatable {
+public class State<Type:Equatable> : Equatable {
     
-    var type: StateType<Type>
+    var type: StateTypeWrapper<Type>
     private var stateBody:((AnyObject?)->())?
 
     
     required public init(type:Type){
-        self.type = StateType<Type>(type:type)
+        self.type = StateTypeWrapper<Type>(type:type)
     }
     
     public func set(body:@escaping (AnyObject?)->()){
@@ -27,7 +27,7 @@ public class StateTemplate<Type:Equatable> : Equatable {
     }
     
     
-    public static func ==(lhs: StateTemplate<Type>, rhs: StateTemplate<Type>) -> Bool {
+    public static func ==(lhs: State<Type>, rhs: State<Type>) -> Bool {
         return lhs.type  == rhs.type
     }
 }

@@ -43,12 +43,52 @@ extension UINavigationController {
         return handler
     }
     
+    func addLeftBarRutton(title:String?,
+                          style: UIBarButtonItem.Style,
+                          handler: @escaping()->()) -> ActionHandler?{
+        
+        let handler = ActionHandler(handler: handler)
+        
+        let button = UIBarButtonItem(title: title,
+                                     style: style,
+                                     target: handler,
+                                     action: #selector(handler.hanbleBarButtonAction))
+        
+        self.addLeftBarButton(button: button)
+        
+        return handler
+    }
+    
+    func addLeftBarRutton(image:UIImage?,
+                          style: UIBarButtonItem.Style,
+                          handler: @escaping()->()) -> ActionHandler?{
+        
+        let handler = ActionHandler(handler: handler)
+        
+        let button = UIBarButtonItem(image: image,
+                                     style: style,
+                                     target: handler,
+                                     action: #selector(handler.hanbleBarButtonAction))
+        
+        self.addLeftBarButton(button: button)
+        
+        return handler
+    }
+    
     private func addRightBarButton(button:UIBarButtonItem){
         
         if self.navigationBar.topItem?.rightBarButtonItems == nil{
             self.navigationBar.topItem?.rightBarButtonItems  = []
         }
          self.navigationBar.topItem?.rightBarButtonItems?.append(button)
+    }
+    
+    private func addLeftBarButton(button:UIBarButtonItem){
+        
+        if self.navigationBar.topItem?.leftBarButtonItems == nil{
+            self.navigationBar.topItem?.leftBarButtonItems  = []
+        }
+        self.navigationBar.topItem?.leftBarButtonItems?.append(button)
     }
 }
 

@@ -42,7 +42,6 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
         })
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -54,6 +53,20 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
         super.viewWillDisappear(animated)
     }
     
+    
+    //MARK: - config ui components
+    private func configureTableViewAndComponents(){
+        self.tableView.estimatedRowHeight = UIScreen.main.bounds.size.height
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.contentInset = UIEdgeInsets(top: -36, left: 0, bottom: 0, right: 0);
+        
+        self.tableView.register(UINib(nibName:"NewsCell", bundle:nil), forCellReuseIdentifier: "NewsCell");
+        self.tableView.register(UINib(nibName:"NewsAttachCell", bundle:nil), forCellReuseIdentifier: "NewsAttachCell");
+    }
+    
+    //MARK: Load Data
     private func selectBehaviorShowNews(){
         
         let listIdGroupOff = self.cake.director.serviceGroups.getIdListGroupsOff()
@@ -68,6 +81,15 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
         }
     }
     
+    private func updateFirstBatchNews(){
+        self.tryShowFirstBatchNewsPast(days: 15, countMessages: 50)
+    }
+    
+    private func loadGroupsNews(){
+        self.cake.director.serviceGroups.updateGroups { (error) in
+            print(error)
+        }
+    }
     
     private func reloadAllNews(){
         self.newsList.removeAll()
@@ -75,28 +97,6 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
         self.tryShowFirstBatchNewsPast(days: 15, countMessages: 50)
     }
     
-    private func updateFirstBatchNews(){
-         self.tryShowFirstBatchNewsPast(days: 15, countMessages: 50)
-    }
-    
-    private func configureTableViewAndComponents(){
-        self.tableView.estimatedRowHeight = UIScreen.main.bounds.size.height
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        
-        self.tableView.register(UINib(nibName:"NewsCell", bundle:nil), forCellReuseIdentifier: "NewsCell");
-        self.tableView.register(UINib(nibName:"NewsAttachCell", bundle:nil), forCellReuseIdentifier: "NewsAttachCell");
-    }
-    
-    //MARK: - load groups
-    private func loadGroupsNews(){
-        self.cake.director.serviceGroups.updateGroups { (error) in
-            print(error)
-        }
-    }
-    
-    //MARK: - load news
     private func tryShowFirstBatchNewsPast(days:Int, countMessages:Int){
         
         let today = Date()

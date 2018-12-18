@@ -17,6 +17,7 @@ def default_pods
     pod 'RealmSwift'
     pod 'BiometricAuthentication'
     pod 'KeychainSwift', '~> 11.0'
+    pod 'ImageSlideshow', '~> 1.6'
 end
 
 target :imh_corp_ios do

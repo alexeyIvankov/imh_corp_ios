@@ -37,7 +37,7 @@ class ConfirmationController : UIViewController {
     @IBOutlet weak var bottomConstraintViewContent: NSLayoutConstraint!
     
     //MARK: State machine
-    lazy public var stateMachineResendCode:StateEngineTemplate<ResendCodeState> = buildStateMachine()
+    lazy public var stateMachineResendCode:StateEngine<ResendCodeState> = buildStateMachine()
     
     //MARK: Keyboard handler
     private var keyboardHandler:KeyboardHandler?
@@ -67,7 +67,7 @@ class ConfirmationController : UIViewController {
         self.keyboardHandle()
         self.subscribeInputFieldsToEventTextChange()
         self.textFieldConfirmation.becomeFirstResponder()
-        self.stateMachineResendCode.change(stateType: StateType(type: ResendCodeState.lock))
+        self.stateMachineResendCode.change(stateType: StateTypeWrapper(type: ResendCodeState.lock))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -76,7 +76,7 @@ class ConfirmationController : UIViewController {
         self.view.endEditing(true)
         self.keyboardHandler = nil
         self.unSubscribeInputFieldsToEventTextChange()
-        self.stateMachineResendCode.change(stateType: StateType(type: ResendCodeState.ready))
+        self.stateMachineResendCode.change(stateType: StateTypeWrapper(type: ResendCodeState.ready))
     }
     
   
@@ -87,7 +87,7 @@ class ConfirmationController : UIViewController {
     
     @IBAction func touchResendCodeButton(){
          self.tryVerificationPhone()
-         self.stateMachineResendCode.change(stateType: StateType(type: ResendCodeState.lock))
+         self.stateMachineResendCode.change(stateType: StateTypeWrapper(type: ResendCodeState.lock))
     }
     
     private func tryVerificationPhone(){
@@ -124,7 +124,7 @@ class ConfirmationController : UIViewController {
             let deviceId  = UIDevice.current.identifierForVendor?.uuidString {
             
             self.startAnimationSendCodeButton()
-            self.stateMachineResendCode.change(stateType: StateType(type: ResendCodeState.hiden))
+            self.stateMachineResendCode.change(stateType: StateTypeWrapper(type: ResendCodeState.hiden))
             
             self.authCake.authDirector.authorization(phone: phone,
                                                      countyCode: countryCode,
@@ -143,7 +143,7 @@ class ConfirmationController : UIViewController {
             }) {[unowned self] (error) in
                 
                 self.stopAnimationSendCodeButtonWithDelay()
-                self.stateMachineResendCode.change(stateType: StateType(type: ResendCodeState.ready))
+                self.stateMachineResendCode.change(stateType: StateTypeWrapper(type: ResendCodeState.ready))
                 self.showAlertInfo(message: error.message())
             }
         }
@@ -162,9 +162,9 @@ class ConfirmationController : UIViewController {
     
     
      //MARK: States
-    func buildStateMachine() -> StateEngineTemplate<ResendCodeState> {
+    func buildStateMachine() -> StateEngine<ResendCodeState> {
         
-        let stateReady = StateTemplate<ResendCodeState>(type: ResendCodeState.ready)
+        let stateReady = State<ResendCodeState>(type: ResendCodeState.ready)
         
         stateReady.set {[unowned self] (data) in
             self.timerResend.stop()
@@ -173,14 +173,14 @@ class ConfirmationController : UIViewController {
             self.viewContainerResendCode.isHidden = false
         }
         
-        let stateHiden = StateTemplate<ResendCodeState>(type: ResendCodeState.hiden)
+        let stateHiden = State<ResendCodeState>(type: ResendCodeState.hiden)
         
         stateHiden.set {[unowned self] (data) in
             self.timerResend.stop()
             self.viewContainerResendCode.isHidden = true
         }
         
-        let stateLock = StateTemplate<ResendCodeState>(type: ResendCodeState.lock)
+        let stateLock = State<ResendCodeState>(type: ResendCodeState.lock)
         
         stateLock.set {[unowned self] (data) in
             self.viewContainerResendCode.isHidden = false
@@ -195,12 +195,12 @@ class ConfirmationController : UIViewController {
             }, completion: { [unowned self] in
                 
                 DispatchQueue.main.async {
-                    self.stateMachineResendCode.change(stateType: StateType(type: ResendCodeState.ready))
+                    self.stateMachineResendCode.change(stateType: StateTypeWrapper(type: ResendCodeState.ready))
                 }
             })
         }
     
-        return StateEngineTemplate<ResendCodeState>(states:[stateReady, stateLock, stateHiden], currentState: stateLock )
+        return StateEngine<ResendCodeState>(states:[stateReady, stateLock, stateHiden], currentState: stateLock )
     }
     
     
