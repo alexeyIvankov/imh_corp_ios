@@ -53,7 +53,7 @@ class LoginController : UIViewController, WKNavigationDelegate{
         self.cake.router.setOwnwer(ownwer: self)
         self.cake.design.apply(vc: self)
         self.configureStates()
-        self.selectStateValid()
+        self.checkStateValid()
         
         self.navigationItem.title = " "
     }
@@ -91,9 +91,11 @@ class LoginController : UIViewController, WKNavigationDelegate{
             let phone = self.textFieldLogin.text,
             let deviceId  = UIDevice.current.identifierForVendor?.uuidString {
             
+            let correctPhone = phone.replacingOccurrences(of: "-", with: "")
+            
             self.startAnimationLoginButton()
             
-            self.authCake.authDirector.sendVerifyCode(phone: phone,
+            self.authCake.authDirector.sendVerifyCode(phone: correctPhone,
                                                       countyCode: code,
                                                       deviceId: deviceId,
                                                       success: { [unowned self] (message) in
@@ -145,7 +147,7 @@ class LoginController : UIViewController, WKNavigationDelegate{
         }
     }
     
-    private func selectStateValid(){
+    private func checkStateValid(){
         if let text =  self.textFieldLogin.text{
             
             if countryCodeIsRussia() == true {
@@ -272,7 +274,7 @@ class LoginController : UIViewController, WKNavigationDelegate{
     
     //MARK: - UITextField Handle Event
     @objc func textFieldLoginDidChange(_ textField: UITextField) {
-        self.selectStateValid()
+        self.checkStateValid()
         self.tryFormatLoginFromMask()
     }
     

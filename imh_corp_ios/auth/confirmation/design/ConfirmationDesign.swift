@@ -36,7 +36,7 @@ class ConfirmationDesign : IConfirmationDesign {
         
         confirmVC.textFieldConfirmation.textColor = UIColor.black
         
-        confirmVC.textFieldConfirmation.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.regular)
+        confirmVC.textFieldConfirmation.font = UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.regular)
     
         let attributesPlaceholderTextField = [
             NSAttributedString.Key.foregroundColor: UIColor.gray,

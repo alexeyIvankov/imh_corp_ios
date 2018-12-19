@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import WebKit
 import KeyboardHandler
+import JMMaskTextField
 
 class ConfirmationController : UIViewController {
     
@@ -17,6 +18,11 @@ class ConfirmationController : UIViewController {
         case ready
         case lock
         case hiden
+    }
+    
+    enum ConfirmationControllerStateValidation{
+        case valid
+        case failed
     }
     
     //MARK: IBOutlets
@@ -38,6 +44,7 @@ class ConfirmationController : UIViewController {
     
     //MARK: State machine
     lazy public var stateMachineResendCode:StateEngine<ResendCodeState> = buildStateMachine()
+    private var stateMachineValidation:StateEngine<ConfirmationControllerStateValidation> = StateEngine<ConfirmationControllerStateValidation>()
     
     //MARK: Keyboard handler
     private var keyboardHandler:KeyboardHandler?
@@ -59,6 +66,8 @@ class ConfirmationController : UIViewController {
         super.viewDidLoad()
         self.cake.router.setOwnwer(ownwer: self)
         self.cake.design.apply(vc: self)
+        self.configureStatesValidation()
+        self.checkStateValid()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -123,12 +132,15 @@ class ConfirmationController : UIViewController {
             let countryCode = self.codeRegion,
             let deviceId  = UIDevice.current.identifierForVendor?.uuidString {
             
+            let correctPhone = phone.replacingOccurrences(of: "-", with: "")
+            let correctConfirmation = verifivcationCode.replacingOccurrences(of: " ", with: "")
+            
             self.startAnimationSendCodeButton()
             self.stateMachineResendCode.change(stateType: StateTypeWrapper(type: ResendCodeState.hiden))
             
-            self.authCake.authDirector.authorization(phone: phone,
+            self.authCake.authDirector.authorization(phone: correctPhone,
                                                      countyCode: countryCode,
-                                                     smsCode: verifivcationCode,
+                                                     smsCode: correctConfirmation,
                                                      deviceId: deviceId,
                                                      success: {[unowned self] (session) in
                                                         
@@ -161,7 +173,32 @@ class ConfirmationController : UIViewController {
     }
     
     
-     //MARK: States
+    //MARK :States
+    private func configureStatesValidation(){
+        self.stateMachineValidation.addState(type: ConfirmationControllerStateValidation.valid) { (data) in
+            self.buttonSendCode.isEnabled = true
+            self.buttonSendCode.alpha = 1
+        }
+        
+        self.stateMachineValidation.addState(type: ConfirmationControllerStateValidation.failed) { (data) in
+            self.buttonSendCode.isEnabled = false
+            self.buttonSendCode.alpha = 0.4
+        }
+    }
+    
+    private func checkStateValid(){
+        if let confirmationText = self.textFieldConfirmation.text{
+            let confirmation = confirmationText.replacingOccurrences(of: " ", with: "")
+            if confirmation.count == 4 {
+                self.stateMachineValidation.changeState(type: ConfirmationController.ConfirmationControllerStateValidation.valid)
+            }
+            else{
+                self.stateMachineValidation.changeState(type: ConfirmationController.ConfirmationControllerStateValidation.failed)
+            }
+        }
+    }
+    
+    
     func buildStateMachine() -> StateEngine<ResendCodeState> {
         
         let stateReady = State<ResendCodeState>(type: ResendCodeState.ready)
@@ -269,9 +306,19 @@ class ConfirmationController : UIViewController {
         }
     }
     
+    private func tryFormatConfirmationFromMask(){
+        
+        if let confirmationText = self.textFieldConfirmation.text{
+            let mask:JMStringMask = JMStringMask.initWithMask("0 0 0 0")
+            let formatConfirmation = mask.maskString(confirmationText)
+            self.textFieldConfirmation.text = formatConfirmation
+        }
+    }
+    
     //MARK: - UITextField Handle Event
     @objc func textFieldConfirmationDidChange(_ textField: UITextField) {
-        
+        self.checkStateValid()
+        self.tryFormatConfirmationFromMask()
     }
 }
 
