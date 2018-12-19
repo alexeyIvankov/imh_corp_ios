@@ -67,8 +67,22 @@ class NewsDetailsController : UIViewController{
     }
     
     private func configureSlider(){
-        self.viewImageSlideshow.pageIndicator = LabelPageIndicator()
+        let labelPageIndicator = LabelPageIndicator()
+        labelPageIndicator.textColor = UIColor.white
+        self.viewImageSlideshow.pageIndicator = labelPageIndicator
         self.viewImageSlideshow.activityIndicator = DefaultActivityIndicator()
+        
+        self.addTapGestureToSlider()
+    }
+    
+    private func addTapGestureToSlider(){
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapToSliderImage))
+        self.viewImageSlideshow.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    //MARK: Handlel tap gesture slider
+    @objc func didTapToSliderImage(){
+        self.cake.router.handleTapToSliderImage()
     }
     
     //MARK: Data Source

@@ -11,6 +11,7 @@ import UIKit
 
 protocol INewsDetailsRouter : IRouter {
     func setOwnwer<T:UIViewController>(ownwer:T)
+    func handleTapToSliderImage()
     
     func showLoader()
     func hideLoader()

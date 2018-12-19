@@ -20,6 +20,7 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
     }
     
     public var pageControll:FSPageControl?
+    public var pageViewWillBeginDragging:Bool = false
     
     //MARK: IBOutlets
     @IBOutlet weak var viewContainerPagerView: UIView!{
@@ -174,9 +175,17 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         self.timerAutoChangePage = nil
     }
     
+    func restartAutoChangePage(){
+        self.stopAutoChangePage()
+        self.startAutoChangePage()
+    }
+    
     //MARK: FSPagerViewDataSource
-    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+    func pagerView(_ pagerView: FSPagerView,
+                   cellForItemAt index: Int) -> FSPagerViewCell {
+        
         let cell:IWelcomePagerCell = pagerView.dequeueReusableCell(withReuseIdentifier:WelcomePagerCell.reuseIdCell(), at: index) as! IWelcomePagerCell
+        
         let page = self.pages[index]
         cell.configure(page: page)
         
@@ -197,8 +206,12 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
     
     func pagerView(_ pagerView: FSPagerView, willDisplay cell: FSPagerViewCell, forItemAt index: Int) {
         if let viewDisplayAnimation = cell as? IViewWithDisplayAnimation{
-            viewDisplayAnimation.startDisplayAnimation()
+            if self.pageViewWillBeginDragging == false{
+                viewDisplayAnimation.startDisplayAnimation()
+            }
+            
         }
+        self.pageViewWillBeginDragging = false
     }
     
     func pagerView(_ pagerView: FSPagerView, didEndDisplaying cell: FSPagerViewCell, forItemAt index: Int) {
@@ -207,6 +220,11 @@ class WelcomeController : UIViewController, FSPagerViewDelegate, FSPagerViewData
         if let viewDisplayAnimation = cell as? IViewWithDisplayAnimation{
             viewDisplayAnimation.stopDisplayAnimation()
         }
+    }
+    
+    func pagerViewWillBeginDragging(_ pagerView: FSPagerView) {
+        self.pageViewWillBeginDragging = true
+        self.restartAutoChangePage()
     }
 }
 

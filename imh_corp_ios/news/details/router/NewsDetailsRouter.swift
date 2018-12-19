@@ -24,6 +24,13 @@ class NewsDetailsRouter : INewsDetailsRouter{
         self.owner = ownwer
     }
     
+    func handleTapToSliderImage(){
+        
+        if let details = self.owner as? NewsDetailsController{
+            details.viewImageSlideshow.presentFullScreenController(from: details)
+        }
+    }
+    
     func showLoader(){
         self.loaderService.showIfNeed()
     }
