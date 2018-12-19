@@ -10,8 +10,14 @@ import Foundation
 import UIKit
 import WebKit
 import KeyboardHandler
+import JMMaskTextField
 
 class LoginController : UIViewController, WKNavigationDelegate{
+    
+    enum LoginControllerStateValidation{
+        case valid
+        case failed
+    }
     
     //MARK: IBOutlets
     @IBOutlet weak var viewContainer: UIView!
@@ -35,7 +41,10 @@ class LoginController : UIViewController, WKNavigationDelegate{
     var cake:ILoginCake = Depednence.tryInject()!
     var authCake:IAuthCake = Depednence.tryInject()!
     
+     //MARK:
     private var keyboardHandler:KeyboardHandler?
+    private var stateEngine:StateEngine<LoginControllerStateValidation> = StateEngine<LoginControllerStateValidation>()
+    
     
 
     //MARK: Life cycle
@@ -43,6 +52,8 @@ class LoginController : UIViewController, WKNavigationDelegate{
         super.viewDidLoad()
         self.cake.router.setOwnwer(ownwer: self)
         self.cake.design.apply(vc: self)
+        self.configureStates()
+        self.selectStateValid()
         
         self.navigationItem.title = " "
     }
@@ -62,6 +73,7 @@ class LoginController : UIViewController, WKNavigationDelegate{
         self.keyboardHandler = nil
         self.unSubscribeInputFieldsToEventTextChange()
     }
+    
     
     //MARK: IBActions
     @IBAction func touchLoginButton(){
@@ -116,6 +128,50 @@ class LoginController : UIViewController, WKNavigationDelegate{
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
              self.buttonLogin.returnToOriginalState()
+        }
+    }
+    
+    //MARK :States
+    private func configureStates(){
+        self.stateEngine.addState(type: LoginController.LoginControllerStateValidation.valid) { (data) in
+            self.buttonLogin.isEnabled = true
+            self.buttonLogin.alpha = 1
+            
+        }
+        
+        self.stateEngine.addState(type: LoginController.LoginControllerStateValidation.failed) { (data) in
+            self.buttonLogin.isEnabled = false
+            self.buttonLogin.alpha = 0.4
+        }
+    }
+    
+    private func selectStateValid(){
+        if let text =  self.textFieldLogin.text{
+            
+            if countryCodeIsRussia() == true {
+                
+                let login = text.replacingOccurrences(of: "-", with: "")
+                
+                if login.count == 10{
+                    self.stateEngine.changeState(type: LoginController.LoginControllerStateValidation.valid)
+                }
+                else {
+                    self.stateEngine.changeState(type: LoginController.LoginControllerStateValidation.failed)
+                }
+            }
+            else {
+                
+                if text.count > 3{
+                    self.stateEngine.changeState(type: LoginController.LoginControllerStateValidation.valid)
+                }
+                else {
+                    self.stateEngine.changeState(type: LoginController.LoginControllerStateValidation.failed)
+                }
+                
+            }
+        }
+        else {
+             self.stateEngine.changeState(type: LoginController.LoginControllerStateValidation.failed)
         }
     }
     
@@ -186,9 +242,38 @@ class LoginController : UIViewController, WKNavigationDelegate{
         }
     }
     
+    private func countryCodeIsRussia() -> Bool{
+     
+        if let countyCode = self.textFieldCountryCode.text{
+            
+            if countyCode == "+7" || countyCode == "8"{
+                return true
+            }
+            else {
+                return false
+            }
+        }
+        else{
+            return false
+        }
+    }
+    
+    private func tryFormatLoginFromMask(){
+        
+        if self.countryCodeIsRussia() == true {
+            
+            if let login = self.textFieldLogin.text{
+                let mask:JMStringMask = JMStringMask.initWithMask("000-000-00-00")
+                let formatLogin = mask.maskString(login)
+                self.textFieldLogin.text = formatLogin
+            }
+        }
+    }
+    
     //MARK: - UITextField Handle Event
     @objc func textFieldLoginDidChange(_ textField: UITextField) {
-        
+        self.selectStateValid()
+        self.tryFormatLoginFromMask()
     }
     
     @objc func textFieldPasswordDidChange(_ textField: UITextField) {

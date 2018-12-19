@@ -13,6 +13,7 @@ PODS:
     - imh_corp_ios_api/Alamofire (= 1.0.0)
   - imh_corp_ios_api/Alamofire (1.0.0):
     - Alamofire (= 4.6)
+  - JMMaskTextField (0.1.0)
   - KeyboardHandler (1.0.0)
   - KeychainSwift (11.0.0)
   - Realm (3.7.6):
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - Fabric
   - ImageSlideshow (~> 1.6)
   - imh_corp_ios_api (from `https://aivankov@bitbucket.org/aivankov/imh_corp_ios_api.git`, branch `master`)
+  - JMMaskTextField
   - KeyboardHandler (from `https://github.com/alexeyIvankov/KeyboardHandler.git`, branch `swift_4.2`)
   - KeychainSwift (~> 11.0)
   - RealmSwift
@@ -70,11 +72,12 @@ SPEC CHECKSUMS:
   Fabric: f233c9492b3bbc1f04e3882986740f7988a58edb
   ImageSlideshow: f0f33e1a20668e83d77f5fb7729e4ae4437c0759
   imh_corp_ios_api: 87d113aae7d1222cf1fa9523c9ce00d36db934c8
+  JMMaskTextField: ceb969a49a313663a041c6413a0284d921f65ba4
   KeyboardHandler: f10336d2b0a478ec701290993a93279067058d8e
   KeychainSwift: bea6bd9f98af7b8d7ca4aa79fe105c00fab532db
   Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
   RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
 
-PODFILE CHECKSUM: 20f37aa477d2cca3c15273fc9739cb651d1eda55
+PODFILE CHECKSUM: a7b3635fa7959aa523e5449b9c3766ebfa7cd1cf
 
 COCOAPODS: 1.4.0

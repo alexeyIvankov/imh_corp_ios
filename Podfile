@@ -18,6 +18,7 @@ def default_pods
     pod 'BiometricAuthentication'
     pod 'KeychainSwift', '~> 11.0'
     pod 'ImageSlideshow', '~> 1.6'
+    pod 'JMMaskTextField'
 end
 
 target :imh_corp_ios do
