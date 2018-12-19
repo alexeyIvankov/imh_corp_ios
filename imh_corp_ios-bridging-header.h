@@ -12,5 +12,6 @@
 #import "RQShineLabel.h"
 #import "JHChainableAnimator.h"
 #import "UIImage+Alpha.h"
+#import "UIImage+RoundedCorner.h"
 
 #endif /* imh_corp_ios_bridging_header_h */

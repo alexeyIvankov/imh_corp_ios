@@ -86,16 +86,21 @@ class NewsAttachCell : UITableViewCell,  INewsAttachCell{
                 guard self.news != nil &&  self.news.newsId == operationId else {
                     return
                 }
+                                            
+                                            DispatchQueue.global().async {
+                                                
+                                                let image = UIImage(data: data)?.roundedCornerImage(10, borderSize: 0)
+                                                
+                                                DispatchQueue.main.async(execute: {
+                                                    
+                                                    if image != self.imageViewAttach.image{
+                                                        self.imageViewAttach.image = image
+                                                    }
+                                                    
+                                                })
+                                            }
                 
-                let image = UIImage(data: data)
-                
-                DispatchQueue.main.async(execute: {
-                    
-                    if image != self.imageViewAttach.image{
-                         self.imageViewAttach.image = image
-                    }
-                   
-                })
+               
                 
             }, failed: { (error, operationId) in
                 
