@@ -13,9 +13,12 @@ class RootRouter : IRootRouter {
    
     weak var owner: UIViewController?
     var loaderService:ILoaderService
+    var pmhLoader:IPMHLoader
     
-    required init(loaderService:ILoaderService){
+    required init(loaderService:ILoaderService,
+                  pmhLoader:IPMHLoader){
         self.loaderService = loaderService
+        self.pmhLoader = pmhLoader
     }
 
     func setOwnwer(ownwer: UIViewController) {
@@ -24,5 +27,13 @@ class RootRouter : IRootRouter {
             fatalError("failed type owner")
         }
         self.owner = root
+    }
+    
+    func showPMHLoader(){
+        self.pmhLoader.show()
+    }
+    
+    func hidePMHLoader(){
+        self.pmhLoader.hide()
     }
 }

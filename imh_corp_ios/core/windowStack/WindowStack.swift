@@ -33,11 +33,9 @@ class WindowStack : IWindowStack {
     
     @discardableResult
     func presentAndDismissAllExcept(vc:UIViewController) -> UIWindow{
+       
+        self.tryDismissAllExceptTop()
         let w = self.presentToTop(vc: vc)
-        
-        DispatchQueue.main.runNextLoop {
-            self.tryDismissAllExceptTop()
-        }
         
         return w
     }

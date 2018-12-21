@@ -57,6 +57,9 @@
 		FF4335D021AD1C9500F0F5F0 /* IRootDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335CF21AD1C9500F0F5F0 /* IRootDesign.swift */; };
 		FF4335D221AD1D9D00F0F5F0 /* RootDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4335D121AD1D9D00F0F5F0 /* RootDesign.swift */; };
 		FF52A22721C8FE1A000DE870 /* NewsAttachDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52A22621C8FE1A000DE870 /* NewsAttachDataSource.swift */; };
+		FF52A22A21CCBA83000DE870 /* IPMHLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52A22921CCBA83000DE870 /* IPMHLoader.swift */; };
+		FF52A22C21CCBAA9000DE870 /* PMHLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52A22B21CCBAA9000DE870 /* PMHLoader.swift */; };
+		FF52A22E21CCBC32000DE870 /* PMHLoader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF52A22D21CCBC32000DE870 /* PMHLoader.xib */; };
 		FF561426217DD3B600DCCE1B /* ITimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561425217DD3B600DCCE1B /* ITimer.swift */; };
 		FF561428217DD3DC00DCCE1B /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */; };
 		FF56142A217DF5BD00DCCE1B /* IAnimatorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */; };
@@ -398,6 +401,9 @@
 		FF4335CF21AD1C9500F0F5F0 /* IRootDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRootDesign.swift; sourceTree = "<group>"; };
 		FF4335D121AD1D9D00F0F5F0 /* RootDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootDesign.swift; sourceTree = "<group>"; };
 		FF52A22621C8FE1A000DE870 /* NewsAttachDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAttachDataSource.swift; sourceTree = "<group>"; };
+		FF52A22921CCBA83000DE870 /* IPMHLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPMHLoader.swift; sourceTree = "<group>"; };
+		FF52A22B21CCBAA9000DE870 /* PMHLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMHLoader.swift; sourceTree = "<group>"; };
+		FF52A22D21CCBC32000DE870 /* PMHLoader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PMHLoader.xib; sourceTree = "<group>"; };
 		FF561425217DD3B600DCCE1B /* ITimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITimer.swift; sourceTree = "<group>"; };
 		FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
 		FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAnimatorImage.swift; sourceTree = "<group>"; };
@@ -952,6 +958,16 @@
 				FF52A22621C8FE1A000DE870 /* NewsAttachDataSource.swift */,
 			);
 			path = dataSources;
+			sourceTree = "<group>";
+		};
+		FF52A22821CCBA56000DE870 /* PMHLoader */ = {
+			isa = PBXGroup;
+			children = (
+				FF52A22921CCBA83000DE870 /* IPMHLoader.swift */,
+				FF52A22B21CCBAA9000DE870 /* PMHLoader.swift */,
+				FF52A22D21CCBC32000DE870 /* PMHLoader.xib */,
+			);
+			path = PMHLoader;
 			sourceTree = "<group>";
 		};
 		FF561424217DD3A700DCCE1B /* timer */ = {
@@ -2060,6 +2076,7 @@
 		FFAB4ECC216392D400AE82EA /* ui_components */ = {
 			isa = PBXGroup;
 			children = (
+				FF52A22821CCBA56000DE870 /* PMHLoader */,
 				FF4335B821A7D7D400F0F5F0 /* TKSubmitTransition */,
 				FFF9532E21A2A4D900612C10 /* limonade */,
 				FFAB4ECD216392D400AE82EA /* NewPopMenu */,
@@ -2661,6 +2678,7 @@
 				FF5614D02180ACFB00DCCE1B /* NewsSB.storyboard in Resources */,
 				FF72AF4621761050002D04DA /* WelcomePagerCell.xib in Resources */,
 				FF7000F421C3D6F5003E4D84 /* ListGroupViewCell.xib in Resources */,
+				FF52A22E21CCBC32000DE870 /* PMHLoader.xib in Resources */,
 				FFAB4F15216392D400AE82EA /* README.md in Resources */,
 				FFAB4F882163960900AE82EA /* Main.storyboard in Resources */,
 				FF5614CA2180ACC500DCCE1B /* MoreSB.storyboard in Resources */,
@@ -2838,6 +2856,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF52A22A21CCBA83000DE870 /* IPMHLoader.swift in Sources */,
 				FFAB4F1F216392D400AE82EA /* IRouter.swift in Sources */,
 				FFAB4F752163959700AE82EA /* IAuthCake.swift in Sources */,
 				FFDEE15921B14BEC00D25CAE /* News.swift in Sources */,
@@ -3021,6 +3040,7 @@
 				FFF9532321A292D500612C10 /* NewsGroupRealm.swift in Sources */,
 				FF72AF3F2175E35C002D04DA /* FSPagerCollectionView.swift in Sources */,
 				FF56144321805B4600DCCE1B /* ConfirmationDirector.swift in Sources */,
+				FF52A22C21CCBAA9000DE870 /* PMHLoader.swift in Sources */,
 				FF72AF3B2175E35C002D04DA /* FSPagerViewCell.swift in Sources */,
 				FF5614AB2180A2C200DCCE1B /* IEventsRouter.swift in Sources */,
 				FF3897F72178C8A4005CE562 /* IAnimator.swift in Sources */,
@@ -3290,7 +3310,10 @@
 				DEVELOPMENT_TEAM = 4SPZ465GFN;
 				INFOPLIST_FILE = "$(SRCROOT)/imh_corp_ios/res/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imh.imh-corp-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "imh_corp_ios-bridging-header.h";
@@ -3308,7 +3331,10 @@
 				DEVELOPMENT_TEAM = 4SPZ465GFN;
 				INFOPLIST_FILE = "$(SRCROOT)/imh_corp_ios/res/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imh.imh-corp-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "imh_corp_ios-bridging-header.h";
@@ -3326,7 +3352,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4SPZ465GFN;
 				INFOPLIST_FILE = imh_corp_iosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imh.imh-corp-iosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -3344,7 +3374,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4SPZ465GFN;
 				INFOPLIST_FILE = imh_corp_iosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imh.imh-corp-iosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

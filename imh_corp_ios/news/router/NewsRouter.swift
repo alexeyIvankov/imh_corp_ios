@@ -16,6 +16,7 @@ class NewsRouter : INewsRouter{
     
     required init(loaderService:ILoaderService){
         self.loaderService = loaderService
+   
     }
     
     func setOwnwer<T>(ownwer: T) where T : UIViewController {

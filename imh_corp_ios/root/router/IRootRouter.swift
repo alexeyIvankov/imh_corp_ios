@@ -9,5 +9,7 @@
 import Foundation
 
 protocol IRootRouter : IRouter{
-   
+    
+    func showPMHLoader()
+    func hidePMHLoader()
 }

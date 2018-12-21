@@ -28,6 +28,18 @@ class RootController: UITabBarController{
     
         self.rootCake.router.setOwnwer(ownwer: self)
         self.rootCake.design.apply(vc: self)
+        self.showPMHLoaderIfAuth()
+    }
+    
+    private func showPMHLoaderIfAuth(){
+        
+        if self.rootCake.director.authCake.authDirector.isAuth(){
+            self.rootCake.router.showPMHLoader()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.rootCake.router.hidePMHLoader()
+            }
+        }
     }
 }
 

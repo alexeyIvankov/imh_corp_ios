@@ -9,5 +9,6 @@
 import Foundation
 
 protocol IRootDirector : AnyObject {
-
+    
+    var authCake:IAuthCake { get }
 }

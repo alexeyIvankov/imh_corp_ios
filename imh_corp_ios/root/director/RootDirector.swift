@@ -11,8 +11,11 @@ import Foundation
 class RootDirector : IRootDirector {
    
     let securityService:ISecurityService
+    let authCake:IAuthCake
     
-    required init(securityService:ISecurityService){
+    required init(securityService:ISecurityService,
+                  authCake:IAuthCake){
         self.securityService = securityService
+        self.authCake = authCake
     }
 }
