@@ -60,6 +60,9 @@
 		FF52A22A21CCBA83000DE870 /* IPMHLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52A22921CCBA83000DE870 /* IPMHLoader.swift */; };
 		FF52A22C21CCBAA9000DE870 /* PMHLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52A22B21CCBAA9000DE870 /* PMHLoader.swift */; };
 		FF52A22E21CCBC32000DE870 /* PMHLoader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF52A22D21CCBC32000DE870 /* PMHLoader.xib */; };
+		FF52A23021CCFF40000DE870 /* AImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF52A22F21CCFF40000DE870 /* AImage.swift */; };
+		FF52A23321CD00F1000DE870 /* pmh_logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = FF52A23221CD00F1000DE870 /* pmh_logo.gif */; };
+		FF52A23521CD02B4000DE870 /* pmh_logo2.gif in Resources */ = {isa = PBXBuildFile; fileRef = FF52A23421CD02B4000DE870 /* pmh_logo2.gif */; };
 		FF561426217DD3B600DCCE1B /* ITimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561425217DD3B600DCCE1B /* ITimer.swift */; };
 		FF561428217DD3DC00DCCE1B /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */; };
 		FF56142A217DF5BD00DCCE1B /* IAnimatorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */; };
@@ -404,6 +407,9 @@
 		FF52A22921CCBA83000DE870 /* IPMHLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPMHLoader.swift; sourceTree = "<group>"; };
 		FF52A22B21CCBAA9000DE870 /* PMHLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMHLoader.swift; sourceTree = "<group>"; };
 		FF52A22D21CCBC32000DE870 /* PMHLoader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PMHLoader.xib; sourceTree = "<group>"; };
+		FF52A22F21CCFF40000DE870 /* AImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AImage.swift; sourceTree = "<group>"; };
+		FF52A23221CD00F1000DE870 /* pmh_logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pmh_logo.gif; sourceTree = "<group>"; };
+		FF52A23421CD02B4000DE870 /* pmh_logo2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pmh_logo2.gif; sourceTree = "<group>"; };
 		FF561425217DD3B600DCCE1B /* ITimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITimer.swift; sourceTree = "<group>"; };
 		FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
 		FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAnimatorImage.swift; sourceTree = "<group>"; };
@@ -968,6 +974,15 @@
 				FF52A22D21CCBC32000DE870 /* PMHLoader.xib */,
 			);
 			path = PMHLoader;
+			sourceTree = "<group>";
+		};
+		FF52A23121CD00AD000DE870 /* gif */ = {
+			isa = PBXGroup;
+			children = (
+				FF52A23421CD02B4000DE870 /* pmh_logo2.gif */,
+				FF52A23221CD00F1000DE870 /* pmh_logo.gif */,
+			);
+			path = gif;
 			sourceTree = "<group>";
 		};
 		FF561424217DD3A700DCCE1B /* timer */ = {
@@ -2041,6 +2056,7 @@
 		FFAB4E99216348B200AE82EA /* res */ = {
 			isa = PBXGroup;
 			children = (
+				FF52A23121CD00AD000DE870 /* gif */,
 				FFAB4E9A216348B200AE82EA /* Assets.xcassets */,
 				FFAB4E9B216348B200AE82EA /* LaunchScreen.storyboard */,
 				FFAB4E9F216348B200AE82EA /* Info.plist */,
@@ -2076,6 +2092,7 @@
 		FFAB4ECC216392D400AE82EA /* ui_components */ = {
 			isa = PBXGroup;
 			children = (
+				FF52A22F21CCFF40000DE870 /* AImage.swift */,
 				FF52A22821CCBA56000DE870 /* PMHLoader */,
 				FF4335B821A7D7D400F0F5F0 /* TKSubmitTransition */,
 				FFF9532E21A2A4D900612C10 /* limonade */,
@@ -2684,6 +2701,8 @@
 				FF5614CA2180ACC500DCCE1B /* MoreSB.storyboard in Resources */,
 				FF5614CE2180ACEB00DCCE1B /* CompanyServicesSB.storyboard in Resources */,
 				FF6FB00221AD5D0100C818BC /* NewsSectionHeader.xib in Resources */,
+				FF52A23321CD00F1000DE870 /* pmh_logo.gif in Resources */,
+				FF52A23521CD02B4000DE870 /* pmh_logo2.gif in Resources */,
 				FF5614CC2180ACD900DCCE1B /* EventsSB.storyboard in Resources */,
 				FFAB4EA2216348B200AE82EA /* LaunchScreen.storyboard in Resources */,
 				FFAB4EA1216348B200AE82EA /* Assets.xcassets in Resources */,
@@ -3143,6 +3162,7 @@
 				FF72AF83217761B2002D04DA /* String+Size.swift in Sources */,
 				FFAB4FA82163971A00AE82EA /* Network.swift in Sources */,
 				FF4335A221A6AC2600F0F5F0 /* AuthDataStorage.swift in Sources */,
+				FF52A23021CCFF40000DE870 /* AImage.swift in Sources */,
 				FF3897F12178C462005CE562 /* DKChainableAnimationKit+Extra.swift in Sources */,
 				FF3897EC2178C462005CE562 /* DKChainableAnimationKit+Transform.swift in Sources */,
 				FFAB4F24216392D400AE82EA /* UIStoryboard+Load.swift in Sources */,

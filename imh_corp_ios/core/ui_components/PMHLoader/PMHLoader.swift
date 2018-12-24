@@ -28,13 +28,34 @@ class PMHLoader: IPMHLoader{
 
 class PMHLoaderVC : UIViewController{
 
-    @IBOutlet weak var imageViewPMHLogo:UIImageView!
+    @IBOutlet weak var imageViewPMH:UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.startAnimationRotate()
     }
     
-    func startAnimationLogo(){
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.startAnimationRotate()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.stopAnimationRotate()
+    }
+    
+    func startAnimationRotate(){
         
+        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotationAnimation.fromValue = 0.0
+        rotationAnimation.toValue = Double.pi
+        rotationAnimation.repeatCount = Float.infinity
+        rotationAnimation.duration = 2.0
+        self.imageViewPMH.layer.add(rotationAnimation, forKey: nil)
+    }
+    
+    func stopAnimationRotate(){
+        self.imageViewPMH.layer.removeAllAnimations()
     }
 }

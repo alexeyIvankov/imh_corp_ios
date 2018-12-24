@@ -36,7 +36,7 @@ class RootController: UITabBarController{
         if self.rootCake.director.authCake.authDirector.isAuth(){
             self.rootCake.router.showPMHLoader()
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 self.rootCake.router.hidePMHLoader()
             }
         }
