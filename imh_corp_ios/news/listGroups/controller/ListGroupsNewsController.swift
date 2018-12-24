@@ -23,7 +23,6 @@ class ListGroupsNewsController : UIViewController, UITableViewDelegate, UITableV
     private var groupList:[INewsGroup] = [INewsGroup]()
     private var idListHidenGroups:[String] = [String]()
     private let queueUpdateTableDataSource = DispatchQueue(label: "NewsController.queue")
-    private var stateSelectAllGroups = false
     
     //MARK: Life cycle
     override func viewDidLoad() {
@@ -38,6 +37,7 @@ class ListGroupsNewsController : UIViewController, UITableViewDelegate, UITableV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.idListHidenGroups = self.cake.director.serviceGroups.getIdListGroupsOff()
+        
         self.tryShowGroups()
     }
     
@@ -79,13 +79,12 @@ class ListGroupsNewsController : UIViewController, UITableViewDelegate, UITableV
                                                     
                                                     if strongSelf != nil{
                                                         
-                                                        if strongSelf!.stateSelectAllGroups == true{
-                                                            strongSelf!.deselectAllGroups()
-                                                        }
-                                                        else {
+                                                        if strongSelf?.idListHidenGroups.count == 0{
                                                             strongSelf!.selectAllGroups()
                                                         }
-                                                        strongSelf!.stateSelectAllGroups = !strongSelf!.stateSelectAllGroups
+                                                        else {
+                                                            strongSelf!.deselectAllGroups()
+                                                        }
                                                         
                                                     }
             })
