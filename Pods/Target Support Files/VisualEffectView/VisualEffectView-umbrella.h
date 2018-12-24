@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double ImageSlideshowVersionNumber;
-FOUNDATION_EXPORT const unsigned char ImageSlideshowVersionString[];
+FOUNDATION_EXPORT double VisualEffectViewVersionNumber;
+FOUNDATION_EXPORT const unsigned char VisualEffectViewVersionString[];
 

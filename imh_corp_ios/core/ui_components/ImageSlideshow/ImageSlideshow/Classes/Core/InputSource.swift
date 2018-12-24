@@ -16,7 +16,17 @@ import UIKit
      - parameter callback: Callback called after image was set to the image view.
      - parameter image: Image that was set to the image view.
      */
-    func load(to imageView: UIImageView, with callback: @escaping (_ image: UIImage?) -> Void)
+    func load(to imageView: UIImageView,
+              with callback: @escaping (_ image: UIImage?) -> Void)
+    
+    /**
+     Load preview image from the source to image view.
+     - parameter imageView: Image view to load the image into.
+     - parameter callback: Callback called after image was set to the image view.
+     - parameter image: Image that was set to the image view.
+     */
+    func loadPreview(to imageView: UIImageView,
+                     with callback: @escaping (_ image: UIImage?) -> Void)
     
     /**
      Cancel image load on the image view
@@ -28,6 +38,7 @@ import UIKit
 /// Input Source to load plain UIImage
 @objcMembers
 open class ImageSource: NSObject, InputSource {
+    
     var image: UIImage!
 
     /// Initializes a new Image Source with UIImage
@@ -48,6 +59,11 @@ open class ImageSource: NSObject, InputSource {
     }
 
     public func load(to imageView: UIImageView, with callback: @escaping (UIImage?) -> Void) {
+        imageView.image = image
+        callback(image)
+    }
+    
+    public func loadPreview(to imageView: UIImageView, with callback: @escaping (UIImage?) -> Void) {
         imageView.image = image
         callback(image)
     }

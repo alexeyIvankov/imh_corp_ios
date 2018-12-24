@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import ImageSlideshow
 
 class NewsDetailsController : UIViewController{
     
@@ -67,10 +66,14 @@ class NewsDetailsController : UIViewController{
     }
     
     private func configureSlider(){
+       
         let labelPageIndicator = LabelPageIndicator()
         labelPageIndicator.textColor = UIColor.white
         self.viewImageSlideshow.pageIndicator = labelPageIndicator
-        self.viewImageSlideshow.activityIndicator = DefaultActivityIndicator()
+        
+        let activityIndicator = DefaultActivityIndicator()
+        activityIndicator.color = UIColor.white
+        self.viewImageSlideshow.activityIndicator = activityIndicator
         
         self.addTapGestureToSlider()
     }

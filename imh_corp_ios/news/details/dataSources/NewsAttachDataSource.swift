@@ -7,10 +7,9 @@
 //
 
 import Foundation
-import ImageSlideshow
-
 
 class NewsAttachDataSource : InputSource {
+   
     
     let file:IFile
     let newsId:String
@@ -22,6 +21,34 @@ class NewsAttachDataSource : InputSource {
         self.file = file
         self.newsId = newsId
         self.fileDirector = fileDirector
+    }
+    
+    func loadPreview(to imageView: UIImageView, with callback: @escaping (UIImage?) -> Void) {
+        
+        DispatchQueue.global().async {
+            
+            self.fileDirector.giveMeFile(operationId: self.newsId,
+                                         typeFile: TypeFileRequest.newsPreview(newsId: self.newsId, fileId: self.file.fileId),
+                                         success: { (data, operationId) in
+                                            
+                                            guard  self.newsId == operationId else {
+                                                return
+                                            }
+                                            
+                                            let image = UIImage(data: data)
+                                            
+                                            DispatchQueue.main.async(execute: {
+                                                
+                                                if image != imageView.image{
+                                                    imageView.image = image
+                                                }
+                                                callback(image)
+                                            })
+                                            
+            }, failed: { (error, operationId) in
+                
+            }, startLoad: nil, endLoad: nil, progressLoad: nil)
+        }
     }
     
     func load(to imageView: UIImageView, with callback: @escaping (UIImage?) -> Void) {

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "960A15E2EF411D8C7F685B00B4597973"
-               BlueprintName = "ImageSlideshow"
+               BlueprintIdentifier = "50D66B43A27166540CAA1F75FC70CB83"
+               BlueprintName = "VisualEffectView"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "ImageSlideshow.framework">
+               BuildableName = "VisualEffectView.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

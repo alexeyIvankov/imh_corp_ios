@@ -32,13 +32,6 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>ImageSlideshow.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
-		</dict>
 		<key>JMMaskTextField.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -88,12 +81,22 @@
 			<key>orderHint</key>
 			<integer>12</integer>
 		</dict>
+		<key>VisualEffectView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>iOS-blur.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>imh_corp_ios_api.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

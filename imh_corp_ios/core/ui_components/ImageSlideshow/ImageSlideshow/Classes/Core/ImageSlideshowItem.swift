@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import VisualEffectView
 
 /// Used to wrap a single slideshow item and allow zooming on it
 @objcMembers
@@ -13,6 +14,17 @@ open class ImageSlideshowItem: UIScrollView, UIScrollViewDelegate {
 
     /// Image view to hold the image
     open let imageView = UIImageView()
+    
+    open let blurView:VisualEffectView = {
+       
+        let visualEffectView = VisualEffectView()
+        visualEffectView.colorTint = .red
+        visualEffectView.colorTintAlpha = 0.2
+        visualEffectView.blurRadius = 10
+        visualEffectView.scale = 1
+        
+        return visualEffectView
+    }()
 
     /// Activity indicator shown during image loading, when nil there won't be shown any
     open let activityIndicator: ActivityIndicatorView?
@@ -85,6 +97,10 @@ open class ImageSlideshowItem: UIScrollView, UIScrollViewDelegate {
         singleTapGestureRecognizer!.numberOfTapsRequired = 1
         singleTapGestureRecognizer!.isEnabled = false
         imageView.addGestureRecognizer(singleTapGestureRecognizer!)
+        
+        
+        addSubview(self.blurView)
+        bringSubviewToFront(self.blurView)
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -93,6 +109,8 @@ open class ImageSlideshowItem: UIScrollView, UIScrollViewDelegate {
 
     override open func layoutSubviews() {
         super.layoutSubviews()
+        
+        self.blurView.frame.size = frame.size
 
         if !zoomEnabled {
             imageView.frame.size = frame.size
@@ -107,6 +125,9 @@ open class ImageSlideshowItem: UIScrollView, UIScrollViewDelegate {
         }
 
         self.activityIndicator?.view.center = imageView.center
+        if activityIndicator != nil{
+            bringSubviewToFront(self.activityIndicator!.view)
+        }
 
         // if self.frame was changed and zoomInInitially enabled, zoom in
         if lastFrame != frame && zoomInInitially {
@@ -125,16 +146,35 @@ open class ImageSlideshowItem: UIScrollView, UIScrollViewDelegate {
             isLoading = true
             imageReleased = false
             activityIndicator?.show()
-            image.load(to: self.imageView) {[weak self] image in
-                // set image to nil if there was a release request during the image load
+            self.blurView.isHidden = false
+            
+            
+            image.loadPreview(to: self.imageView) {[weak self] previewImage in
+                
                 if let imageRelease = self?.imageReleased, imageRelease {
                     self?.imageView.image = nil
                 }else{
-                    self?.imageView.image = image
+                    self?.imageView.image = previewImage
                 }
-                self?.activityIndicator?.hide()
-                self?.loadFailed = image == nil
-                self?.isLoading = false
+                
+                
+                guard self != nil else {
+                    return
+                }
+                
+                self!.image.load(to: self!.imageView) {[weak self] image in
+                    // set image to nil if there was a release request during the image load
+                    if let imageRelease = self?.imageReleased, imageRelease {
+                        self?.imageView.image = nil
+                    }else{
+                        self?.imageView.image = image
+                    }
+                    self?.activityIndicator?.hide()
+                    self?.blurView.isHidden = true
+                    self?.loadFailed = image == nil
+                    self?.isLoading = false
+                }
+                
             }
         }
     }

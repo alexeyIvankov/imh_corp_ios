@@ -138,12 +138,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/BiometricAuthentication/BiometricAuthentication.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Cocaine/Cocaine.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EventSender/EventSender.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/JMMaskTextField/JMMaskTextField.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KeyboardHandler/KeyboardHandler.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Realm/Realm.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/VisualEffectView/VisualEffectView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/imh_corp_ios_api/imh_corp_ios_api.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -151,12 +151,12 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/BiometricAuthentication/BiometricAuthentication.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Cocaine/Cocaine.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/EventSender/EventSender.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/JMMaskTextField/JMMaskTextField.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KeyboardHandler/KeyboardHandler.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Realm/Realm.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/VisualEffectView/VisualEffectView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/imh_corp_ios_api/imh_corp_ios_api.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
