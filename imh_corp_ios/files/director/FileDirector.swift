@@ -147,6 +147,13 @@ class FileDirector : IFileDirector {
         for item in operations{
             
             if item.fileId == operation.fileId{
+                
+                if let previewOperation = item as? OperationDownloadAndSavePreview{
+                    previewOperation.success = operation.success
+                    previewOperation.failed = operation.failed
+                    previewOperation.startLoad = operation.startLoad
+                    previewOperation.endLoad = operation.endLoad
+                }
                 return
             }
         }
@@ -223,11 +230,11 @@ class OperationDownloadAndSavePreview:Operation{
     private let accessToken:String
     private let path:String
     
-    private let success:(Data, String)->()
-    private let failed: (NSError, String)->()
-    private let startLoad:(()->())?
-    private let endLoad:(()->())?
-    private let progressLoad:((Float)->())?
+    public var success:(Data, String)->()
+    public var failed: (NSError, String)->()
+    public var startLoad:(()->())?
+    public var endLoad:(()->())?
+    public var progressLoad:((Float)->())?
     
     required init(accountId:String,
                   newsId:String,
