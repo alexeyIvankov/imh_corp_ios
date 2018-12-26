@@ -24,4 +24,12 @@ public protocol IServiceNews : AnyObject{
                           newLoadedNews:@escaping ([INews])->(),
                           failed: @escaping (NSError?)->())
     
+    func giveMeYammerNewsExceptGroups(groupsIdList:[String],
+                                      startDate:Int?,
+                                      endDate:Int?,
+                                      count:Int,
+                                      oldCashedNews:@escaping ([INews])->(),
+                                      newLoadedNews:@escaping ([INews])->(),
+                                      failed: @escaping (NSError?)->())
+    
 }

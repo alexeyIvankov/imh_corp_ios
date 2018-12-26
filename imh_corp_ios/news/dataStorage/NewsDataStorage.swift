@@ -240,4 +240,52 @@ class NewsDataStorage : INewsDataStorage{
         }
     }
     
+    func getNewsExceptGroups(groupsIdList:[String],
+                             accountId:String,
+                             startDate:Int?,
+                             endDate:Int?,
+                             count:Int,
+                             completion:@escaping ([INews])->()){
+        
+        var groupQueryString:String = ""
+        for (index, groupId) in groupsIdList.enumerated(){
+            groupQueryString += " groupId != '\(groupId)'"
+            
+            if index < groupsIdList.count - 1{
+                groupQueryString += " AND"
+            }
+        }
+        
+        let predicate:NSPredicate?
+        
+        if startDate != nil && endDate != nil{
+            predicate = NSPredicate(format: "accountId='\(accountId)' AND dateCreated > \(startDate!) AND dateCreated < \(endDate!)" + " AND " + groupQueryString)
+        }
+        else if startDate != nil{
+            predicate = NSPredicate(format: "accountId='\(accountId)' AND dateCreated > \(startDate!)" + " AND " + groupQueryString)
+        }
+        else if endDate != nil{
+            predicate = NSPredicate(format: "accountId='\(accountId)' AND dateCreated < \(endDate!)" + " AND " + groupQueryString)
+        }
+        else {
+            predicate = NSPredicate(format: "accountId='\(accountId)'" + " AND " + groupQueryString)
+        }
+        
+        self.db.asynchFetch(type: NewsRealm.self, options: FetchOptionsPredicate(predicate: predicate!, sortBy: ("dateCreated", false))) { (executeNews, ctx)  in
+            
+            
+            var convertNews:[INews] = [INews]()
+            
+            if executeNews.count <= count{
+                convertNews = News.createNews(news: executeNews)
+            }
+            else {
+                convertNews = News.createNews(news: Array(executeNews[0..<count]))
+            }
+            
+            completion(convertNews)
+        }
+        
+    }
+    
 }

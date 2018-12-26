@@ -73,7 +73,7 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
         
         if listIdGroupOff != self.listIdGroupOff{
             self.listIdGroupOff = listIdGroupOff
-            reloadAllNews()
+            reloadAllNewsInTableView()
         }
         else {
             self.listIdGroupOff = listIdGroupOff
@@ -82,7 +82,7 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     private func updateFirstBatchNews(){
-        self.tryShowFirstBatchNewsPast(days: 15, countMessages: 50)
+        self.tryShowFirstBatchNewsAllGroupsPast(days: 15, countMessages: 50)
     }
     
     private func loadGroupsNews(){
@@ -91,29 +91,49 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
         }
     }
     
-    private func reloadAllNews(){
+    private func reloadAllNewsInTableView(){
         self.newsList.removeAll()
         self.tableView.reloadData()
-        self.tryShowFirstBatchNewsPast(days: 15, countMessages: 50)
+        
+        if self.listIdGroupOff.count == 0{
+            self.tryShowFirstBatchNewsAllGroupsPast(days: 15, countMessages: 50)
+        }
+        else {
+             self.tryShowFirstBatchNewsExceptGroupsPast(days: 15, countMessages: 50)
+        }
     }
     
-    private func tryShowFirstBatchNewsPast(days:Int, countMessages:Int){
+    private func tryShowFirstBatchNewsAllGroupsPast(days:Int, countMessages:Int){
         
         let today = Date()
         let calculateDate = Calendar.current.date(byAdding: .day, value: -days, to: today)?.timeIntervalSince1970.rounded()
         if calculateDate != nil{
-            self.tryShowNews(startDate: Int(calculateDate!), endDate: nil, count: countMessages)
+            self.tryShowNewsAllGroups(startDate: Int(calculateDate!), endDate: nil, count: countMessages)
         }
     }
     
-    private func truShowNextBatchFrom(news:INews){
-        let date = Date(timeIntervalSince1970: TimeInterval(news.dateCreated))
-        self.tryShowNews(startDate: nil, endDate: Int(date.timeIntervalSince1970.rounded()), count: self.countMessagesFromNewsBatch)
+    private func tryShowFirstBatchNewsExceptGroupsPast(days:Int, countMessages:Int){
+        
+        let today = Date()
+        let calculateDate = Calendar.current.date(byAdding: .day, value: -days, to: today)?.timeIntervalSince1970.rounded()
+        if calculateDate != nil{
+            self.tryShowNewsExceptGroups(startDate: Int(calculateDate!), endDate: nil, count: countMessages)
+        }
     }
     
-    private func tryShowNews(startDate:Int?,
-                             endDate:Int?,
-                             count:Int){
+    private func truShowNextBatchAllGroupsFrom(news:INews){
+        let date = Date(timeIntervalSince1970: TimeInterval(news.dateCreated))
+        self.tryShowNewsAllGroups(startDate: nil, endDate: Int(date.timeIntervalSince1970.rounded()), count: self.countMessagesFromNewsBatch)
+    }
+    
+    private func truShowNextBatchExceptGroupsFrom(news:INews){
+        let date = Date(timeIntervalSince1970: TimeInterval(news.dateCreated))
+        self.tryShowNewsExceptGroups(startDate: nil, endDate: Int(date.timeIntervalSince1970.rounded()), count: self.countMessagesFromNewsBatch)
+    }
+    
+    private func tryShowNewsAllGroups(startDate:Int?,
+                                      endDate:Int?,
+                                      count:Int){
         
         guard self.cake.director.serviceNews.getState() == .ready else{
             return
@@ -140,6 +160,36 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
         }
     }
     
+    private func tryShowNewsExceptGroups(startDate:Int?,
+                                         endDate:Int?,
+                                         count:Int){
+        
+        guard self.cake.director.serviceNews.getState() == .ready else{
+            return
+        }
+        
+        self.cake.director.serviceNews.giveMeYammerNewsExceptGroups(groupsIdList:self.listIdGroupOff,
+                                                                    startDate: startDate,
+                                                                    endDate: endDate,
+                                                                    count: count,
+                                                                    oldCashedNews: { (cashedNews) in
+                                                            
+                                                            DispatchQueue.main.async {
+                                                                self.createOrUpdateDataSource(news: cashedNews)
+                                                            }
+                                                            
+        }, newLoadedNews: { (newLoadedNews) in
+            
+            DispatchQueue.main.async {
+                self.createOrUpdateDataSource(news: newLoadedNews)
+            }
+            
+        }) { (error) in
+            print(error)
+        }
+    }
+    
+    
     //MARK: - Data source
     private func createOrUpdateDataSource(news:[INews]){
         
@@ -151,7 +201,6 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
         self.queueUpdateTableDataSource.async {
             
             var copyNewsList = Array(self.newsList)
-             var isAddededNews = false
             
             for currentNews in news{
              
@@ -164,10 +213,7 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
                     }
                 }) == false{
                    
-                    if self.listIdGroupOff.contains(currentNews.groupId) == false{
-                         isAddededNews = true
-                        copyNewsList.append(currentNews)
-                    }
+                    copyNewsList.append(currentNews)
                 }
             }
             
@@ -181,12 +227,9 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
                 }
             }
             
-            
             DispatchQueue.main.async {
-                if isAddededNews {
-                    self.newsList = sortedList
-                    self.tableView.reloadData()
-                }
+                self.newsList = sortedList
+                self.tableView.reloadData()
             }
         }
     }
@@ -230,7 +273,14 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
             scrollView.contentSize.height/scrollView.contentOffset.y < 2{
             let news = self.newsList.last
             if news != nil{
-                self.truShowNextBatchFrom(news: news!)
+                
+                if self.listIdGroupOff.count == 0{
+                    self.truShowNextBatchAllGroupsFrom(news: news!)
+                }
+                else {
+                    self.truShowNextBatchExceptGroupsFrom(news: news!)
+                }
+                
             }
         }
     }

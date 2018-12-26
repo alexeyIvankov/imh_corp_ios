@@ -55,7 +55,7 @@ CHECKOUT OPTIONS:
     :commit: 74580311c906b96c64aebaad08be5d203c2d5eb6
     :git: https://github.com/alexeyIvankov/EventSender.git
   imh_corp_ios_api:
-    :commit: 9f2a3e0051ec3021038b450266d96cf614d374a6
+    :commit: 6d0a3b09b7fabac9873c48f11d0efef853d2fc3d
     :git: https://aivankov@bitbucket.org/aivankov/imh_corp_ios_api.git
   KeyboardHandler:
     :commit: 86910f285b25aa53129e184a3f1781363b1b9d8c

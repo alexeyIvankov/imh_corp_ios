@@ -21,5 +21,12 @@ protocol INewsDataStorage : AnyObject {
                  count:Int,
                  completion:@escaping ([INews])->())
     
+    func getNewsExceptGroups(groupsIdList:[String],
+                             accountId:String,
+                             startDate:Int?,
+                             endDate:Int?,
+                             count:Int,
+                             completion:@escaping ([INews])->())
+    
     func getIdListGroupsOff(accountId:String) -> [String]
 }

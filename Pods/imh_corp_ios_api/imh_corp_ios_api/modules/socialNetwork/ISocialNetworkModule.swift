@@ -23,6 +23,24 @@ public protocol ISocialNetworkModule : AnyObject{
                  success:@escaping (RPCResponce)->(),
                  failed:@escaping (NSError)->())
     
+    func newsSelectedGroups(accessToken:String,
+                            networkType:String,
+                            groupsIdList:[Int],
+                            startDate:Int?,
+                            endDate:Int?,
+                            countMessages:Int?,
+                            success:@escaping (RPCResponce)->(),
+                            failed:@escaping (NSError)->())
+    
+    func newsExceptGroups(accessToken:String,
+                          networkType:String,
+                          groupsIdList:[Int],
+                          startDate:Int?,
+                          endDate:Int?,
+                          countMessages:Int?,
+                          success:@escaping (RPCResponce)->(),
+                          failed:@escaping (NSError)->())
+    
     func attach(accessToken:String,
                 networkType:String,
                 attachUrl:String,
