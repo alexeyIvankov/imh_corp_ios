@@ -50,6 +50,10 @@
 		FF3B82C121E74364001D2830 /* EmployeeRequestCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82C021E74364001D2830 /* EmployeeRequestCategoryCell.swift */; };
 		FF3B82C321E74508001D2830 /* EmployeeRequestCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF3B82C221E74508001D2830 /* EmployeeRequestCategoryCell.xib */; };
 		FF3B82C521E7521A001D2830 /* UIViewDrawBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82C421E75219001D2830 /* UIViewDrawBorder.swift */; };
+		FF3B82C821E782A5001D2830 /* IEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82C721E782A5001D2830 /* IEvent.swift */; };
+		FF3B82CA21E782B2001D2830 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82C921E782B2001D2830 /* Event.swift */; };
+		FF3B82CD21E78319001D2830 /* IEventServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82CC21E78319001D2830 /* IEventServices.swift */; };
+		FF3B82CF21E78323001D2830 /* EventServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82CE21E78323001D2830 /* EventServices.swift */; };
 		FF43358021A6835000F0F5F0 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43357F21A6835000F0F5F0 /* UIViewController+Alert.swift */; };
 		FF43358E21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43358B21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift */; };
 		FF43358F21A69CF100F0F5F0 /* LazyParametersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43358C21A69CF100F0F5F0 /* LazyParametersManager.swift */; };
@@ -421,6 +425,10 @@
 		FF3B82C021E74364001D2830 /* EmployeeRequestCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeRequestCategoryCell.swift; sourceTree = "<group>"; };
 		FF3B82C221E74508001D2830 /* EmployeeRequestCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeRequestCategoryCell.xib; sourceTree = "<group>"; };
 		FF3B82C421E75219001D2830 /* UIViewDrawBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewDrawBorder.swift; sourceTree = "<group>"; };
+		FF3B82C721E782A5001D2830 /* IEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEvent.swift; sourceTree = "<group>"; };
+		FF3B82C921E782B2001D2830 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		FF3B82CC21E78319001D2830 /* IEventServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEventServices.swift; sourceTree = "<group>"; };
+		FF3B82CE21E78323001D2830 /* EventServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventServices.swift; sourceTree = "<group>"; };
 		FF43357D21A5A2E400F0F5F0 /* imh_corp_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imh_corp_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF43357F21A6835000F0F5F0 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		FF43358B21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyParametersManagerAssembly.swift; sourceTree = "<group>"; };
@@ -1001,6 +1009,24 @@
 			path = category;
 			sourceTree = "<group>";
 		};
+		FF3B82C621E78299001D2830 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				FF3B82C721E782A5001D2830 /* IEvent.swift */,
+				FF3B82C921E782B2001D2830 /* Event.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		FF3B82CB21E782FB001D2830 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				FF3B82CC21E78319001D2830 /* IEventServices.swift */,
+				FF3B82CE21E78323001D2830 /* EventServices.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
 		FF43357E21A6808700F0F5F0 /* viewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1444,6 +1470,8 @@
 		FF5614912180A2C200DCCE1B /* events */ = {
 			isa = PBXGroup;
 			children = (
+				FF3B82CB21E782FB001D2830 /* services */,
+				FF3B82C621E78299001D2830 /* models */,
 				FF5614922180A2C200DCCE1B /* design */,
 				FF5614952180A2C200DCCE1B /* director */,
 				FF5614982180A2C200DCCE1B /* assemblys */,
@@ -3119,11 +3147,13 @@
 				FFAB4F20216392D400AE82EA /* IWindowStack.swift in Sources */,
 				FF7000A621B92CF5003E4D84 /* File.swift in Sources */,
 				FFAB4FA72163971A00AE82EA /* INetwork.swift in Sources */,
+				FF3B82CA21E782B2001D2830 /* Event.swift in Sources */,
 				FF4335AE21A6CF8C00F0F5F0 /* ISession.swift in Sources */,
 				FF72AF82217761B2002D04DA /* String+Remove.swift in Sources */,
 				FFF9533D21A2A4D900612C10 /* IContainer.swift in Sources */,
 				FF3B82A021E733B1001D2830 /* IEmployeeRequestsDirector.swift in Sources */,
 				FFAB4F6B2163959700AE82EA /* LoginCake.swift in Sources */,
+				FF3B82CF21E78323001D2830 /* EventServices.swift in Sources */,
 				FF3B82A121E733B1001D2830 /* EmployeeRequestsDirector.swift in Sources */,
 				FFAB4F672163959700AE82EA /* LoginController.swift in Sources */,
 				FF72AF7D217761B2002D04DA /* Image+Color.swift in Sources */,
@@ -3284,6 +3314,7 @@
 				FF72AF122175CECF002D04DA /* WelcomeController.swift in Sources */,
 				FFAB4F23216392D400AE82EA /* DispatchQueue+After.swift in Sources */,
 				FF52A26521D0D939000DE870 /* Gap.swift in Sources */,
+				FF3B82C821E782A5001D2830 /* IEvent.swift in Sources */,
 				FF72AF81217761B2002D04DA /* String+NSMutableAttributedString.swift in Sources */,
 				FF7000BF21BF9188003E4D84 /* FileDirector.swift in Sources */,
 				FFAB4F3A2163936B00AE82EA /* AppDelegate.swift in Sources */,
@@ -3379,6 +3410,7 @@
 				FF3897EC2178C462005CE562 /* DKChainableAnimationKit+Transform.swift in Sources */,
 				FFAB4F24216392D400AE82EA /* UIStoryboard+Load.swift in Sources */,
 				FF72AF0E2175CEAD002D04DA /* IWelcomeCake.swift in Sources */,
+				FF3B82CD21E78319001D2830 /* IEventServices.swift in Sources */,
 				FFAB4F0F216392D400AE82EA /* UIColor+Contrast.swift in Sources */,
 				FFF9532D21A29F9A00612C10 /* List+Array.swift in Sources */,
 				FF56144A21805B4600DCCE1B /* IConfirmationRouter.swift in Sources */,

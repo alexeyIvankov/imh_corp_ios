@@ -16,6 +16,10 @@ class EventsController : UIViewController {
     //MARK: Dependence
     var cake:IEventsCake = Depednence.tryInject()!
     
+    //MARK: IBOutlets
+    @IBOutlet var buttonTodayEvents:UIButton!
+    @IBOutlet var buttonAllEvents:UIButton!
+    
 
     //MARK: Life cycle
     override func viewDidLoad() {
@@ -33,7 +37,17 @@ class EventsController : UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
+    }
+    
+    //MARK: Actions
+    @IBAction func buttonTodayEventsPressed(){
+        self.buttonTodayEvents.isSelected = true
+        self.buttonAllEvents.isSelected = false
+    }
+    
+    @IBAction func buttonAllEventsPressed(){        
+        self.buttonTodayEvents.isSelected = false
+        self.buttonAllEvents.isSelected = true
     }
 }
 
