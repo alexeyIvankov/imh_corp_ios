@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class СompanyServicesDesign : IСompanyServicesDesign {
+class EmployeeRequestsDesign : IEmployeeRequestsDesign {
     
     required init(appDesign: IAppDesign) {
         
@@ -17,7 +17,7 @@ class СompanyServicesDesign : IСompanyServicesDesign {
     
     func apply<T>(vc: T) where T : UIViewController {
         
-        guard let controller = vc as? СompanyServicesController else {
+        guard let controller = vc as? EmployeeRequestsController else {
             return
         }
     }

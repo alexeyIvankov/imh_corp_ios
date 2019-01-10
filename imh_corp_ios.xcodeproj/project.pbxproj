@@ -29,6 +29,27 @@
 		FF3897F42178C462005CE562 /* UIView+AnimationKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897E82178C462005CE562 /* UIView+AnimationKit.swift */; };
 		FF3897F72178C8A4005CE562 /* IAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897F62178C8A4005CE562 /* IAnimator.swift */; };
 		FF3897FA2178CB7D005CE562 /* AnimatorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3897F92178CB7D005CE562 /* AnimatorImage.swift */; };
+		FF3B829D21E733B1001D2830 /* EmployeeRequestsSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF3B828421E733B1001D2830 /* EmployeeRequestsSB.storyboard */; };
+		FF3B829E21E733B1001D2830 /* IEmployeeRequestsDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B828621E733B1001D2830 /* IEmployeeRequestsDesign.swift */; };
+		FF3B829F21E733B1001D2830 /* EmployeeRequestsDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B828721E733B1001D2830 /* EmployeeRequestsDesign.swift */; };
+		FF3B82A021E733B1001D2830 /* IEmployeeRequestsDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B828921E733B1001D2830 /* IEmployeeRequestsDirector.swift */; };
+		FF3B82A121E733B1001D2830 /* EmployeeRequestsDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B828A21E733B1001D2830 /* EmployeeRequestsDirector.swift */; };
+		FF3B82A221E733B1001D2830 /* EmployeeRequestsCakeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B828C21E733B1001D2830 /* EmployeeRequestsCakeAssembly.swift */; };
+		FF3B82A321E733B1001D2830 /* EmployeeRequestsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B828E21E733B1001D2830 /* EmployeeRequestsController.swift */; };
+		FF3B82A821E733B1001D2830 /* IEmployeeRequestsCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B829821E733B1001D2830 /* IEmployeeRequestsCake.swift */; };
+		FF3B82A921E733B1001D2830 /* EmployeeRequestsCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B829921E733B1001D2830 /* EmployeeRequestsCake.swift */; };
+		FF3B82AA21E733B1001D2830 /* EmployeeRequestsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B829B21E733B1001D2830 /* EmployeeRequestsRouter.swift */; };
+		FF3B82AB21E733B1001D2830 /* IEmployeeRequestsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B829C21E733B1001D2830 /* IEmployeeRequestsRouter.swift */; };
+		FF3B82B221E7376F001D2830 /* EmployeeRequestsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82AD21E7376F001D2830 /* EmployeeRequestsCategory.swift */; };
+		FF3B82B321E7376F001D2830 /* IEmployeeRequestCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82AE21E7376F001D2830 /* IEmployeeRequestCategory.swift */; };
+		FF3B82B421E7376F001D2830 /* EmployeeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82B021E7376F001D2830 /* EmployeeRequest.swift */; };
+		FF3B82B521E7376F001D2830 /* IEmployeeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82B121E7376F001D2830 /* IEmployeeRequest.swift */; };
+		FF3B82B821E73E63001D2830 /* IEmployeeRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82B721E73E63001D2830 /* IEmployeeRequestService.swift */; };
+		FF3B82BA21E73E81001D2830 /* EmployeeRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82B921E73E81001D2830 /* EmployeeRequestService.swift */; };
+		FF3B82BF21E74342001D2830 /* IEmployeeRequestCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82BE21E74342001D2830 /* IEmployeeRequestCategoryCell.swift */; };
+		FF3B82C121E74364001D2830 /* EmployeeRequestCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82C021E74364001D2830 /* EmployeeRequestCategoryCell.swift */; };
+		FF3B82C321E74508001D2830 /* EmployeeRequestCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF3B82C221E74508001D2830 /* EmployeeRequestCategoryCell.xib */; };
+		FF3B82C521E7521A001D2830 /* UIViewDrawBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82C421E75219001D2830 /* UIViewDrawBorder.swift */; };
 		FF43358021A6835000F0F5F0 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43357F21A6835000F0F5F0 /* UIViewController+Alert.swift */; };
 		FF43358E21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43358B21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift */; };
 		FF43358F21A69CF100F0F5F0 /* LazyParametersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43358C21A69CF100F0F5F0 /* LazyParametersManager.swift */; };
@@ -82,7 +103,6 @@
 		FF561426217DD3B600DCCE1B /* ITimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561425217DD3B600DCCE1B /* ITimer.swift */; };
 		FF561428217DD3DC00DCCE1B /* BackgroundTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */; };
 		FF56142A217DF5BD00DCCE1B /* IAnimatorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */; };
-		FF56142D217F56C200DCCE1B /* UIViewDrawBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56142C217F56C200DCCE1B /* UIViewDrawBorder.swift */; };
 		FF56144121805B4600DCCE1B /* ConfirmationDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56143021805B4500DCCE1B /* ConfirmationDesign.swift */; };
 		FF56144221805B4600DCCE1B /* IConfirmationDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56143121805B4500DCCE1B /* IConfirmationDesign.swift */; };
 		FF56144321805B4600DCCE1B /* ConfirmationDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56143321805B4500DCCE1B /* ConfirmationDirector.swift */; };
@@ -108,16 +128,6 @@
 		FF56147221809EE300DCCE1B /* INewsCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56146721809EE300DCCE1B /* INewsCake.swift */; };
 		FF56147321809EE300DCCE1B /* INewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56146921809EE300DCCE1B /* INewsRouter.swift */; };
 		FF56147421809EE300DCCE1B /* NewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56146A21809EE300DCCE1B /* NewsRouter.swift */; };
-		FF5614872180A1A800DCCE1B /* IСompanyServicesDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614772180A1A800DCCE1B /* IСompanyServicesDesign.swift */; };
-		FF5614882180A1A800DCCE1B /* СompanyServicesDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614782180A1A800DCCE1B /* СompanyServicesDesign.swift */; };
-		FF5614892180A1A800DCCE1B /* СompanyServicesDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56147A2180A1A800DCCE1B /* СompanyServicesDirector.swift */; };
-		FF56148A2180A1A800DCCE1B /* IСompanyServicesDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56147B2180A1A800DCCE1B /* IСompanyServicesDirector.swift */; };
-		FF56148B2180A1A800DCCE1B /* СompanyServicesCakeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56147D2180A1A800DCCE1B /* СompanyServicesCakeAssembly.swift */; };
-		FF56148C2180A1A800DCCE1B /* СompanyServicesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF56147F2180A1A800DCCE1B /* СompanyServicesController.swift */; };
-		FF56148D2180A1A800DCCE1B /* IСompanyServicesCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614822180A1A800DCCE1B /* IСompanyServicesCake.swift */; };
-		FF56148E2180A1A800DCCE1B /* СompanyServicesCake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614832180A1A800DCCE1B /* СompanyServicesCake.swift */; };
-		FF56148F2180A1A800DCCE1B /* IСompanyServicesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614852180A1A800DCCE1B /* IСompanyServicesRouter.swift */; };
-		FF5614902180A1A800DCCE1B /* СompanyServicesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614862180A1A800DCCE1B /* СompanyServicesRouter.swift */; };
 		FF5614A32180A2C200DCCE1B /* IEventsDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614932180A2C200DCCE1B /* IEventsDesign.swift */; };
 		FF5614A42180A2C200DCCE1B /* EventsDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614942180A2C200DCCE1B /* EventsDesign.swift */; };
 		FF5614A52180A2C200DCCE1B /* EventsDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614962180A2C200DCCE1B /* EventsDirector.swift */; };
@@ -140,7 +150,6 @@
 		FF5614C82180A40900DCCE1B /* MoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5614BE2180A40900DCCE1B /* MoreRouter.swift */; };
 		FF5614CA2180ACC500DCCE1B /* MoreSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5614C92180ACC500DCCE1B /* MoreSB.storyboard */; };
 		FF5614CC2180ACD900DCCE1B /* EventsSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5614CB2180ACD900DCCE1B /* EventsSB.storyboard */; };
-		FF5614CE2180ACEB00DCCE1B /* CompanyServicesSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5614CD2180ACEB00DCCE1B /* CompanyServicesSB.storyboard */; };
 		FF5614D02180ACFB00DCCE1B /* NewsSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5614CF2180ACFB00DCCE1B /* NewsSB.storyboard */; };
 		FF5615482181CBDD00DCCE1B /* IError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5615472181CBDD00DCCE1B /* IError.swift */; };
 		FF6FAFFC21AD5C7500C818BC /* INewsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FAFF821AD5C7500C818BC /* INewsPresenter.swift */; };
@@ -391,6 +400,27 @@
 		FF3897E82178C462005CE562 /* UIView+AnimationKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AnimationKit.swift"; sourceTree = "<group>"; };
 		FF3897F62178C8A4005CE562 /* IAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAnimator.swift; sourceTree = "<group>"; };
 		FF3897F92178CB7D005CE562 /* AnimatorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatorImage.swift; sourceTree = "<group>"; };
+		FF3B828421E733B1001D2830 /* EmployeeRequestsSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EmployeeRequestsSB.storyboard; sourceTree = "<group>"; };
+		FF3B828621E733B1001D2830 /* IEmployeeRequestsDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEmployeeRequestsDesign.swift; sourceTree = "<group>"; };
+		FF3B828721E733B1001D2830 /* EmployeeRequestsDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeRequestsDesign.swift; sourceTree = "<group>"; };
+		FF3B828921E733B1001D2830 /* IEmployeeRequestsDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEmployeeRequestsDirector.swift; sourceTree = "<group>"; };
+		FF3B828A21E733B1001D2830 /* EmployeeRequestsDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeRequestsDirector.swift; sourceTree = "<group>"; };
+		FF3B828C21E733B1001D2830 /* EmployeeRequestsCakeAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeRequestsCakeAssembly.swift; sourceTree = "<group>"; };
+		FF3B828E21E733B1001D2830 /* EmployeeRequestsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeRequestsController.swift; sourceTree = "<group>"; };
+		FF3B829821E733B1001D2830 /* IEmployeeRequestsCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEmployeeRequestsCake.swift; sourceTree = "<group>"; };
+		FF3B829921E733B1001D2830 /* EmployeeRequestsCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeRequestsCake.swift; sourceTree = "<group>"; };
+		FF3B829B21E733B1001D2830 /* EmployeeRequestsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeRequestsRouter.swift; sourceTree = "<group>"; };
+		FF3B829C21E733B1001D2830 /* IEmployeeRequestsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEmployeeRequestsRouter.swift; sourceTree = "<group>"; };
+		FF3B82AD21E7376F001D2830 /* EmployeeRequestsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeRequestsCategory.swift; sourceTree = "<group>"; };
+		FF3B82AE21E7376F001D2830 /* IEmployeeRequestCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEmployeeRequestCategory.swift; sourceTree = "<group>"; };
+		FF3B82B021E7376F001D2830 /* EmployeeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeRequest.swift; sourceTree = "<group>"; };
+		FF3B82B121E7376F001D2830 /* IEmployeeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEmployeeRequest.swift; sourceTree = "<group>"; };
+		FF3B82B721E73E63001D2830 /* IEmployeeRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEmployeeRequestService.swift; sourceTree = "<group>"; };
+		FF3B82B921E73E81001D2830 /* EmployeeRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeRequestService.swift; sourceTree = "<group>"; };
+		FF3B82BE21E74342001D2830 /* IEmployeeRequestCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEmployeeRequestCategoryCell.swift; sourceTree = "<group>"; };
+		FF3B82C021E74364001D2830 /* EmployeeRequestCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeRequestCategoryCell.swift; sourceTree = "<group>"; };
+		FF3B82C221E74508001D2830 /* EmployeeRequestCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeRequestCategoryCell.xib; sourceTree = "<group>"; };
+		FF3B82C421E75219001D2830 /* UIViewDrawBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewDrawBorder.swift; sourceTree = "<group>"; };
 		FF43357D21A5A2E400F0F5F0 /* imh_corp_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imh_corp_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF43357F21A6835000F0F5F0 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		FF43358B21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyParametersManagerAssembly.swift; sourceTree = "<group>"; };
@@ -445,7 +475,6 @@
 		FF561425217DD3B600DCCE1B /* ITimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITimer.swift; sourceTree = "<group>"; };
 		FF561427217DD3DC00DCCE1B /* BackgroundTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTimer.swift; sourceTree = "<group>"; };
 		FF561429217DF5BD00DCCE1B /* IAnimatorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAnimatorImage.swift; sourceTree = "<group>"; };
-		FF56142C217F56C200DCCE1B /* UIViewDrawBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewDrawBorder.swift; sourceTree = "<group>"; };
 		FF56143021805B4500DCCE1B /* ConfirmationDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationDesign.swift; sourceTree = "<group>"; };
 		FF56143121805B4500DCCE1B /* IConfirmationDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IConfirmationDesign.swift; sourceTree = "<group>"; };
 		FF56143321805B4500DCCE1B /* ConfirmationDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationDirector.swift; sourceTree = "<group>"; };
@@ -471,16 +500,6 @@
 		FF56146721809EE300DCCE1B /* INewsCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INewsCake.swift; sourceTree = "<group>"; };
 		FF56146921809EE300DCCE1B /* INewsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INewsRouter.swift; sourceTree = "<group>"; };
 		FF56146A21809EE300DCCE1B /* NewsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRouter.swift; sourceTree = "<group>"; };
-		FF5614772180A1A800DCCE1B /* IСompanyServicesDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IСompanyServicesDesign.swift"; sourceTree = "<group>"; };
-		FF5614782180A1A800DCCE1B /* СompanyServicesDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СompanyServicesDesign.swift"; sourceTree = "<group>"; };
-		FF56147A2180A1A800DCCE1B /* СompanyServicesDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СompanyServicesDirector.swift"; sourceTree = "<group>"; };
-		FF56147B2180A1A800DCCE1B /* IСompanyServicesDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IСompanyServicesDirector.swift"; sourceTree = "<group>"; };
-		FF56147D2180A1A800DCCE1B /* СompanyServicesCakeAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СompanyServicesCakeAssembly.swift"; sourceTree = "<group>"; };
-		FF56147F2180A1A800DCCE1B /* СompanyServicesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СompanyServicesController.swift"; sourceTree = "<group>"; };
-		FF5614822180A1A800DCCE1B /* IСompanyServicesCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IСompanyServicesCake.swift"; sourceTree = "<group>"; };
-		FF5614832180A1A800DCCE1B /* СompanyServicesCake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СompanyServicesCake.swift"; sourceTree = "<group>"; };
-		FF5614852180A1A800DCCE1B /* IСompanyServicesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IСompanyServicesRouter.swift"; sourceTree = "<group>"; };
-		FF5614862180A1A800DCCE1B /* СompanyServicesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "СompanyServicesRouter.swift"; sourceTree = "<group>"; };
 		FF5614932180A2C200DCCE1B /* IEventsDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEventsDesign.swift; sourceTree = "<group>"; };
 		FF5614942180A2C200DCCE1B /* EventsDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsDesign.swift; sourceTree = "<group>"; };
 		FF5614962180A2C200DCCE1B /* EventsDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsDirector.swift; sourceTree = "<group>"; };
@@ -503,7 +522,6 @@
 		FF5614BE2180A40900DCCE1B /* MoreRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreRouter.swift; sourceTree = "<group>"; };
 		FF5614C92180ACC500DCCE1B /* MoreSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MoreSB.storyboard; sourceTree = "<group>"; };
 		FF5614CB2180ACD900DCCE1B /* EventsSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventsSB.storyboard; sourceTree = "<group>"; };
-		FF5614CD2180ACEB00DCCE1B /* CompanyServicesSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CompanyServicesSB.storyboard; sourceTree = "<group>"; };
 		FF5614CF2180ACFB00DCCE1B /* NewsSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsSB.storyboard; sourceTree = "<group>"; };
 		FF5615472181CBDD00DCCE1B /* IError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IError.swift; sourceTree = "<group>"; };
 		FF6FAFF821AD5C7500C818BC /* INewsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INewsPresenter.swift; sourceTree = "<group>"; };
@@ -852,6 +870,137 @@
 			path = animators;
 			sourceTree = "<group>";
 		};
+		FF3B828321E733B1001D2830 /* employeeRequests */ = {
+			isa = PBXGroup;
+			children = (
+				FF3B82B621E73E0A001D2830 /* services */,
+				FF3B828421E733B1001D2830 /* EmployeeRequestsSB.storyboard */,
+				FF3B828521E733B1001D2830 /* design */,
+				FF3B828821E733B1001D2830 /* director */,
+				FF3B828B21E733B1001D2830 /* assemblys */,
+				FF3B828D21E733B1001D2830 /* controller */,
+				FF3B828F21E733B1001D2830 /* model */,
+				FF3B829621E733B1001D2830 /* views */,
+				FF3B829721E733B1001D2830 /* cake */,
+				FF3B829A21E733B1001D2830 /* router */,
+			);
+			path = employeeRequests;
+			sourceTree = "<group>";
+		};
+		FF3B828521E733B1001D2830 /* design */ = {
+			isa = PBXGroup;
+			children = (
+				FF3B828621E733B1001D2830 /* IEmployeeRequestsDesign.swift */,
+				FF3B828721E733B1001D2830 /* EmployeeRequestsDesign.swift */,
+			);
+			path = design;
+			sourceTree = "<group>";
+		};
+		FF3B828821E733B1001D2830 /* director */ = {
+			isa = PBXGroup;
+			children = (
+				FF3B828921E733B1001D2830 /* IEmployeeRequestsDirector.swift */,
+				FF3B828A21E733B1001D2830 /* EmployeeRequestsDirector.swift */,
+			);
+			path = director;
+			sourceTree = "<group>";
+		};
+		FF3B828B21E733B1001D2830 /* assemblys */ = {
+			isa = PBXGroup;
+			children = (
+				FF3B828C21E733B1001D2830 /* EmployeeRequestsCakeAssembly.swift */,
+			);
+			path = assemblys;
+			sourceTree = "<group>";
+		};
+		FF3B828D21E733B1001D2830 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				FF3B828E21E733B1001D2830 /* EmployeeRequestsController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		FF3B828F21E733B1001D2830 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				FF3B82AF21E7376F001D2830 /* employeeRequests */,
+				FF3B82AC21E7376F001D2830 /* employeeRequestsCategory */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		FF3B829621E733B1001D2830 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				FF3B82BB21E742DF001D2830 /* cells */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		FF3B829721E733B1001D2830 /* cake */ = {
+			isa = PBXGroup;
+			children = (
+				FF3B829821E733B1001D2830 /* IEmployeeRequestsCake.swift */,
+				FF3B829921E733B1001D2830 /* EmployeeRequestsCake.swift */,
+			);
+			path = cake;
+			sourceTree = "<group>";
+		};
+		FF3B829A21E733B1001D2830 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				FF3B829B21E733B1001D2830 /* EmployeeRequestsRouter.swift */,
+				FF3B829C21E733B1001D2830 /* IEmployeeRequestsRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		FF3B82AC21E7376F001D2830 /* employeeRequestsCategory */ = {
+			isa = PBXGroup;
+			children = (
+				FF3B82AD21E7376F001D2830 /* EmployeeRequestsCategory.swift */,
+				FF3B82AE21E7376F001D2830 /* IEmployeeRequestCategory.swift */,
+			);
+			path = employeeRequestsCategory;
+			sourceTree = "<group>";
+		};
+		FF3B82AF21E7376F001D2830 /* employeeRequests */ = {
+			isa = PBXGroup;
+			children = (
+				FF3B82B021E7376F001D2830 /* EmployeeRequest.swift */,
+				FF3B82B121E7376F001D2830 /* IEmployeeRequest.swift */,
+			);
+			path = employeeRequests;
+			sourceTree = "<group>";
+		};
+		FF3B82B621E73E0A001D2830 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				FF3B82B721E73E63001D2830 /* IEmployeeRequestService.swift */,
+				FF3B82B921E73E81001D2830 /* EmployeeRequestService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		FF3B82BB21E742DF001D2830 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				FF3B82BC21E742FD001D2830 /* category */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		FF3B82BC21E742FD001D2830 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				FF3B82BE21E74342001D2830 /* IEmployeeRequestCategoryCell.swift */,
+				FF3B82C021E74364001D2830 /* EmployeeRequestCategoryCell.swift */,
+				FF3B82C221E74508001D2830 /* EmployeeRequestCategoryCell.xib */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
 		FF43357E21A6808700F0F5F0 /* viewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1107,7 +1256,6 @@
 		FF56142B217F547700DCCE1B /* views */ = {
 			isa = PBXGroup;
 			children = (
-				FF56142C217F56C200DCCE1B /* UIViewDrawBorder.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1289,80 +1437,6 @@
 			children = (
 				FF56146921809EE300DCCE1B /* INewsRouter.swift */,
 				FF56146A21809EE300DCCE1B /* NewsRouter.swift */,
-			);
-			path = router;
-			sourceTree = "<group>";
-		};
-		FF5614752180A1A800DCCE1B /* companyServices */ = {
-			isa = PBXGroup;
-			children = (
-				FF5614762180A1A800DCCE1B /* design */,
-				FF5614792180A1A800DCCE1B /* director */,
-				FF56147C2180A1A800DCCE1B /* assemblys */,
-				FF56147E2180A1A800DCCE1B /* controller */,
-				FF5614802180A1A800DCCE1B /* views */,
-				FF5614812180A1A800DCCE1B /* cake */,
-				FF5614842180A1A800DCCE1B /* router */,
-				FF5614CD2180ACEB00DCCE1B /* CompanyServicesSB.storyboard */,
-			);
-			path = companyServices;
-			sourceTree = "<group>";
-		};
-		FF5614762180A1A800DCCE1B /* design */ = {
-			isa = PBXGroup;
-			children = (
-				FF5614772180A1A800DCCE1B /* IСompanyServicesDesign.swift */,
-				FF5614782180A1A800DCCE1B /* СompanyServicesDesign.swift */,
-			);
-			path = design;
-			sourceTree = "<group>";
-		};
-		FF5614792180A1A800DCCE1B /* director */ = {
-			isa = PBXGroup;
-			children = (
-				FF56147A2180A1A800DCCE1B /* СompanyServicesDirector.swift */,
-				FF56147B2180A1A800DCCE1B /* IСompanyServicesDirector.swift */,
-			);
-			path = director;
-			sourceTree = "<group>";
-		};
-		FF56147C2180A1A800DCCE1B /* assemblys */ = {
-			isa = PBXGroup;
-			children = (
-				FF56147D2180A1A800DCCE1B /* СompanyServicesCakeAssembly.swift */,
-			);
-			path = assemblys;
-			sourceTree = "<group>";
-		};
-		FF56147E2180A1A800DCCE1B /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				FF56147F2180A1A800DCCE1B /* СompanyServicesController.swift */,
-			);
-			path = controller;
-			sourceTree = "<group>";
-		};
-		FF5614802180A1A800DCCE1B /* views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = views;
-			sourceTree = "<group>";
-		};
-		FF5614812180A1A800DCCE1B /* cake */ = {
-			isa = PBXGroup;
-			children = (
-				FF5614822180A1A800DCCE1B /* IСompanyServicesCake.swift */,
-				FF5614832180A1A800DCCE1B /* СompanyServicesCake.swift */,
-			);
-			path = cake;
-			sourceTree = "<group>";
-		};
-		FF5614842180A1A800DCCE1B /* router */ = {
-			isa = PBXGroup;
-			children = (
-				FF5614852180A1A800DCCE1B /* IСompanyServicesRouter.swift */,
-				FF5614862180A1A800DCCE1B /* СompanyServicesRouter.swift */,
 			);
 			path = router;
 			sourceTree = "<group>";
@@ -2136,10 +2210,10 @@
 		FFAB4E722163465C00AE82EA /* imh_corp_ios */ = {
 			isa = PBXGroup;
 			children = (
+				FF3B828321E733B1001D2830 /* employeeRequests */,
 				FF70009F21B92CF5003E4D84 /* files */,
 				FF5614AD2180A40900DCCE1B /* more */,
 				FF5614912180A2C200DCCE1B /* events */,
-				FF5614752180A1A800DCCE1B /* companyServices */,
 				FF56145921809EE300DCCE1B /* news */,
 				FF72AF2B2175E35C002D04DA /* extLib */,
 				FF72AEEF2170AF8D002D04DA /* welcome */,
@@ -2202,6 +2276,7 @@
 		FFAB4ECC216392D400AE82EA /* ui_components */ = {
 			isa = PBXGroup;
 			children = (
+				FF3B82C421E75219001D2830 /* UIViewDrawBorder.swift */,
 				FF52A25721D0D939000DE870 /* SABlurImageView */,
 				FF52A23621D0CC78000DE870 /* ImageSlideshow */,
 				FF52A22F21CCFF40000DE870 /* AImage.swift */,
@@ -2813,11 +2888,11 @@
 				FFAB4F15216392D400AE82EA /* README.md in Resources */,
 				FFAB4F882163960900AE82EA /* Main.storyboard in Resources */,
 				FF5614CA2180ACC500DCCE1B /* MoreSB.storyboard in Resources */,
-				FF5614CE2180ACEB00DCCE1B /* CompanyServicesSB.storyboard in Resources */,
 				FF6FB00221AD5D0100C818BC /* NewsSectionHeader.xib in Resources */,
 				FF52A23321CD00F1000DE870 /* pmh_logo.gif in Resources */,
 				FF52A23521CD02B4000DE870 /* pmh_logo2.gif in Resources */,
 				FF5614CC2180ACD900DCCE1B /* EventsSB.storyboard in Resources */,
+				FF3B829D21E733B1001D2830 /* EmployeeRequestsSB.storyboard in Resources */,
 				FFAB4EA2216348B200AE82EA /* LaunchScreen.storyboard in Resources */,
 				FFAB4EA1216348B200AE82EA /* Assets.xcassets in Resources */,
 				FF7000B421BEA24E003E4D84 /* NewsCell.xib in Resources */,
@@ -2827,6 +2902,7 @@
 				FFAB4E942163489200AE82EA /* Podfile in Resources */,
 				FF7000BA21BEA3DC003E4D84 /* NewsAttachCell.xib in Resources */,
 				FFAB4F1B216392D400AE82EA /* AssemblyList.plist in Resources */,
+				FF3B82C321E74508001D2830 /* EmployeeRequestCategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2991,23 +3067,27 @@
 			files = (
 				FF52A22A21CCBA83000DE870 /* IPMHLoader.swift in Sources */,
 				FFAB4F1F216392D400AE82EA /* IRouter.swift in Sources */,
+				FF3B82A921E733B1001D2830 /* EmployeeRequestsCake.swift in Sources */,
 				FFAB4F752163959700AE82EA /* IAuthCake.swift in Sources */,
 				FFDEE15921B14BEC00D25CAE /* News.swift in Sources */,
 				FF56146B21809EE300DCCE1B /* INewsDesign.swift in Sources */,
 				FF52A26421D0D939000DE870 /* UIImage+BlurEffect.swift in Sources */,
 				FF4335D021AD1C9500F0F5F0 /* IRootDesign.swift in Sources */,
 				FF4335C121A7D7D400F0F5F0 /* CGRectEx.swift in Sources */,
-				FF5614902180A1A800DCCE1B /* СompanyServicesRouter.swift in Sources */,
 				FFAB4F13216392D400AE82EA /* PopMenuPresentAnimationController.swift in Sources */,
+				FF3B829F21E733B1001D2830 /* EmployeeRequestsDesign.swift in Sources */,
 				FF72AEF32175BFBB002D04DA /* IRootDirector.swift in Sources */,
 				FF5614C12180A40900DCCE1B /* MoreDirector.swift in Sources */,
 				FF5614A32180A2C200DCCE1B /* IEventsDesign.swift in Sources */,
+				FF3B82A221E733B1001D2830 /* EmployeeRequestsCakeAssembly.swift in Sources */,
+				FF3B82B421E7376F001D2830 /* EmployeeRequest.swift in Sources */,
 				FF70010321C3E53F003E4D84 /* ServiceGroups.swift in Sources */,
 				FF72AF4421761019002D04DA /* WelcomePagerCell.swift in Sources */,
 				FF70008221B51A5E003E4D84 /* SettingsRealm.swift in Sources */,
 				FF7000E521C3A97C003E4D84 /* ListGroupsNewsController.swift in Sources */,
 				FF7000E821C3A97C003E4D84 /* IListGroupsNewsRouter.swift in Sources */,
 				FF72AF80217761B2002D04DA /* UIImage+Resize.m in Sources */,
+				FF3B82C521E7521A001D2830 /* UIViewDrawBorder.swift in Sources */,
 				FFAB4FA92163971A00AE82EA /* NetworkAssembly.swift in Sources */,
 				FFAB4F382163936B00AE82EA /* Application.swift in Sources */,
 				FF72AF022175C1F5002D04DA /* AuthDirector.swift in Sources */,
@@ -3016,9 +3096,11 @@
 				FF52A24F21D0CC78000DE870 /* FullScreenSlideshowViewController.swift in Sources */,
 				FF3897C02178AC78005CE562 /* RQShineLabel.m in Sources */,
 				FF5614AC2180A2C200DCCE1B /* EventsRouter.swift in Sources */,
+				FF3B82AB21E733B1001D2830 /* IEmployeeRequestsRouter.swift in Sources */,
 				FF72AF86217761B2002D04DA /* String+HTML.swift in Sources */,
 				FFAB4FA62163971A00AE82EA /* SecurityService.swift in Sources */,
 				FFAB4F6D2163959700AE82EA /* LoginRouter.swift in Sources */,
+				FF3B82AA21E733B1001D2830 /* EmployeeRequestsRouter.swift in Sources */,
 				FF56147221809EE300DCCE1B /* INewsCake.swift in Sources */,
 				FF7000B321BEA24E003E4D84 /* INewsCell.swift in Sources */,
 				FF52A25221D0CC78000DE870 /* ZoomAnimatedTransitioning.swift in Sources */,
@@ -3032,7 +3114,6 @@
 				FF4335AC21A6CF5C00F0F5F0 /* SessionService.swift in Sources */,
 				FF56147321809EE300DCCE1B /* INewsRouter.swift in Sources */,
 				FF6FB00F21AD68E700C818BC /* INewsDetailsRouter.swift in Sources */,
-				FF56148D2180A1A800DCCE1B /* IСompanyServicesCake.swift in Sources */,
 				FF5614C72180A40900DCCE1B /* IMoreRouter.swift in Sources */,
 				FF52A25021D0CC78000DE870 /* InputSource.swift in Sources */,
 				FFAB4F20216392D400AE82EA /* IWindowStack.swift in Sources */,
@@ -3041,7 +3122,9 @@
 				FF4335AE21A6CF8C00F0F5F0 /* ISession.swift in Sources */,
 				FF72AF82217761B2002D04DA /* String+Remove.swift in Sources */,
 				FFF9533D21A2A4D900612C10 /* IContainer.swift in Sources */,
+				FF3B82A021E733B1001D2830 /* IEmployeeRequestsDirector.swift in Sources */,
 				FFAB4F6B2163959700AE82EA /* LoginCake.swift in Sources */,
+				FF3B82A121E733B1001D2830 /* EmployeeRequestsDirector.swift in Sources */,
 				FFAB4F672163959700AE82EA /* LoginController.swift in Sources */,
 				FF72AF7D217761B2002D04DA /* Image+Color.swift in Sources */,
 				FF70008921B51D10003E4D84 /* AccountRealm.swift in Sources */,
@@ -3064,13 +3147,9 @@
 				FF7000E021C3A97C003E4D84 /* IListGroupsNewsDesign.swift in Sources */,
 				FF72AF1F2175DB11002D04DA /* IWelcomeDesign.swift in Sources */,
 				FF6FB00521AD5E2700C818BC /* Bunble+LoadView.swift in Sources */,
-				FF56142D217F56C200DCCE1B /* UIViewDrawBorder.swift in Sources */,
-				FF5614882180A1A800DCCE1B /* СompanyServicesDesign.swift in Sources */,
 				FF3897D42178C3F5005CE562 /* JHKeyframeAnimationFunctions.c in Sources */,
 				FFAB4F772163959700AE82EA /* IAuthRouter.swift in Sources */,
 				FFF9534221A2A4D900612C10 /* TableContainer.swift in Sources */,
-				FF5614872180A1A800DCCE1B /* IСompanyServicesDesign.swift in Sources */,
-				FF56148B2180A1A800DCCE1B /* СompanyServicesCakeAssembly.swift in Sources */,
 				FF72AF482176109B002D04DA /* IWelcomePagerCell.swift in Sources */,
 				FF5614BF2180A40900DCCE1B /* IMoreDesign.swift in Sources */,
 				FF56144521805B4600DCCE1B /* ConfirmationCakeAssembly.swift in Sources */,
@@ -3089,6 +3168,7 @@
 				FF52A24B21D0CC78000DE870 /* ImageSlideshowItem.swift in Sources */,
 				FFAB4F11216392D400AE82EA /* UIView+Shadows.swift in Sources */,
 				FF56146E21809EE300DCCE1B /* INewsDirector.swift in Sources */,
+				FF3B82B521E7376F001D2830 /* IEmployeeRequest.swift in Sources */,
 				FF3897D82178C3F5005CE562 /* JHAnimationChainLink.m in Sources */,
 				FF5615482181CBDD00DCCE1B /* IError.swift in Sources */,
 				FF7000CC21BF9600003E4D84 /* IFileDiskService.swift in Sources */,
@@ -3112,11 +3192,11 @@
 				FFAB4F0D216392D400AE82EA /* PopMenuAppearance.swift in Sources */,
 				FF7000F921C3E0CC003E4D84 /* ListGroupsDataStorage.swift in Sources */,
 				FF72AF6421776138002D04DA /* UICollectionViewCell+Reuse.swift in Sources */,
+				FF3B82BA21E73E81001D2830 /* EmployeeRequestService.swift in Sources */,
 				FF72AF4D21761B13002D04DA /* WelcomePage.swift in Sources */,
 				FF72AF5021770AB6002D04DA /* WelcomePagesDataSource.swift in Sources */,
 				FF5614582180943200DCCE1B /* StateEngine.swift in Sources */,
 				FF4335D221AD1D9D00F0F5F0 /* RootDesign.swift in Sources */,
-				FF56148A2180A1A800DCCE1B /* IСompanyServicesDirector.swift in Sources */,
 				FFF9534121A2A4D900612C10 /* Section.swift in Sources */,
 				FF3897FA2178CB7D005CE562 /* AnimatorImage.swift in Sources */,
 				FF70008E21B51D27003E4D84 /* Account.swift in Sources */,
@@ -3135,6 +3215,7 @@
 				FFAB4F21216392D400AE82EA /* WindowStack.swift in Sources */,
 				FF4335C721A7E20200F0F5F0 /* INewsDataStorage.swift in Sources */,
 				FF7000E321C3A97C003E4D84 /* IListGroupsNewsDirector.swift in Sources */,
+				FF3B82B221E7376F001D2830 /* EmployeeRequestsCategory.swift in Sources */,
 				FF5614A62180A2C200DCCE1B /* IEventsDirector.swift in Sources */,
 				FFAB4F14216392D400AE82EA /* PopMenuDismissAnimationController.swift in Sources */,
 				FF6FB01521AD691800C818BC /* NewsDetailsDesign.swift in Sources */,
@@ -3156,6 +3237,7 @@
 				FF72AF3C2175E35C002D04DA /* FSPagerViewLayoutAttributes.swift in Sources */,
 				FF70010121C3E532003E4D84 /* IServiceGroups.swift in Sources */,
 				FFAB4F3C2163936B00AE82EA /* main.swift in Sources */,
+				FF3B82B321E7376F001D2830 /* IEmployeeRequestCategory.swift in Sources */,
 				FF5614C02180A40900DCCE1B /* MoreDesign.swift in Sources */,
 				FF5614552180943200DCCE1B /* ValidatorTemplate.swift in Sources */,
 				FF7000B221BEA24E003E4D84 /* NewsCell.swift in Sources */,
@@ -3165,6 +3247,7 @@
 				FFAB4F1E216392D400AE82EA /* Global.swift in Sources */,
 				FFAB4F3B2163936B00AE82EA /* IApplication.swift in Sources */,
 				FF3897F02178C462005CE562 /* DKChainableAnimationKit+Frame.swift in Sources */,
+				FF3B82B821E73E63001D2830 /* IEmployeeRequestService.swift in Sources */,
 				FF52A22721C8FE1A000DE870 /* NewsAttachDataSource.swift in Sources */,
 				FF3897F32178C462005CE562 /* DKChainableAnimationKit.swift in Sources */,
 				FF70008B21B51D10003E4D84 /* AuthRealm.swift in Sources */,
@@ -3194,7 +3277,6 @@
 				FF72AF8921776230002D04DA /* UIView+Shadow.swift in Sources */,
 				FF5614AA2180A2C200DCCE1B /* EventsCake.swift in Sources */,
 				FF5614C82180A40900DCCE1B /* MoreRouter.swift in Sources */,
-				FF5614892180A1A800DCCE1B /* СompanyServicesDirector.swift in Sources */,
 				FFAB4F1A216392D400AE82EA /* AppDesign.swift in Sources */,
 				FF56144221805B4600DCCE1B /* IConfirmationDesign.swift in Sources */,
 				FFAB4F6A2163959700AE82EA /* ILoginCake.swift in Sources */,
@@ -3216,6 +3298,7 @@
 				FFF9532521A292E000612C10 /* INewsGroup.swift in Sources */,
 				FF7000FF21C3E485003E4D84 /* IServiceNews.swift in Sources */,
 				FFAB4F22216392D400AE82EA /* TimeInterval+Date.swift in Sources */,
+				FF3B82C121E74364001D2830 /* EmployeeRequestCategoryCell.swift in Sources */,
 				FF7000F021C3D6DA003E4D84 /* IListGroupViewCell.swift in Sources */,
 				FF72AF85217761B2002D04DA /* String+Subscript.swift in Sources */,
 				FF7000EE21C3CA23003E4D84 /* UIViewController+BarButtons.swift in Sources */,
@@ -3224,12 +3307,10 @@
 				FF56144421805B4600DCCE1B /* IConfirmationDirector.swift in Sources */,
 				FF72AF102175CEBA002D04DA /* WelcomeCake.swift in Sources */,
 				FFAB4F18216392D400AE82EA /* IDesign.swift in Sources */,
-				FF56148F2180A1A800DCCE1B /* IСompanyServicesRouter.swift in Sources */,
 				FF43359C21A6A8F000F0F5F0 /* IDataBase.swift in Sources */,
 				FFAB4F17216392D400AE82EA /* IAppDesign.swift in Sources */,
 				FF5614A52180A2C200DCCE1B /* EventsDirector.swift in Sources */,
 				FFAB4F0E216392D400AE82EA /* PopMenuManager.swift in Sources */,
-				FF56148E2180A1A800DCCE1B /* СompanyServicesCake.swift in Sources */,
 				FF7000B821BEA31B003E4D84 /* INewsAttachCell.swift in Sources */,
 				FF7000B621BEA305003E4D84 /* NewsAttachCell.swift in Sources */,
 				FFAB4F8E2163960900AE82EA /* RootRouter.swift in Sources */,
@@ -3241,6 +3322,7 @@
 				FF4335CB21A8225B00F0F5F0 /* UIViewController+Keyboard.swift in Sources */,
 				FF52A24D21D0CC78000DE870 /* ImageSlideshow.swift in Sources */,
 				FF72AEF82175BFF5002D04DA /* LoginDirector.swift in Sources */,
+				FF3B82A321E733B1001D2830 /* EmployeeRequestsController.swift in Sources */,
 				FF43359B21A6A8F000F0F5F0 /* DataBaseAssembly.swift in Sources */,
 				FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */,
 				FF4335CD21ABF85A00F0F5F0 /* ILimonadeItem.swift in Sources */,
@@ -3263,7 +3345,6 @@
 				FFAB4F16216392D400AE82EA /* GradientView.swift in Sources */,
 				FF3897F42178C462005CE562 /* UIView+AnimationKit.swift in Sources */,
 				FFAB4F642163959700AE82EA /* LoginDesign.swift in Sources */,
-				FF56148C2180A1A800DCCE1B /* СompanyServicesController.swift in Sources */,
 				FF72AF1A2175CF0B002D04DA /* WelcomeRouter.swift in Sources */,
 				FFAB4F1C216392D400AE82EA /* IDependenceDirector.swift in Sources */,
 				FF70008C21B51D10003E4D84 /* IAuth.swift in Sources */,
@@ -3271,12 +3352,14 @@
 				FF4335B021A6CF9500F0F5F0 /* SessionRealm.swift in Sources */,
 				FFAB4F19216392D400AE82EA /* AppDesignAssembly.swift in Sources */,
 				FFAB4F2C216392D400AE82EA /* ILoaderService.swift in Sources */,
+				FF3B82A821E733B1001D2830 /* IEmployeeRequestsCake.swift in Sources */,
 				FF72AF84217761B2002D04DA /* String+Localize.swift in Sources */,
 				FF72AF032175C1F5002D04DA /* IAuthDirector.swift in Sources */,
 				FF72AF212175DB1C002D04DA /* WelcomeDesign.swift in Sources */,
 				FF52A24E21D0CC78000DE870 /* PageIndicatorPosition.swift in Sources */,
 				FFAB4F0B216392D400AE82EA /* PopMenuAction.swift in Sources */,
 				FF56146F21809EE300DCCE1B /* NewsCakeAssembly.swift in Sources */,
+				FF3B82BF21E74342001D2830 /* IEmployeeRequestCategoryCell.swift in Sources */,
 				FFF9532121A292C600612C10 /* INews.swift in Sources */,
 				FFAB4F28216392D400AE82EA /* WKWebView+Cookies.swift in Sources */,
 				FF7000F721C3E0C0003E4D84 /* IListGroupsDataStorage.swift in Sources */,
@@ -3284,6 +3367,7 @@
 				FFF9534021A2A4D900612C10 /* Header.swift in Sources */,
 				FFAB4F2A216392D400AE82EA /* FullScreenLoader.swift in Sources */,
 				FF56144D2180631400DCCE1B /* UINavigationControllerTransparentBar.swift in Sources */,
+				FF3B829E21E733B1001D2830 /* IEmployeeRequestsDesign.swift in Sources */,
 				FF70010B21C3EBD9003E4D84 /* ServiceNewsAssembly.swift in Sources */,
 				FF5614A42180A2C200DCCE1B /* EventsDesign.swift in Sources */,
 				FF4335C021A7D7D400F0F5F0 /* SpinerLayer.swift in Sources */,

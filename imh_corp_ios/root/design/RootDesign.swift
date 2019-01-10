@@ -40,7 +40,7 @@ class RootDesign : IRootDesign{
                         currentVC.tabBarItem.image =  UIImage(named: "events_icon_deselect")?.withRenderingMode(.alwaysOriginal)
                         currentVC.tabBarItem.selectedImage = UIImage(named: "events_icon_select")?.withRenderingMode(.alwaysOriginal)
                     }
-                    else if currentVC is СompanyServicesController{
+                    else if currentVC is EmployeeRequestsController{
                         currentVC.tabBarItem.image =  UIImage(named: "info_icon_deselect")?.withRenderingMode(.alwaysOriginal)
                         currentVC.tabBarItem.selectedImage = UIImage(named: "info_icon_select")?.withRenderingMode(.alwaysOriginal)
                     }

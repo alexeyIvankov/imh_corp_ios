@@ -16,7 +16,7 @@ class News : INews{
     var body: String!
     var groupName:String!
     var dateCreated: Int
-      var containsImages: Bool = false
+    var containsImages: Bool = false
     
     var attaches: [IFile] = []
     

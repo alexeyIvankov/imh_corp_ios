@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-protocol IСompanyServicesDesign : AnyObject, IDesign {
+protocol IEmployeeRequestsDesign : AnyObject, IDesign {
     
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol IСompanyServicesRouter : AnyObject {
+protocol IEmployeeRequestsRouter : AnyObject {
     func setOwnwer<T:UIViewController>(ownwer:T)
     
     func showAlert(message:String)

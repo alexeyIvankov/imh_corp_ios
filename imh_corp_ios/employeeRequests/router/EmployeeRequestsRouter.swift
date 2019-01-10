@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class СompanyServicesRouter : IСompanyServicesRouter{
+class EmployeeRequestsRouter : IEmployeeRequestsRouter{
 
     var owner:UIViewController?
     var loaderService:ILoaderService

@@ -16,7 +16,7 @@ extension UIStoryboard{
         case root = "Main"
         case welcome = "WelcomeSB"
         case news = "NewsSB"
-        case companyServices = "CompanyServicesSB"
+        case employeeRequests = "EmployeeRequestsSB"
         case events = "EventsSB"
         case more = "MoreSB"
     }

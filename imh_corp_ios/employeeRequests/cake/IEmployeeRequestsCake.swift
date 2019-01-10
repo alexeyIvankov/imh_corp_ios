@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol IСompanyServicesCake : AnyObject {
+protocol IEmployeeRequestsCake : AnyObject {
     
-    var router:IСompanyServicesRouter { get }
-    var director:IСompanyServicesDirector { get }
-    var design:IСompanyServicesDesign { get }
+    var router:IEmployeeRequestsRouter { get }
+    var director:IEmployeeRequestsDirector { get }
+    var design:IEmployeeRequestsDesign { get }
 }
