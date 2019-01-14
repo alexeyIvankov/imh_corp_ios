@@ -15,18 +15,21 @@ class Event : IEvent {
     var handler: String?
     var address: String?
     var date: NSNumber
+    var dateText:String?
     
     required init(type:String,
                   date:NSNumber,
                   name:String? = nil,
                   handler:String? = nil,
-                  address:String? = nil){
+                  address:String? = nil,
+                  dateText:String? = nil){
         
         self.type = type
         self.date = date
         self.name = name
         self.handler = handler
         self.address = address
+        self.dateText = dateText
     }
     
 }

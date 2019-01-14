@@ -52,8 +52,11 @@
 		FF3B82C521E7521A001D2830 /* UIViewDrawBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82C421E75219001D2830 /* UIViewDrawBorder.swift */; };
 		FF3B82C821E782A5001D2830 /* IEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82C721E782A5001D2830 /* IEvent.swift */; };
 		FF3B82CA21E782B2001D2830 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82C921E782B2001D2830 /* Event.swift */; };
-		FF3B82CD21E78319001D2830 /* IEventServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82CC21E78319001D2830 /* IEventServices.swift */; };
-		FF3B82CF21E78323001D2830 /* EventServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82CE21E78323001D2830 /* EventServices.swift */; };
+		FF3B82CD21E78319001D2830 /* IEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82CC21E78319001D2830 /* IEventService.swift */; };
+		FF3B82CF21E78323001D2830 /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3B82CE21E78323001D2830 /* EventService.swift */; };
+		FF3D078121EC8AF30029C431 /* IEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3D078021EC8AF30029C431 /* IEventCell.swift */; };
+		FF3D078321EC8AFD0029C431 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3D078221EC8AFD0029C431 /* EventCell.swift */; };
+		FF3D078521EC8B090029C431 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF3D078421EC8B090029C431 /* EventCell.xib */; };
 		FF43358021A6835000F0F5F0 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43357F21A6835000F0F5F0 /* UIViewController+Alert.swift */; };
 		FF43358E21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43358B21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift */; };
 		FF43358F21A69CF100F0F5F0 /* LazyParametersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43358C21A69CF100F0F5F0 /* LazyParametersManager.swift */; };
@@ -427,8 +430,11 @@
 		FF3B82C421E75219001D2830 /* UIViewDrawBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewDrawBorder.swift; sourceTree = "<group>"; };
 		FF3B82C721E782A5001D2830 /* IEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEvent.swift; sourceTree = "<group>"; };
 		FF3B82C921E782B2001D2830 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		FF3B82CC21E78319001D2830 /* IEventServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEventServices.swift; sourceTree = "<group>"; };
-		FF3B82CE21E78323001D2830 /* EventServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventServices.swift; sourceTree = "<group>"; };
+		FF3B82CC21E78319001D2830 /* IEventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEventService.swift; sourceTree = "<group>"; };
+		FF3B82CE21E78323001D2830 /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
+		FF3D078021EC8AF30029C431 /* IEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEventCell.swift; sourceTree = "<group>"; };
+		FF3D078221EC8AFD0029C431 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		FF3D078421EC8B090029C431 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		FF43357D21A5A2E400F0F5F0 /* imh_corp_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imh_corp_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF43357F21A6835000F0F5F0 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		FF43358B21A69CF100F0F5F0 /* LazyParametersManagerAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyParametersManagerAssembly.swift; sourceTree = "<group>"; };
@@ -1021,8 +1027,8 @@
 		FF3B82CB21E782FB001D2830 /* services */ = {
 			isa = PBXGroup;
 			children = (
-				FF3B82CC21E78319001D2830 /* IEventServices.swift */,
-				FF3B82CE21E78323001D2830 /* EventServices.swift */,
+				FF3B82CC21E78319001D2830 /* IEventService.swift */,
+				FF3B82CE21E78323001D2830 /* EventService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -1521,6 +1527,9 @@
 		FF56149C2180A2C200DCCE1B /* views */ = {
 			isa = PBXGroup;
 			children = (
+				FF3D078021EC8AF30029C431 /* IEventCell.swift */,
+				FF3D078221EC8AFD0029C431 /* EventCell.swift */,
+				FF3D078421EC8B090029C431 /* EventCell.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -2915,6 +2924,7 @@
 				FF52A22E21CCBC32000DE870 /* PMHLoader.xib in Resources */,
 				FFAB4F15216392D400AE82EA /* README.md in Resources */,
 				FFAB4F882163960900AE82EA /* Main.storyboard in Resources */,
+				FF3D078521EC8B090029C431 /* EventCell.xib in Resources */,
 				FF5614CA2180ACC500DCCE1B /* MoreSB.storyboard in Resources */,
 				FF6FB00221AD5D0100C818BC /* NewsSectionHeader.xib in Resources */,
 				FF52A23321CD00F1000DE870 /* pmh_logo.gif in Resources */,
@@ -3120,6 +3130,7 @@
 				FFAB4F382163936B00AE82EA /* Application.swift in Sources */,
 				FF72AF022175C1F5002D04DA /* AuthDirector.swift in Sources */,
 				FF6FB02921AFFB8F00C818BC /* LimonadeItemTemplate.swift in Sources */,
+				FF3D078121EC8AF30029C431 /* IEventCell.swift in Sources */,
 				FF4335C921A7E22000F0F5F0 /* NewsDataStorage.swift in Sources */,
 				FF52A24F21D0CC78000DE870 /* FullScreenSlideshowViewController.swift in Sources */,
 				FF3897C02178AC78005CE562 /* RQShineLabel.m in Sources */,
@@ -3153,7 +3164,7 @@
 				FFF9533D21A2A4D900612C10 /* IContainer.swift in Sources */,
 				FF3B82A021E733B1001D2830 /* IEmployeeRequestsDirector.swift in Sources */,
 				FFAB4F6B2163959700AE82EA /* LoginCake.swift in Sources */,
-				FF3B82CF21E78323001D2830 /* EventServices.swift in Sources */,
+				FF3B82CF21E78323001D2830 /* EventService.swift in Sources */,
 				FF3B82A121E733B1001D2830 /* EmployeeRequestsDirector.swift in Sources */,
 				FFAB4F672163959700AE82EA /* LoginController.swift in Sources */,
 				FF72AF7D217761B2002D04DA /* Image+Color.swift in Sources */,
@@ -3356,6 +3367,7 @@
 				FF3B82A321E733B1001D2830 /* EmployeeRequestsController.swift in Sources */,
 				FF43359B21A6A8F000F0F5F0 /* DataBaseAssembly.swift in Sources */,
 				FF72AEF42175BFBB002D04DA /* RootDirector.swift in Sources */,
+				FF3D078321EC8AFD0029C431 /* EventCell.swift in Sources */,
 				FF4335CD21ABF85A00F0F5F0 /* ILimonadeItem.swift in Sources */,
 				FFF9533F21A2A4D900612C10 /* ContainerTemplate.swift in Sources */,
 				FF7000C721BF9596003E4D84 /* FileDataStorage.swift in Sources */,
@@ -3410,7 +3422,7 @@
 				FF3897EC2178C462005CE562 /* DKChainableAnimationKit+Transform.swift in Sources */,
 				FFAB4F24216392D400AE82EA /* UIStoryboard+Load.swift in Sources */,
 				FF72AF0E2175CEAD002D04DA /* IWelcomeCake.swift in Sources */,
-				FF3B82CD21E78319001D2830 /* IEventServices.swift in Sources */,
+				FF3B82CD21E78319001D2830 /* IEventService.swift in Sources */,
 				FFAB4F0F216392D400AE82EA /* UIColor+Contrast.swift in Sources */,
 				FFF9532D21A29F9A00612C10 /* List+Array.swift in Sources */,
 				FF56144A21805B4600DCCE1B /* IConfirmationRouter.swift in Sources */,

@@ -10,5 +10,10 @@ import Foundation
 
 class EventsDirector : IEventsDirector {
     
+    var eventService:IEventService
+    
+    required init(eventService:IEventService) {
+        self.eventService = eventService
+    }
   
 }

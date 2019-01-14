@@ -15,4 +15,5 @@ public protocol IEvent : AnyObject{
     var handler:String? { get }
     var address:String? { get }
     var date:NSNumber { get }
+    var dateText:String? { get }
 }

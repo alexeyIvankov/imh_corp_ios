@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol IEventServices : AnyObject{
+public protocol IEventService : AnyObject{
     func getFakeAllEvents() -> [IEvent]
     func getFakeEventsToday() -> [IEvent]
 }

@@ -10,4 +10,5 @@ import Foundation
 
 protocol IEventsDirector : AnyObject {
     
+    var eventService:IEventService { get }
 }

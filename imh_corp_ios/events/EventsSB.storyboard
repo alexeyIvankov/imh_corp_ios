@@ -117,7 +117,7 @@
                                     <constraint firstItem="UYw-s8-GRo" firstAttribute="top" secondItem="vLo-qw-yVz" secondAttribute="top" id="zYP-Yq-w47"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="VXr-eR-cQC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="VXr-eR-cQC">
                                 <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
@@ -138,6 +138,7 @@
                     <connections>
                         <outlet property="buttonAllEvents" destination="YsE-RA-B9T" id="CD5-xd-rZS"/>
                         <outlet property="buttonTodayEvents" destination="a7R-Mh-F1I" id="lHF-GN-OFf"/>
+                        <outlet property="tableView" destination="VXr-eR-cQC" id="Kl2-8o-Kvk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10B-BW-uL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
