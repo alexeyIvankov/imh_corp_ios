@@ -12,15 +12,15 @@ class EmployeeRequestService : IEmployeeRequestService{
  
     func getCategories() -> [IEmployeeRequestCategory]{
         
-        let salaryInfoCategory = EmployeeRequestsCategory(name: "Информация о заработной плате", type: "Информация о заработной плате", services: [])
+        let salaryInfoCategory = EmployeeRequestsCategory(name: "Информация о заработной плате", type: EmployeeRequestCategoryType.salaryInformation, services: [])
         
-        let employeeInfoCategory = EmployeeRequestsCategory(name: "Кадровая информация", type: "Кадровая информация", services: [])
+        let employeeInfoCategory = EmployeeRequestsCategory(name: "Кадровая информация", type: EmployeeRequestCategoryType.personnelInformation, services: [])
         
-        let requestsCategory = EmployeeRequestsCategory(name: "Запросы", type: "Запросы", services: [])
+        let requestsCategory = EmployeeRequestsCategory(name: "Запросы", type: EmployeeRequestCategoryType.requests, services: [])
         
-        let documentTemplateCategory = EmployeeRequestsCategory(name: "Шаблоны документов", type: "Шаблоны документов", services: [])
+        let documentTemplateCategory = EmployeeRequestsCategory(name: "Шаблоны документов", type: EmployeeRequestCategoryType.templates, services: [])
         
-        let educationCategory = EmployeeRequestsCategory(name: "Аттестация и обучение", type: "Аттестация и обучение", services: [])
+        let educationCategory = EmployeeRequestsCategory(name: "Аттестация и обучение", type: EmployeeRequestCategoryType.education, services: [])
         
         
         return [salaryInfoCategory,

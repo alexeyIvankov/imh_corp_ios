@@ -9,6 +9,5 @@
 import Foundation
 
 public protocol IEventServices : AnyObject{
-    
     func getFakeEvents() -> [IEvent]
 }

@@ -82,7 +82,7 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     private func updateFirstBatchNews(){
-        self.tryShowFirstBatchNewsAllGroupsPast(days: 15, countMessages: 50)
+        self.tryShowFirstBatchNewsAllGroupsPast(days: 30, countMessages: 50)
     }
     
     private func loadGroupsNews(){

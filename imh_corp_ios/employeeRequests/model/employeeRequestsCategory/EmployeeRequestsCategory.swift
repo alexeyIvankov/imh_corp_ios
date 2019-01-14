@@ -11,11 +11,11 @@ import Foundation
 class EmployeeRequestsCategory : IEmployeeRequestCategory{
     
     var name: String
-    var type: String
+    var type: EmployeeRequestCategoryType
     var services: [IEmployeeRequest]
     
     required init(name:String,
-                  type:String,
+                  type:EmployeeRequestCategoryType,
                   services: [IEmployeeRequest]) {
         
         self.name = name

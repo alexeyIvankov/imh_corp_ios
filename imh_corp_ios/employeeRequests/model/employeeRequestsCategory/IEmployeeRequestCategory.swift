@@ -8,9 +8,17 @@
 
 import Foundation
 
+public enum EmployeeRequestCategoryType : String{
+    case salaryInformation
+    case personnelInformation
+    case requests
+    case templates
+    case education
+}
+
 public protocol IEmployeeRequestCategory{
     
     var name:String { get }
-    var type:String { get }
+    var type:EmployeeRequestCategoryType { get }
     var services:[IEmployeeRequest] { get }
 }

@@ -10,4 +10,9 @@ import Foundation
 
 public protocol IEvent : AnyObject{
     
+    var type:String { get }
+    var name:String? { get }
+    var handler:String? { get }
+    var address:String? { get }
+    var date:NSNumber { get }
 }
