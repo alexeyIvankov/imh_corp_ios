@@ -23,6 +23,7 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
     private var newsList:[INews] = [INews]()
     private var listIdGroupOff:[String] = [String]()
     private let countMessagesFromNewsBatch = 50
+    private let countPastDaysFromNewsBatch = 30
     private let queueUpdateTableDataSource = DispatchQueue(label: "NewsController.queue")
     
     private var actionFilterButton:ActionHandler?
@@ -51,6 +52,7 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.clearNewsFromTable()
     }
     
     
@@ -71,18 +73,17 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
         
         let listIdGroupOff = self.cake.director.serviceGroups.getIdListGroupsOff()
         
-        if listIdGroupOff != self.listIdGroupOff{
+        if listIdGroupOff.count > 0 {
             self.listIdGroupOff = listIdGroupOff
             reloadAllNewsInTableView()
         }
         else {
-            self.listIdGroupOff = listIdGroupOff
             updateFirstBatchNews()
         }
     }
     
     private func updateFirstBatchNews(){
-        self.tryShowFirstBatchNewsAllGroupsPast(days: 30, countMessages: 50)
+        self.tryShowFirstBatchNewsAllGroupsPast(days: countPastDaysFromNewsBatch, countMessages: countMessagesFromNewsBatch)
     }
     
     private func loadGroupsNews(){
@@ -96,10 +97,10 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
         self.tableView.reloadData()
         
         if self.listIdGroupOff.count == 0{
-            self.tryShowFirstBatchNewsAllGroupsPast(days: 15, countMessages: 50)
+            self.tryShowFirstBatchNewsAllGroupsPast(days: countPastDaysFromNewsBatch, countMessages: countMessagesFromNewsBatch)
         }
         else {
-             self.tryShowFirstBatchNewsExceptGroupsPast(days: 15, countMessages: 50)
+             self.tryShowFirstBatchNewsExceptGroupsPast(days: countPastDaysFromNewsBatch, countMessages: countMessagesFromNewsBatch)
         }
     }
     
@@ -187,6 +188,11 @@ class NewsController : UIViewController, UITableViewDataSource, UITableViewDeleg
         }) { (error) in
             print(error)
         }
+    }
+    
+    private func clearNewsFromTable(){
+        self.newsList.removeAll()
+        self.tableView.reloadData()
     }
     
     

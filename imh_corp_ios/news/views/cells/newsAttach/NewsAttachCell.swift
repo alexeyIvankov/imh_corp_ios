@@ -83,7 +83,8 @@ class NewsAttachCell : UITableViewCell,  INewsAttachCell{
                                          typeFile: TypeFileRequest.newsPreview(newsId: imageAttach!.newsId, fileId:imageAttach!.fileId),
                                          success: { (data, operationId) in
                 
-                guard self.news != nil &&  self.news.newsId == operationId else {
+                guard self.news != nil &&
+                    self.news.newsId == operationId else {
                     return
                 }
                                             
@@ -93,10 +94,12 @@ class NewsAttachCell : UITableViewCell,  INewsAttachCell{
                                                 
                                                 DispatchQueue.main.async(execute: {
                                                     
-                                                    if image != self.imageViewAttach.image{
-                                                        self.imageViewAttach.image = image
-                                                    }
+                                                    self.imageViewAttach.image = image
                                                     
+                                                    self.imageViewAttach.alpha = 0
+                                                    UIView.animate(withDuration: 0.2, animations: {
+                                                        self.imageViewAttach.alpha = 1
+                                                    })
                                                 })
                                             }
                 
