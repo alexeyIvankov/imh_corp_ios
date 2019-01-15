@@ -58,33 +58,27 @@ class ServiceNews: IServiceNews {
                                         
                                         oldCashedNews(newsList)
                                         
-                                        if newsList.count < count {
-                                            
-                                            self.loadAndSaveYammerNews(accountId: accountId,
-                                                                       token: token,
-                                                                       startDate: startDate,
-                                                                       endDate: endDate,
-                                                                       count: count,
-                                                                       success: {
-                                                                        
-                                                                        self.dataStorage.getNews(accountId: accountId,
-                                                                                                 startDate:startDate,
-                                                                                                 endDate: endDate,
-                                                                                                 count: count,
-                                                                                                 completion: { (newsList) in
-                                                                                                    
-                                                                                                    newLoadedNews(newsList)
-                                                                                                    self.setState(state: .ready)
-                                                                        })
-                                                                        
-                                            }, failed: { (error) in
-                                                failed(error)
-                                                self.setState(state: .ready)
-                                            })
-                                        }
-                                        else {
-                                             self.setState(state: .ready)
-                                        }
+                                        self.loadAndSaveYammerNews(accountId: accountId,
+                                                                   token: token,
+                                                                   startDate: startDate,
+                                                                   endDate: endDate,
+                                                                   count: count,
+                                                                   success: {
+                                                                    
+                                                                    self.dataStorage.getNews(accountId: accountId,
+                                                                                             startDate:startDate,
+                                                                                             endDate: endDate,
+                                                                                             count: count,
+                                                                                             completion: { (newsList) in
+                                                                                                
+                                                                                                newLoadedNews(newsList)
+                                                                                                self.setState(state: .ready)
+                                                                    })
+                                                                    
+                                        }, failed: { (error) in
+                                            failed(error)
+                                            self.setState(state: .ready)
+                                        })
             })
         }
     }

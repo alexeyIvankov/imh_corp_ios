@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PrivacyPhoneMoreCell" rowHeight="83" id="HvW-dd-UK2" customClass="PrivacyPhoneMoreCell" customModule="imh_corp_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HvW-dd-UK2" id="KBB-Kq-HzY">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="82.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YdL-8x-5eQ" customClass="UIViewDrawBorder" customModule="imh_corp_ios" customModuleProvider="target">
+                        <rect key="frame" x="16" y="0.0" width="359" height="82.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQ8-pr-tKA">
+                                <rect key="frame" x="0.0" y="10" width="359" height="62.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мобильный телефон" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lB0-yN-aaH">
+                                        <rect key="frame" x="0.0" y="0.0" width="349" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                        <color key="textColor" red="0.0" green="0.58823529409999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="8(912)100-11-22" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v74-rt-dvD">
+                                        <rect key="frame" x="0.0" y="31.5" width="349" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="lB0-yN-aaH" firstAttribute="top" secondItem="gQ8-pr-tKA" secondAttribute="top" id="39y-qa-Ea7"/>
+                                    <constraint firstAttribute="bottom" secondItem="v74-rt-dvD" secondAttribute="bottom" id="8QI-G3-7j4"/>
+                                    <constraint firstItem="v74-rt-dvD" firstAttribute="leading" secondItem="gQ8-pr-tKA" secondAttribute="leading" id="D8m-NQ-cp3"/>
+                                    <constraint firstAttribute="trailing" secondItem="lB0-yN-aaH" secondAttribute="trailing" constant="10" id="DCS-VT-GAF"/>
+                                    <constraint firstAttribute="trailing" secondItem="v74-rt-dvD" secondAttribute="trailing" constant="10" id="Nkh-eZ-FhQ"/>
+                                    <constraint firstItem="lB0-yN-aaH" firstAttribute="leading" secondItem="gQ8-pr-tKA" secondAttribute="leading" id="fwI-e5-lWz"/>
+                                    <constraint firstItem="v74-rt-dvD" firstAttribute="top" secondItem="lB0-yN-aaH" secondAttribute="bottom" constant="10" id="saL-ol-qEF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gQ8-pr-tKA" firstAttribute="top" secondItem="YdL-8x-5eQ" secondAttribute="top" constant="10" id="1QP-hu-jDn"/>
+                            <constraint firstItem="gQ8-pr-tKA" firstAttribute="leading" secondItem="YdL-8x-5eQ" secondAttribute="leading" id="MCs-Nn-UwT"/>
+                            <constraint firstAttribute="trailing" secondItem="gQ8-pr-tKA" secondAttribute="trailing" id="ghX-SL-uwN"/>
+                            <constraint firstAttribute="bottom" secondItem="gQ8-pr-tKA" secondAttribute="bottom" constant="10" id="gwk-Xg-wMe"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="bottomBorder" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="YdL-8x-5eQ" firstAttribute="top" secondItem="KBB-Kq-HzY" secondAttribute="top" id="3v9-WH-TQD"/>
+                    <constraint firstItem="YdL-8x-5eQ" firstAttribute="leading" secondItem="KBB-Kq-HzY" secondAttribute="leading" constant="16" id="KdS-xu-FSD"/>
+                    <constraint firstAttribute="bottom" secondItem="YdL-8x-5eQ" secondAttribute="bottom" id="Z0E-PR-VX1"/>
+                    <constraint firstAttribute="trailing" secondItem="YdL-8x-5eQ" secondAttribute="trailing" id="lKZ-mz-X11"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="labelPhone" destination="v74-rt-dvD" id="nNW-dO-fgP"/>
+            </connections>
+            <point key="canvasLocation" x="-258.39999999999998" y="308.09595202398805"/>
+        </tableViewCell>
+    </objects>
+</document>
